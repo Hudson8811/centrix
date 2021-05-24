@@ -1,0 +1,59 @@
+$width--full: 1830px;
+$width--large: 1550px;
+$width--small: 760px;
+// Colors
+//---------------------------------
+$color-default-white: #ffffff;
+$color-default-black: #000000;
+
+//$color-main: #616161;
+$color-dark: #212121;
+$color-smoky: #f7f7f7;
+//$color-smoky3: #fbfaf6;
+
+$color-yellow: #fffe55;
+
+$color-yellow-hover: darken($color-yellow, 5%);
+
+$color-grey: #787878;
+
+$color-base: $color-dark; // основной цвет текста, используется в миксине text()
+
+// Typography
+//--------------   $font-family, $file-name, $weight, $style: normal
+
+//
+$fonts: "Neue Montreal" "NeueMontreal-Regular" 400 normal,
+	"Neue Montreal" "NeueMontreal-Italic" 400 italic;
+
+$font-family--main: "Poppins", "Arial", sans-serif;
+//$font-family--secondary: "Gilroy", "Arial", sans-serif;
+//$font-family--third: "Swansea", "Arial", sans-serif;
+
+$font-size-base: 15px;
+$line-height-base: calc(21 / 15); //1.4
+
+/////////////////////////////
+$default-transition-settings: 0.3s ease;
+
+///////////////////////////////
+
+// Viewports
+//---------------------------------
+
+//bootstrap 5 breakpoints
+$breakpoints: (
+	default: "default",
+	xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+	xxl: 1400px,
+) !default;
+
+// Retina
+//---------------------------------
+
+$retina-dpi: 144dpi;
+$retina-dppx: 1.5dppx;
