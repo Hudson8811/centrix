@@ -1,4 +1,4 @@
-$width--full: 1830px;
+$width--full: 1750px;
 $width--large: 1550px;
 $width--small: 760px;
 // Colors
@@ -8,6 +8,7 @@ $color-default-black: #000000;
 
 //$color-main: #616161;
 $color-dark: #212121;
+$color-dark-0a: #0a0a0a;
 $color-smoky: #f7f7f7;
 //$color-smoky3: #fbfaf6;
 
@@ -24,9 +25,10 @@ $color-base: $color-dark; // основной цвет текста, испол�
 
 //
 $fonts: "Neue Montreal" "NeueMontreal-Regular" 400 normal,
+	"Neue Montreal" "NeueMontreal-Medium" 500 normal,
 	"Neue Montreal" "NeueMontreal-Italic" 400 italic;
 
-$font-family--main: "Poppins", "Arial", sans-serif;
+$font-family--main: "Neue Montreal", "Arial", sans-serif;
 //$font-family--secondary: "Gilroy", "Arial", sans-serif;
 //$font-family--third: "Swansea", "Arial", sans-serif;
 

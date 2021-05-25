@@ -57,18 +57,18 @@
 	};
 
 	let FOOTER_MENU_1 = [
-		{text: 'Site Map', url: '#', currentPage: null, currentSection: null},
-		{text: 'Terms & Conditions', url: '#', currentPage: null, currentSection: null},
-		{text: 'Privacy Policy', url: '#', currentPage: null, currentSection: null},
-		{text: 'Help', url: '#', currentPage: null, currentSection: null},
-		{text: 'Affiliatep', url: '#', currentPage: null, currentSection: null}
+		{name: 'Home', url: URLS.home.default, currentPage: 1.01, currentSection: 1},
+		{name: 'Pages', url: URLS.pages.about, currentPage: 2.01, currentSection: 2},
+		{name: 'Blog', url: URLS.blog.masonry, currentPage: 4.01, currentSection: 4},
+		{name: 'Contact', url: URLS.contact, currentPage: 5.01, currentSection: 5},
+		{name: 'Portfolio', url: URLS.projects.masonry, currentPage: 3.01, currentSection: 3}
 	];
 
 	let FOOTER_MENU_2 = [
-		{text: 'Our Location', url: '#', currentPage: null, currentSection: null},
-		{text: 'Career', url: '#', currentPage: null, currentSection: null},
-		{text: 'About', url: URLS.pages.about, currentPage: 4.01, currentSection: 4},
-		{text: 'Contact', url: URLS.pages.contact, currentPage: 4.02, currentSection: 4}
+		{name: 'Facebook', url: '#'},
+		{name: 'Twitter', url: '#',},
+		{name: 'Instagram', url: '#'},
+		{name: 'LinkedIn', url: '#'}
 	];
 
 	let PARTNERS_LOGO = [
@@ -78,7 +78,7 @@
 		{name: '4', w: '125', h: '32', alt: 'artchive crasfts gallery'}
 	];
 
-	let PAGES_LIST = [
+	let MAIN_MENU = [
 		{
 			name: 'Home',
 			url: URLS.home.default,

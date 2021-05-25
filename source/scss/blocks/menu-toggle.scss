@@ -22,10 +22,12 @@
 
 	&--opened {
 		&::before {
-			transform: translateY(2px);
+			//transform: translateY(2px);
+			transform: translateY(150%) rotate(45deg);
 		}
 		&::after {
-			transform: translateY(-2px);
+			//transform: translateY(-2px);
+			transform: translateY(-150%) rotate(-45deg);
 		}
 	}
 
@@ -56,7 +58,7 @@
 		}
 	}
 
-	&:hover,
+	/*&:hover,
 	&:focus {
 		outline: none;
 
@@ -64,5 +66,5 @@
 		&::after {
 			border-top-color: $color-yellow;
 		}
-	}
+	}*/
 }

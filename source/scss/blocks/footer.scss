@@ -1,186 +1,187 @@
 .footer {
 	$self: &;
+	padding: 40px 0;
+	background-color: $color-yellow;
 
-	&--lite {
-		#{$self}__inner {
-			padding-top: 46px;
-			padding-bottom: 46px;
-
-			&::before {
-				display: none;
-			}
-		}
-
-		#{$self}__lang-switcher {
-			margin-left: auto;
-		}
+	@include media(lg) {
+		padding-top: 80px;
+		padding-bottom: 80px;
 	}
 
-	&--white {
-		#{$self}__copy {
-			color: $color-default-white;
-		}
-
-		.lang-switcher {
-			&__link {
-				color: $color-default-white;
-
-				&--current {
-					color: $color-yellow;
-				}
-
-				&:focus {
-					color: $color-yellow;
-				}
-
-				@include hover {
-					color: $color-yellow;
-				}
-			}
-		}
-	}
-
-	&--fixed {
-		width: 100%;
-		position: fixed;
-		bottom: 0;
-		left: 0;
-		z-index: 1;
-
-		#{$self}__inner {
-			padding-top: 12px;
-			padding-bottom: 12px;
-
-			@include media(md) {
-				padding-bottom: 24px;
-			}
-			@include media(lg) {
-				@include media-custom-height(768px) {
-					padding-bottom: 52px;
-				}
-			}
-		}
-	}
-
-	&--bg {
-		background-color: $color-default-white !important;
-
-		@include media(xl) {
-			background-color: transparent !important;
-		}
-	}
-
-	&__inner {
-		position: relative;
-		padding-top: 32px;
-		padding-bottom: 32px;
-
-		&::before {
-			content: "";
-			position: absolute;
-			left: 15px;
-			top: 0;
-
-			width: calc(100% - 30px);
-			//border-top: solid 1px $color-grey3;
-		}
-
-		@include media(md) {
-			padding-top: 80px;
-			padding-bottom: 60px;
-		}
-
-		@include media(lg) {
-			padding-top: 100px;
-			padding-bottom: 80px;
-		}
-
+	&__container {
 		@include media(xl) {
 			max-width: $width--full;
-			padding-top: 150px;
-			padding-bottom: 130px;
-		}
-
-		@include media(xxx) {
-			max-width: calc(100vw - 90px);
 		}
 	}
 
-	&__social {
-		@include media(md) {
-			margin-top: 8px;
-			justify-content: flex-end;
-		}
+	&__title {
+		margin-bottom: 16px;
+
+		@include text(20px, 28 / 20, $color-default-black);
+		font-weight: 500;
 	}
 
-	&__lang-switcher {
-		@include media(lg) {
-			//margin: 0 auto;
-		}
-	}
-
-	&__copyright {
-		margin-bottom: 12px;
-
-		@include text(16px, 1.625, $color-default-black);
-
-		span {
-			color: $color-default-black;
-		}
-
-		@include media(md) {
-			margin-bottom: 0;
-		}
-
-		@include media(xl) {
-			font-size: 16px;
-		}
-	}
-
-	&__column {
-		margin-bottom: 24px;
-
-		@include media(lg) {
-			margin-bottom: 0;
-		}
-
-		&-menu {
+	&__menu {
+		&-list {
 			@include list-reset;
 		}
 
 		&-item {
-			&--current {
-				#{$self}__column-link {
-					color: $color-yellow;
-				}
-			}
+			margin-top: 10px;
 
-			@include media(xl) {
-				//margin-bottom: 9px;
+			&:first-child {
+				margin-top: 0;
 			}
 		}
 
 		&-link {
-			@include text(16px, 1.625, $color-default-black);
-			@include transition(color);
+			@include text(15px, 21 / 15, $color-default-black);
+			text-transform: uppercase;
+		}
+	}
 
-			&:hover,
-			&:focus {
-				outline: none;
-				color: $color-yellow;
+	&__phone {
+		padding-top: 40px;
+		padding-bottom: 20px;
+
+		@include media(sm) {
+			padding-top: 0;
+			padding-bottom: 0;
+		}
+
+		a {
+			position: relative;
+			@include text(28px, 34 / 28, $color-default-black);
+			font-weight: 500;
+
+			&::before {
+				content: "";
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				width: 100%;
+				height: 1px;
+				background-color: #000;
+				transform: scale(0, 1);
+				transform-origin: 0 50%;
+
+				@include transition(transform);
 			}
 
-			&:active {
-				opacity: 0.7;
+			@include hover {
+				&::before {
+					transform: scale(1, 1);
+				}
+			}
+
+			@include media(sm) {
+				display: inline-block;
+				white-space: nowrap;
+				transform: rotate(-90deg) translateX(-100%);
+				transform-origin: 0 0;
 			}
 		}
 	}
 
-	&__logo {
-		margin-bottom: 20px;
+	&__feedback {
+		margin-bottom: 110px;
+
+		@include media(sm) {
+			margin-top: 50px;
+		}
+
+		@include media(lg) {
+			margin-top: 0;
+		}
+
+		&-form {
+			display: flex;
+			align-items: flex-end;
+			margin-bottom: 42px;
+		}
+
+		&-field {
+			display: block;
+			margin-right: 20px;
+		}
+
+		&-send {
+			margin-bottom: 6px;
+			flex-shrink: 0;
+		}
+
+		&-notice {
+			@include text(15px, 21 / 15, $color-default-black);
+
+			a {
+				color: $color-default-black;
+				text-decoration: underline;
+
+				@include hover {
+					text-decoration: none;
+				}
+			}
+		}
+	}
+
+	&__copyright {
+		//margin-bottom: 12px;
+
+		//@include text(16px, 1.625, $color-default-black);
 
 		@include media(md) {
-			margin-bottom: 0;
+			//margin-bottom: 0;
+		}
+
+		@include media(xl) {
+			//font-size: 16px;
+		}
+	}
+
+	&__logo {
+		margin-bottom: 36px;
+
+		@include media(sm) {
+			transform: rotate(-90deg) translateX(-100%);
+			transform-origin: 0 0;
+		}
+
+		@include media(lg) {
+		}
+
+		&-wrap {
+			// то до удалить
+			@include media(sm) {
+				//background-image: linear-gradient(to right, red 12px, grey 12px);
+			}
+		}
+	}
+
+	&__bottom {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		&::before {
+			content: "";
+			width: 100%;
+			margin-bottom: 36px;
+			border-top: solid 1px $color-default-black;
+		}
+	}
+
+	&__copyright {
+		margin-right: 12px;
+
+		@include text(15px, 21 / 15, $color-default-black);
+	}
+
+	&__privacy {
+		color: $color-default-black;
+		text-decoration: none;
+
+		@include hover {
+			text-decoration: underline;
 		}
 	}
 }

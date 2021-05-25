@@ -3,18 +3,20 @@
 
 	&__dropdown {
 		display: none;
+		padding-top: 20px;
+		padding-left: 20px;
 
 		@include media(lg) {
 			position: absolute;
 			z-index: 1;
-			left: -50px;
+			left: -30px;
 			bottom: -40px;
 			transform: translateY(100%);
 			display: block;
 
 			min-width: 400px;
-			padding: 42px 50px;
-			background-color: $color-default-white;
+			padding: 30px;
+			background-color: $color-default-black;
 			opacity: 0;
 			pointer-events: none;
 
@@ -26,97 +28,79 @@
 			}
 		}
 
-		@include media(xl) {
-			left: -100px;
-			padding: 76px 100px 70px;
-		}
-
-		&--columns {
-			@include media(lg) {
-				width: 480px;
-			}
-
-			@include media(xl) {
-				width: 670px;
-			}
-		}
-
-		&-wrapper {
-			@include media(lg) {
-				display: flex;
-			}
-		}
-
-		&-column {
-			@include media(lg) {
-				flex-grow: 1;
-
-				& + & {
-					width: 50%;
-					padding-left: 32px;
-				}
-			}
-
-			&-title {
-				display: none;
-
-				@include media(lg) {
-					display: block;
-					margin-bottom: 20px;
-
-					@include text(12px, 1, $color-grey);
-					text-transform: uppercase;
-					letter-spacing: 0.01em;
-				}
-			}
-		}
-
 		&-list {
 			@include list-reset;
 		}
 
 		&-item {
-			margin-top: 16px;
-			line-height: 1 !important;
+			margin-top: 10px;
+			line-height: 1;
 
 			&:first-child {
-				margin-top: 20px; //32px;
-
-				@include media(md) {
-					margin-top: 24px;
-				}
-
-				@include media(lg) {
-					margin-top: 0;
-				}
+				margin-top: 0;
 			}
 
 			@include media(lg) {
-				margin-top: 8px;
+				//@debug: 8px;
+				margin-top: 16px;
 			}
 
 			&--current {
 				a {
 					color: $color-yellow !important;
-					font-weight: 600;
+
+					#{$self}__dropdown-icon {
+						svg {
+							fill: $color-yellow !important;
+						}
+					}
 				}
 			}
 
 			a {
-				@include text(14px, 1, $color-default-black);
-				letter-spacing: 0.015em;
+				position: relative;
+				display: inline-block;
+				vertical-align: top;
+				padding-right: 22px;
+
+				@include text(13px, 18 / 15, $color-default-black);
+				text-transform: uppercase;
 
 				@include transition(color);
 
 				@include media(lg) {
-					line-height: 1.875;
+					font-size: 15px;
+					color: $color-default-white;
 				}
 
 				&:hover,
 				&:focus {
 					outline: none;
 					color: $color-yellow;
+
+					#{$self}__dropdown-icon {
+						svg {
+							fill: $color-yellow !important;
+						}
+					}
 				}
+			}
+		}
+
+		&-icon {
+			position: absolute;
+			top: 50%;
+			right: 0;
+			transform: translateY(-50%);
+			width: 13px;
+			height: 13px;
+
+			svg {
+				display: block;
+				fill: transparent;
+
+				@include transition(fill);
+				transition-delay: 0.3s;
 			}
 		}
 	}
@@ -148,7 +132,7 @@
 		}
 
 		@include media(xl) {
-			margin-right: 56px; //3.28vw;
+			//margin-right: 56px; //3.28vw;
 		}
 
 		&:last-child {
@@ -159,47 +143,76 @@
 		&--current {
 			#{$self}__link {
 				color: $color-yellow;
+
+				&-icon {
+					svg {
+						fill: $color-yellow;
+					}
+				}
 			}
 		}
 	}
 
 	&__link {
-		@include text(24px, 1, $color-default-black); //36
-		font-weight: 600;
+		position: relative;
+		display: inline-block;
+		padding-right: 22px;
+
+		@include text(15px, 18 / 15, $color-default-black);
+		text-transform: uppercase;
 
 		@include transition(color);
 
 		@include media(md) {
-			font-size: 36px;
+			//font-size: 36px;
 		}
 
 		@include media(lg) {
-			font-size: 14px;
-			line-height: 1.21;
-			text-transform: uppercase;
 		}
 
-		&:hover,
-		&:focus {
+		&-icon {
+			position: absolute;
+			top: 50%;
+			right: 0;
+			transform: translateY(-50%);
+			width: 13px;
+			height: 13px;
+
+			svg {
+				display: block;
+				fill: transparent;
+
+				@include transition(fill);
+				transition-delay: 0.3s;
+			}
+		}
+
+		@include hover {
 			outline: none;
 			color: $color-yellow;
 			position: relative;
 
-			@include media(lg) {
-				&::after {
-					content: "";
-					position: absolute;
-					left: 0;
-					bottom: 0;
-					transform: translateY(100%);
-					width: 100%;
-					height: 70px;
+			#{$self}__link {
+				&-icon {
+					svg {
+						fill: $color-yellow;
+					}
 				}
+			}
 
-				& + #{$self}__dropdown {
-					opacity: 1;
-					pointer-events: auto;
-				}
+			&::after {
+				content: "";
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				transform: translateY(100%);
+				width: 100%;
+				height: 70px;
+			}
+
+			& + #{$self}__dropdown {
+				opacity: 1;
+				pointer-events: auto;
 			}
 		}
 

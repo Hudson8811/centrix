@@ -1,0 +1,23 @@
+ul.navigation__list
+	each item, index in MAIN_MENU
+		if item.currentSection === currentSection && item.currentPage === currentPage
+			li.navigation__item.navigation__item--current
+				a.navigation__link= item.name
+					span.navigation__link-icon
+						+icon('link-arrow')(width="12", height="13")
+				if item.submenu
+					+navigation-dropdown(item.submenu)
+		else if item.currentSection === currentSection && item.currentPage !== currentPage && item.submenu != false
+			li.navigation__item.navigation__item--current
+				a.navigation__link(href= item.url)= item.name
+					span.navigation__link-icon
+						+icon('link-arrow')(width="12", height="13")
+				if item.submenu
+					+navigation-dropdown(item.submenu)
+		else
+			li.navigation__item
+				a.navigation__link.animsition-link(href= item.url)= item.name
+					span.navigation__link-icon
+						+icon('link-arrow')(width="12", height="13")
+				if item.submenu
+					+navigation-dropdown(item.submenu)

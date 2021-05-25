@@ -1,45 +1,50 @@
-footer.footer.__js_fixed-footer
-	.footer__inner.container
+footer.footer
+	.footer__container.container-fluid
 		.row
-			.footer__column.col-12.col-sm
-				+logo(isHome, 'footer__logo logo--borderless')
+			.footer__logo-wrap.col-12.col-sm-3
+				.footer__logo.logo.logo--filled
+					+icon('logo')(width="240", height="57")
+			.col-12.col-sm-9
+				.row
+					.footer__menu.col-6.col-sm-5.col-lg-3
+						.footer__title Quick Links
+						ul.footer__menu-list
+							each item in FOOTER_MENU_1
+								if currentPage === item.currentPage
+									li.footer__menu-item.footer__menu-item--current
+										a.footer__menu-link= item.name
+								else
+									li.footer__menu-item
+										a.footer__menu-link(href= item.url)= item.name
+					.footer__menu.col-6.col-sm-5.col-lg-3
+						.footer__title Follow
+						ul.footer__menu-list
+							each item in FOOTER_MENU_2
+								if currentPage === item.currentPage
+									li.footer__menu-item.footer__menu-item--current
+										a.footer__menu-link= item.name
+								else
+									li.footer__menu-item
+										a.footer__menu-link(href= item.url)= item.name
 
-			// Copyrights
-			.footer__column.col-12.col-lg.order-2.order-lg-0
-				.footer__copyright © Larson. 2020 <br> All Rights Resevered
+					.footer__phone.col-12.col-sm-2.col-lg-1.order-sm-first
+						a(href="tel:+34255216021") +3(425) 521 60 21
+					.footer__feedback.col-12.col-lg-5
+						.footer__title Sign up to our newsletter
+						form.footer__feedback-form(action="#", method="post")
+							label.footer__feedback-field.field
+								input(type="email", name="email")
+								span.field__hint E-mail
+							button.footer__feedback-send.arrow-btn.arrow-btn--size-large(type="button")
+								+icon('link-arrow')(width="75", height="75")
+						.footer__feedback-notice This site is protected by reCAPTHCHA and the <a href="#", target="_blank">Google Privacy Policy</a> and <a href="#", target="_blank">Terms of Service apply</a>.
+					.footer__bottom.col-12
+						.footer__copyright © Centrix  2021. All Rights Resevered
+						a.footer__privacy(href="#") Privacy Policy
 
 
-				// Footer menu
-			.footer__column.col-6.col-sm
-				ul.footer__column-menu
-					each item in FOOTER_MENU_1
-						if item.currentPage === currentPage
-							li.footer__column-item.footer__column-item--current
-								a.footer__column-link= item.text
-						else
-							li.footer__column-item
-								a.footer__column-link.animsition-link(href= item.url)= item.text
 
-			// Footer menu
-			.footer__column.col-6.col-sm
 
-				ul.footer__column-menu
-					each item in FOOTER_MENU_2
-						if item.currentPage === currentPage
-							li.footer__column-item.footer__column-item--current
-								a.footer__column-link= item.text
-						else
-							li.footer__column-item
-								a.footer__column-link.animsition-link(href= item.url)= item.text
-			.footer__column.col-12.col-lg-1.order-md-1.order-lg-0
-				ul.footer__lang-switcher.lang-switcher.lang-switcher--footer
-					li.lang-switcher__item
-						a.lang-switcher__link.lang-switcher__link--current Eng
-					li.lang-switcher__item
-						a.lang-switcher__link(href="#") Fra
-					li.lang-switcher__item
-						a.lang-switcher__link(href="#") Ger
-			.footer__column.footer__column.col-12.col-md.col-lg-3.col-xl-2
-				+social('footer__social', ['facebook', 'twitter', 'google-plus', 'linkedin-original'])
+				//+social('footer__social', ['facebook', 'twitter', 'google-plus', 'linkedin-original'])
 
 

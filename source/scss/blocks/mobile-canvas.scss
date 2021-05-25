@@ -1,0 +1,56 @@
+.mobile-canvas {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 1000;
+	width: 85%;
+	max-width: 460px;
+	padding: 60px 60px 40px;
+	background-color: $color-default-white;
+	display: flex;
+	flex-direction: column;
+	transform: translateX(100%);
+	@include transition(transform);
+
+	&--opened {
+		transform: translateX(0);
+	}
+
+	@include media(lg) {
+		position: static;
+		width: auto;
+		max-width: none;
+		padding: 0;
+		flex-direction: row;
+		align-items: center;
+		background-color: transparent;
+		transform: translateX(0);
+		transition: none;
+	}
+
+	&__nav {
+		margin-bottom: 20px;
+
+		@include media(lg) {
+			margin-right: vw(140);
+			margin-bottom: 0;
+		}
+	}
+
+	&__phone {
+		margin-top: auto;
+
+		@include text(26px, 31 / 26, $color-default-black);
+		@include transition(color);
+
+		@include media(lg) {
+			margin-top: 0;
+		}
+
+		@include hover {
+			outline: none;
+			color: $color-yellow;
+		}
+	}
+}

@@ -45,7 +45,7 @@ gulp.task('server', function() {
 	 gulp.watch('source/themes/intro/**/*.scss', gulp.series('sassIntro'));
    gulp.watch('source/pug/**/*.pug', gulp.series('pug', 'refresh'));
 	 gulp.watch('source/icons/*.svg', gulp.series('sprite', 'pug', 'refresh'));
-	 gulp.watch('source/js/*.js', gulp.series('scripts'));
+	 gulp.watch('source/js/**/*.js', gulp.series('scripts'));
 	 gulp.watch('source/img/**/*.{png,jpg,svg,webp}', gulp.series('img', 'webp'));
 });
 

@@ -3,129 +3,8 @@
 
 	position: relative;
 	z-index: 2;
-	background-color: $color-default-white;
-
-	&--white {
-		border: none !important;
-		background-color: transparent;
-
-		#{$self}__inner {
-			&::after {
-				display: none;
-			}
-		}
-
-		.logo {
-			&__large,
-			&__small {
-				color: $color-default-white;
-			}
-
-			&[href]:hover,
-			&[href]:focus {
-				//color: $color-orange;
-			}
-		}
-
-		.menu-toggle {
-			&::before,
-			&::after {
-				border-top: solid 3px $color-default-white;
-			}
-
-			&:hover,
-			&:focus {
-				&::before,
-				&::after {
-					border-top-color: $color-yellow;
-				}
-			}
-		}
-
-		.navigation {
-			$navigation: &;
-
-			&__link {
-				color: $color-default-white;
-
-				&:hover,
-				&:focus {
-					color: $color-yellow;
-				}
-			}
-
-			&__item {
-				&--current {
-					#{$navigation}__link {
-						color: $color-yellow !important;
-					}
-				}
-			}
-		}
-
-		@include media(lg) {
-			.social {
-				&__link {
-					svg {
-						fill: $color-default-white;
-					}
-
-					&:focus {
-						svg {
-							fill: $color-yellow;
-						}
-					}
-
-					@include hover {
-						svg {
-							fill: $color-yellow;
-						}
-					}
-				}
-			}
-		}
-	}
-
-	&--half {
-		@include media(xl) {
-			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-			background-color: transparent;
-
-			.container {
-				//transform: translateX(-5.52vw);
-			}
-
-			.navigation {
-				&__item {
-					margin-right: 2.7vw;
-				}
-			}
-
-			.mobile-canvas__phone {
-				display: none;
-			}
-		}
-		@include media(xxl) {
-			.container {
-				transform: translateX(-4.68vw);
-			}
-		}
-
-		@include media(xxx) {
-			.navigation {
-				&__item {
-					margin-right: 49px;
-
-					&:last-child {
-						margin-right: 0;
-					}
-				}
-			}
-		}
-	}
+	//background-color: $color-default-white;
+	padding: 20px 0;
 
 	&--fixed {
 		position: fixed;
@@ -227,40 +106,17 @@
 		}
 	}
 
-	&--bg {
-		background-color: $color-default-white !important;
-
-		@include media(xl) {
-			background-color: transparent !important;
-		}
-	}
-
 	@include media(md) {
 	}
 
 	@include media(lg) {
+		padding: 40px 0;
 	}
 
-	&__inner {
+	&__container {
 		display: flex;
 		align-items: center;
-		width: 100%;
 		max-width: $width--full;
-		margin: 0 auto;
-		padding: 15px;
-
-		@include media(md) {
-			padding: 24px 15px;
-		}
-
-		@include media(xxl) {
-			position: relative;
-			padding: 42px 15px;
-		}
-
-		@include media(xxx) {
-			max-width: calc(100vw - 90px);
-		}
 	}
 
 	&__logo {
@@ -273,115 +129,25 @@
 
 		@include media(xxl) {
 			//margin-right: 11.71vw;
-			position: absolute;
-		}
-	}
-
-	.container {
-		display: none;
-
-		@include media(lg) {
-			display: block;
 		}
 	}
 
 	&__mobile {
 		@include media(lg) {
-			flex-grow: 1;
-		}
-	}
-
-	&__phone {
-		display: none;
-
-		@include media(lg) {
-			display: block;
-			flex-shrink: 0;
-
-			@include text(16px, 1.25, $color-default-black);
-			font-weight: 600;
-
-			@include transition(color);
-
-			&:hover,
-			&:focus {
-				outline: none;
-				color: $color-yellow;
-			}
-
-			&:active {
-				opacity: 0.7;
-			}
-		}
-
-		@include media(xxl) {
-			position: absolute;
-			top: 50%;
-			right: 15px;
-			transform: translateY(-50%);
+			margin-left: auto;
 		}
 	}
 
 	&__social {
-		display: none;
-
-		@include media(lg) {
-			display: flex;
-			flex-shrink: 0;
-		}
-		@include media(xxl) {
-			position: absolute;
-			top: 50%;
-			right: 15px;
-			transform: translateY(-50%);
-		}
 	}
 
 	&__menu-toggle {
+		position: relative;
+		z-index: 1000;
 		margin-left: auto;
-		order: 2;
 
 		@include media(lg) {
 			display: none;
-
-			&--always {
-				display: block;
-			}
 		}
-	}
-
-	&__purchase {
-		margin-left: auto;
-		border-radius: 0;
-		align-self: center;
-		order: 1;
-
-		@include media(xxl) {
-			position: absolute;
-			right: 15px;
-			top: 50%;
-			transform: translateY(-50%);
-		}
-
-		&-text {
-			display: none;
-
-			@include media(sm) {
-				display: inline;
-			}
-		}
-
-		svg {
-			display: block;
-			fill: $color-default-white;
-
-			@include media(sm) {
-				display: none;
-			}
-		}
-	}
-
-	&__purchase + &__menu-toggle {
-		margin-left: 20px;
 	}
 }

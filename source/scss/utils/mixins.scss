@@ -30,6 +30,10 @@
 }
 
 @mixin hover {
+	&:focus {
+		outline: none;
+	}
+
 	@media (min-width: 992px) {
 		&:hover,
 		&:focus {
