@@ -152,7 +152,7 @@ function setOverlay(cb) {
 
 /* 3. Hint fields */
 (function() {
-	var fields = $('.field input');
+	var fields = $('.field input, .field textarea');
 	var ModifierClass = 'field--filled';
 
 	fields.on('focus', function() {
@@ -163,5 +163,30 @@ function setOverlay(cb) {
 		if (!$(this).val()) {
 			$(this).parent().removeClass(ModifierClass);
 		}
+	});
+})();
+
+/* 4. Accordion */
+(function(){
+	var btn = $('.accordion__item-header');
+	var content = $('.accordion__item-body');
+	var modifierClass = 'accordion__item-header--opened';
+
+	btn.on('click', function() {
+		$(this).toggleClass(modifierClass).next().slideToggle(DURATION);
+	});
+})();
+
+/* 5. Carousels */
+(function() {
+	var carousel = new Swiper('.__js_carousel', {
+		slidesPerView: 'auto',
+		spaceBetween: 60,
+		loop: true,
+		//centeredSlides: true,
+		navigation: {
+			nextEl: '.carousel__btn--next',
+			prevEl: '.carousel__btn--prev',
+		},
 	});
 })();

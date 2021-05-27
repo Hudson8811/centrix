@@ -57,6 +57,7 @@
 /* 1.4 Buttons */
 @import "blocks/btn";
 @import "blocks/arrow-btn";
+@import "blocks/arrow-link";
 
 /* 1.5 Fields */
 @import "blocks/field";
@@ -76,8 +77,35 @@
 /* 1.10 Social */
 @import "blocks/social";
 
+/* Feature card */
+@import "blocks/feature-card";
+
+/* Carousel card */
+@import "blocks/carousel-card";
+
+/* Carousel */
+@import "blocks/carousel";
+
+/* Accordion */
+@import "blocks/accordion";
+
 /* Mobile canvas */
 @import "blocks/mobile-canvas";
+
+/* 2.2 Hero section in homepage */
+@import "blocks/hero";
+
+/* 2.2 Features section in homepage */
+@import "blocks/features";
+
+/* 2.2 Services section in homepage */
+@import "blocks/our-services";
+
+/* 2.2 Works section in homepage */
+@import "blocks/works";
+
+/* 2.2 Contact section in homepage */
+@import "blocks/contact-section";
 
 /* 2.2 Header */
 @import "blocks/header";

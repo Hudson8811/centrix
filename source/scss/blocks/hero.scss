@@ -1,0 +1,100 @@
+.hero {
+	display: flex;
+	height: 100vh;
+	min-height: 480px;
+
+	padding-top: 80px;
+	background-size: cover;
+	background-position: 50% 0;
+
+	@include media(sm) {
+		padding-top: 123px;
+	}
+
+	@include media(lg) {
+		min-height: 700px;
+		padding-top: 223px;
+	}
+
+	&__container {
+		display: flex;
+		flex-direction: column;
+		max-width: $width--full;
+	}
+
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		order: 1;
+		margin-top: auto;
+		padding-bottom: 36px;
+	}
+
+	&__title {
+		max-width: 230px;
+		margin: 0 0 -113px;
+
+		@include text(36px, 1, $color-default-black);
+		text-transform: uppercase;
+		font-weight: 500;
+
+		//transform: translateY(calc(50% + 23px));
+
+		span {
+			display: block;
+			color: $color-default-white;
+		}
+
+		@include media(sm) {
+			max-width: 389px;
+			margin-bottom: -147px;
+			font-size: 52px;
+		}
+
+		@include media(lg) {
+			max-width: 670px;
+			margin-bottom: -227px;
+			font-size: 90px;
+		}
+
+		@include media(xl) {
+			max-width: 930px;
+			margin-bottom: -302px;
+			font-size: 125px;
+		}
+	}
+
+	&__content {
+		position: relative;
+		display: flex;
+		align-items: flex-end;
+		flex-grow: 1;
+		min-height: 276px;
+		margin-bottom: 80px;
+		padding-left: 140px;
+
+		@include media(lg) {
+			padding-left: 200px;
+		}
+	}
+
+	&__logo {
+		position: absolute;
+		left: 0;
+		top: 0;
+		transform: rotate(-90deg) translateX(-100%);
+		transform-origin: 0 0;
+
+		@include media(xl) {
+			padding: 86px 104px;
+		}
+	}
+
+	&__text {
+		max-width: 366px;
+		margin: 0 auto;
+
+		@include text(15px, 21 / 15, $color-default-black);
+	}
+}

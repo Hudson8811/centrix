@@ -6,6 +6,13 @@
 	//background-color: $color-default-white;
 	padding: 20px 0;
 
+	&--absolute {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+	}
+
 	&--fixed {
 		position: fixed;
 		top: 0;

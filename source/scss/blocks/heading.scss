@@ -4,7 +4,7 @@
 	//font-family: $font-family--secondary;
 
 	@include text(32px, 1.25, $color-default-black);
-	font-weight: 700;
+	font-weight: 400;
 
 	@include media(md) {
 		font-size: 40px;

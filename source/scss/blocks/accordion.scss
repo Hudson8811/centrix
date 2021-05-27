@@ -1,0 +1,109 @@
+.accordion {
+	&__header {
+	}
+
+	&__item {
+		$item: &;
+		border-top: solid 1px $color-default-white;
+
+		&-header {
+			position: relative;
+			width: 100%;
+			padding: 24px 0;
+			text-align: left;
+			border: none;
+			background-color: transparent;
+			cursor: pointer;
+
+			&::before {
+				content: "";
+
+				position: absolute;
+				right: 0;
+				top: 50%;
+				transform: translateY(-50%);
+				width: 25px;
+				height: 25px;
+				background-repeat: no-repeat;
+				background-position: 50% 50%;
+				background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg viewBox='0 0 25 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='%23fff' d='M13.5 0v25M25 12.5H0'/%3e%3c/svg%3e");
+			}
+
+			@include media(xl) {
+				padding: 46px 0;
+			}
+
+			&--opened {
+				&::before {
+					background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg viewBox='0 0 25 2' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='%23fff' d='M25 .922H.073'/%3e%3c/svg%3e");
+				}
+			}
+		}
+
+		&-title {
+			margin-bottom: 8px;
+
+			@include text(26px, 1.4, $color-default-white);
+			font-weight: 500;
+
+			@include media(md) {
+				margin-bottom: 0;
+			}
+		}
+
+		&-short {
+			max-width: 560px;
+
+			@include text(15px, 21 / 15, $color-default-white);
+
+			@include media(xl) {
+				padding-left: 54px;
+			}
+		}
+
+		&-text {
+			max-width: 505px;
+			margin-top: 24px;
+
+			@include text(15px, 21 / 15, $color-default-white);
+
+			@include media(xl) {
+				margin-top: 46px;
+			}
+		}
+
+		&-body {
+			display: none;
+
+			padding-bottom: 24px;
+
+			@include media(xl) {
+				padding-bottom: 64px;
+			}
+
+			img {
+				display: block;
+				max-width: 100%;
+				height: auto;
+			}
+		}
+
+		&-left {
+			margin-bottom: 24px;
+
+			@include media(md) {
+				margin-bottom: 0;
+			}
+		}
+
+		&-right {
+			@include media(xl) {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+
+				padding-left: 54px;
+			}
+		}
+	}
+}

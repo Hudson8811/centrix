@@ -1,0 +1,78 @@
+.works {
+	padding-top: 44px;
+	background-image: linear-gradient(
+		to bottom,
+		$color-default-black 70px,
+		transparent 70px
+	);
+	overflow: hidden;
+
+	@include media(md) {
+		background-image: linear-gradient(
+			to bottom,
+			$color-default-black 89px,
+			transparent 89px
+		);
+	}
+
+	@include media(lg) {
+		background-image: linear-gradient(
+			to bottom,
+			$color-default-black 123px,
+			transparent 123px
+		);
+	}
+
+	&__container {
+		max-width: $width--full;
+	}
+
+	&__header {
+		margin-bottom: 40px;
+
+		@include media(md) {
+			margin-bottom: 60px;
+		}
+	}
+
+	&__title {
+		margin: 0;
+
+		@include text(30px, 1, $color-default-black);
+		text-transform: uppercase;
+		font-weight: 500;
+
+		@include media(md) {
+			font-size: 52px;
+		}
+
+		@include media(lg) {
+			font-size: 90px;
+		}
+
+		span {
+			display: block;
+			color: $color-default-white;
+		}
+	}
+
+	&__more {
+		//display: flex;
+		margin-top: -43px;
+		margin-left: auto;
+
+		@include media(md) {
+			margin-top: -7px;
+		}
+	}
+
+	.works__carousel {
+		.carousel__item {
+			max-width: 450px;
+
+			@include media(lg) {
+				max-width: 662px;
+			}
+		}
+	}
+}

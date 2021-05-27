@@ -1,0 +1,66 @@
+.our-services {
+	padding-bottom: 80px;
+	background-color: $color-default-black;
+
+	@include media(xl) {
+		padding-bottom: 215px;
+	}
+
+	&__container {
+		max-width: $width--full;
+	}
+
+	&__header {
+		//display: flex;
+		//flex-wrap: wrap;
+		padding-top: 80px;
+		padding-bottom: 80px;
+		border-top: solid 1px $color-default-white;
+
+		@include media(xl) {
+			padding-top: 165px;
+			padding-bottom: 165px;
+		}
+	}
+
+	&__title {
+		width: 100%;
+		margin: 0 0 8px;
+
+		@include text(30px, 1, $color-default-white);
+		text-transform: uppercase;
+		font-weight: 500;
+
+		@include media(md) {
+			max-width: 230px;
+			margin: 0;
+			font-size: 52px;
+		}
+
+		@include media(lg) {
+			max-width: 430px;
+			font-size: 90px;
+		}
+	}
+
+	&__short {
+		//max-width: calc(100% - 80px);
+
+		@include text(15px, 21 / 15, $color-default-white);
+
+		@include media(xl) {
+			max-width: 693px;
+			margin-left: auto;
+
+			@include text(32px, 42 / 32, $color-default-white);
+		}
+	}
+
+	&__more {
+		display: inline-flex;
+		margin-left: auto;
+	}
+
+	&__accordion {
+	}
+}

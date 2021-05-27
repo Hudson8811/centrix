@@ -20,3 +20,9 @@ function setOverlay(cb) {
 
 /* 3. Hint fields */
 //= parts/field.js
+
+/* 4. Accordion */
+//= parts/accordion.js
+
+/* 5. Carousels */
+//= parts/carousel.js

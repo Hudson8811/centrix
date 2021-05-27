@@ -1,0 +1,11 @@
+mixin btn(isButton = true, text = 'btn text', url = '', cl = '')
+	if isButton === true
+		button(class= cl ? cl + ' btn' : 'btn')&attributes(attributes)
+			span.btn__text= text
+			span.btn__icon
+				+icon('link-arrow')(width="19", height="19")
+	else
+		a(class= cl ? cl + ' btn' : 'btn', href= url)&attributes(attributes)
+			span.btn__text= text
+			span.btn__icon
+				+icon('link-arrow')(width="19", height="19")

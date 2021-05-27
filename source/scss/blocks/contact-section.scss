@@ -1,0 +1,149 @@
+.contact-section {
+	padding: 80px 0;
+
+	@include media(md) {
+		padding: 120px 0;
+	}
+	@include media(lg) {
+		padding: 220px 0;
+	}
+
+	&__container {
+		max-width: $width--full;
+	}
+
+	&__title {
+		margin: 0 0 32px;
+
+		@include text(30px, 1, $color-default-black);
+		text-transform: uppercase;
+		font-weight: 500;
+
+		@include media(md) {
+			margin-bottom: 67px;
+			font-size: 52px;
+		}
+
+		@include media(lg) {
+			font-size: 90px;
+		}
+	}
+
+	&__address {
+		max-width: 305px;
+		margin-bottom: 32px;
+
+		@include text(15px, 21 / 15, $color-default-black);
+		font-style: normal;
+
+		@include media(md) {
+			margin-bottom: 120px;
+		}
+	}
+
+	&__link {
+		margin-bottom: 12px;
+
+		@include media(md) {
+			margin-bottom: 29px;
+		}
+
+		a {
+			@include text(24px, 48 / 40, $color-default-black);
+			text-transform: uppercase;
+			font-weight: 500;
+
+			@include transition(color);
+
+			&:focus {
+				outline: none;
+			}
+
+			@include media(md) {
+				font-size: 32px;
+			}
+
+			@include media(lg) {
+				font-size: 40px;
+			}
+
+			@include hover {
+				color: $color-yellow;
+			}
+		}
+	}
+
+	&__social {
+		@include list-reset;
+
+		display: flex;
+		flex-wrap: wrap;
+		margin-top: 32px;
+
+		@include media(md) {
+			margin-top: auto;
+		}
+
+		li {
+			margin-right: 20px;
+		}
+
+		a {
+			@include text(15px, 21 / 15, $color-default-black);
+			text-transform: uppercase;
+
+			&:focus {
+				outline: none;
+			}
+
+			@include hover {
+				color: $color-yellow;
+			}
+		}
+	}
+
+	&__main {
+		margin-bottom: 60px;
+
+		@include media(md) {
+			display: flex;
+			flex-direction: column;
+			margin-bottom: 0;
+		}
+	}
+
+	&__aside {
+	}
+
+	&__form-wrapper {
+		max-width: 810px;
+		margin-left: auto;
+		padding: 40px 32px;
+		background-color: $color-default-black;
+
+		@include media(md) {
+			padding: 76px 60px;
+		}
+	}
+
+	form {
+	}
+
+	&__field {
+		margin-bottom: 32px;
+
+		@include media(md) {
+			margin-bottom: 60px;
+
+			&--textarea {
+				margin-top: 70px;
+			}
+		}
+
+		@include media(lg) {
+		}
+	}
+
+	&__send {
+	}
+}

@@ -1,0 +1,5 @@
+mixin arrow-link(text, url, cl)
+	a(class= cl ? cl + ' arrow-link' : 'arrow-link', href= url ? url : '#')
+		span.arrow-link__text= text ? text : 'link anchor'
+		span.arrow-link__icon
+			+icon('link-arrow')(width="75", height="75")

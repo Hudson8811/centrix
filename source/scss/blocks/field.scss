@@ -10,7 +10,7 @@
 	textarea {
 		display: block;
 		width: 100%;
-		padding: 16px 0 14px;
+		padding: 0 0 14px;
 		//border: solid 1px $color-grey7;
 		font-family: $font-family--main;
 
@@ -23,8 +23,8 @@
 
 		&:focus {
 			outline: none;
-			border-color: $color-default-black;
-			color: $color-default-black;
+			//border-color: $color-default-black;
+			//color: $color-default-black;
 		}
 
 		&:hover + #{$self}__hint {
@@ -32,25 +32,20 @@
 		}
 
 		@include hover {
-			border-color: $color-default-black;
+			//border-color: $color-default-black;
 		}
 	}
 
 	textarea {
 		resize: none;
-		height: 150px;
-		padding: 24px;
-
-		@include media(xl) {
-			height: 174px;
-		}
+		height: 122px;
 	}
 
 	&__hint {
 		position: absolute;
-		top: 50%;
+		top: 3px;
 		left: 0;
-		transform: translateY(-50%);
+		//transform: translateY(-50%);
 
 		@include text(15px, 1, rgba($color-default-black, 0.5));
 		text-transform: uppercase;
@@ -63,6 +58,28 @@
 			font-size: 12px;
 			color: $color-default-black;
 			transform: translateY(-24px);
+		}
+	}
+
+	&--theme-white {
+		input,
+		textarea {
+			color: $color-default-white;
+			border-bottom-color: $color-default-white;
+
+			&:hover + #{$self}__hint {
+				color: $color-default-white;
+			}
+		}
+
+		#{$self}__hint {
+			color: rgba($color-default-white, 0.5);
+		}
+
+		&#{$self}--filled {
+			#{$self}__hint {
+				color: $color-default-white;
+			}
 		}
 	}
 }

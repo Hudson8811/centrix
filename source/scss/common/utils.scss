@@ -57,6 +57,12 @@
 	color: $color-yellow;
 }
 
+.text-md-right {
+	@include media(md) {
+		text-align: right;
+	}
+}
+
 /* swiper */
 
 .swiper-pagination {

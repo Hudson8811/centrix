@@ -1,0 +1,23 @@
+.feature-card {
+	$self: &;
+
+	position: relative;
+	display: block;
+
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+
+	&__caption {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		//max-width: 272px;
+		padding: 32px 45px;
+
+		@include text(26px, 34 / 26, $color-default-white);
+		text-transform: uppercase;
+		background-color: $color-default-black;
+	}
+}

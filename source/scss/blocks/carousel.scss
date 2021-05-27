@@ -1,0 +1,54 @@
+.carousel {
+	position: relative;
+	overflow: visible;
+
+	&::before {
+		content: "";
+		position: absolute;
+		z-index: 2;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		transform: translateX(-100%);
+		background-color: $color-default-white;
+	}
+
+	&__item {
+	}
+
+	&__navigation {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+
+		margin-bottom: 40px;
+		@include media(md) {
+			margin-bottom: 57px;
+		}
+	}
+
+	&__btn {
+		padding: 0;
+
+		@include text(24px, 48 / 40, $color-default-black);
+		text-transform: uppercase;
+		font-weight: 500;
+		border: none;
+		background-color: transparent;
+
+		@include media(md) {
+			font-size: 40px;
+		}
+
+		&--prev {
+			margin-right: 24px;
+
+			@include media(md) {
+				margin-right: 72px;
+			}
+		}
+		&--next {
+		}
+	}
+}

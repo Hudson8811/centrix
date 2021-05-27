@@ -1,0 +1,66 @@
+.features {
+	padding: 80px 0;
+	background-color: $color-default-black;
+
+	@include media(lg) {
+		padding: 150px 0 120px;
+	}
+
+	@include media(xl) {
+		padding: 229px 0 120px;
+	}
+
+	&__container {
+		max-width: $width--full;
+	}
+
+	&__description {
+		max-width: 693px;
+		margin-left: auto;
+		margin-top: 40px;
+		margin-bottom: 40px;
+
+		@include text(24px, 42 / 32, $color-default-white);
+
+		@include media(lg) {
+			margin-bottom: 100px;
+			font-size: 32px;
+		}
+
+		@include media(xl) {
+			margin-bottom: 236px;
+		}
+	}
+
+	&__text {
+		max-width: 366px;
+		margin-bottom: 40px;
+
+		@include text(15px, 21 / 15, $color-default-white);
+
+		@include media(lg) {
+			margin-left: 43px;
+		}
+	}
+
+	&__card {
+		display: inline-block;
+		margin-bottom: 40px;
+
+		&--size {
+			&-large {
+				@include media(lg) {
+					margin-bottom: 144px;
+					margin-left: auto;
+				}
+			}
+
+			&-small {
+				@include media(lg) {
+					margin-top: 338px;
+					margin-left: auto;
+				}
+			}
+		}
+	}
+}

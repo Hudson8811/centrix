@@ -1,0 +1,48 @@
+.arrow-link {
+	$self: &;
+
+	display: inline-flex;
+	flex-direction: column-reverse;
+	align-items: flex-end;
+
+	@include media(md) {
+		flex-direction: row;
+	}
+
+	&__text {
+		@include text(14px, 24 / 20, $color-default-black);
+		text-transform: uppercase;
+		white-space: nowrap;
+
+		@include media(lg) {
+			font-size: 20px;
+		}
+	}
+
+	&__icon {
+		display: block;
+		margin-left: 12px;
+		margin-bottom: 8px;
+		width: 48px;
+
+		@include media(lg) {
+			margin-left: 20px;
+			width: 75px;
+		}
+
+		svg {
+			display: block;
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	&--white {
+		#{$self}__text {
+			color: $color-default-white;
+		}
+		#{$self}__icon svg {
+			fill: $color-default-white;
+		}
+	}
+}

@@ -1,5 +1,5 @@
 (function() {
-	var fields = $('.field input');
+	var fields = $('.field input, .field textarea');
 	var ModifierClass = 'field--filled';
 
 	fields.on('focus', function() {

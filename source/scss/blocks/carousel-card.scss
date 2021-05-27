@@ -1,0 +1,62 @@
+.carousel-card {
+	$self: &;
+	position: relative;
+	overflow: hidden;
+
+	img {
+		display: block;
+		max-width: 100%;
+		height: auto;
+
+		@include transition(transform);
+	}
+
+	@include hover {
+		outline: none;
+
+		img {
+			transform: scale(1.15) rotate(-4deg);
+		}
+
+		#{$self}__bottom {
+			transform: translateY(0);
+		}
+	}
+
+	&__bottom {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 20px;
+		background-color: $color-yellow;
+
+		@include media(lg) {
+			position: absolute;
+			z-index: 1;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			padding: 38px 40px;
+			transform: translateY(100%);
+
+			@include transition(transform);
+		}
+	}
+
+	&__title {
+		margin-right: 20px;
+
+		@include text(20px, 34 / 28, $color-default-black);
+
+		@include media(lg) {
+			font-size: 28px;
+		}
+	}
+
+	&__icon {
+		svg {
+			display: block;
+			fill: $color-default-black;
+		}
+	}
+}
