@@ -57,6 +57,8 @@
 /* 1.4 Buttons */
 @import "blocks/btn";
 @import "blocks/arrow-btn";
+@import "blocks/arrow-link";
+@import "blocks/circle-link";
 
 /* 1.5 Fields */
 @import "blocks/field";
@@ -96,3 +98,11 @@
 
 /* 1.16 Webpage */
 @import "blocks/webpage";
+
+@import "blocks/quote";
+@import "blocks/comment";
+@import "blocks/news-card";
+@import "blocks/blog-grid";
+@import "blocks/filter";
+@import "blocks/single-post";
+@import "blocks/form";

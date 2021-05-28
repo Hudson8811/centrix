@@ -1,0 +1,28 @@
+.circle-link {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 60px;
+	height: 60px;
+	border: 1px solid $color-default-black;
+	border-radius: 50%;
+	transition: all 0.3s ease;
+
+	@include media(lg) {
+		width: 100px;
+		height: 100px;
+	}
+
+	@include hover {
+		border-color: $color-yellow;
+		background-color: $color-yellow;
+	}
+
+	svg {
+		transform: scale(0.6);
+
+		@include media(lg) {
+			transform: scale(1);
+		}
+	}
+}

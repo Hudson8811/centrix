@@ -1,0 +1,45 @@
+.filter {
+	$self: &;
+
+	text-align: center;
+
+	@include media(lg) {
+		text-align: left;
+	}
+
+	&__item {
+		margin-right: 20px;
+		padding: 0;
+		font-family: $font-family--main;
+
+		@include text(18px, 140%, $color-default-black);
+		text-transform: capitalize;
+		background-color: transparent;
+		border: none;
+		appearance: none;
+		cursor: pointer;
+
+		@include transition(color);
+
+		@include media(lg) {
+			font-size: 20px;
+		}
+
+		@include media(xl) {
+			margin-right: 50px;
+		}
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		@include hover {
+			outline: none;
+			color: $color-yellow;
+		}
+
+		&--active {
+			color: $color-yellow;
+		}
+	}
+}

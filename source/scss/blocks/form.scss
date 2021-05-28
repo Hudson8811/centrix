@@ -1,0 +1,45 @@
+.form {
+	padding: 45px 60px 92px;
+	background-color: $color-yellow;
+
+	&__title {
+		font-size: 32px;
+		line-height: 42px;
+		margin-bottom: 70px;
+	}
+
+	label {
+		margin-bottom: 47px;
+	}
+
+	&__row {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 -50px;
+
+		label {
+			width: calc(50% - 100px);
+			margin: 0 50px 69px;
+		}
+	}
+
+	.field-file {
+		display: flex;
+		align-items: center;
+
+		input {
+			display: none;
+		}
+
+		svg {
+			width: 16px;
+			height: 16px;
+			margin-right: 20px;
+		}
+
+		span {
+			font-size: 15px;
+			text-transform: uppercase;
+		}
+	}
+}

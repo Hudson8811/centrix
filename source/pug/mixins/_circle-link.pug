@@ -1,0 +1,3 @@
+mixin circle-link(url, cl)
+	a(class= cl ? cl + ' circle-link' : 'circle-link', href= url ? url : '#')
+		+icon('arrow-down')(width="30", height="32")

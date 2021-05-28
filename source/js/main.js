@@ -20,3 +20,6 @@ function setOverlay(cb) {
 
 /* 3. Hint fields */
 //= parts/field.js
+
+/* 4. Masonry */
+//= parts/masonry.js

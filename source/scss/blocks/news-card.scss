@@ -1,0 +1,145 @@
+.news-card {
+	margin-bottom: 20px;
+
+	@include media(md) {
+		padding: 0 10px;
+	}
+
+	@include media(xl) {
+		padding: 0 30px;
+		margin-bottom: 60px;
+	}
+
+	&__wrapper {
+		position: relative;
+		overflow: hidden;
+
+		@include hover {
+			.news-card__content {
+				transform: translateY(0);
+			}
+		}
+	}
+
+	&__pic {
+		height: 0;
+		padding-top: 60%;
+		position: relative;
+
+		@include media(md) {
+			height: 224px;
+			padding-top: 0;
+		}
+
+		@include media(lg) {
+			height: 280px;
+		}
+
+		@include media(xl) {
+			height: 340px;
+		}
+
+		@include media(xxl) {
+			height: 510px;
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			position: absolute;
+			top: 0;
+			left: 0;
+
+			@include media(md) {
+				position: unset;
+			}
+		}
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		padding: 20px 15px;
+		box-sizing: border-box;
+		background-color: $color-yellow;
+		position: relative;
+		@include transition(transform);
+
+		@include media(md) {
+			top: -6px;
+		}
+
+		@include media(lg) {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			transform: translateY(100%);
+		}
+
+		@include media(xl) {
+			padding: 52px 40px 39px;
+		}
+	}
+
+	&__date {
+		font-size: 14px;
+		line-height: 140%;
+		margin-bottom: 18px;
+
+		@include media(lg) {
+			font-size: 15px;
+		}
+	}
+
+	&__title {
+		font-size: 26px;
+		line-height: 110%;
+
+		@include media(lg) {
+			font-size: 32px;
+			line-height: 130%;
+		}
+	}
+
+	&__bottom {
+		display: flex;
+		justify-content: space-between;
+		margin-top: 40px;
+
+		@include media(lg) {
+			margin-top: 0;
+		}
+
+		a .arrow-link__icon {
+			width: 29px;
+			margin-bottom: 0;
+		}
+	}
+
+	&__text {
+		max-width: 280px;
+		font-size: 14px;
+		line-height: 140%;
+		margin-right: 20px;
+
+		@include media(lg) {
+			font-size: 15px;
+		}
+	}
+
+	&--width2 {
+		width: 100%;
+
+		@include media(md) {
+			width: 50%;
+		}
+
+		@include media(lg) {
+			width: 66.6666%;
+		}
+	}
+}

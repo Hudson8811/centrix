@@ -64,9 +64,28 @@ body {
 	font-family: $font-family--main;
 
 	@include text();
-	font-weight: 400;
+	font-weight: 500;
 	-webkit-locale: auto;
 	white-space: normal;
+}
+
+.container {
+	@include media(xxl) {
+		padding: 0 15px;
+		max-width: 1720px;
+	}
+
+	&--small {
+		@include media(xxl) {
+			max-width: 1140px;
+		}
+	}
+
+	&--xsmall {
+		@include media(xxl) {
+			max-width: 760px;
+		}
+	}
 }
 
 main {

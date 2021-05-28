@@ -17,8 +17,11 @@ $color-yellow: #fffe55;
 $color-yellow-hover: darken($color-yellow, 5%);
 
 $color-grey: #787878;
+$color-grey-d3: #d3d3d3;
+$color-grey-76: #767676;
+$color-grey-ab: #ababab;
 
-$color-base: $color-dark; // основной цвет текста, используется в миксине text()
+$color-base: $color-default-black; // основной цвет текста, используется в миксине text()
 
 // Typography
 //--------------   $font-family, $file-name, $weight, $style: normal
