@@ -1,0 +1,37 @@
+extends templates/main
+block variables
+	- let pageTitle = TITLE_PART + ' | Coming Soon';
+	- let isHome = false; //- Если true то логотип не будет ссылкой
+	- let currentPage = 2.09; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+	- let currentSection = 2; // // Для каждой раздела уникален. Home -1, projects - 2, news - 3, pages - 4
+
+block content
+	article.coming-soon
+		.coming-soon__header
+			+icon('logo')(width='76' height='19')
+		.container.coming-soon__container
+			.coming-soon__wrapper
+				.coming-soon__content
+					.coming-soon__title Comming soon...
+					.coming-soon__subtitle Condimentum ipsum a adipiscing hac dolor set consectetur urna commodo elit
+						|  parturient a molestie ut nisl partu convallier ullamcorpe.
+					.coming-soon__timer-title Our website will be launched in:
+					include modules/timer
+					// Social
+					ul.social.coming-soon__social
+						li.social__item
+							a.social__link(href='#', target='_blank')
+								+icon('soc-fb')(width='22', height='22')
+						li.social__item
+							a.social__link(href='#', target='_blank')
+								+icon('soc-tw')(width='22', height='22')
+						li.social__item
+							a.social__link(href='#', target='_blank')
+								+icon('soc-gp')(width='22', height='22')
+						li.social__item
+							a.social__link(href='#', target='_blank')
+								+icon('soc-lin')(width='22', height='22')
+
+block script
+	// JavaScript
+	script(src="js/libs/timer.js")

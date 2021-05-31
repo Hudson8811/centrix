@@ -2,35 +2,35 @@
 	display: flex;
 
 	&__digit {
+		text-align: center;
+
 		&:not(:last-child) {
 			margin-right: 35px;
 
 			@include media(lg) {
-				margin-right: 131px;
+				margin-right: 127px;
 			}
 		}
 
 		p {
-			width: 30px;
-			font-family: $font-family--secondary;
+			width: 55px;
 			font-size: 40px;
 			line-height: 40px;
-			font-weight: bold;
+			color: $color-yellow;
 			text-transform: uppercase;
 			margin: 0 0 12px;
 
 			@include media(lg) {
-				width: 85px;
+				width: 90px;
 				margin: 0 auto 12px;
 				font-size: 70px;
-				line-height: 72px;
+				line-height: 84px;
 			}
 		}
 
 		span {
 			font-size: 14px;
 			line-height: 24px;
-			font-weight: bold;
 
 			@include media(lg) {
 				font-size: 16px;
