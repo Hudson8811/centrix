@@ -6,7 +6,7 @@
 	}
 
 	@include media(xl) {
-		padding: 201px 0 100px;
+		padding: 201px 0 140px;
 	}
 
 	&__date {
@@ -204,6 +204,10 @@
 	}
 
 	&__form {
-		margin: 224px 0 80px;
+		margin: 55px 0;
+
+		@include media(lg) {
+			margin: 224px 0 80px;
+		}
 	}
 }

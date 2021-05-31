@@ -152,7 +152,7 @@ function setOverlay(cb) {
 
 /* 3. Hint fields */
 (function() {
-	var fields = $('.field input');
+	var fields = $('.field input').add('.field textarea');
 	var ModifierClass = 'field--filled';
 
 	fields.on('focus', function() {

@@ -1,4 +1,6 @@
 .btn {
+	$self: &;
+
 	//old
 	min-width: 207px;
 	display: inline-flex;
@@ -56,6 +58,30 @@
 			outline: none;
 			background-color: $color-yellow;
 			color: $color-default-white;
+		}
+	}
+
+	&--black {
+		background-color: $color-default-black;
+
+		@include hover {
+			background-color: rgba($color-default-black, 0.85);
+
+			&__text {
+				color: $color-default-white;
+			}
+		}
+
+		#{$self} {
+			&__text {
+				color: $color-default-white;
+			}
+
+			&__icon {
+				svg {
+					fill: $color-default-white;
+				}
+			}
 		}
 	}
 }

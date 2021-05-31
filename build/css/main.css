@@ -432,6 +432,31 @@ a:hover, a:focus {
   color: #ffffff;
 }
 
+.btn--black {
+  background-color: #000000;
+}
+
+.btn--black:focus {
+  outline: none;
+}
+
+@media (min-width: 992px) {
+  .btn--black:hover, .btn--black:focus {
+    background-color: rgba(0, 0, 0, 0.85);
+  }
+  .btn--black:hover__text, .btn--black:focus__text {
+    color: #ffffff;
+  }
+}
+
+.btn--black .btn__text {
+  color: #ffffff;
+}
+
+.btn--black .btn__icon svg {
+  fill: #ffffff;
+}
+
 .arrow-btn {
   display: block;
   padding: 0;
@@ -2346,7 +2371,7 @@ a:hover, a:focus {
 
 @media (min-width: 1200px) {
   .single-post {
-    padding: 201px 0 100px;
+    padding: 201px 0 140px;
   }
 }
 
@@ -2596,18 +2621,40 @@ a:hover, a:focus {
 }
 
 .single-post__form {
-  margin: 224px 0 80px;
+  margin: 55px 0;
+}
+
+@media (min-width: 992px) {
+  .single-post__form {
+    margin: 224px 0 80px;
+  }
 }
 
 .form {
-  padding: 45px 60px 92px;
+  padding: 40px 25px 55px;
   background-color: #fffe55;
 }
 
+@media (min-width: 992px) {
+  .form {
+    padding: 45px 60px 92px;
+  }
+}
+
 .form__title {
-  font-size: 32px;
-  line-height: 42px;
-  margin-bottom: 70px;
+  font-size: 26px;
+  line-height: 32px;
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+@media (min-width: 768px) {
+  .form__title {
+    font-size: 32px;
+    line-height: 42px;
+    text-align: left;
+    margin-bottom: 70px;
+  }
 }
 
 .form label {
@@ -2620,12 +2667,37 @@ a:hover, a:focus {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin: 0 -50px;
+}
+
+@media (min-width: 768px) {
+  .form__row {
+    margin: 0 -15px;
+  }
+}
+
+@media (min-width: 992px) {
+  .form__row {
+    margin: 0 -50px;
+  }
 }
 
 .form__row label {
-  width: calc(50% - 100px);
-  margin: 0 50px 69px;
+  width: 100%;
+  margin: 0 0 40px;
+}
+
+@media (min-width: 768px) {
+  .form__row label {
+    width: calc(50% - 30px);
+    margin: 0 15px 69px;
+  }
+}
+
+@media (min-width: 992px) {
+  .form__row label {
+    width: calc(50% - 100px);
+    margin: 0 50px 69px;
+  }
 }
 
 .form .field-file {
@@ -2635,6 +2707,20 @@ a:hover, a:focus {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  cursor: pointer;
+}
+
+.form .field-file:focus {
+  outline: none;
+}
+
+@media (min-width: 992px) {
+  .form .field-file:hover svg, .form .field-file:focus svg {
+    fill: rgba(0, 0, 0, 0.85);
+  }
+  .form .field-file:hover span, .form .field-file:focus span {
+    color: rgba(0, 0, 0, 0.85);
+  }
 }
 
 .form .field-file input {
@@ -2642,12 +2728,17 @@ a:hover, a:focus {
 }
 
 .form .field-file svg {
+  fill: #000000;
   width: 16px;
   height: 16px;
   margin-right: 20px;
+  -webkit-transition: fill 0.3s ease;
+  transition: fill 0.3s ease;
 }
 
 .form .field-file span {
   font-size: 15px;
   text-transform: uppercase;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
 }
