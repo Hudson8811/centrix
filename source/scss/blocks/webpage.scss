@@ -7,4 +7,12 @@
 		flex-direction: column;
 		height: 100vh;
 	}
+
+	&--parallax-dark {
+		.parallax-projects {
+			&__section {
+				color: $color-default-black;
+			}
+		}
+	}
 }

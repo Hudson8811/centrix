@@ -22,4 +22,7 @@ function setOverlay(cb) {
 //= parts/field.js
 
 /* 4. Masonry */
-//= parts/masonry.js
+// //= parts/masonry.js
+
+/* 5. Pagepiling */
+//= parts/pagepiling.js

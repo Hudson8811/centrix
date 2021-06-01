@@ -15,7 +15,7 @@
   <!-- CSS-->
   <link rel="stylesheet" href="css/bootstrap-grid.min.css">
   <link rel="stylesheet" href="css/main.css">
-  <title>Centrix | Blog Listing</title>
+  <title>Centrix | Page 404</title>
 </head>
 
 <body class="webpage">
@@ -144,8 +144,8 @@
                   </ul>
                 </div>
               </li>
-              <li class="navigation__item">
-                <a class="navigation__link animsition-link" href="about-us.html">Pages<span class="navigation__link-icon">
+              <li class="navigation__item navigation__item--current">
+                <a class="navigation__link" href="about-us.html">Pages<span class="navigation__link-icon">
                     <svg width="12" height="13">
                       <use xlink:href="#link-arrow"></use>
                     </svg>
@@ -209,8 +209,8 @@
                         </span>
                       </a>
                     </li>
-                    <li class="navigation__dropdown-item">
-                      <a class="animsition-link" href="404-error.html">404<span class="navigation__dropdown-icon">
+                    <li class="navigation__dropdown-item navigation__dropdown-item--current">
+                      <a>404<span class="navigation__dropdown-icon">
                           <svg width="12" height="13">
                             <use xlink:href="#link-arrow"></use>
                           </svg>
@@ -272,8 +272,8 @@
                   </ul>
                 </div>
               </li>
-              <li class="navigation__item navigation__item--current">
-                <a class="navigation__link" href="blog-masonry.html">Blog<span class="navigation__link-icon">
+              <li class="navigation__item">
+                <a class="navigation__link animsition-link" href="blog-masonry.html">Blog<span class="navigation__link-icon">
                     <svg width="12" height="13">
                       <use xlink:href="#link-arrow"></use>
                     </svg>
@@ -297,8 +297,8 @@
                         </span>
                       </a>
                     </li>
-                    <li class="navigation__dropdown-item navigation__dropdown-item--current">
-                      <a>Listing<span class="navigation__dropdown-icon">
+                    <li class="navigation__dropdown-item">
+                      <a class="animsition-link" href="blog-listing.html">Listing<span class="navigation__dropdown-icon">
                           <svg width="12" height="13">
                             <use xlink:href="#link-arrow"></use>
                           </svg>
@@ -334,158 +334,27 @@
       </div>
     </header>
     <main>
-      <article class="blog-grid blog-grid--listing">
-        <div class="blog-grid__first-screen">
-          <h1 class="heading heading--size-large blog-grid__title">Blog</h1>
-        </div>
-        <div class="container container--small blog-grid__container">
-          <!-- Filter news-->
-          <div class="filter blog-grid__filter">
-            <button class="filter__item filter__item--active __js_filter-btn" type="button" data-filter="*">all</button>
-            <button class="filter__item __js_filter-btn" type="button" data-filter=".__js_design">design</button>
-            <button class="filter__item __js_filter-btn" type="button" data-filter=".__js_marketing">marketing</button>
-            <button class="filter__item __js_filter-btn" type="button" data-filter=".__js_business">business</button>
-            <button class="filter__item __js_filter-btn" type="button" data-filter=".__js_photography">photography</button>
+      <article class="page-404">
+        <div class="container page-404__container">
+          <div class="page-404__wrapper">
+            <div class="page-404__img">
+              <img src="img/404.jpg" srcset="img/404@2x.jpg" alt="">
+            </div>
+            <div class="page-404__content">
+              <div class="page-404__title">404.</div>
+              <div class="page-404__subtitle">The page you were looking for could
+                <br> not be found.
+              </div>
+              <a class="btn" href="/">
+                <span class="btn__text">Back home</span>
+                <span class="btn__icon">
+                  <svg width="19" height="19">
+                    <use xlink:href="#link-arrow"></use>
+                  </svg>
+                </span>
+              </a>
+            </div>
           </div>
-          <ul class="row blog-grid__row __js_blog-grid">
-            <li class="news-card __js_masonry-item col-12 col-lg-4 col-md-6 __js_design __js_business">
-              <div class="news-card__wrapper">
-                <div class="news-card__pic">
-                  <img src="img/news/blog-5-2.jpg" srcset="img/news/blog-5-2@2x.jpg" alt="" />
-                </div>
-                <div class="news-card__content">
-                  <div class="news-card__top">
-                    <div class="news-card__date">
-                      <span>16</span>
-                      <span>&nbsp;</span>
-                      <span>Jan</span>
-                      <span>,&nbsp;</span>
-                      <span>2020</span>
-                      <span>&nbsp;/&nbsp;</span>
-                      <span>Design</span>
-                    </div>
-                    <div class="news-card__title">A few words
-                      <br> about us
-                    </div>
-                  </div>
-                  <div class="news-card__bottom">
-                    <div class="news-card__text">We make our customers &#39; products valuable in the eyes of customers. To do this, we analyze and study people,</div>
-                    <a class="arrow-link" href="#">
-                      <span class="arrow-link__icon">
-                        <svg width="75" height="75">
-                          <use xlink:href="#link-arrow"></use>
-                        </svg>
-                      </span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li class="news-card __js_masonry-item col-12 col-lg-4 col-md-6 __js_design">
-              <div class="news-card__wrapper">
-                <div class="news-card__pic">
-                  <img src="img/news/blog-9-3.jpg" srcset="img/news/blog-9-3@2x.jpg" alt="" />
-                </div>
-                <div class="news-card__content">
-                  <div class="news-card__top">
-                    <div class="news-card__date">
-                      <span>16</span>
-                      <span>&nbsp;</span>
-                      <span>Jan</span>
-                      <span>,&nbsp;</span>
-                      <span>2020</span>
-                      <span>&nbsp;/&nbsp;</span>
-                      <span>Design</span>
-                    </div>
-                    <div class="news-card__title">A few words
-                      <br> about us
-                    </div>
-                  </div>
-                  <div class="news-card__bottom">
-                    <div class="news-card__text">We make our customers &#39; products valuable in the eyes of customers. To do this, we analyze and study people,</div>
-                    <a class="arrow-link" href="#">
-                      <span class="arrow-link__icon">
-                        <svg width="75" height="75">
-                          <use xlink:href="#link-arrow"></use>
-                        </svg>
-                      </span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li class="news-card __js_masonry-item col-12 col-lg-4 col-md-6 __js_marketing __js_design">
-              <div class="news-card__wrapper">
-                <div class="news-card__pic">
-                  <img src="img/news/blog-3-3.jpg" srcset="img/news/blog-3-3@2x.jpg" alt="" />
-                </div>
-                <div class="news-card__content">
-                  <div class="news-card__top">
-                    <div class="news-card__date">
-                      <span>16</span>
-                      <span>&nbsp;</span>
-                      <span>Jan</span>
-                      <span>,&nbsp;</span>
-                      <span>2020</span>
-                      <span>&nbsp;/&nbsp;</span>
-                      <span>Design</span>
-                    </div>
-                    <div class="news-card__title">A few words
-                      <br> about us
-                    </div>
-                  </div>
-                  <div class="news-card__bottom">
-                    <div class="news-card__text">We make our customers &#39; products valuable in the eyes of customers. To do this, we analyze and study people,</div>
-                    <a class="arrow-link" href="#">
-                      <span class="arrow-link__icon">
-                        <svg width="75" height="75">
-                          <use xlink:href="#link-arrow"></use>
-                        </svg>
-                      </span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li class="news-card __js_masonry-item col-12 col-lg-4 col-md-6 __js_photography __js_marketing">
-              <div class="news-card__wrapper">
-                <div class="news-card__pic">
-                  <img src="img/news/blog-8-2.jpg" srcset="img/news/blog-8-2@2x.jpg" alt="" />
-                </div>
-                <div class="news-card__content">
-                  <div class="news-card__top">
-                    <div class="news-card__date">
-                      <span>16</span>
-                      <span>&nbsp;</span>
-                      <span>Jan</span>
-                      <span>,&nbsp;</span>
-                      <span>2020</span>
-                      <span>&nbsp;/&nbsp;</span>
-                      <span>Design</span>
-                    </div>
-                    <div class="news-card__title">A few words
-                      <br> about us
-                    </div>
-                  </div>
-                  <div class="news-card__bottom">
-                    <div class="news-card__text">We make our customers &#39; products valuable in the eyes of customers. To do this, we analyze and study people,</div>
-                    <a class="arrow-link" href="#">
-                      <span class="arrow-link__icon">
-                        <svg width="75" height="75">
-                          <use xlink:href="#link-arrow"></use>
-                        </svg>
-                      </span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </li>
-          </ul>
-          <a class="blog-grid__more circle-link" href="#">
-            <svg width="30" height="32">
-              <use xlink:href="#arrow-down"></use>
-            </svg>
-          </a>
         </div>
       </article>
     </main>
