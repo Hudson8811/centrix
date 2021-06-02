@@ -1,0 +1,18 @@
+.skills {
+	&__item {
+		margin-bottom: 50px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		@include media(md) {
+			max-width: calc(50% - 50px);
+			margin-bottom: 96px;
+
+			&:nth-last-child(-n + 2) {
+				margin-bottom: 0;
+			}
+		}
+	}
+}

@@ -82,4 +82,26 @@
 			}
 		}
 	}
+
+	&--theme-yellow {
+		input,
+		textarea {
+			color: $color-yellow;
+			border-bottom-color: $color-yellow;
+
+			&:hover + #{$self}__hint {
+				color: $color-yellow;
+			}
+		}
+
+		#{$self}__hint {
+			color: rgba($color-yellow, 0.5);
+		}
+
+		&#{$self}--filled {
+			#{$self}__hint {
+				color: $color-yellow;
+			}
+		}
+	}
 }
