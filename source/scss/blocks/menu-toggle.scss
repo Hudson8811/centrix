@@ -2,9 +2,9 @@
 	$self: &;
 
 	position: relative;
-	display: block;
-	width: 25px;
-	height: 12px;
+	display: flex;
+	width: 44px;
+	height: 30px; //12px;
 	padding: 0;
 	border: none;
 	background-color: transparent;
@@ -16,18 +16,26 @@
 	&--white {
 		&::before,
 		&::after {
-			border-top: solid 3px $color-default-white;
+			border-top-color: $color-default-white;
+		}
+
+		#{$self}__line {
+			border-top-color: $color-default-white;
 		}
 	}
 
 	&--opened {
 		&::before {
 			//transform: translateY(2px);
-			transform: translateY(150%) rotate(45deg);
+			transform: translateY(450%) rotate(45deg);
 		}
 		&::after {
 			//transform: translateY(-2px);
-			transform: translateY(-150%) rotate(-45deg);
+			transform: translateY(-450%) rotate(-45deg);
+		}
+
+		#{$self}__line {
+			opacity: 0;
 		}
 	}
 
@@ -51,11 +59,11 @@
 		bottom: 0;
 	}
 
-	&--white {
-		&::before,
-		&::after {
-			border-top: solid 3px $color-default-white;
-		}
+	&__line {
+		display: block;
+		width: 100%;
+		border-top: solid 3px $color-default-black;
+		align-self: center;
 	}
 
 	/*&:hover,

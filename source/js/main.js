@@ -37,8 +37,11 @@ function setOverlay(cb) {
 /* 7. Tooltip pages */
 //= parts/tooltip.js
 
-/* 4. Masonry */
+/* 8. Masonry */
 //= parts/masonry.js
 
-/* 5. Pagepiling */
+/* 9. Pagepiling */
 //= parts/pagepiling.js
+
+/* 10. Animation of skills */
+//= parts/skills.js

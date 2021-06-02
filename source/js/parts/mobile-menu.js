@@ -1,10 +1,12 @@
 (function() {
 	var menuOpenBtn = $('.menu-toggle');
+	var menuCloseBtn = $('.mobile-canvas__close');
 	var menu = $('.mobile-canvas');
 	var headerContainer = $('.header__container');
 	var animsition = $('.animsition');
 	var isHandled = false;
 	var menuIsOpened = false;
+	var isLeftwardHeader = $('.header').is('.header--leftward');
 
 	//var dropdownLinks = menu.find('.__js_menu-dropdown-link');
 	var mobileDropdownLinks = $('.navigation__link');
@@ -20,15 +22,19 @@
 		menuIsOpened ? closeMenu() : openMenu();
 	});
 
+	if (menuCloseBtn.length > 0) {
+		menuCloseBtn.on('click', closeMenu);
+	}
 
-	if ($(window).width() < mobileBreakpoint && !isHandled) {
+
+	if ($(window).width() < mobileBreakpoint && !isHandled || isLeftwardHeader) {
 		mobileDropdownLinks.on('click', openMobileDropdown);
 		isHandled = true;
 	}
 
 	$(window).on('resize', function() {
 
-		if ($(window).width() < mobileBreakpoint && !isHandled) {
+		if ($(window).width() < mobileBreakpoint && !isHandled || isLeftwardHeader) {
 			mobileDropdownLinks.on('click', openMobileDropdown);
 			isHandled = true;
 		} else {
@@ -41,7 +47,7 @@
 	});
 
 	function changeClassNavLink() {
-		if ($(window).width() < mobileBreakpoint) {
+		if ($(window).width() < mobileBreakpoint || isLeftwardHeader) {
 			mobileDropdownLinks.each(function() {
 				if($(this).next().length !== 0) {
 					$(this).removeClass('animsition-link');

@@ -51,11 +51,13 @@ function setOverlay(cb) {
 /* 3. Mobile menu */
 (function() {
 	var menuOpenBtn = $('.menu-toggle');
+	var menuCloseBtn = $('.mobile-canvas__close');
 	var menu = $('.mobile-canvas');
 	var headerContainer = $('.header__container');
 	var animsition = $('.animsition');
 	var isHandled = false;
 	var menuIsOpened = false;
+	var isLeftwardHeader = $('.header').is('.header--leftward');
 
 	//var dropdownLinks = menu.find('.__js_menu-dropdown-link');
 	var mobileDropdownLinks = $('.navigation__link');
@@ -71,15 +73,19 @@ function setOverlay(cb) {
 		menuIsOpened ? closeMenu() : openMenu();
 	});
 
+	if (menuCloseBtn.length > 0) {
+		menuCloseBtn.on('click', closeMenu);
+	}
 
-	if ($(window).width() < mobileBreakpoint && !isHandled) {
+
+	if ($(window).width() < mobileBreakpoint && !isHandled || isLeftwardHeader) {
 		mobileDropdownLinks.on('click', openMobileDropdown);
 		isHandled = true;
 	}
 
 	$(window).on('resize', function() {
 
-		if ($(window).width() < mobileBreakpoint && !isHandled) {
+		if ($(window).width() < mobileBreakpoint && !isHandled || isLeftwardHeader) {
 			mobileDropdownLinks.on('click', openMobileDropdown);
 			isHandled = true;
 		} else {
@@ -92,7 +98,7 @@ function setOverlay(cb) {
 	});
 
 	function changeClassNavLink() {
-		if ($(window).width() < mobileBreakpoint) {
+		if ($(window).width() < mobileBreakpoint || isLeftwardHeader) {
 			mobileDropdownLinks.each(function() {
 				if($(this).next().length !== 0) {
 					$(this).removeClass('animsition-link');
@@ -377,7 +383,7 @@ function setOverlay(cb) {
 	}
 })();
 
-/* 4. Masonry */
+/* 8. Masonry */
 (function() {
 	$(window).on('load', function(){
 		var filterItem = $('.filter__item');
@@ -401,7 +407,7 @@ function setOverlay(cb) {
 	});
 })();
 
-/* 5. Pagepiling */
+/* 9. Pagepiling */
 (function(){
 	initFullPage();
 
@@ -442,4 +448,74 @@ function setOverlay(cb) {
 	function removeDark() {
 		$('.webpage').removeClass('webpage--parallax-dark');
 	}
+})();
+
+/* 10. Animation of skills */
+(function() {
+	$(window).on('load', function() {
+		var skills = $('.skills');
+		var skill = $('.skill');
+		var numbers = $('.skill .__js_number');
+		var animationIsDone = false;
+		var scroll = $(window).scrollTop() + $(window).height();
+
+		var duration = 1800;
+
+		if ($('*').is('.skills')) {
+			var offset = skills.offset().top;
+
+			if (!animationIsDone && scroll >= offset) {
+				animateNumbers();
+				animateProgress();
+			}
+
+			$(window).on('scroll', function() {
+				scroll = $(window).scrollTop() + $(window).height();
+
+				if (!animationIsDone && scroll >= offset) {
+					animateNumbers();
+					animateProgress();
+				}
+			});
+		}
+
+		function animateNumbers() {
+			numbers.each(function() {
+				var endValue = parseInt($(this).parent().parent().parent().attr('data-percent'), 10);
+
+				$(this).easy_number_animate({
+					start_value: 0,
+					end_value: endValue,
+					duration: 1800
+				});
+
+			});
+
+			animationIsDone = true;
+		}
+
+		function animateProgress() {
+			skill.each(function() {
+				var current = $(this);
+				var progress = current.find('.skill__progress');
+				var percent = parseInt(current.attr('data-percent'), 10);
+				//var interval = duration / percent;
+
+				var count = 1;
+
+				/*var idInterval = setInterval(function() {
+					progress.attr('style', 'transform: scale(' + (count / 100) + ', 1)')
+					count++;
+
+					if (count === percent) {
+						clearInterval(idInterval);
+					}
+				}, interval);*/
+
+
+
+				progress.attr('style', 'transform: scale(' + (percent / 100) + ', 1)')
+			});
+		}
+	});
 })();

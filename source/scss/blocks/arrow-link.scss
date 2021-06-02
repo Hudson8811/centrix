@@ -9,6 +9,18 @@
 		flex-direction: row;
 	}
 
+	&--theme-yellow {
+		#{$self}__text {
+			color: $color-yellow;
+		}
+
+		#{$self}__icon {
+			svg {
+				fill: $color-yellow;
+			}
+		}
+	}
+
 	&__text {
 		@include text(14px, 24 / 20, $color-default-black);
 		text-transform: uppercase;

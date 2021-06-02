@@ -1,0 +1,161 @@
+.vcard {
+	padding: 160px 0 100px;
+	background-color: $color-default-black;
+	background-size: 200% auto;
+	background-position: 50% 0;
+	background-repeat: no-repeat;
+
+	@include media(sm) {
+		background-size: 150% auto;
+	}
+
+	@include media(md) {
+		background-size: 100% auto;
+	}
+
+	@include media(xl) {
+		padding: 263px 0 220px;
+	}
+
+	&__container {
+		max-width: $width--middle;
+	}
+
+	&__header {
+		margin-bottom: 100px;
+
+		@include media(md) {
+			margin-bottom: 160px;
+		}
+
+		@include media(lg) {
+			margin-bottom: 200px;
+		}
+
+		@include media(lg) {
+			margin-bottom: 240px;
+		}
+	}
+
+	&__title {
+		margin: 0 0 16px;
+
+		@include text(42px, 133 / 140, $color-yellow);
+		font-weight: 500;
+
+		@include media(sm) {
+			margin-bottom: 0;
+			font-size: 72px;
+		}
+
+		@include media(md) {
+			font-size: 110px;
+		}
+
+		@include media(lg) {
+			font-size: 140px;
+		}
+	}
+
+	&__post {
+		margin-bottom: 16px;
+
+		@include text(16px, 36 / 26, $color-yellow);
+
+		@include media(sm) {
+			font-size: 26px;
+		}
+	}
+
+	&__great {
+		margin-bottom: -1px;
+		padding: 20px 0;
+
+		@include text(15px, 30 / 22, $color-yellow);
+		border-top: solid 1px $color-yellow;
+		border-bottom: solid 1px $color-yellow;
+
+		@include media(sm) {
+			padding: 35px 0;
+			font-size: 22px;
+		}
+	}
+
+	&__skills {
+		margin-top: 100px;
+		margin-bottom: 100px;
+
+		@include media(sm) {
+			margin: 170px 0;
+		}
+
+		@include media(md) {
+			margin-bottom: 200px;
+		}
+
+		@include media(xl) {
+			margin-bottom: 240px;
+		}
+	}
+
+	&__start-project {
+		.start-project__title {
+			color: $color-yellow;
+		}
+	}
+
+	table {
+		width: 100%;
+		border-collapse: collapse;
+
+		td {
+			padding: 20px 0;
+			vertical-align: top;
+
+			@include text(15px, 42 / 32, $color-yellow);
+			border-top: solid 1px $color-yellow;
+			border-bottom: solid 1px $color-yellow;
+
+			&:first-child {
+				width: 50%;
+				padding-right: 20px;
+				font-size: 18px;
+			}
+
+			@include media(sm) {
+				padding: 35px 0;
+				font-size: 32px;
+
+				&:first-child {
+					width: 54.4%;
+					padding-right: 35px;
+					font-size: 45px;
+				}
+			}
+
+			a {
+				color: $color-yellow;
+
+				@include transition(color);
+
+				@include hover {
+					color: $color-yellow-hover;
+				}
+			}
+		}
+
+		ul {
+			@include list-reset;
+
+			counter-reset: list;
+
+			li {
+				counter-increment: list;
+
+				&::before {
+					content: "0" counter(list) ". ";
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,80 @@
+.skill {
+	$self: &;
+
+	position: relative;
+	padding-bottom: 12px;
+	//border-bottom: solid 1px $color-default-black;
+
+	&::before {
+		content: "";
+		position: absolute;
+		left: 50%;
+		bottom: -1px;
+		transform: translateX(-50%);
+		width: calc(100% - 24px);
+		border-bottom: solid 1px $color-default-black;
+	}
+
+	&--theme-yellow {
+		&::before {
+			border-bottom-color: $color-yellow;
+		}
+
+		#{$self}__title {
+			color: $color-yellow;
+		}
+
+		#{$self}__percent {
+			color: $color-yellow;
+		}
+
+		#{$self}__progress {
+			background-color: $color-yellow;
+		}
+	}
+
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		align-items: baseline;
+
+		margin-bottom: 16px;
+	}
+
+	&__title {
+		@include text(20px, 42 / 32, $color-default-black);
+		font-weight: 500;
+
+		@include media(sm) {
+			font-size: 32px;
+		}
+	}
+
+	&__percent {
+		margin-left: 20px;
+
+		@include text(20px, 42 / 32, $color-default-black);
+		font-weight: 500;
+
+		@include media(sm) {
+			font-size: 32px;
+		}
+	}
+
+	&__bar {
+	}
+
+	&__progress {
+		width: 100%;
+		height: 2px;
+		transform: scale(0, 1);
+		transform-origin: 0 50%;
+		background-color: $color-default-black;
+
+		transition: 2s linear;
+
+		@include media(sm) {
+			height: 4px;
+		}
+	}
+}

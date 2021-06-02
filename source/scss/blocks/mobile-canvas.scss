@@ -1,4 +1,5 @@
 .mobile-canvas {
+	$self: &;
 	position: fixed;
 	top: 0;
 	bottom: 0;
@@ -13,8 +14,15 @@
 	transform: translateX(100%);
 	@include transition(transform);
 
+	//opacity: 0;
+
 	&--opened {
 		transform: translateX(0);
+		//opacity: 1;
+
+		#{$self}__close {
+			transform: translateX(100%);
+		}
 	}
 
 	@include media(lg) {
@@ -50,6 +58,52 @@
 		@include hover {
 			outline: none;
 			color: $color-yellow;
+		}
+	}
+
+	&__close {
+		display: none;
+
+		@include media(lg) {
+			position: absolute;
+			top: 0;
+			right: 0;
+			display: block;
+			width: 60px;
+			height: 60px;
+			border: none;
+			background-color: $color-default-white;
+			cursor: pointer;
+
+			@include transition(transform);
+
+			&::before,
+			&::after {
+				content: "";
+				position: absolute;
+				top: 50%;
+				left: 50%;
+
+				width: calc(100% - 16px);
+				border-top: solid 3px $color-default-black;
+
+				@include transition(border-color);
+			}
+
+			&::before {
+				transform: translateY(-50%) translateX(-50%) rotate(45deg);
+			}
+
+			&::after {
+				transform: translateY(-50%) translateX(-50%) rotate(-45deg);
+			}
+		}
+
+		@include hover {
+			&::before,
+			&::after {
+				border-top-color: $color-yellow;
+			}
 		}
 	}
 }

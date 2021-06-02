@@ -13,6 +13,10 @@
 		padding: 240px 0;
 	}
 
+	&--no-padding {
+		padding: 0;
+	}
+
 	&__container {
 		max-width: $width--full;
 	}
@@ -43,6 +47,19 @@
 			margin-bottom: 156px;
 
 			@include fluid-font-size(150px, 209px, 1200px, 1920px, 180px);
+		}
+
+		&--size-small {
+			text-transform: inherit;
+
+			@include media(lg) {
+				max-width: 520px;
+				font-size: 140px !important;
+			}
+			@include media(xl) {
+				margin-bottom: 163px;
+				//font-size: 140px !important;
+			}
 		}
 	}
 
@@ -106,5 +123,43 @@
 				margin-bottom: 113px;
 			}
 		}
+	}
+
+	&__field-wrapper {
+		@include media(md) {
+			width: calc(50% - 50px);
+		}
+	}
+
+	&__field {
+		width: auto;
+		margin-bottom: 32px;
+
+		@include media(md) {
+			margin-bottom: 60px;
+
+			&--textarea {
+				margin-top: 10px;
+				margin-bottom: 42px;
+			}
+		}
+	}
+
+	&__bottom {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	&__file {
+		margin: 0 0 32px;
+
+		@include media(md) {
+			margin: 0 0 58px;
+		}
+	}
+
+	&__send {
+		display: flex;
 	}
 }
