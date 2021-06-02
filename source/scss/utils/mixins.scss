@@ -54,6 +54,16 @@
 	}
 }
 
+@mixin media-max($media) {
+	@each $breakpoint, $breakpointValue in $breakpoints {
+		@if $media == $breakpoint {
+			@media (max-width: $breakpointValue - 1) {
+				@content;
+			}
+		}
+	}
+}
+
 @mixin media-custom-height($height) {
 	@media (min-height: $height) {
 		@content;

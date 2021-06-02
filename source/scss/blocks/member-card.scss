@@ -1,0 +1,106 @@
+.member-card {
+	$self: &;
+
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+	overflow: hidden;
+
+	@include media(sm) {
+		display: block;
+	}
+
+	@include media(lg) {
+		display: inline-block;
+	}
+
+	@include hover {
+		#{$self}__info {
+			transform: translateY(0);
+		}
+	}
+
+	&__image {
+		overflow: hidden;
+		@include media(sm) {
+			height: 300px;
+		}
+
+		@include media(lg) {
+			height: auto;
+		}
+
+		img {
+			display: inline-block;
+			vertical-align: top;
+			max-width: 100%;
+			height: auto;
+
+			@include media(sm) {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				object-position: top;
+			}
+
+			@include media(lg) {
+				width: auto;
+				height: auto;
+				object-fit: none;
+			}
+		}
+	}
+
+	&__info {
+		display: flex;
+		flex-direction: column;
+		padding: 16px;
+		background-color: $color-yellow;
+
+		@include media(xl) {
+			padding: vw(30);
+		}
+
+		@include media(full) {
+			padding: 30px;
+		}
+
+		@include media(lg) {
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			transform: translateY(100%);
+
+			@include transition(transform);
+		}
+	}
+
+	&__title {
+		margin: 0 0 8px;
+
+		@include text(22px, 34 / 26, $color-default-black);
+		text-transform: uppercase;
+		font-weight: 500;
+
+		@include media(xl) {
+			font-size: 26px;
+		}
+	}
+
+	&__post {
+		@include text(15px, 21 / 15, $color-default-black);
+	}
+
+	&__social {
+		margin: 48px 0 0;
+
+		@include media(xl) {
+			margin-top: vw(100);
+		}
+
+		@include media(full) {
+			margin-top: 100px;
+		}
+	}
+}

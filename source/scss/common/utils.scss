@@ -56,7 +56,9 @@
 .color-yellow {
 	color: $color-yellow;
 }
-
+.text-right {
+	text-align: right;
+}
 .text-md-right {
 	@include media(md) {
 		text-align: right;

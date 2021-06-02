@@ -7,7 +7,7 @@
 	}
 
 	@include media(xl) {
-		padding: 229px 0 120px;
+		padding: 229px 0 175px;
 	}
 
 	&__container {
@@ -59,7 +59,12 @@
 				@include media(lg) {
 					margin-top: 338px;
 					margin-left: auto;
+					margin-right: 33px;
 				}
+			}
+
+			&-middle {
+				margin-left: 43px;
 			}
 		}
 	}

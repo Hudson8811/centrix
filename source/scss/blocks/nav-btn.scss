@@ -1,0 +1,36 @@
+.nav-btn {
+	display: inline-block;
+	vertical-align: top;
+	padding: 0;
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+
+	svg {
+		display: block;
+		fill: $color-default-black;
+
+		@include transition(transform);
+	}
+
+	@include hover {
+		svg {
+			fill: lighten($color-default-black, 30%);
+		}
+	}
+
+	&--next {
+		@include hover {
+			svg {
+				transform: translateX(30%);
+			}
+		}
+	}
+	&--prev {
+		@include hover {
+			svg {
+				transform: translateX(-30%);
+			}
+		}
+	}
+}

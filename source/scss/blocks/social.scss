@@ -5,10 +5,12 @@
 	display: flex;
 	flex-wrap: wrap;
 
-	&--contact {
+	&--hover-white {
 		#{$self}__link {
-			svg {
-				//fill: $color-grey8;
+			@include hover {
+				svg {
+					fill: $color-default-white;
+				}
 			}
 		}
 	}
@@ -22,7 +24,7 @@
 	}
 
 	&__item + &__item {
-		margin-left: 28px;
+		margin-left: 23px;
 	}
 
 	&__link {

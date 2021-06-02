@@ -1,0 +1,24 @@
+.play-btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 83px;
+	height: 83px;
+	border-radius: 50%;
+	border: none;
+	background-color: $color-default-white;
+	cursor: pointer;
+
+	//background-image: linear-gradient(to right, red 50%, transparent 50%);
+
+	@include transition(opacity);
+
+	svg {
+		display: block;
+		fill: $color-default-black;
+	}
+
+	@include hover {
+		opacity: 0.9;
+	}
+}

@@ -1,0 +1,109 @@
+.about-video-section {
+	padding: 80px 0;
+
+	@include media(md) {
+		padding: 160px 0 120px;
+	}
+
+	@include media(xl) {
+		padding: 240px 0 180px;
+	}
+
+	&--pt-0 {
+		padding-top: 0;
+	}
+
+	&--pb-0 {
+		padding-bottom: 0;
+	}
+
+	&__container {
+		max-width: $width--full;
+	}
+
+	&__main {
+		@include media(md) {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+
+		@include media(xl) {
+			padding-top: 26px;
+		}
+	}
+
+	&__aside {
+		margin-bottom: 48px;
+
+		@include media(md) {
+			display: flex;
+			margin-bottom: 0;
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+	}
+
+	&__statistics {
+		margin-top: 80px;
+
+		@include media(md) {
+			margin-top: 120px;
+		}
+
+		@include media(xl) {
+			margin-top: 193px;
+		}
+	}
+
+	&__title {
+		max-width: 520px;
+		margin: 0 0 48px;
+
+		@include text(24px, 1, $color-default-black);
+		font-weight: 500;
+
+		@include media(sm) {
+			font-size: 32px;
+		}
+
+		@include media(lg) {
+			font-size: 36px;
+		}
+		@include media(xl) {
+			max-width: 700px;
+			font-size: 58px;
+		}
+
+		&--size-small {
+			@include text(24px, 42 / 32, $color-default-black);
+
+			@include media(lg) {
+				font-size: 32px;
+			}
+			@include media(xl) {
+				max-width: 767px;
+				font-size: 32px;
+			}
+		}
+	}
+
+	&__text {
+		@include media(xl) {
+			max-width: 366px;
+		}
+	}
+
+	&__more {
+	}
+
+	&__video {
+		@include media(md) {
+			margin-left: auto;
+		}
+	}
+}

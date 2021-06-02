@@ -26,6 +26,10 @@
 			padding: 56px 72px;
 		}
 
+		@include media(xl) {
+			padding: 66px 72px 67px;
+		}
+
 		svg {
 			width: 180px;
 			height: auto;

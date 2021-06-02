@@ -33,11 +33,11 @@
 @import "utils/functions";
 @import "utils/mixins";
 
-//ignorescss @import "aos.css";
-//ignorescss @import "swiper-bundle.css";
-//ignorescss @import "animsition.min.css";
-//ignorescss @import "jquery.pagepiling.css";
-//ignorescss @import "jquery.fancybox.css";
+//ignorescss @import url("aos.css");
+//ignorescss @import url("swiper-bundle.css");
+//ignorescss @import url("animsition.min.css");
+//ignorescss @import url("jquery.pagepiling.css");
+//ignorescss @import url("jquery.fancybox.css");
 
 /*-------------------------------------------------------------------------------
   1. Global
@@ -58,9 +58,13 @@
 @import "blocks/btn";
 @import "blocks/arrow-btn";
 @import "blocks/arrow-link";
+@import "blocks/play-btn";
+@import "blocks/nav-btn";
+@import "blocks/round-button";
 
 /* 1.5 Fields */
 @import "blocks/field";
+@import "blocks/file-upload";
 
 /* 1.6 Heading */
 @import "blocks/heading";
@@ -83,17 +87,38 @@
 /* Carousel card */
 @import "blocks/carousel-card";
 
+/* Project preview card in carousel */
+@import "blocks/project-preview";
+
+/* Team member card */
+@import "blocks/member-card";
+
 /* Carousel */
 @import "blocks/carousel";
 
 /* Accordion */
 @import "blocks/accordion";
 
+/* Video block */
+@import "blocks/video-block";
+
+/* Statistics block */
+@import "blocks/statistics";
+
+/* Section with partners logo */
+@import "blocks/partners";
+
 /* Mobile canvas */
 @import "blocks/mobile-canvas";
 
 /* 2.2 Hero section in homepage */
 @import "blocks/hero";
+
+/* 2.2 Main screen section in homepage */
+@import "blocks/main-screen";
+
+/* 2.2 Hero section in modern homepage */
+@import "blocks/modern-hero";
 
 /* 2.2 Features section in homepage */
 @import "blocks/features";
@@ -106,6 +131,27 @@
 
 /* 2.2 Contact section in homepage */
 @import "blocks/contact-section";
+
+/* 2.2 About section with video in homepage */
+@import "blocks/about-video-section";
+
+/* 2.2 About section in modern homepage */
+@import "blocks/about-section";
+
+/* 2.2 Section with carousel */
+@import "blocks/carousel-section";
+
+/* 2.2 Team section only with mobile carousel */
+@import "blocks/team-section";
+
+/* 2.2 Section discuss-project */
+@import "blocks/discuss-project";
+
+/* 2.2 Tooltip section */
+@import "blocks/tooltip";
+
+/* Feedback section for starting the project */
+@import "blocks/start-project";
 
 /* 2.2 Header */
 @import "blocks/header";

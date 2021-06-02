@@ -25,4 +25,14 @@ function setOverlay(cb) {
 //= parts/accordion.js
 
 /* 5. Carousels */
+/* 5.1 Carousel */
 //= parts/carousel.js
+
+/* 5.2 Team carousel */
+//= parts/team-carousel.js
+
+/* 6. Animation of statistics */
+//= parts/statistics.js
+
+/* 7. Tooltip pages */
+//= parts/tooltip.js

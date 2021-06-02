@@ -1,0 +1,91 @@
+.modern-hero {
+	display: flex;
+	height: 100vh;
+	min-height: 480px;
+	padding: 120px 0 45px;
+	background-color: $color-yellow;
+
+	@include media(lg) {
+		min-height: 800px;
+	}
+
+	@include media(xl) {
+		min-height: 960px;
+		padding-top: 200px;
+	}
+
+	&__container {
+		max-width: $width--full;
+		display: flex;
+
+		& > * {
+			width: 100%;
+		}
+	}
+
+	&__header {
+	}
+
+	&__title {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		margin: 0 0 60px;
+
+		@include text(42px, 198 / 209, $color-default-black);
+		font-weight: 500;
+		text-transform: uppercase;
+		//209 / 198
+		opacity: 0.95;
+
+		@include media(sm) {
+			font-size: 72px;
+		}
+
+		@include media(md) {
+			font-size: 110px;
+		}
+
+		@include media(lg) {
+			font-size: 150px;
+		}
+
+		@include media(xl) {
+			margin-bottom: 115px;
+
+			@include fluid-font-size(150px, 209px, 1200px, 1920px, 180px);
+		}
+
+		span {
+			display: block;
+			white-space: nowrap;
+		}
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	&__btn {
+		margin-bottom: 40px;
+
+		@include media(xl) {
+			//margin-top: 82px;
+		}
+
+		@media screen and (min-height: 960px) and (max-height: 1080px) {
+			margin-top: (82 * 100 / 1080) * 1vh;
+		}
+	}
+
+	&__more {
+		align-items: flex-start;
+		//justify-content: flex-start;
+
+		@include media(md) {
+			align-items: flex-end;
+		}
+	}
+}

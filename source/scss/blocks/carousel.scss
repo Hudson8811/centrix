@@ -1,6 +1,20 @@
 .carousel {
+	$self: &;
 	position: relative;
 	overflow: visible;
+
+	&--slide-auto {
+		.swiper-wrapper {
+			align-items: flex-start;
+		}
+
+		#{$self}__item {
+			width: auto;
+			height: auto;
+
+			max-width: 100%;
+		}
+	}
 
 	&::before {
 		content: "";

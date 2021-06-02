@@ -1,4 +1,5 @@
 .our-services {
+	$self: &;
 	padding-bottom: 80px;
 	background-color: $color-default-black;
 
@@ -15,11 +16,38 @@
 		//flex-wrap: wrap;
 		padding-top: 80px;
 		padding-bottom: 80px;
-		border-top: solid 1px $color-default-white;
 
 		@include media(xl) {
-			padding-top: 165px;
-			padding-bottom: 165px;
+			padding-top: 144px;
+			padding-bottom: 80px;
+		}
+
+		&--large {
+			border-top: solid 1px $color-default-white;
+
+			@include media(xl) {
+				padding-top: 165px;
+				padding-bottom: 165px;
+			}
+
+			#{$self}__title {
+				text-transform: uppercase;
+
+				@include media(md) {
+					max-width: 230px;
+					margin: 0;
+					font-size: 52px;
+				}
+
+				@include media(lg) {
+					max-width: 430px;
+					font-size: 90px;
+				}
+			}
+
+			#{$self}__more {
+				top: 0;
+			}
 		}
 	}
 
@@ -28,18 +56,15 @@
 		margin: 0 0 8px;
 
 		@include text(30px, 1, $color-default-white);
-		text-transform: uppercase;
 		font-weight: 500;
 
 		@include media(md) {
-			max-width: 230px;
 			margin: 0;
 			font-size: 52px;
 		}
 
 		@include media(lg) {
-			max-width: 430px;
-			font-size: 90px;
+			font-size: 58px;
 		}
 	}
 
@@ -59,6 +84,11 @@
 	&__more {
 		display: inline-flex;
 		margin-left: auto;
+
+		@include media(xl) {
+			position: relative;
+			top: -26px;
+		}
 	}
 
 	&__accordion {

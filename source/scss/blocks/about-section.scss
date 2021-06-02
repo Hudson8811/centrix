@@ -1,0 +1,190 @@
+.about-section {
+	padding: 80px 0 40px;
+
+	@include media(md) {
+		padding: 180px 0 80px;
+	}
+
+	@include media(xl) {
+		padding: 240px 0 185px;
+	}
+
+	&__container {
+		max-width: $width--full;
+	}
+
+	&__aside {
+		margin-bottom: 40px;
+
+		@include media(sm) {
+			margin-bottom: 56px;
+		}
+
+		@include media(md) {
+			display: flex;
+			margin-bottom: 0;
+		}
+
+		@include media(xl) {
+			padding-right: vw(40);
+		}
+
+		@include media(full) {
+			padding-right: 40px;
+		}
+	}
+
+	&__main {
+		@include media(md) {
+			display: flex;
+			flex-direction: column;
+			padding-left: 24px;
+		}
+
+		@include media(xl) {
+			padding-left: vw(80);
+		}
+
+		@include media(full) {
+			padding-left: 80px;
+		}
+	}
+
+	&__image {
+		img {
+			display: inline-block;
+			vertical-align: top;
+			max-width: 100%;
+			height: auto;
+
+			@include media(md) {
+				display: block;
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+	}
+
+	&__steps {
+		margin-bottom: 40px;
+
+		@include media(md) {
+			margin-bottom: 0;
+			margin-top: 40px;
+		}
+
+		@include media(xl) {
+			margin-top: vw(75);
+		}
+
+		@include media(full) {
+			margin-top: 75px;
+		}
+	}
+
+	&__list {
+		@include list-reset;
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	&__item {
+		margin-right: 16px;
+
+		@include text(16px, 45 / 32, $color-default-black);
+		font-weight: 500;
+
+		&::after {
+			content: "/";
+			display: inline;
+			margin-left: 16px;
+		}
+
+		&:last-child {
+			margin-right: 0;
+
+			&::after {
+				display: none;
+			}
+		}
+
+		@include media(sm) {
+			font-size: 24px;
+		}
+
+		@include media(lg) {
+			font-size: 32px;
+		}
+
+		a {
+			color: $color-default-black;
+			@include transition(color);
+
+			@include hover {
+				color: $color-yellow;
+			}
+		}
+	}
+
+	&__title {
+		margin: 0 0 24px;
+
+		@include text(24px, 1, $color-default-black);
+		font-weight: 500;
+
+		@include media(sm) {
+			font-size: 36px;
+		}
+
+		@include media(xl) {
+			margin-bottom: vw(120);
+			font-size: 58px;
+		}
+
+		@include media(full) {
+			margin-bottom: 120px;
+		}
+	}
+
+	&__wrapper {
+		display: flex;
+
+		@include media(md) {
+			flex-direction: column;
+			justify-content: space-between;
+			flex-grow: 1;
+		}
+	}
+
+	&__text {
+		max-width: 490px;
+		margin-right: auto;
+		//margin-bottom: 40px;
+
+		@include text(15px, 28 / 22, $color-default-black);
+
+		@include media(sm) {
+			font-size: 18px;
+		}
+
+		@include media(lg) {
+			font-size: 22px;
+		}
+	}
+
+	&__more {
+		margin-left: 20px;
+		//margin-bottom: 20px;
+		align-self: flex-end;
+
+		@include media(md) {
+			margin-left: 0;
+			margin-top: 20px;
+		}
+
+		@include media(xl) {
+			margin-right: 107px;
+		}
+	}
+}

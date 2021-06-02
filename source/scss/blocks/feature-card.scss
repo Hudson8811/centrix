@@ -10,14 +10,25 @@
 	}
 
 	&__caption {
-		position: absolute;
-		left: 0;
-		bottom: 0;
-		//max-width: 272px;
-		padding: 32px 45px;
+		display: block;
+		padding: 32px 45px 38px;
 
 		@include text(26px, 34 / 26, $color-default-white);
 		text-transform: uppercase;
 		background-color: $color-default-black;
+
+		br {
+			display: none;
+		}
+
+		@include media(lg) {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+
+			br {
+				display: block;
+			}
+		}
 	}
 }

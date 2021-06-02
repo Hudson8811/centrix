@@ -1,0 +1,22 @@
+section.about-video-section.about-video-section--pt-0
+	.about-video-section__container.container-fluid
+		.row
+			.about-video-section__main.col-12.col-md
+				.about-video-section__title Our team consists of practitioners who have 15 years of experience in launching and managing projects
+				.row.align-items-end
+					.col-4.col-md-5.col-xl-4
+						+arrow-link('About us', URLS.pages.about, 'about-video-section__more')
+					.col-8.col-md-7.col-xl-8
+						.about-video-section__text We make our customers ' products valuable in the eyes of customers. To do this, we analyze and study people, build long-term strategies for interacting with them, develop creative ideas and create a bright design. We use all opportunities to solve business problems.
+
+			.about-video-section__aside.col-12.col-md.order-first.order-md-0
+				.about-video-section__video.video-block
+					picture
+						source(type="image/webp" srcset="img/picture/common/video-poster.webp 1x, img/picture/common/video-poster@2x.webp 2x")
+						// 1х: 810px; 2x: 1620px
+						img(src="img/picture/common/video-poster.jpg", srcset="img/picture/common/video-poster@2x.jpg 2x", width="810", height="539", alt="About us video")
+
+					a.video-block__btn.play-btn(data-fancybox, href="https://www.youtube.com/watch?v=_sI_Ps7JSEk", aria-label="Play button")
+						+icon('triangle')(width="17", height="19")
+
+	include statistics

@@ -12,7 +12,7 @@
 	}
 
 	@include media(lg) {
-		min-height: 700px;
+		min-height: 800px;
 		padding-top: 223px;
 	}
 
@@ -96,5 +96,11 @@
 		margin: 0 auto;
 
 		@include text(15px, 21 / 15, $color-default-black);
+
+		@include media(lg) {
+			position: relative;
+			left: 140px;
+			margin-bottom: -120px;
+		}
 	}
 }

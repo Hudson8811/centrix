@@ -6,11 +6,84 @@
 	//background-color: $color-default-white;
 	padding: 20px 0;
 
+	@include media(md) {
+	}
+
+	@include media(lg) {
+		padding: 40px 0;
+	}
+
 	&--absolute {
 		position: absolute;
 		top: 0;
 		left: 0;
 		right: 0;
+	}
+
+	&--secondary {
+		@include media(lg) {
+			padding: 52px 0;
+		}
+
+		.mobile-canvas__nav {
+			@include media(lg) {
+				margin-right: vw(140);
+			}
+		}
+		#{$self}__mobile {
+			margin-left: auto;
+			flex-grow: 0;
+
+			@include media(lg) {
+				.mobile-canvas__nav {
+					left: 0;
+				}
+			}
+		}
+	}
+
+	&--white {
+		.logo {
+			svg {
+				fill: $color-default-white;
+			}
+		}
+
+		.menu-toggle {
+			&::before,
+			&::after {
+				border-top-color: $color-default-white;
+			}
+
+			&--opened {
+				&::before,
+				&::after {
+					border-top-color: $color-default-black;
+				}
+			}
+		}
+
+		&#{$self}--separator {
+			#{$self}__container {
+				&::before {
+					border-top: solid 1px $color-default-white;
+				}
+			}
+		}
+
+		@include media(lg) {
+			.navigation__link {
+				color: $color-default-white;
+
+				@include hover {
+					color: $color-yellow;
+				}
+			}
+
+			.navigation__item--current .navigation__link {
+				color: $color-yellow;
+			}
+		}
 	}
 
 	&--fixed {
@@ -113,11 +186,21 @@
 		}
 	}
 
-	@include media(md) {
-	}
+	&--separator {
+		#{$self}__container {
+			//position: relative;
 
-	@include media(lg) {
-		padding: 40px 0;
+			&::before {
+				content: "";
+				position: absolute;
+				bottom: 0;
+				left: 50%;
+				transform: translateX(-50%);
+				width: 100%;
+				max-width: $width--full - 24px;
+				border-top: solid 1px $color-default-black;
+			}
+		}
 	}
 
 	&__container {
@@ -141,7 +224,15 @@
 
 	&__mobile {
 		@include media(lg) {
-			margin-left: auto;
+			//margin-left: auto;
+			//margin-right: auto;
+
+			flex-grow: 1;
+
+			.mobile-canvas__nav {
+				position: relative;
+				left: 72px;
+			}
 		}
 	}
 

@@ -1,0 +1,103 @@
+.carousel-section {
+	$self: &;
+	position: relative;
+	padding: 80px 0;
+	overflow: hidden;
+
+	@include media(md) {
+		padding: 120px 0;
+	}
+
+	@include media(xl) {
+		padding: 184px 0 187px;
+	}
+
+	&--separator {
+		&::after {
+			content: "";
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 100%;
+			max-width: $width--full - 24;
+			border-bottom: solid 1px $color-default-black;
+		}
+	}
+
+	&--pb-large {
+		@include media(xl) {
+			padding-bottom: 242px;
+		}
+	}
+
+	&__container {
+		max-width: $width--full;
+	}
+
+	&__header {
+		margin-bottom: 50px;
+
+		@include media(md) {
+			margin-bottom: 90px;
+		}
+	}
+
+	&__title {
+		margin: 0;
+		//max-width: 120px;
+		//margin: -57px auto 40px;
+
+		@include text(30px, 1, $color-default-black);
+		font-weight: 500;
+
+		@include media(sm) {
+			//max-width: 150px;
+			//margin-top: -63px;
+			font-size: 36px;
+		}
+
+		@include media(md) {
+			/*max-width: 190px;
+			margin-top: -105px;
+			margin-bottom: 80px;*/
+			font-size: 48px;
+		}
+
+		@include media(lg) {
+			//max-width: 700px;
+			/*max-width: 280px;
+			margin-top: -118px;*/
+			font-size: 58px;
+		}
+	}
+
+	&__nav {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-top: 40px;
+
+		@include media(md) {
+			margin-top: 0;
+		}
+		@include media(xl) {
+			position: relative;
+			left: -82px;
+		}
+
+		.nav-btn + .nav-btn {
+			margin-left: 48px;
+		}
+	}
+
+	&__more {
+		@include media(xl) {
+			position: relative;
+			top: -26px;
+		}
+	}
+
+	&__carousel {
+	}
+}

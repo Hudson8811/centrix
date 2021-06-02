@@ -1,0 +1,110 @@
+.start-project {
+	padding: 80px 0;
+
+	@include media(sm) {
+		padding: 120px 0;
+	}
+
+	@include media(md) {
+		padding: 180px 0;
+	}
+
+	@include media(xl) {
+		padding: 240px 0;
+	}
+
+	&__container {
+		max-width: $width--full;
+	}
+
+	&__title {
+		margin: 0 0 60px;
+
+		@include text(42px, 198 / 209, $color-default-black);
+		font-weight: 500;
+		text-transform: uppercase;
+		opacity: 0.95;
+
+		@include media(sm) {
+			margin-bottom: 80px;
+			font-size: 72px;
+		}
+
+		@include media(md) {
+			margin-bottom: 110px;
+			font-size: 110px;
+		}
+
+		@include media(lg) {
+			font-size: 150px;
+		}
+
+		@include media(xl) {
+			margin-bottom: 156px;
+
+			@include fluid-font-size(150px, 209px, 1200px, 1920px, 180px);
+		}
+	}
+
+	&__grid {
+	}
+
+	&__discuss {
+		margin-bottom: 52px;
+
+		@include media(md) {
+			margin-bottom: 100px;
+		}
+
+		@include media(lg) {
+			margin-bottom: 0;
+		}
+
+		@include media(xl) {
+			margin-bottom: 0;
+			padding-right: 40px;
+		}
+
+		.discuss-project__title {
+			margin-left: 0;
+			text-align: left;
+		}
+
+		.discuss-project__bottom {
+			//margin-left: 0;
+			//text-align: left;
+			align-items: flex-start;
+		}
+
+		.discuss-project__send {
+			margin-left: 0;
+		}
+	}
+
+	&__partners {
+		text-align: center;
+
+		@include media(lg) {
+			padding-left: 40px;
+			//text-align: right;
+		}
+
+		@include media(xl) {
+			padding-left: vw(64);
+		}
+
+		@include media(full) {
+			padding-left: 64px;
+		}
+
+		.partners__item {
+			@include media(lg) {
+				margin-bottom: 56px;
+			}
+
+			@include media(xl) {
+				margin-bottom: 113px;
+			}
+		}
+	}
+}

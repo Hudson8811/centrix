@@ -22,6 +22,12 @@
 	}
 
 	&__menu {
+		@include media(xl) {
+			padding-left: vw(185);
+		}
+		@include media(full) {
+			padding-left: 185px;
+		}
 		&-list {
 			@include list-reset;
 		}
@@ -80,6 +86,10 @@
 				transform: rotate(-90deg) translateX(-100%);
 				transform-origin: 0 0;
 			}
+
+			@include media(xl) {
+				//margin-left: 30px;
+			}
 		}
 	}
 
@@ -92,6 +102,14 @@
 
 		@include media(lg) {
 			margin-top: 0;
+		}
+
+		@include media(xl) {
+			padding-left: vw(95);
+		}
+
+		@include media(full) {
+			padding-left: 95px;
 		}
 
 		&-form {

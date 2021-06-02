@@ -1,5 +1,5 @@
 $width--full: 1750px;
-$width--large: 1550px;
+$width--middle: 1134px;
 $width--small: 760px;
 // Colors
 //---------------------------------
@@ -9,6 +9,7 @@ $color-default-black: #000000;
 //$color-main: #616161;
 $color-dark: #212121;
 $color-dark-0a: #0a0a0a;
+$color-dark-26: #262626;
 $color-smoky: #f7f7f7;
 //$color-smoky3: #fbfaf6;
 
@@ -52,6 +53,7 @@ $breakpoints: (
 	lg: 992px,
 	xl: 1200px,
 	xxl: 1400px,
+	full: 1920px,
 ) !default;
 
 // Retina

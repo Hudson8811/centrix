@@ -1,0 +1,79 @@
+.main-screen {
+	display: flex;
+	height: 100vh;
+	min-height: 480px;
+
+	padding-top: 80px;
+	padding-bottom: 160px;
+	background-size: cover;
+	background-position: 50% 0;
+
+	@include media(sm) {
+		padding-top: 120px;
+	}
+
+	@include media(lg) {
+		min-height: 700px;
+		//padding-top: 223px;
+	}
+
+	@include media(xl) {
+		padding-top: 190px;
+		padding-bottom: 60px;
+	}
+
+	&__container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		max-width: $width--full;
+	}
+
+	&__title {
+		max-width: 290px;
+		margin: 0 0 24px;
+
+		@include text(36px, 1, $color-default-white);
+		text-align: center;
+
+		font-weight: 500;
+		align-self: center;
+
+		span {
+			display: block;
+			color: $color-yellow;
+		}
+
+		@include media(sm) {
+			max-width: 530px;
+			font-size: 52px;
+		}
+
+		@include media(lg) {
+			font-size: 72px;
+		}
+
+		@include media(xl) {
+			margin-bottom: 36px;
+			font-size: 100px;
+			line-height: 0.95;
+		}
+	}
+
+	&__text {
+		max-width: 251px;
+		margin: 0 0 40px;
+		align-self: center;
+
+		@include text(15px, 21 / 15, $color-default-white);
+		text-align: center;
+
+		@include media(xl) {
+			margin-bottom: 70px;
+		}
+	}
+
+	&__btn {
+		align-self: center;
+	}
+}

@@ -1,4 +1,5 @@
 .btn {
+	$self: &;
 	//old
 	min-width: 207px;
 	display: inline-flex;
@@ -56,6 +57,25 @@
 			outline: none;
 			background-color: $color-yellow;
 			color: $color-default-white;
+		}
+	}
+
+	&--theme-black {
+		background-color: $color-default-black;
+
+		#{$self}__text {
+			color: $color-default-white;
+		}
+
+		#{$self}__icon {
+			svg {
+				fill: $color-default-white;
+			}
+		}
+
+		&:hover,
+		&:focus {
+			background-color: lighten($color-default-black, 30%);
 		}
 	}
 }

@@ -1,0 +1,98 @@
+.tooltip {
+	$self: &;
+	overflow: hidden;
+	padding: 200px 0 120px;
+
+	@include media(lg) {
+		padding: 312px 0 215px;
+	}
+
+	&--theme-dark {
+		background-color: $color-default-black;
+
+		#{$self}__section {
+			border-top-color: $color-default-white;
+			border-bottom-color: $color-default-white;
+		}
+
+		#{$self}__item {
+			color: $color-default-white;
+		}
+	}
+
+	&__container {
+		position: relative;
+		max-width: $width--full;
+	}
+
+	&__btn {
+		position: absolute;
+		z-index: 1;
+		left: 12px;
+		top: 0;
+		margin-top: -122px;
+	}
+
+	&__marquee {
+		& > * {
+			display: flex;
+		}
+	}
+
+	&__section {
+		padding: 56px 0;
+		border-top: solid 1px $color-default-black;
+		border-bottom: solid 1px $color-default-black;
+
+		@include media(lg) {
+			padding: 96px 0 90px;
+		}
+
+		& + & {
+			//margin-top: -1px;
+			border-top: none;
+		}
+	}
+
+	&__list {
+		@include list-reset;
+
+		display: flex;
+	}
+
+	&__item {
+		position: relative;
+		margin-right: 70px;
+
+		@include text(90px, 1, $color-default-black);
+		white-space: nowrap;
+		cursor: none;
+
+		@include media(lg) {
+			font-size: 140px;
+		}
+
+		&::after {
+			content: "/";
+			display: inline-block;
+			margin-left: 70px;
+		}
+	}
+
+	&__card {
+		display: none;
+		transform: translateX(-50%) translateY(-50%);
+		z-index: 1001;
+		background-color: $color-yellow;
+		pointer-events: none;
+
+		@include media(lg) {
+			display: block;
+		}
+
+		img {
+			display: inline-block;
+			vertical-align: top;
+		}
+	}
+}

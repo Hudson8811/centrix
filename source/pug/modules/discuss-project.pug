@@ -1,0 +1,27 @@
+section.discuss-project
+	.discuss-project__container.container-fluid
+		.discuss-project__wrapper
+			h2.discuss-project__title Discuss the project
+
+			form(action="#", method="post")
+				.row.justify-content-between.gx-0
+					.discuss-project__field-wrapper.col-12.col-md-6
+						label.discuss-project__field.field
+							input(type="text", name="name")
+							span.field__hint Name
+					.discuss-project__field-wrapper.col-12.col-md-6
+						label.discuss-project__field.field
+							input(type="email", name="email")
+							span.field__hint Email
+					.col-12
+						label.discuss-project__field.discuss-project__field--textarea.field
+							textarea(name="message", required)
+							span.field__hint Message
+					.discuss-project__bottom.col-12
+						.discuss-project__file.file-upload
+							label.file-upload__label
+								input.visually-hidden(type="file")
+								span.file-upload__icon
+									+icon('paper-clip')(width="16", height="16")
+								span.file-upload__text Attach a file
+						+btn(true, 'Submit', '', 'discuss-project__send btn--theme-black')(type="submit")

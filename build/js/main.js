@@ -178,6 +178,7 @@ function setOverlay(cb) {
 })();
 
 /* 5. Carousels */
+/* 5.1 Carousel */
 (function() {
 	var carousel = new Swiper('.__js_carousel', {
 		slidesPerView: 'auto',
@@ -189,4 +190,188 @@ function setOverlay(cb) {
 			prevEl: '.carousel__btn--prev',
 		},
 	});
+
+	var latestProjects = new Swiper('.__js_carousel-latest-projects', {
+		slidesPerView: 'auto',
+		spaceBetween: 60,
+		loop: true,
+		//centeredSlides: true,
+		/*navigation: {
+			nextEl: '.carousel__btn--next',
+			prevEl: '.carousel__btn--prev',
+		},*/
+	});
+
+	/*var carousels = {
+		'latest-projects': latestProjects
+	}*/
+
+	var navBtn = $('.__js_navbtn-latest-projects');
+
+	navBtn.on('click', function() {
+		var direction = $(this).attr('data-dir');
+
+		direction === 'prev' ? latestProjects.slidePrev() : latestProjects.slideNext();;
+	})
+})();
+
+/* 5.2 Team carousel */
+(function() {
+	var carouselSelector = '.__js_team-carousel-only-mobile';
+	var carousel;
+
+	if ($(carouselSelector).length > 0) {
+
+		initTeamCarousel();
+
+		$(window).resize(function () {
+			initTeamCarousel();
+		});
+	}
+
+	function initTeamCarousel() {
+		if (window.matchMedia('(min-width: 576px)').matches && carousel) {
+			carousel.destroy();
+			carousel = null;
+
+		} else if (window.matchMedia('(max-width: 575px)').matches && carousel !== null) {
+			carousel = new Swiper(carouselSelector, {
+				speed: 300,
+				slidesPerView: 'auto',
+				spaceBetween: 40,
+				loop: true
+			});
+		}
+	}
+})();
+
+/* 6. Animation of statistics */
+(function() {
+	$(window).on('load', function() {
+		var statistics = $('.statistics');
+		var numbers = $('.__js_number');
+		var animationIsDone = false;
+		var scroll = $(window).scrollTop() + $(window).height();
+
+		if ($('*').is('.statistics')) {
+			var offset = statistics.offset().top;
+
+			if (!animationIsDone && scroll >= offset) {
+				animateNumbers();
+			}
+
+			$(window).on('scroll', function() {
+				scroll = $(window).scrollTop() + $(window).height();
+
+				if (!animationIsDone && scroll >= offset) {
+					animateNumbers();
+				}
+			});
+		}
+
+		function animateNumbers() {
+			numbers.each(function() {
+				var endValue = parseInt($(this).attr('data-end-value'), 10);
+
+				$(this).easy_number_animate({
+					start_value: 0,
+					end_value: endValue,
+					duration: 1800
+				});
+
+			});
+
+			animationIsDone = true;
+		}
+	});
+})();
+
+/* 7. Tooltip pages */
+(function() {
+	var windowWidth = $(window).width();
+
+	var marqueeSpeed = windowWidth < mobileBreakpoint ? 10000 : 25000;
+
+	$('.__js-marquee').bind('beforeStarting', function() {
+			var item = $('.tooltip__item');
+			item.on('mouseover', onMarqueeItemHover);
+	}).marquee({
+		 //speed in milliseconds of the marquee
+    duration: marqueeSpeed,
+    //gap in pixels between the tickers
+    gap: 0,
+    //time in milliseconds before the marquee will start animating
+    delayBeforeStart: 0,
+    //'left' or 'right'
+    direction: 'left',
+    //true or false - should the marquee be duplicated to show an effect of continues flow
+    duplicated: true,
+		startVisible: true
+	});
+
+	$('.__js-marquee--reverse').bind('beforeStarting', function() {
+			var item = $('.tooltip__item');
+			item.on('mouseover', onMarqueeItemHover);
+	}).marquee({
+		 //speed in milliseconds of the marquee
+    duration: marqueeSpeed,
+    //gap in pixels between the tickers
+    gap: 0,
+    //time in milliseconds before the marquee will start animating
+    delayBeforeStart: 0,
+    //'left' or 'right'
+    direction: 'right',
+    //true or false - should the marquee be duplicated to show an effect of continues flow
+    duplicated: true,
+		startVisible: true
+	});
+
+
+
+	function onMarqueeItemHover() {
+		var current = $(this);
+		var parent = current.closest('.tooltip__marquee');
+		var itemImage = {
+			url: current.attr('data-image'),
+			url2x: current.attr('data-image2x'),
+			w: current.attr('data-image-w'),
+			h: current.attr('data-image-h')
+		};
+
+		var itemCard = createItemCard(itemImage);
+
+		parent.marquee('pause');
+		current.append(itemCard);
+		var card = current.find('.tooltip__card');
+
+		current.on('mousemove', function(evt) {
+			var x = evt.pageX - current.offset().left;
+			var y = evt.pageY - current.offset().top;
+			card.css({'left': x + 'px', 'top': y + 'px'});
+		});
+
+		current.on('mouseout', function() {
+			parent.marquee('resume');
+			card.remove();
+		});
+	}
+
+	function createItemCard(imageData) {
+		if (imageData.url) {
+			var card = $('<div class="tooltip__card"></a>');
+			var format = imageData.url.slice(imageData.url.lastIndexOf('.'));
+
+			var path = {
+				'1x': imageData.url.slice(0, -format.length),
+				'2x': imageData.url2x ? imageData.url2x.slice(0, -format.length) : imageData.url.slice(0, -format.length)
+			};
+
+			var image = $('<picture><source type="image/webp" srcset="' + path['1x'] + '.webp 1x, ' + path['2x'] + '.webp 2x"><img src="' + path['1x'] + format + '" srcset="' + path['2x'] + format + ' 2x" width="' + imageData.w + '" height="' + imageData.h + '" alt=""></picture>');
+
+			card.append(image);
+			card.css({'position': 'absolute'})
+
+			return card;
+		}
+	}
 })();

@@ -1,0 +1,98 @@
+.discuss-project {
+	$self: &;
+	padding: 120px 0 80px;
+
+	@include media(md) {
+		padding: 180px 0 140px;
+	}
+
+	@include media(lg) {
+		padding: 220px 0 180px;
+	}
+
+	&--no-padding {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+
+	&__container {
+		max-width: $width--middle;
+	}
+
+	&__wrapper {
+		padding: 40px 32px;
+		background-color: $color-yellow;
+
+		@include media(md) {
+			padding: 76px 60px 96px;
+		}
+	}
+
+	&__title {
+		max-width: 120px;
+		margin: -57px auto 40px;
+
+		@include text(24px, 1, $color-default-black);
+		text-align: center;
+		font-weight: 500;
+
+		@include media(sm) {
+			max-width: 150px;
+			margin-top: -63px;
+			font-size: 32px;
+		}
+
+		@include media(md) {
+			max-width: 190px;
+			margin-top: -105px;
+			margin-bottom: 80px;
+			font-size: 40px;
+		}
+
+		@include media(lg) {
+			//max-width: 700px;
+			max-width: 280px;
+			margin-top: -118px;
+			font-size: 58px;
+		}
+	}
+
+	&__field-wrapper {
+		@include media(md) {
+			width: calc(50% - 50px);
+		}
+	}
+
+	&__field {
+		width: auto;
+		margin-bottom: 32px;
+
+		@include media(md) {
+			margin-bottom: 60px;
+
+			&--textarea {
+				margin-top: 10px;
+				margin-bottom: 42px;
+			}
+		}
+	}
+
+	&__bottom {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	&__file {
+		margin: 0 0 32px;
+
+		@include media(md) {
+			margin: 0 0 40px;
+		}
+	}
+
+	&__send {
+		display: flex;
+		margin: 0 auto;
+	}
+}
