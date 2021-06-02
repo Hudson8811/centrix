@@ -1,0 +1,48 @@
+extends templates/main
+block variables
+	- let pageTitle = TITLE_PART + ' | Parallax Projects';
+	- let isHome = false; //- Если true то логотип не будет ссылкой
+	- let currentPage = 3.07; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+	- let currentSection = 3; // // Для каждой раздела уникален. Home -1, projects - 2, news - 3, pages - 4
+
+block header
+	//include modules/header-secondary
+
+block content
+	article#pagepiling.parallax-projects
+		// Section 1
+		section.section.pp-scrollable.parallax-projects__section(style='background-image: url("img/parallax/bg-1.jpg");')
+			.container.container--small.parallax-projects__container
+				.parallax-projects__wrapper
+					.parallax-projects__subtitle Photography
+					.parallax-projects__title Creative Color Cheme
+					+btn(false, 'See project', '/')
+			.parallax-projects__nav
+				span
+		// Section 2
+		section.section.pp-scrollable.parallax-projects__section.dark(style='background-image: url("img/parallax/bg-2.jpg");')
+			.container.container--small.parallax-projects__container
+				.parallax-projects__wrapper
+					.parallax-projects__subtitle Photography
+					.parallax-projects__title Sunny green onions
+					+btn(false, 'See project', '/')
+			.parallax-projects__nav
+				span
+		// Section 3
+		section.section.pp-scrollable.parallax-projects__section(style='background-image: url("img/parallax/bg-3.jpg");')
+			.container.container--small.parallax-projects__container
+				.parallax-projects__wrapper
+					.parallax-projects__subtitle Photography
+					.parallax-projects__title Contrast Sunny Orange
+					+btn(false, 'See project', '/')
+			.parallax-projects__nav
+				span
+		// Section 4
+		section.section.pp-scrollable.parallax-projects__section.dark(style='background-image: url("img/parallax/bg-4.jpg");')
+			.container.container--small.parallax-projects__container
+				.parallax-projects__wrapper
+					.parallax-projects__subtitle Photography
+					.parallax-projects__title Realistic building
+					+btn(false, 'See project', '/')
+			.parallax-projects__nav
+				span

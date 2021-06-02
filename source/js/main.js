@@ -36,3 +36,9 @@ function setOverlay(cb) {
 
 /* 7. Tooltip pages */
 //= parts/tooltip.js
+
+/* 4. Masonry */
+// //= parts/masonry.js
+
+/* 5. Pagepiling */
+//= parts/pagepiling.js

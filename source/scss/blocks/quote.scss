@@ -1,0 +1,55 @@
+.quote {
+	padding: 20px 20px 20px 70px;
+	background-color: $color-yellow;
+	position: relative;
+
+	@include media(lg) {
+		padding: 43px 60px 46px 128px;
+	}
+
+	&::before {
+		content: ",,";
+		display: block;
+		font-family: $font-family--main;
+		font-size: 70px;
+		line-height: 70px;
+		font-weight: 600;
+		letter-spacing: -5px;
+		color: $color-default-black;
+		position: absolute;
+		top: -21px;
+		left: 18px;
+
+		@include media(lg) {
+			font-size: 100px;
+			line-height: 100px;
+			top: -19px;
+			left: 34px;
+		}
+	}
+
+	p {
+		font-size: 18px;
+		line-height: 130%;
+		color: $color-default-black;
+		margin: 0 0 50px;
+
+		@include media(lg) {
+			font-size: 20px;
+			line-height: 140%;
+		}
+	}
+
+	&__name,
+	&__position {
+		display: block;
+		font-size: 14px;
+		line-height: 130%;
+		font-style: normal;
+
+		@include media(lg) {
+			font-size: 15px;
+			line-height: 130%;
+		}
+	}
+}

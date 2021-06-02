@@ -18,8 +18,11 @@ $color-yellow: #fffe55;
 $color-yellow-hover: darken($color-yellow, 10%);
 
 $color-grey: #787878;
+$color-grey-d3: #d3d3d3;
+$color-grey-76: #767676;
+$color-grey-ab: #ababab;
 
-$color-base: $color-dark; // основной цвет текста, используется в миксине text()
+$color-base: $color-default-black; // основной цвет текста, используется в миксине text()
 
 // Typography
 //--------------   $font-family, $file-name, $weight, $style: normal
@@ -27,10 +30,12 @@ $color-base: $color-dark; // основной цвет текста, испол�
 //
 $fonts: "Neue Montreal" "NeueMontreal-Regular" 400 normal,
 	"Neue Montreal" "NeueMontreal-Medium" 500 normal,
-	"Neue Montreal" "NeueMontreal-Italic" 400 italic;
+	"Neue Montreal" "NeueMontreal-Italic" 400 italic,
+	"Gilroy" "Gilroy-Regular" 400 normal,
+	"Gilroy" "Gilroy-Bold" 700 normal;
 
 $font-family--main: "Neue Montreal", "Arial", sans-serif;
-//$font-family--secondary: "Gilroy", "Arial", sans-serif;
+$font-family--secondary: "Gilroy", "Arial", sans-serif;
 //$font-family--third: "Swansea", "Arial", sans-serif;
 
 $font-size-base: 15px;

@@ -1,0 +1,25 @@
+extends templates/main
+block variables
+	- let pageTitle = TITLE_PART + ' | Page 404';
+	- let isHome = false; //- Если true то логотип не будет ссылкой
+	- let currentPage = 2.08; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+	- let currentSection = 2; // // Для каждой раздела уникален. Home -1, projects - 2, news - 3, pages - 4
+
+block header
+	include modules/header-secondary
+
+block content
+	article.page-404
+		.container.page-404__container
+			.page-404__wrapper
+				.page-404__img
+					img(src="img/404.jpg", srcset="img/404@2x.jpg", alt="")
+				.page-404__content
+					.page-404__title 404.
+					.page-404__subtitle The page you were looking for could <br> not be found.
+					+btn(false, 'Back home', '/')
+
+
+
+block footer
+	include modules/footer
