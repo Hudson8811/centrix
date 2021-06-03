@@ -146,4 +146,23 @@
 
 	&__send {
 	}
+
+	&__map {
+		height: 300px;
+		margin-top: 40px;
+
+		@include media(md) {
+			height: 400px;
+			margin-top: 70px;
+		}
+
+		@include media(lg) {
+			height: 500px;
+			margin-top: 110px;
+		}
+
+		@include media(xl) {
+			height: 617px;
+		}
+	}
 }
