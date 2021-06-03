@@ -1,0 +1,30 @@
+.services-section {
+	&__container {
+		&--small {
+			max-width: $width--middle;
+		}
+	}
+
+	&__main {
+	}
+
+	&__image {
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+	}
+
+	&__aside {
+	}
+	&__list {
+	}
+	&__item {
+	}
+	&__link {
+		span {
+			svg {
+			}
+		}
+	}
+}

@@ -1,0 +1,23 @@
+section.portfolio-section
+	.portfolio-section__container.container-fluid
+		header.portfolio-section__header
+			h2.portfolio-section__title Latest works
+			+arrow-link('View all', URLS.projects.masonry, 'portfolio-section__more')
+
+		ul.portfolio-section__grid.__js_portfolio-section-masonry
+			- let count = 0;
+			while count < 4
+				- let cl2 = PORTFOLIO_CARDS[count].cl2 ? ' portfolio-section__item' + PORTFOLIO_CARDS[count].cl2: '';
+				li.portfolio-section__item.__js_masonry-item(class= cl2)
+					//-(class= PORTFOLIO_CARDS[count].cl)
+					a.project-preview.project-preview--elastic(href= URLS.projects.single)
+						picture
+							source(type="image/webp" srcset="img/picture/common/portfolio-section/" + PORTFOLIO_CARDS[count].image.url + ".webp 1x, img/picture/common/portfolio-section/" + PORTFOLIO_CARDS[count].image.url + "@2x.webp 2x")
+
+							img(src="img/picture/common/portfolio-section/" + PORTFOLIO_CARDS[count].image.url + ".jpg", srcset="img/picture/common/portfolio-section/" + PORTFOLIO_CARDS[count].image.url + "@2x.jpg 2x", width= PORTFOLIO_CARDS[count].image.w, height= PORTFOLIO_CARDS[count].image.h, alt= PORTFOLIO_CARDS[count].title)
+						span.project-preview__bottom
+							span.project-preview__title= PORTFOLIO_CARDS[count].title
+							span.project-preview__icon
+								+icon('link-arrow2')(width="24" height="23")
+				- count++;
+
