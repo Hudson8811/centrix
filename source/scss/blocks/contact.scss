@@ -1,0 +1,18 @@
+.contact {
+	.contact-section {
+		padding: 107px 0 0;
+
+		&__title {
+			font-size: 100px;
+			text-transform: none;
+
+			@include media(md) {
+				margin-bottom: 58px;
+			}
+		}
+
+		&__form-wrapper {
+			background-color: $color-yellow;
+		}
+	}
+}

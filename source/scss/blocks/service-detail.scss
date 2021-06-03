@@ -1,0 +1,97 @@
+.service-detail {
+	padding-bottom: 90px;
+
+	@include media(md) {
+		padding-bottom: 150px;
+	}
+
+	@include media(lg) {
+		padding-bottom: 220px;
+	}
+
+	&__carousel {
+		padding: 70px 0 100px;
+
+		@include media(lg) {
+			padding: 167px 0 224px;
+		}
+
+		.carousel-section {
+			&__header {
+				@include media(md) {
+					margin-bottom: 112px;
+				}
+			}
+
+			&__title {
+				text-align: center;
+
+				@include media(md) {
+					text-align: left;
+				}
+
+				@include media(lg) {
+					font-size: 40px;
+				}
+			}
+
+			&__nav {
+				@include media(xl) {
+					left: 0;
+				}
+			}
+		}
+	}
+
+	&__title {
+		font-size: 32px;
+		line-height: 120%;
+		text-transform: uppercase;
+		margin-bottom: 25px;
+
+		@include media(md) {
+			font-size: 36px;
+		}
+
+		@include media(lg) {
+			font-size: 40px;
+			line-height: 120%;
+			margin-bottom: 65px;
+		}
+	}
+
+	&__discuss {
+		padding-top: 100px;
+
+		@include media(md) {
+			padding-top: 180px;
+		}
+
+		@include media(xl) {
+			padding-top: 260px;
+		}
+
+		.discuss-project {
+			&__title {
+				margin-left: 0;
+				text-align: left;
+
+				@include media(md) {
+					margin-bottom: 82px;
+				}
+
+				@include media(lg) {
+					margin-top: -116px;
+				}
+			}
+
+			&__bottom {
+				align-items: flex-start;
+			}
+
+			&__send {
+				margin-left: 0;
+			}
+		}
+	}
+}

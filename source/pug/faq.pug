@@ -1,0 +1,112 @@
+extends templates/main
+block variables
+	- let pageTitle = TITLE_PART + ' | FAQ';
+	- let isHome = false; //- Если true то логотип не будет ссылкой
+	- let currentPage = 2.05; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+	- let currentSection = 2; // // Для каждой раздела уникален. Home -1, projects - 2, news - 3, pages - 4
+	- headerClasses = 'header--bg-white';
+
+block header
+	include modules/header
+
+block content
+	article.faq
+		+first-banner('FAQ', 'banner-faq')
+		.container.container--small.faq__container
+			.faq__title asked questions
+			.faq__accordion.accordion.accordion--black
+				.accordion__item
+					button.accordion__item-header(type="button")
+						.row.align-items-md-center
+							.accordion__item-title.col-11.col-md-6 <span>01.</span> Return option
+					.accordion__item-body
+						.row
+							.accordion__item-left.col-12.col-md-7
+								.accordion__item-text Alienum phaedrum torquatos nec eu, detr periculis ex, nihil expetendis in mei. Mei an pericula euripidis hinc partem ei est. Eos ei nisl graecis, vix aperiri consequat an. Eius lorem tincidunt vix at, vel pertinax sensibus id, error epicurei mea et. Mea facilisis urbanitas moderatius id. Vis ei rationibus definiebas.
+
+				.accordion__item
+					button.accordion__item-header(type="button")
+						.row.align-items-md-center
+							.accordion__item-title.col-11.col-md-6 <span>02.</span> How to select price?
+					.accordion__item-body
+						.row
+							.accordion__item-left.col-12.col-md-7
+								.accordion__item-text Alienum phaedrum torquatos nec eu, detr periculis ex, nihil expetendis in mei. Mei an pericula euripidis hinc partem ei est. Eos ei nisl graecis, vix aperiri consequat an. Eius lorem tincidunt vix at, vel pertinax sensibus id, error epicurei mea et. Mea facilisis urbanitas moderatius id. Vis ei rationibus definiebas.
+
+				.accordion__item
+					button.accordion__item-header(type="button")
+						.row.align-items-md-center
+							.accordion__item-title.col-11.col-md-6 <span>03.</span> Terms of us
+					.accordion__item-body
+						.row
+							.accordion__item-left.col-12.col-md-7
+								.accordion__item-text Alienum phaedrum torquatos nec eu, detr periculis ex, nihil expetendis in mei. Mei an pericula euripidis hinc partem ei est. Eos ei nisl graecis, vix aperiri consequat an. Eius lorem tincidunt vix at, vel pertinax sensibus id, error epicurei mea et. Mea facilisis urbanitas moderatius id. Vis ei rationibus definiebas.
+
+				.accordion__item
+					button.accordion__item-header(type="button")
+						.row.align-items-md-center
+							.accordion__item-title.col-11.col-md-6 <span>04.</span> Shipping
+					.accordion__item-body
+						.row
+							.accordion__item-left.col-12.col-md-7
+								.accordion__item-text Alienum phaedrum torquatos nec eu, detr periculis ex, nihil expetendis in mei. Mei an pericula euripidis hinc partem ei est. Eos ei nisl graecis, vix aperiri consequat an. Eius lorem tincidunt vix at, vel pertinax sensibus id, error epicurei mea et. Mea facilisis urbanitas moderatius id. Vis ei rationibus definiebas.
+
+				.accordion__item
+					button.accordion__item-header(type="button")
+						.row.align-items-md-center
+							.accordion__item-title.col-11.col-md-6 <span>05.</span> Paypall
+					.accordion__item-body
+						.row
+							.accordion__item-left.col-12.col-md-7
+								.accordion__item-text Alienum phaedrum torquatos nec eu, detr periculis ex, nihil expetendis in mei. Mei an pericula euripidis hinc partem ei est. Eos ei nisl graecis, vix aperiri consequat an. Eius lorem tincidunt vix at, vel pertinax sensibus id, error epicurei mea et. Mea facilisis urbanitas moderatius id. Vis ei rationibus definiebas.
+
+				.accordion__item
+					button.accordion__item-header(type="button")
+						.row.align-items-md-center
+							.accordion__item-title.col-11.col-md-6 <span>06.</span> Delivery
+					.accordion__item-body
+						.row
+							.accordion__item-left.col-12.col-md-7
+								.accordion__item-text Alienum phaedrum torquatos nec eu, detr periculis ex, nihil expetendis in mei. Mei an pericula euripidis hinc partem ei est. Eos ei nisl graecis, vix aperiri consequat an. Eius lorem tincidunt vix at, vel pertinax sensibus id, error epicurei mea et. Mea facilisis urbanitas moderatius id. Vis ei rationibus definiebas.
+
+				.accordion__item
+					button.accordion__item-header(type="button")
+						.row.align-items-md-center
+							.accordion__item-title.col-11.col-md-6 <span>07.</span> Money back
+					.accordion__item-body
+						.row
+							.accordion__item-left.col-12.col-md-7
+								.accordion__item-text Alienum phaedrum torquatos nec eu, detr periculis ex, nihil expetendis in mei. Mei an pericula euripidis hinc partem ei est. Eos ei nisl graecis, vix aperiri consequat an. Eius lorem tincidunt vix at, vel pertinax sensibus id, error epicurei mea et. Mea facilisis urbanitas moderatius id. Vis ei rationibus definiebas.
+
+			.faq__discuss.discuss-project.discuss-project--no-padding.col-12
+				.discuss-project__wrapper
+					.discuss-project__title Ask  Question
+
+					form(action="#", method="post")
+						.row.justify-content-between.gx-0
+							.discuss-project__field-wrapper.col-12.col-md-6
+								label.discuss-project__field.field
+									input(type="text", name="name")
+									span.field__hint Name
+							.discuss-project__field-wrapper.col-12.col-md-6
+								label.discuss-project__field.field
+									input(type="email", name="email")
+									span.field__hint Email
+							.col-12
+								label.discuss-project__field.discuss-project__field--textarea.field
+									textarea(name="message", required)
+									span.field__hint Message
+							.discuss-project__bottom.col-12
+								.discuss-project__file.file-upload
+									label.file-upload__label
+										input.visually-hidden(type="file")
+										span.file-upload__icon
+											+icon('paper-clip')(width="16", height="16")
+										span.file-upload__text Attach a file
+								+btn(true, 'Submit', '', 'discuss-project__send btn--theme-black')(type="submit")
+
+
+
+
+block footer
+	include modules/footer
