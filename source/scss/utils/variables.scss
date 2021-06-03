@@ -1,6 +1,7 @@
 $width--full: 1750px;
 $width--middle: 1134px;
 $width--small: 760px;
+$width--non-standard: 1845px;
 // Colors
 //---------------------------------
 $color-default-white: #ffffff;
@@ -31,8 +32,7 @@ $color-base: $color-default-black; // основной цвет текста, и
 $fonts: "Neue Montreal" "NeueMontreal-Regular" 400 normal,
 	"Neue Montreal" "NeueMontreal-Medium" 500 normal,
 	"Neue Montreal" "NeueMontreal-Italic" 400 italic,
-	"Gilroy" "Gilroy-Regular" 400 normal,
-	"Gilroy" "Gilroy-Bold" 700 normal;
+	"Gilroy" "Gilroy-Regular" 400 normal, "Gilroy" "Gilroy-Bold" 700 normal;
 
 $font-family--main: "Neue Montreal", "Arial", sans-serif;
 $font-family--secondary: "Gilroy", "Arial", sans-serif;
