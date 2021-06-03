@@ -1,0 +1,28 @@
+.projects-listing {
+	padding: 100px 0 50px;
+
+	@include media(lg) {
+		padding-top: 50px;
+	}
+
+	&__container {
+		max-width: $width--non-standard;
+
+		@include media(xl) {
+			padding-left: 42px;
+			transform: translateX(50px);
+		}
+	}
+
+	&__list {
+		@include list-reset;
+	}
+
+	&__item {
+		margin-bottom: 54px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}

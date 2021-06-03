@@ -1,0 +1,93 @@
+.project-card {
+	&__image {
+		display: block;
+		margin-bottom: 40px;
+		overflow: hidden;
+
+		@include media(md) {
+			display: inline-block;
+			vertical-align: top;
+			margin-left: auto;
+			margin-bottom: 0;
+		}
+
+		@include hover {
+			img {
+				transform: scale(1.15) rotate(-4deg);
+			}
+		}
+
+		img {
+			display: inline-block;
+			vertical-align: top;
+			max-width: 100%;
+			height: auto;
+
+			@include transition(transform);
+		}
+
+		@include hover {
+		}
+	}
+
+	&__main {
+		display: flex;
+		align-items: flex-end;
+		justify-content: space-between;
+
+		@include media(md) {
+			flex-direction: column;
+			align-items: flex-start;
+
+			padding-right: 15px;
+		}
+
+		&-left {
+			margin-right: 24px;
+
+			@include media(md) {
+				margin-right: 0;
+				margin-bottom: 24px;
+			}
+		}
+	}
+
+	&__category {
+		display: inline-block;
+		margin-bottom: 12px;
+
+		@include text(15px, 21 / 15, $color-default-black);
+		font-weight: 500;
+		text-transform: uppercase;
+
+		@include transition(color);
+
+		@include hover {
+			color: $color-yellow;
+		}
+	}
+
+	&__title {
+		margin: 0;
+		//margin: 0 0 40px;
+
+		@include text(42px, 95 / 100, $color-default-black);
+		font-weight: 500;
+
+		@include media(md) {
+			font-size: 64px;
+		}
+
+		@include media(xl) {
+			font-size: 100px;
+		}
+
+		span {
+			display: block;
+		}
+	}
+
+	&__more {
+		flex-shrink: 0;
+	}
+}
