@@ -1,0 +1,178 @@
+.card-price {
+	$self: &;
+
+	&__wrapper {
+		height: 100%;
+		padding: 35px 25px;
+		border: 1px solid $color-default-black;
+		text-align: center;
+
+		@include media(md) {
+			padding: 45px 30px 55px;
+		}
+
+		@include media(xl) {
+			padding: 55px 30px 61px;
+		}
+	}
+
+	&__plan {
+		font-size: 32px;
+		line-height: 130%;
+		margin-bottom: 25px;
+
+		@include media(md) {
+			margin-bottom: 35px;
+		}
+
+		@include media(xl) {
+			margin-bottom: 40px;
+		}
+	}
+
+	&__price {
+		font-size: 45px;
+		line-height: 95%;
+		margin-bottom: 25px;
+
+		@include media(md) {
+			font-size: 60px;
+			margin-bottom: 45px;
+		}
+
+		@include media(xl) {
+			font-size: 80px;
+			margin-bottom: 58px;
+		}
+
+		@include media(xxl) {
+			font-size: 100px;
+		}
+
+		sup {
+			font-size: 24px;
+			line-height: 130%;
+			position: relative;
+			top: 0;
+			left: 0;
+
+			@include media(md) {
+				top: -10px;
+				left: 6px;
+			}
+
+			@include media(xl) {
+				font-size: 32px;
+			}
+
+			@include media(xxl) {
+				top: -18px;
+			}
+		}
+
+		span {
+			font-size: 24px;
+			line-height: 130%;
+
+			@include media(md) {
+				font-size: 28px;
+			}
+
+			@include media(xl) {
+				font-size: 32px;
+			}
+		}
+	}
+
+	&__list {
+		@include list-reset();
+		text-align: left;
+		margin-bottom: 60px;
+
+		@include media(xl) {
+			margin-bottom: 73px;
+		}
+
+		li {
+			display: flex;
+			font-size: 14px;
+			line-height: 120%;
+
+			@include media(md) {
+				font-size: 16px;
+				line-height: 130%;
+			}
+
+			@include media(xl) {
+				font-size: 20px;
+				line-height: 140%;
+			}
+
+			+ li {
+				margin-top: 24px;
+			}
+
+			&::before {
+				content: '';
+				display: block;
+				max-width: 27px;
+				width: 100%;
+				height: 27px;
+				margin-right: 15px;
+				border-radius: 50%;
+				background-color: $color-default-black;
+				background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='27' height='27' viewBox='0 0 27 27' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cline x1='8.06791' y1='12.5683' x2='11.9251' y2='16.4255' stroke-width='2' stroke='%23ffffff'/%3e%3cline x1='20.9248' y1='8.06791' x2='11.9248' y2='17.0679' stroke-width='2' stroke='%23ffffff'/%3e%3c/svg%3e ");
+
+				@include media(md) {
+					margin-right: 20px;
+				}
+
+				@include media(xl) {
+					margin-right: 30px;
+				}
+			}
+
+			&.yellow {
+				&::before {
+					background-color: $color-yellow;
+					background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='27' height='27' viewBox='0 0 27 27' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cline x1='8.06791' y1='12.5683' x2='11.9251' y2='16.4255' stroke-width='2' stroke='%23000000'/%3e%3cline x1='20.9248' y1='8.06791' x2='11.9248' y2='17.0679' stroke-width='2' stroke='%23000000'/%3e%3c/svg%3e ");
+				}
+			}
+		}
+	}
+
+	&__btn {
+		@include transition(all);
+
+		@include hover {
+			opacity: 0.7;
+		}
+
+		&--outline {
+			border: 1px solid $color-default-black;
+
+			@include hover {
+				background-color: transparent;
+			}
+		}
+	}
+
+	&--gradient {
+		#{$self} {
+			&__wrapper {
+				border: 0;
+				background: url("../img/gradient.jpg") no-repeat center;
+				background-size: cover;
+			}
+		}
+	}
+
+	&--yellow {
+		#{$self} {
+			&__wrapper {
+				border: 0;
+				background-color: $color-yellow;
+			}
+		}
+	}
+}

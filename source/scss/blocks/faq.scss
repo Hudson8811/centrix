@@ -1,0 +1,66 @@
+.faq {
+	&__container {
+		padding-top: 60px;
+		padding-bottom: 60px;
+
+		@include media(md) {
+			padding-top: 100px;
+			padding-bottom: 120px;
+		}
+
+		@include media(xl) {
+			padding-top: 163px;
+			padding-bottom: 220px;
+		}
+	}
+
+	&__title {
+		font-size: 36px;
+		line-height: 120%;
+		text-transform: uppercase;
+		margin-bottom: 35px;
+
+		@include media(md) {
+			margin-bottom: 45px;
+		}
+
+		@include media(xl) {
+			margin-bottom: 65px;
+		}
+	}
+
+	&__discuss {
+		padding-top: 100px;
+
+		@include media(md) {
+			padding-top: 180px;
+		}
+
+		@include media(xl) {
+			padding-top: 260px;
+		}
+
+		.discuss-project {
+			&__title {
+				margin-left: 0;
+				text-align: left;
+
+				@include media(md) {
+					margin-bottom: 91px;
+				}
+
+				@include media(lg) {
+					margin-top: -125px;
+				}
+			}
+
+			&__bottom {
+				align-items: flex-start;
+			}
+
+			&__send {
+				margin-left: 0;
+			}
+		}
+	}
+}
