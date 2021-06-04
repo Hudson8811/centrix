@@ -109,7 +109,6 @@ body {
   font-weight: 500;
   -webkit-locale: auto;
   white-space: normal;
-  background-color: #f7f7f7;
 }
 
 @media (min-width: 1400px) {
@@ -131,6 +130,13 @@ body {
   .container--xsmall,
   .container-fluid--xsmall {
     max-width: 760px;
+  }
+}
+
+@media (min-width: 1400px) {
+  [class*="col-"] {
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }
 
@@ -1936,6 +1942,35 @@ a:hover, a:focus {
   .member-card:hover .member-card__info, .member-card:focus .member-card__info {
     -webkit-transform: translateY(0);
             transform: translateY(0);
+  }
+}
+
+.member-card--elastic {
+  display: block;
+}
+
+@media (min-width: 992px) {
+  .member-card--elastic {
+    display: inline-block;
+  }
+}
+
+.member-card--elastic .member-card__image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media (min-width: 992px) {
+  .member-card--elastic .member-card__image img {
+    display: inline-block;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    -o-object-fit: none;
+       object-fit: none;
   }
 }
 
@@ -5306,6 +5341,72 @@ a:hover, a:focus {
   }
 }
 
+/* Grid in team page */
+.team__item {
+  margin-top: 40px;
+}
+
+@media (min-width: 992px) {
+  .team__item {
+    margin-top: 80px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .team__item {
+    margin-top: 116px;
+  }
+}
+
+@media (min-width: 992px) {
+  .team__item--first {
+    margin-top: 16px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .team__item--first {
+    padding-left: 52px;
+  }
+}
+
+@media (min-width: 992px) {
+  .team__item--margin-negative {
+    margin-top: -108px;
+    margin-bottom: -80px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .team__item--margin-negative {
+    margin-bottom: -116px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .team__item--left-shift {
+    padding-left: 8.125vw;
+  }
+}
+
+@media (min-width: 1920px) {
+  .team__item--left-shift {
+    padding-left: 156px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .team__item--left-small-shift {
+    padding-left: 2.91667vw;
+  }
+}
+
+@media (min-width: 1920px) {
+  .team__item--left-small-shift {
+    padding-left: 56px;
+  }
+}
+
 /* 2.2 Header */
 .header {
   position: relative;
@@ -6105,6 +6206,57 @@ a:hover, a:focus {
 }
 
 /* 4.31 Article */
+.article {
+  padding: 100px 0;
+}
+
+@media (min-width: 576px) {
+  .article {
+    padding: 180px 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .article {
+    padding: 212px 0 220px;
+  }
+}
+
+.article__title {
+  margin: 0 0 40px;
+  font-size: 42px;
+  line-height: 0.95;
+  color: #000000;
+  font-weight: 500;
+  opacity: 0.95;
+}
+
+@media (min-width: 576px) {
+  .article__title {
+    margin-bottom: 60px;
+    font-size: 64px;
+  }
+}
+
+@media (min-width: 768px) {
+  .article__title {
+    margin-bottom: 80px;
+    font-size: 100px;
+  }
+}
+
+.article__text {
+  font-size: 16px;
+  line-height: 1.27273;
+  color: #000000;
+}
+
+@media (min-width: 768px) {
+  .article__text {
+    font-size: 22px;
+  }
+}
+
 /* 1.16 Webpage */
 .webpage {
   background-color: #f7f7f7;
@@ -6134,6 +6286,22 @@ a:hover, a:focus {
 
 .webpage--parallax-dark .parallax-projects__section {
   color: #000000;
+}
+
+.webpage--bg-smoky {
+  background-color: #f7f7f7;
+}
+
+.webpage--bg-smoky main {
+  background-color: #f7f7f7;
+}
+
+.webpage--bg-grey {
+  background-color: #e5e5e5;
+}
+
+.webpage--bg-grey main {
+  background-color: #e5e5e5;
 }
 
 .quote {

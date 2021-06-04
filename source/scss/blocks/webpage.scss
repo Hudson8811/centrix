@@ -15,6 +15,24 @@
 			}
 		}
 	}
+
+	&--bg {
+		&-smoky {
+			background-color: $color-smoky;
+
+			main {
+				background-color: $color-smoky;
+			}
+		}
+
+		&-grey {
+			background-color: $color-grey-e5;
+
+			main {
+				background-color: $color-grey-e5;
+			}
+		}
+	}
 	/*
 	&::before {
 		content: "";

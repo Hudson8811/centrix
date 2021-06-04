@@ -1,3 +1,48 @@
 .article {
 	$self: &;
+
+	padding: 100px 0;
+
+	@include media(sm) {
+		padding: 180px 0;
+	}
+
+	@include media(lg) {
+		padding: 212px 0 220px;
+	}
+
+	&__container {
+	}
+
+	&__header {
+	}
+
+	&__title {
+		margin: 0 0 40px;
+
+		@include text(42px, 95 / 100, $color-default-black);
+		font-weight: 500;
+		opacity: 0.95;
+
+		@include media(sm) {
+			margin-bottom: 60px;
+			font-size: 64px;
+		}
+
+		@include media(md) {
+			margin-bottom: 80px;
+			font-size: 100px;
+		}
+	}
+
+	&__text {
+		@include text(16px, 28 / 22, $color-default-black);
+
+		@include media(md) {
+			font-size: 22px;
+		}
+	}
+
+	&__main {
+	}
 }

@@ -1,0 +1,44 @@
+extends templates/main
+block variables
+	- let pageTitle = TITLE_PART + ' | Team';
+	- let isHome = false; //- Если true то логотип не будет ссылкой
+	- let currentPage = 2.04; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+	- let currentSection = 2; // // Для каждой раздела уникален. Home -1, projects - 2, news - 3, pages - 4
+	- let headerClasses = 'header--absolute header--separator';
+	//- let socialModClass = '';
+	//- let navigationModClass = 'navigation--hover-white';
+	//- let isLeftwardHeader = true;
+	- let bodyModClass = 'webpage--bg-smoky';
+
+block header
+	include modules/header
+
+block content
+	article.article.team
+		.article__container.container-fluid
+			.row
+				header.article__header.col-12.col-lg-7
+					h1.article__title Our <br>magic team
+					.article__text The best design team in NYC
+
+				each item in MEMBERS_CARDS_2
+					- let addCl = item.addCl ? item.addCl : '';
+					- let bootstrapCl = item.bootstrapCl ? 'col-12 col-sm-6 col-md-4 ' + item.bootstrapCl : 'col-12 col-sm-6 col-md-4';
+					- let classes = addCl + ' ' + bootstrapCl;
+
+					.team__item(class= classes)
+						.member-card.member-card--elastic
+							.member-card__image
+								picture
+									source(type="image/webp", srcset="img/picture/team/" + item.image.url + ".webp 1x, img/picture/team/" + item.image.url + "@2x.webp 2x")
+									img(src="img/picture/team/" + item.image.url + ".jpg" srcset="img/picture/team/" + item.image.url + "@2x.jpg 2x", width= item.image.w, height= item.image.h, alt= item.name + " photo")
+							.member-card__info
+								.member-card__title= item.name
+								.member-card__post= item.post
+								+social('member-card__social social--hover-secondary', ['linkedin', 'facebook', 'twitter'])
+
+			//.article__main
+				include modules/team-grid
+
+block footer
+	include modules/footer
