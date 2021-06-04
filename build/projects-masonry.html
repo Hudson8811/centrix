@@ -15,7 +15,7 @@
   <!-- CSS-->
   <link rel="stylesheet" href="css/bootstrap-grid.min.css">
   <link rel="stylesheet" href="css/main.css">
-  <title>Centrix | Creative Agency</title>
+  <title>Centrix | Projects masonry</title>
 </head>
 
 <body class="webpage">
@@ -97,21 +97,18 @@
     </svg>
   </div>
   <div class="animsition">
-    <header class="header header--leftward">
+    <header class="header header--absolute">
       <div class="header__container container-fluid">
-        <a class="header__logo logo">
+        <a class="header__logo logo" href="agency-default.html">
           <svg width="76" height="19">
             <use xlink:href="#logo"></use>
           </svg>
         </a>
         <div class="header__mobile mobile-canvas">
-          <button class="mobile-canvas__close" type="button">
-            <span class="visually-hidden">Close menu</span>
-          </button>
           <nav class="mobile-canvas__nav navigation">
             <ul class="navigation__list">
-              <li class="navigation__item navigation__item--current">
-                <a class="navigation__link" href="agency-default.html">Home<span class="navigation__link-icon">
+              <li class="navigation__item">
+                <a class="navigation__link animsition-link" href="agency-default.html">Home<span class="navigation__link-icon">
                     <svg width="12" height="13">
                       <use xlink:href="#link-arrow"></use>
                     </svg>
@@ -143,8 +140,8 @@
                         </span>
                       </a>
                     </li>
-                    <li class="navigation__dropdown-item navigation__dropdown-item--current">
-                      <a>Creative agency<span class="navigation__dropdown-icon">
+                    <li class="navigation__dropdown-item">
+                      <a class="animsition-link" href="creative-agency.html">Creative agency<span class="navigation__dropdown-icon">
                           <svg width="12" height="13">
                             <use xlink:href="#link-arrow"></use>
                           </svg>
@@ -270,8 +267,8 @@
                   </ul>
                 </div>
               </li>
-              <li class="navigation__item">
-                <a class="navigation__link animsition-link" href="projects-masonry.html">Projects<span class="navigation__link-icon">
+              <li class="navigation__item navigation__item--current">
+                <a class="navigation__link">Projects<span class="navigation__link-icon">
                     <svg width="12" height="13">
                       <use xlink:href="#link-arrow"></use>
                     </svg>
@@ -279,8 +276,8 @@
                 </a>
                 <div class="navigation__dropdown">
                   <ul class="navigation__dropdown-list">
-                    <li class="navigation__dropdown-item">
-                      <a class="animsition-link" href="projects-masonry.html">Masonry<span class="navigation__dropdown-icon">
+                    <li class="navigation__dropdown-item navigation__dropdown-item--current">
+                      <a>Masonry<span class="navigation__dropdown-icon">
                           <svg width="12" height="13">
                             <use xlink:href="#link-arrow"></use>
                           </svg>
@@ -404,41 +401,6 @@
             </li>
           </ul>
         </div>
-        <!-- Social-->
-        <ul class="header__social social">
-          <li class="social__item">
-            <a class="social__link" href="#" target="_blank">
-              <svg width="20" height="20" aria-label="linkedin icon">
-                <use xlink:href="#linkedin"></use>
-              </svg>
-              <span class="visually-hidden">linkedin</span>
-            </a>
-          </li>
-          <li class="social__item">
-            <a class="social__link" href="#" target="_blank">
-              <svg width="20" height="20" aria-label="facebook icon">
-                <use xlink:href="#facebook"></use>
-              </svg>
-              <span class="visually-hidden">facebook</span>
-            </a>
-          </li>
-          <li class="social__item">
-            <a class="social__link" href="#" target="_blank">
-              <svg width="20" height="20" aria-label="instagram icon">
-                <use xlink:href="#instagram"></use>
-              </svg>
-              <span class="visually-hidden">instagram</span>
-            </a>
-          </li>
-          <li class="social__item">
-            <a class="social__link" href="#" target="_blank">
-              <svg width="20" height="20" aria-label="twitter icon">
-                <use xlink:href="#twitter"></use>
-              </svg>
-              <span class="visually-hidden">twitter</span>
-            </a>
-          </li>
-        </ul>
         <button class="header__menu-toggle menu-toggle" type="button">
           <span class="menu-toggle__line"></span>
           <span class="visually-hidden">Menu toggle</span>
@@ -446,44 +408,9 @@
       </div>
     </header>
     <main>
-      <section class="creative-hero">
-        <div class="creative-hero__container container-fluid">
-          <div class="creative-hero__main">
-            <h1 class="creative-hero__title">Undertake projects of&nbsp;any complexity</h1>
-            <a class="creative-hero__btn btn" href="#">
-              <span class="btn__text">Join now</span>
-              <span class="btn__icon">
-                <svg width="19" height="19">
-                  <use xlink:href="#link-arrow"></use>
-                </svg>
-              </span>
-            </a>
-          </div>
-          <div class="creative-hero__image">
-            <picture>
-              <source type="image/webp" srcset="img/picture/creative/hero.webp 1x, img/picture/creative/hero@2x.webp">
-              <img src="img/picture/creative/hero.jpg" srcset="img/picture/creative/hero@2x.jpg 2x" width="1100" height="980" alt="">
-            </picture>
-          </div>
-        </div>
-      </section>
-      <section class="portfolio-section portfolio-section--no-padding">
+      <section class="portfolio-section">
         <div class="portfolio-section__container container-fluid">
-          <header class="portfolio-section__header row align-items-end">
-            <div class="col-8 col-xl-6 offset-xl-2">
-              <h2 class="portfolio-section__title">Latest works</h2>
-            </div>
-            <div class="col-4 text-right">
-              <a class="portfolio-section__more arrow-link" href="projects-masonry.html">
-                <span class="arrow-link__text">View all</span>
-                <span class="arrow-link__icon">
-                  <svg width="75" height="75">
-                    <use xlink:href="#link-arrow"></use>
-                  </svg>
-                </span>
-              </a>
-            </div>
-          </header>
+          <h1 class="visually-hidden">Projects masonry</h1>
           <ul class="portfolio-section__grid __js_portfolio-section-masonry">
             <li class="portfolio-section__item __js_masonry-item">
               <a class="project-preview project-preview--elastic" href="single-project.html">
@@ -549,187 +476,76 @@
                 </span>
               </a>
             </li>
+            <li class="portfolio-section__item __js_masonry-item">
+              <a class="project-preview project-preview--elastic" href="single-project.html">
+                <picture>
+                  <source type="image/webp" srcset="img/picture/common/portfolio-section/5.webp 1x, img/picture/common/portfolio-section/5@2x.webp 2x">
+                  <img src="img/picture/common/portfolio-section/5.jpg" srcset="img/picture/common/portfolio-section/5@2x.jpg 2x" width="536" height="417" alt="Banana">
+                </picture>
+                <span class="project-preview__bottom">
+                  <span class="project-preview__title">Banana</span>
+                  <span class="project-preview__icon">
+                    <svg width="24" height="23">
+                      <use xlink:href="#link-arrow2"></use>
+                    </svg>
+                  </span>
+                </span>
+              </a>
+            </li>
+            <li class="portfolio-section__item __js_masonry-item">
+              <a class="project-preview project-preview--elastic" href="single-project.html">
+                <picture>
+                  <source type="image/webp" srcset="img/picture/common/portfolio-section/6.webp 1x, img/picture/common/portfolio-section/6@2x.webp 2x">
+                  <img src="img/picture/common/portfolio-section/6.jpg" srcset="img/picture/common/portfolio-section/6@2x.jpg 2x" width="531" height="417" alt="Abstract lists">
+                </picture>
+                <span class="project-preview__bottom">
+                  <span class="project-preview__title">Abstract lists</span>
+                  <span class="project-preview__icon">
+                    <svg width="24" height="23">
+                      <use xlink:href="#link-arrow2"></use>
+                    </svg>
+                  </span>
+                </span>
+              </a>
+            </li>
+            <li class="portfolio-section__item __js_masonry-item">
+              <a class="project-preview project-preview--elastic" href="single-project.html">
+                <picture>
+                  <source type="image/webp" srcset="img/picture/common/portfolio-section/7.webp 1x, img/picture/common/portfolio-section/7@2x.webp 2x">
+                  <img src="img/picture/common/portfolio-section/7.jpg" srcset="img/picture/common/portfolio-section/7@2x.jpg 2x" width="533" height="1013" alt="Realistic building">
+                </picture>
+                <span class="project-preview__bottom">
+                  <span class="project-preview__title">Realistic building</span>
+                  <span class="project-preview__icon">
+                    <svg width="24" height="23">
+                      <use xlink:href="#link-arrow2"></use>
+                    </svg>
+                  </span>
+                </span>
+              </a>
+            </li>
+            <li class="portfolio-section__item __js_masonry-item  portfolio-section__item--two-thirds">
+              <a class="project-preview project-preview--elastic" href="single-project.html">
+                <picture>
+                  <source type="image/webp" srcset="img/picture/common/portfolio-section/8.webp 1x, img/picture/common/portfolio-section/8@2x.webp 2x">
+                  <img src="img/picture/common/portfolio-section/8.jpg" srcset="img/picture/common/portfolio-section/8@2x.jpg 2x" width="1125" height="494" alt="Green onion">
+                </picture>
+                <span class="project-preview__bottom">
+                  <span class="project-preview__title">Green onion</span>
+                  <span class="project-preview__icon">
+                    <svg width="24" height="23">
+                      <use xlink:href="#link-arrow2"></use>
+                    </svg>
+                  </span>
+                </span>
+              </a>
+            </li>
           </ul>
-        </div>
-      </section>
-      <section class="services-section">
-        <div class="services-section__container services-section__container--small container-fluid">
-          <h2 class="services-section__title">Services</h2>
-          <div class="services-section__main">
-            <div class="services-section__image">
-              <picture>
-                <source type="image/webp" srcset="img/picture/creative/services.webp 1x, img/picture/creative/services@2x.webp 2x">
-                <img src="img/picture/creative/services.jpg" srcset="img/picture/creative/services@2x.jpg 2x" width="823" height="417" alt="">
-              </picture>
-            </div>
-            <div class="services-section__menu">
-              <ul class="services-section__list">
-                <li class="services-section__item">
-                  <a class="services-section__link" href="service-detail.html">Web development<span>
-                      <svg width="24" height="23">
-                        <use xlink:href="#link-arrow2"></use>
-                      </svg>
-                    </span>
-                  </a>
-                </li>
-                <li class="services-section__item">
-                  <a class="services-section__link" href="service-detail.html">Marketing<span>
-                      <svg width="24" height="23">
-                        <use xlink:href="#link-arrow2"></use>
-                      </svg>
-                    </span>
-                  </a>
-                </li>
-                <li class="services-section__item">
-                  <a class="services-section__link" href="service-detail.html">Graphic design<span>
-                      <svg width="24" height="23">
-                        <use xlink:href="#link-arrow2"></use>
-                      </svg>
-                    </span>
-                  </a>
-                </li>
-                <li class="services-section__item">
-                  <a class="services-section__link" href="service-detail.html">Photography<span>
-                      <svg width="24" height="23">
-                        <use xlink:href="#link-arrow2"></use>
-                      </svg>
-                    </span>
-                  </a>
-                </li>
-                <li class="services-section__item">
-                  <a class="services-section__link" href="service-detail.html">Illustrations<span>
-                      <svg width="24" height="23">
-                        <use xlink:href="#link-arrow2"></use>
-                      </svg>
-                    </span>
-                  </a>
-                </li>
-                <li class="services-section__item">
-                  <a class="services-section__link" href="service-detail.html">Product design<span>
-                      <svg width="24" height="23">
-                        <use xlink:href="#link-arrow2"></use>
-                      </svg>
-                    </span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="plans-section">
-        <div class="plans-section__container container-fluid">
-          <div class="row">
-            <div class="plans-section__item card-price col-12 col-sm-6 col-lg-4">
-              <div class="card-price__wrapper">
-                <div class="card-price__plan">Basic</div>
-                <div class="card-price__price">
-                  <sup>$</sup> 29 <span>/ mo</span>
-                </div>
-                <ul class="card-price__list">
-                  <li class="yellow">Gathered day, years she'd upon, greater.</li>
-                  <li>Kind cattle won't bearing.</li>
-                  <li>own night two above.</li>
-                </ul>
-              </div>
-            </div>
-            <div class="plans-section__item card-price card-price--gradient col-12 col-sm-6 col-lg-4">
-              <div class="card-price__wrapper">
-                <div class="card-price__plan">Standard</div>
-                <div class="card-price__price">
-                  <sup>$</sup> 39 <span>/ mo</span>
-                </div>
-                <ul class="card-price__list">
-                  <li class="yellow">Gathered day, years she'd upon, greater.</li>
-                  <li class="yellow">Kind cattle won't bearing.</li>
-                  <li>own night two above.</li>
-                </ul>
-                <a class="btn--outline card-price__btn card-price__btn--outline btn" href="#">
-                  <span class="btn__text">join now</span>
-                  <span class="btn__icon">
-                    <svg width="19" height="19">
-                      <use xlink:href="#link-arrow"></use>
-                    </svg>
-                  </span>
-                </a>
-              </div>
-            </div>
-            <div class="plans-section__item card-price col-12 col-sm-6 col-lg-4">
-              <div class="card-price__wrapper">
-                <div class="card-price__plan">Advanced</div>
-                <div class="card-price__price">
-                  <sup>$</sup> 49 <span>/ mo</span>
-                </div>
-                <ul class="card-price__list">
-                  <li class="yellow">Gathered day, years she'd upon, greater.</li>
-                  <li class="yellow">Kind cattle won't bearing.</li>
-                  <li class="yellow">own night two above.</li>
-                </ul>
-                <a class="card-price__btn btn" href="#">
-                  <span class="btn__text">join now</span>
-                  <span class="btn__icon">
-                    <svg width="19" height="19">
-                      <use xlink:href="#link-arrow"></use>
-                    </svg>
-                  </span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="start-project">
-        <div class="start-project__container start-project__container--small container-fluid">
-          <h2 class="start-project__title start-project__title--size-small">Start A Project?</h2>
-          <div class="start-project__grid">
-            <div class="start-project__discuss discuss-project discuss-project--no-padding">
-              <div class="discuss-project__wrapper">
-                <form action="#" method="post">
-                  <div class="row justify-content-between gx-0">
-                    <div class="discuss-project__field-wrapper col-12 col-md-6">
-                      <label class="discuss-project__field field">
-                        <input type="text" name="name">
-                        <span class="field__hint">Name</span>
-                      </label>
-                    </div>
-                    <div class="discuss-project__field-wrapper col-12 col-md-6">
-                      <label class="discuss-project__field field">
-                        <input type="email" name="email">
-                        <span class="field__hint">Email</span>
-                      </label>
-                    </div>
-                    <div class="col-12">
-                      <label class="discuss-project__field discuss-project__field--textarea field">
-                        <textarea name="message" required></textarea>
-                        <span class="field__hint">Message</span>
-                      </label>
-                    </div>
-                    <div class="discuss-project__bottom col-12">
-                      <div class="discuss-project__file file-upload">
-                        <label class="file-upload__label">
-                          <input class="visually-hidden" type="file">
-                          <span class="file-upload__icon">
-                            <svg width="16" height="16">
-                              <use xlink:href="#paper-clip"></use>
-                            </svg>
-                          </span>
-                          <span class="file-upload__text">Attach a file</span>
-                        </label>
-                      </div>
-                      <button class="discuss-project__send btn--theme-black btn" type="submit">
-                        <span class="btn__text">Submit</span>
-                        <span class="btn__icon">
-                          <svg width="19" height="19">
-                            <use xlink:href="#link-arrow"></use>
-                          </svg>
-                        </span>
-                      </button>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
+          <a class="portfolio-section__more circle-link" href="#">
+            <svg width="30" height="32">
+              <use xlink:href="#arrow-down"></use>
+            </svg>
+          </a>
         </div>
       </section>
     </main>
@@ -760,8 +576,8 @@
                   <li class="footer__menu-item">
                     <a class="footer__menu-link" href="contact.html">Contact</a>
                   </li>
-                  <li class="footer__menu-item">
-                    <a class="footer__menu-link" href="projects-masonry.html">Portfolio</a>
+                  <li class="footer__menu-item footer__menu-item--current">
+                    <a class="footer__menu-link">Portfolio</a>
                   </li>
                 </ul>
               </div>
