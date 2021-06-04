@@ -1,0 +1,70 @@
+.creative-hero {
+	padding: 100px 0 70px;
+
+	@include media(lg) {
+		//padding-top: 50px;
+	}
+
+	&__container {
+		position: relative;
+		display: flex;
+	}
+
+	&__main {
+		position: absolute;
+		top: 50%;
+		left: 40px;
+		transform: translateY(-50%);
+
+		@include media(sm) {
+			left: 12px;
+		}
+
+		@include media(xl) {
+			top: 46.5%;
+			left: calc(0.162 * 100vw + 12px);
+			transform: translateY(-50%);
+		}
+	}
+
+	&__title {
+		max-width: 160px;
+		margin: 0 0 50px;
+
+		@include text(36px, 95 / 100, $color-default-black);
+		font-weight: 500;
+
+		@include media(sm) {
+			max-width: 44.4%;
+			margin-bottom: 84px;
+
+			@include fluid-font-size(52px, 100px, 576px, 1200px, 80px);
+		}
+
+		@include media(xl) {
+			max-width: 480px;
+		}
+	}
+
+	&__btn {
+	}
+
+	&__image {
+		margin-left: -12px;
+		margin-right: -12px;
+
+		@include media(sm) {
+			width: 73%;
+			max-width: 1100px;
+			margin-left: auto;
+			margin-right: 0;
+		}
+
+		img {
+			display: inline-block;
+			vertical-align: top;
+			max-width: 100%;
+			height: auto;
+		}
+	}
+}

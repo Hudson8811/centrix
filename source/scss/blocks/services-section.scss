@@ -1,4 +1,18 @@
 .services-section {
+	padding: 80px 0;
+
+	@include media(sm) {
+		padding: 120px 0;
+	}
+
+	@include media(md) {
+		padding: 188px 0;
+	}
+
+	@include media(xl) {
+		padding: 188px 0 312px;
+	}
+
 	&__container {
 		&--small {
 			max-width: $width--middle;
@@ -6,24 +20,138 @@
 	}
 
 	&__main {
+		position: relative;
 	}
 
 	&__image {
+		position: relative;
+		overflow: hidden;
+		text-align: right;
+		min-height: 300px;
+		margin-right: vw(284);
+
+		@include media(sm) {
+			min-height: 0;
+		}
+
 		img {
-			max-width: 100%;
-			height: auto;
+			position: absolute;
+			top: 0;
+			right: 0;
+			display: inline-block;
+			vertical-align: top;
+			width: auto;
+			height: 100%;
+			//max-width: 100%;
+			//height: auto;
+			//width: auto;
+			//min-height: 300px;
+
+			@include media(sm) {
+				position: static;
+				width: auto;
+				height: auto;
+				max-width: 100%;
+			}
 		}
 	}
 
-	&__aside {
+	&__title {
+		margin: 0 0 48px;
+
+		@include text(24px, 42 / 32, $color-default-black);
+		font-weight: 500;
+
+		@include media(md) {
+			margin-bottom: 80px;
+			font-size: 32px;
+		}
 	}
+
+	&__menu {
+		position: absolute;
+		right: 0;
+		top: 49%;
+		transform: translateY(-50%);
+
+		@include media(md) {
+			min-width: 316px;
+			right: 34px;
+		}
+	}
+
 	&__list {
+		@include list-reset;
 	}
+
 	&__item {
+		margin-bottom: 32px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		@include media(md) {
+			margin-bottom: 42px;
+		}
+
+		@include media(xl) {
+			margin-bottom: 79px;
+		}
 	}
+
 	&__link {
+		@include text(16px, 34 / 26, $color-default-black);
+		font-weight: 500;
+		text-transform: uppercase;
+
+		@include transition(color);
+
+		@include hover {
+			color: $color-yellow;
+
+			span {
+				opacity: 1;
+
+				svg {
+					fill: $color-yellow;
+				}
+			}
+		}
+
 		span {
+			display: none;
+			//display: inline-block;
+			width: 16px;
+			margin-left: 20px;
+
 			svg {
+				display: block;
+				width: 100%;
+				height: auto;
+				fill: $color-default-black;
+
+				@include transition(fill);
+			}
+		}
+
+		@include media(sm) {
+			font-size: 20px;
+		}
+
+		@include media(md) {
+			font-size: 26px;
+		}
+
+		@include media(lg) {
+			span {
+				display: inline-block;
+				width: 24px;
+				transform: translateX(33px) translateY(-4px);
+				opacity: 0;
+
+				@include transition(opacity);
+				transition-delay: 0.3s;
 			}
 		}
 	}

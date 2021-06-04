@@ -1,0 +1,19 @@
+.plans-section {
+	.row {
+		margin-top: -45px;
+
+		@include media(xxl) {
+			margin-left: -30px;
+			margin-right: -30px;
+		}
+	}
+
+	&__item {
+		margin-top: 45px;
+
+		@include media(xxl) {
+			padding-left: 30px;
+			padding-right: 30px;
+		}
+	}
+}

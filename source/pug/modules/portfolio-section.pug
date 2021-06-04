@@ -1,8 +1,10 @@
 section.portfolio-section
 	.portfolio-section__container.container-fluid
-		header.portfolio-section__header
-			h2.portfolio-section__title Latest works
-			+arrow-link('View all', URLS.projects.masonry, 'portfolio-section__more')
+		header.portfolio-section__header.row.align-items-end
+			.col-8.col-xl-6.offset-xl-2
+				h2.portfolio-section__title Latest works
+			.col-4.text-right
+				+arrow-link('View all', URLS.projects.masonry, 'portfolio-section__more')
 
 		ul.portfolio-section__grid.__js_portfolio-section-masonry
 			- let count = 0;

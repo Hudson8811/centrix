@@ -1,27 +1,69 @@
 .portfolio-section {
+	overflow: hidden;
+
 	&__container {
 		max-width: $width--full;
 		margin: 0 auto;
 	}
 
 	&__header {
+		margin-bottom: 48px;
+
+		@include media(sm) {
+			margin-bottom: 84px;
+		}
+	}
+
+	&__title {
+		margin: 0 20px 0 0;
+
+		@include text(24px, 42 / 32, $color-default-black);
+		font-weight: 500;
+
+		@include media(sm) {
+			font-size: 32px;
+		}
 	}
 
 	&__grid {
 		@include list-reset;
 		display: flex;
 
-		@include media(lg) {
+		@include media(sm) {
+			margin-left: -24px;
+		}
+
+		@include media(xl) {
 			margin-left: -60px;
 		}
 	}
 
 	&__item {
 		//display: block;
-		//width: 100%;
+		width: 100%;
 		margin-bottom: 45px;
 
+		@include media(sm) {
+			width: calc(50% - 24px);
+			margin-bottom: 38px;
+			margin-left: 24px;
+
+			&--two-thirds {
+				width: calc(100% - 24px);
+			}
+		}
+
 		@include media(lg) {
+			width: calc(33.33% - 24px);
+			//margin-right: 60px;
+			//margin-left: 60px;
+
+			&--two-thirds {
+				width: calc(66.66% - 24px);
+			}
+		}
+
+		@include media(xl) {
 			width: calc(33.33% - 60px);
 			//margin-right: 60px;
 			margin-left: 60px;
