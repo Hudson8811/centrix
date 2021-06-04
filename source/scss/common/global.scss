@@ -71,7 +71,8 @@ body {
 	background-color: $color-smoky;
 }
 
-.container {
+.container,
+.container-fluid {
 	@include media(xxl) {
 		padding: 0 15px;
 		max-width: 1750px;
