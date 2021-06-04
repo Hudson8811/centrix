@@ -1,0 +1,55 @@
+.team {
+	&__item {
+		margin-top: 40px;
+
+		@include media(lg) {
+			margin-top: 80px;
+		}
+
+		@include media(xl) {
+			margin-top: 116px;
+		}
+
+		&--first {
+			@include media(lg) {
+				margin-top: 16px;
+			}
+
+			@include media(xl) {
+				padding-left: 52px;
+			}
+		}
+
+		&--margin-negative {
+			@include media(lg) {
+				margin-top: -108px;
+				margin-bottom: -80px;
+			}
+
+			@include media(xl) {
+				//margin-top: -226px;
+				margin-bottom: -116px;
+			}
+		}
+
+		&--left-shift {
+			@include media(xl) {
+				padding-left: vw(156);
+			}
+
+			@include media(full) {
+				padding-left: 156px;
+			}
+		}
+
+		&--left-small-shift {
+			@include media(xl) {
+				padding-left: vw(56);
+			}
+
+			@include media(full) {
+				padding-left: 56px;
+			}
+		}
+	}
+}

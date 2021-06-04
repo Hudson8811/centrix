@@ -15,10 +15,10 @@
   <!-- CSS-->
   <link rel="stylesheet" href="css/bootstrap-grid.min.css">
   <link rel="stylesheet" href="css/main.css">
-  <title>Centrix | Agency Mono</title>
+  <title>Centrix | Team</title>
 </head>
 
-<body class="webpage">
+<body class="webpage webpage--bg-smoky">
   <div style="display: none">
     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
       <symbol id="arrow-down">
@@ -97,9 +97,9 @@
     </svg>
   </div>
   <div class="animsition">
-    <header class="header header--absolute header--separator header--white">
+    <header class="header header--absolute header--separator">
       <div class="header__container container-fluid">
-        <a class="header__logo logo">
+        <a class="header__logo logo" href="agency-default.html">
           <svg width="76" height="19">
             <use xlink:href="#logo"></use>
           </svg>
@@ -107,8 +107,8 @@
         <div class="header__mobile mobile-canvas">
           <nav class="mobile-canvas__nav navigation">
             <ul class="navigation__list">
-              <li class="navigation__item navigation__item--current">
-                <a class="navigation__link" href="agency-default.html">Home<span class="navigation__link-icon">
+              <li class="navigation__item">
+                <a class="navigation__link animsition-link" href="agency-default.html">Home<span class="navigation__link-icon">
                     <svg width="12" height="13">
                       <use xlink:href="#link-arrow"></use>
                     </svg>
@@ -124,8 +124,8 @@
                         </span>
                       </a>
                     </li>
-                    <li class="navigation__dropdown-item navigation__dropdown-item--current">
-                      <a>Agency mono<span class="navigation__dropdown-icon">
+                    <li class="navigation__dropdown-item">
+                      <a class="animsition-link" href="agency-mono.html">Agency mono<span class="navigation__dropdown-icon">
                           <svg width="12" height="13">
                             <use xlink:href="#link-arrow"></use>
                           </svg>
@@ -183,8 +183,8 @@
                   </ul>
                 </div>
               </li>
-              <li class="navigation__item">
-                <a class="navigation__link animsition-link" href="about-us.html">Pages<span class="navigation__link-icon">
+              <li class="navigation__item navigation__item--current">
+                <a class="navigation__link" href="about-us.html">Pages<span class="navigation__link-icon">
                     <svg width="12" height="13">
                       <use xlink:href="#link-arrow"></use>
                     </svg>
@@ -216,8 +216,8 @@
                         </span>
                       </a>
                     </li>
-                    <li class="navigation__dropdown-item">
-                      <a class="animsition-link" href="team.html">Team<span class="navigation__dropdown-icon">
+                    <li class="navigation__dropdown-item navigation__dropdown-item--current">
+                      <a>Team<span class="navigation__dropdown-icon">
                           <svg width="12" height="13">
                             <use xlink:href="#link-arrow"></use>
                           </svg>
@@ -366,7 +366,7 @@
             </ul>
           </nav>
           <!-- Social-->
-          <ul class="header__social social--white social">
+          <ul class="header__social social">
             <li class="social__item">
               <a class="social__link" href="#" target="_blank">
                 <svg width="20" height="20" aria-label="linkedin icon">
@@ -408,482 +408,309 @@
       </div>
     </header>
     <main>
-      <!--+--->
-      <section class="main-screen" style="background-image: url('img/picture/mono/hero.jpg');">
-        <div class="main-screen__container container-fluid">
-          <h1 class="main-screen__title">
-            <span>Nobody</span>doesn't look advertising
-          </h1>
-          <div class="main-screen__text">People watch what they're interested in. And only sometimes it's advertising.</div>
-          <a class="main-screen__btn btn" href="">
-            <span class="btn__text">Learn more</span>
-            <span class="btn__icon">
-              <svg width="19" height="19">
-                <use xlink:href="#link-arrow"></use>
-              </svg>
-            </span>
-          </a>
-        </div>
-      </section>
-      <section class="carousel-section carousel-section--separator">
-        <div class="carousel-section__container container-fluid">
-          <header class="carousel-section__header row align-items-end align-items-md-center">
-            <h2 class="carousel-section__title col-8 col-md-6">Our latest projects</h2>
-            <div class="carousel-section__nav col-12 col-md-3 order-last order-md-0">
-              <button class="nav-btn nav-btn--prev __js_navbtn-latest-projects" type="button">
-                <svg width="50" height="16">
-                  <use xlink:href="#long-arrow-left"></use>
-                </svg>
-              </button>
-              <button class="nav-btn nav-btn--next __js_navbtn-latest-projects" type="button">
-                <svg width="50" height="16">
-                  <use xlink:href="#long-arrow-right"></use>
-                </svg>
-              </button>
-            </div>
-            <div class="col-4 col-md-3 align-self-md-start text-right">
-              <a class="carousel-section__more arrow-link" href="projects-masonry.html">
-                <span class="arrow-link__text">View all</span>
-                <span class="arrow-link__icon">
-                  <svg width="75" height="75">
-                    <use xlink:href="#link-arrow"></use>
-                  </svg>
-                </span>
-              </a>
-            </div>
-          </header>
-          <div class="carousel-section__carousel carousel carousel--slide-auto swiper-container __js_carousel-latest-projects">
-            <div class="swiper-wrapper">
-              <a class="carousel__item project-preview swiper-slide" href="single-project.html">
-                <picture>
-                  <source type="image/webp" srcset="img/picture/carousel/4.webp 1x, img/picture/carousel/4@2x.webp 2x">
-                  <!-- 1х: 662px; 2x: 1324px-->
-                  <img src="img/picture/carousel/4.jpg" srcset="img/picture/carousel/4@2x.jpg 2x" width="720" height="548" alt="water bottle">
-                </picture>
-                <span class="project-preview__bottom">
-                  <span class="project-preview__title">Water bottle</span>
-                  <span class="project-preview__icon">
-                    <svg width="24" height="23">
-                      <use xlink:href="#link-arrow2"></use>
-                    </svg>
-                  </span>
-                </span>
-              </a>
-              <a class="carousel__item project-preview swiper-slide" href="single-project.html">
-                <picture>
-                  <source type="image/webp" srcset="img/picture/carousel/5.webp 1x, img/picture/carousel/5@2x.webp 2x">
-                  <!-- 1х: 662px; 2x: 1324px-->
-                  <img src="img/picture/carousel/5.jpg" srcset="img/picture/carousel/5@2x.jpg 2x" width="334" height="255" alt="Copenhagen">
-                </picture>
-                <span class="project-preview__bottom">
-                  <span class="project-preview__title">Copenhagen</span>
-                  <span class="project-preview__icon">
-                    <svg width="24" height="23">
-                      <use xlink:href="#link-arrow2"></use>
-                    </svg>
-                  </span>
-                </span>
-              </a>
-              <a class="carousel__item project-preview swiper-slide" href="single-project.html">
-                <picture>
-                  <source type="image/webp" srcset="img/picture/carousel/6.webp 1x, img/picture/carousel/6@2x.webp 2x">
-                  <!-- 1х: 662px; 2x: 1324px-->
-                  <img src="img/picture/carousel/6.jpg" srcset="img/picture/carousel/6@2x.jpg 2x" width="404" height="491" alt="Kodak">
-                </picture>
-                <span class="project-preview__bottom">
-                  <span class="project-preview__title">Kodak</span>
-                  <span class="project-preview__icon">
-                    <svg width="24" height="23">
-                      <use xlink:href="#link-arrow2"></use>
-                    </svg>
-                  </span>
-                </span>
-              </a>
-              <a class="carousel__item project-preview swiper-slide" href="single-project.html">
-                <picture>
-                  <source type="image/webp" srcset="img/picture/carousel/7.webp 1x, img/picture/carousel/7@2x.webp 2x">
-                  <!-- 1х: 662px; 2x: 1324px-->
-                  <img src="img/picture/carousel/7.jpg" srcset="img/picture/carousel/7@2x.jpg 2x" width="433" height="321" alt="Exoape">
-                </picture>
-                <span class="project-preview__bottom">
-                  <span class="project-preview__title">Exoape</span>
-                  <span class="project-preview__icon">
-                    <svg width="24" height="23">
-                      <use xlink:href="#link-arrow2"></use>
-                    </svg>
-                  </span>
-                </span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!--+-->
-      <section class="discuss-project">
-        <div class="discuss-project__container container-fluid">
-          <div class="discuss-project__wrapper">
-            <h2 class="discuss-project__title">Discuss the project</h2>
-            <form action="#" method="post">
-              <div class="row justify-content-between gx-0">
-                <div class="discuss-project__field-wrapper col-12 col-md-6">
-                  <label class="discuss-project__field field">
-                    <input type="text" name="name">
-                    <span class="field__hint">Name</span>
-                  </label>
-                </div>
-                <div class="discuss-project__field-wrapper col-12 col-md-6">
-                  <label class="discuss-project__field field">
-                    <input type="email" name="email">
-                    <span class="field__hint">Email</span>
-                  </label>
-                </div>
-                <div class="col-12">
-                  <label class="discuss-project__field discuss-project__field--textarea field">
-                    <textarea name="message" required></textarea>
-                    <span class="field__hint">Message</span>
-                  </label>
-                </div>
-                <div class="discuss-project__bottom col-12">
-                  <div class="discuss-project__file file-upload">
-                    <label class="file-upload__label">
-                      <input class="visually-hidden" type="file">
-                      <span class="file-upload__icon">
-                        <svg width="16" height="16">
-                          <use xlink:href="#paper-clip"></use>
-                        </svg>
-                      </span>
-                      <span class="file-upload__text">Attach a file</span>
-                    </label>
-                  </div>
-                  <button class="discuss-project__send btn--theme-black btn" type="submit">
-                    <span class="btn__text">Submit</span>
-                    <span class="btn__icon">
-                      <svg width="19" height="19">
-                        <use xlink:href="#link-arrow"></use>
-                      </svg>
-                    </span>
-                  </button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </section>
-      <!--+- play btn need corrections-->
-      <section class="about-video-section about-video-section--pt-0">
-        <div class="about-video-section__container container-fluid">
+      <article class="article team">
+        <div class="article__container container-fluid">
           <div class="row">
-            <div class="about-video-section__main col-12 col-md">
-              <div class="about-video-section__title">Our team consists of practitioners who have 15 years of experience in launching and managing projects</div>
-              <div class="row align-items-end">
-                <div class="col-4 col-md-5 col-xl-4">
-                  <a class="about-video-section__more arrow-link" href="about-us.html">
-                    <span class="arrow-link__text">About us</span>
-                    <span class="arrow-link__icon">
-                      <svg width="75" height="75">
-                        <use xlink:href="#link-arrow"></use>
-                      </svg>
-                    </span>
-                  </a>
+            <header class="article__header col-12 col-lg-7">
+              <h1 class="article__title">Our
+                <br>magic team
+              </h1>
+              <div class="article__text">The best design team in NYC</div>
+            </header>
+            <div class="team__item team__item--first col-12 col-sm-6 col-md-4 col-lg-5">
+              <div class="member-card member-card--elastic">
+                <div class="member-card__image">
+                  <picture>
+                    <source type="image/webp" srcset="img/picture/team/3.webp 1x, img/picture/team/3@2x.webp 2x">
+                    <img src="img/picture/team/3.jpg" srcset="img/picture/team/3@2x.jpg 2x" width="474" height="450" alt="Bobby Fish photo">
+                  </picture>
                 </div>
-                <div class="col-8 col-md-7 col-xl-8">
-                  <div class="about-video-section__text">We make our customers ' products valuable in the eyes of customers. To do this, we analyze and study people, build long-term strategies for interacting with them, develop creative ideas and create a bright design. We use all opportunities to solve business problems.</div>
+                <div class="member-card__info">
+                  <div class="member-card__title">Bobby Fish</div>
+                  <div class="member-card__post">Designer</div>
+                  <!-- Social-->
+                  <ul class="member-card__social social--hover-secondary social">
+                    <li class="social__item">
+                      <a class="social__link" href="#" target="_blank">
+                        <svg width="20" height="20" aria-label="linkedin icon">
+                          <use xlink:href="#linkedin"></use>
+                        </svg>
+                        <span class="visually-hidden">linkedin</span>
+                      </a>
+                    </li>
+                    <li class="social__item">
+                      <a class="social__link" href="#" target="_blank">
+                        <svg width="20" height="20" aria-label="facebook icon">
+                          <use xlink:href="#facebook"></use>
+                        </svg>
+                        <span class="visually-hidden">facebook</span>
+                      </a>
+                    </li>
+                    <li class="social__item">
+                      <a class="social__link" href="#" target="_blank">
+                        <svg width="20" height="20" aria-label="twitter icon">
+                          <use xlink:href="#twitter"></use>
+                        </svg>
+                        <span class="visually-hidden">twitter</span>
+                      </a>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
-            <div class="about-video-section__aside col-12 col-md order-first order-md-0">
-              <div class="about-video-section__video video-block">
-                <picture>
-                  <source type="image/webp" srcset="img/picture/common/video-poster.webp 1x, img/picture/common/video-poster@2x.webp 2x">
-                  <!-- 1х: 810px; 2x: 1620px-->
-                  <img src="img/picture/common/video-poster.jpg" srcset="img/picture/common/video-poster@2x.jpg 2x" width="810" height="539" alt="About us video">
-                </picture>
-                <a class="video-block__btn play-btn" data-fancybox href="https://www.youtube.com/watch?v=_sI_Ps7JSEk" aria-label="Play button">
-                  <svg width="17" height="19">
-                    <use xlink:href="#triangle"></use>
-                  </svg>
-                </a>
+            <div class="team__item  col-12 col-sm-6 col-md-4">
+              <div class="member-card member-card--elastic">
+                <div class="member-card__image">
+                  <picture>
+                    <source type="image/webp" srcset="img/picture/team/1.webp 1x, img/picture/team/1@2x.webp 2x">
+                    <img src="img/picture/team/1.jpg" srcset="img/picture/team/1@2x.jpg 2x" width="385" height="548" alt="Sam Flex photo">
+                  </picture>
+                </div>
+                <div class="member-card__info">
+                  <div class="member-card__title">Sam Flex</div>
+                  <div class="member-card__post">Director</div>
+                  <!-- Social-->
+                  <ul class="member-card__social social--hover-secondary social">
+                    <li class="social__item">
+                      <a class="social__link" href="#" target="_blank">
+                        <svg width="20" height="20" aria-label="linkedin icon">
+                          <use xlink:href="#linkedin"></use>
+                        </svg>
+                        <span class="visually-hidden">linkedin</span>
+                      </a>
+                    </li>
+                    <li class="social__item">
+                      <a class="social__link" href="#" target="_blank">
+                        <svg width="20" height="20" aria-label="facebook icon">
+                          <use xlink:href="#facebook"></use>
+                        </svg>
+                        <span class="visually-hidden">facebook</span>
+                      </a>
+                    </li>
+                    <li class="social__item">
+                      <a class="social__link" href="#" target="_blank">
+                        <svg width="20" height="20" aria-label="twitter icon">
+                          <use xlink:href="#twitter"></use>
+                        </svg>
+                        <span class="visually-hidden">twitter</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="team__item  col-12 col-sm-6 col-md-4">
+              <div class="member-card member-card--elastic">
+                <div class="member-card__image">
+                  <picture>
+                    <source type="image/webp" srcset="img/picture/team/2.webp 1x, img/picture/team/2@2x.webp 2x">
+                    <img src="img/picture/team/2.jpg" srcset="img/picture/team/2@2x.jpg 2x" width="355" height="241" alt="Kate Larson photo">
+                  </picture>
+                </div>
+                <div class="member-card__info">
+                  <div class="member-card__title">Kate Larson</div>
+                  <div class="member-card__post">Manager</div>
+                  <!-- Social-->
+                  <ul class="member-card__social social--hover-secondary social">
+                    <li class="social__item">
+                      <a class="social__link" href="#" target="_blank">
+                        <svg width="20" height="20" aria-label="linkedin icon">
+                          <use xlink:href="#linkedin"></use>
+                        </svg>
+                        <span class="visually-hidden">linkedin</span>
+                      </a>
+                    </li>
+                    <li class="social__item">
+                      <a class="social__link" href="#" target="_blank">
+                        <svg width="20" height="20" aria-label="facebook icon">
+                          <use xlink:href="#facebook"></use>
+                        </svg>
+                        <span class="visually-hidden">facebook</span>
+                      </a>
+                    </li>
+                    <li class="social__item">
+                      <a class="social__link" href="#" target="_blank">
+                        <svg width="20" height="20" aria-label="twitter icon">
+                          <use xlink:href="#twitter"></use>
+                        </svg>
+                        <span class="visually-hidden">twitter</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="team__item  col-12 col-sm-6 col-md-4">
+              <div class="member-card member-card--elastic">
+                <div class="member-card__image">
+                  <picture>
+                    <source type="image/webp" srcset="img/picture/team/5.webp 1x, img/picture/team/5@2x.webp 2x">
+                    <img src="img/picture/team/5.jpg" srcset="img/picture/team/5@2x.jpg 2x" width="326" height="548" alt="Amanda James photo">
+                  </picture>
+                </div>
+                <div class="member-card__info">
+                  <div class="member-card__title">Amanda James</div>
+                  <div class="member-card__post">Programmer</div>
+                  <!-- Social-->
+                  <ul class="member-card__social social--hover-secondary social">
+                    <li class="social__item">
+                      <a class="social__link" href="#" target="_blank">
+                        <svg width="20" height="20" aria-label="linkedin icon">
+                          <use xlink:href="#linkedin"></use>
+                        </svg>
+                        <span class="visually-hidden">linkedin</span>
+                      </a>
+                    </li>
+                    <li class="social__item">
+                      <a class="social__link" href="#" target="_blank">
+                        <svg width="20" height="20" aria-label="facebook icon">
+                          <use xlink:href="#facebook"></use>
+                        </svg>
+                        <span class="visually-hidden">facebook</span>
+                      </a>
+                    </li>
+                    <li class="social__item">
+                      <a class="social__link" href="#" target="_blank">
+                        <svg width="20" height="20" aria-label="twitter icon">
+                          <use xlink:href="#twitter"></use>
+                        </svg>
+                        <span class="visually-hidden">twitter</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="team__item team__item--margin-negative col-12 col-sm-6 col-md-4 offset-lg-4">
+              <div class="member-card member-card--elastic">
+                <div class="member-card__image">
+                  <picture>
+                    <source type="image/webp" srcset="img/picture/team/4-1.webp 1x, img/picture/team/4-1@2x.webp 2x">
+                    <img src="img/picture/team/4-1.jpg" srcset="img/picture/team/4-1@2x.jpg 2x" width="355" height="548" alt="Amanda James photo">
+                  </picture>
+                </div>
+                <div class="member-card__info">
+                  <div class="member-card__title">Amanda James</div>
+                  <div class="member-card__post">Programmer</div>
+                  <!-- Social-->
+                  <ul class="member-card__social social--hover-secondary social">
+                    <li class="social__item">
+                      <a class="social__link" href="#" target="_blank">
+                        <svg width="20" height="20" aria-label="linkedin icon">
+                          <use xlink:href="#linkedin"></use>
+                        </svg>
+                        <span class="visually-hidden">linkedin</span>
+                      </a>
+                    </li>
+                    <li class="social__item">
+                      <a class="social__link" href="#" target="_blank">
+                        <svg width="20" height="20" aria-label="facebook icon">
+                          <use xlink:href="#facebook"></use>
+                        </svg>
+                        <span class="visually-hidden">facebook</span>
+                      </a>
+                    </li>
+                    <li class="social__item">
+                      <a class="social__link" href="#" target="_blank">
+                        <svg width="20" height="20" aria-label="twitter icon">
+                          <use xlink:href="#twitter"></use>
+                        </svg>
+                        <span class="visually-hidden">twitter</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="team__item team__item--left-shift col-12 col-sm-6 col-md-4 col-lg-6 align-self-lg-end">
+              <div class="member-card member-card--elastic">
+                <div class="member-card__image">
+                  <picture>
+                    <source type="image/webp" srcset="img/picture/team/6.webp 1x, img/picture/team/6@2x.webp 2x">
+                    <img src="img/picture/team/6.jpg" srcset="img/picture/team/6@2x.jpg 2x" width="355" height="281" alt="Amanda James photo">
+                  </picture>
+                </div>
+                <div class="member-card__info">
+                  <div class="member-card__title">Amanda James</div>
+                  <div class="member-card__post">Programmer</div>
+                  <!-- Social-->
+                  <ul class="member-card__social social--hover-secondary social">
+                    <li class="social__item">
+                      <a class="social__link" href="#" target="_blank">
+                        <svg width="20" height="20" aria-label="linkedin icon">
+                          <use xlink:href="#linkedin"></use>
+                        </svg>
+                        <span class="visually-hidden">linkedin</span>
+                      </a>
+                    </li>
+                    <li class="social__item">
+                      <a class="social__link" href="#" target="_blank">
+                        <svg width="20" height="20" aria-label="facebook icon">
+                          <use xlink:href="#facebook"></use>
+                        </svg>
+                        <span class="visually-hidden">facebook</span>
+                      </a>
+                    </li>
+                    <li class="social__item">
+                      <a class="social__link" href="#" target="_blank">
+                        <svg width="20" height="20" aria-label="twitter icon">
+                          <use xlink:href="#twitter"></use>
+                        </svg>
+                        <span class="visually-hidden">twitter</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="team__item team__item--left-small-shift col-12 col-sm-6 col-md-4 col-lg-5 offset-lg-1">
+              <div class="member-card member-card--elastic">
+                <div class="member-card__image">
+                  <picture>
+                    <source type="image/webp" srcset="img/picture/team/7.webp 1x, img/picture/team/7@2x.webp 2x">
+                    <img src="img/picture/team/7.jpg" srcset="img/picture/team/7@2x.jpg 2x" width="474" height="450" alt="Bobby Fish photo">
+                  </picture>
+                </div>
+                <div class="member-card__info">
+                  <div class="member-card__title">Bobby Fish</div>
+                  <div class="member-card__post">Designer</div>
+                  <!-- Social-->
+                  <ul class="member-card__social social--hover-secondary social">
+                    <li class="social__item">
+                      <a class="social__link" href="#" target="_blank">
+                        <svg width="20" height="20" aria-label="linkedin icon">
+                          <use xlink:href="#linkedin"></use>
+                        </svg>
+                        <span class="visually-hidden">linkedin</span>
+                      </a>
+                    </li>
+                    <li class="social__item">
+                      <a class="social__link" href="#" target="_blank">
+                        <svg width="20" height="20" aria-label="facebook icon">
+                          <use xlink:href="#facebook"></use>
+                        </svg>
+                        <span class="visually-hidden">facebook</span>
+                      </a>
+                    </li>
+                    <li class="social__item">
+                      <a class="social__link" href="#" target="_blank">
+                        <svg width="20" height="20" aria-label="twitter icon">
+                          <use xlink:href="#twitter"></use>
+                        </svg>
+                        <span class="visually-hidden">twitter</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
+          <!--.article__main
+            include modules/team-grid
+            
+            -->
         </div>
-        <div class="about-video-section__statistics statistics">
-          <div class="statistics__container container-fluid">
-            <div class="row justify-content-between">
-              <div class="statistics__item col-auto">
-                <div class="statistics__item-value">
-                  <span class="__js_number" data-end-value="25">0</span>
-                </div>
-                <div class="statistics__item-text">managers</div>
-              </div>
-              <div class="statistics__item col-auto">
-                <div class="statistics__item-value">
-                  <span class="__js_number" data-end-value="200">0</span>
-                </div>
-                <div class="statistics__item-text">the person
-                  <br>in the team
-                </div>
-              </div>
-              <div class="statistics__item col-auto">
-                <div class="statistics__item-value">
-                  <span class="__js_number" data-end-value="15">0</span>
-                </div>
-                <div class="statistics__item-text">Years
-                  <br>experience
-                </div>
-              </div>
-              <div class="statistics__item col-auto">
-                <div class="statistics__item-value">
-                  <span class="__js_number" data-end-value="7">0</span>
-                </div>
-                <div class="statistics__item-text">awards and
-                  <br>accolades
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="our-services">
-        <div class="our-services__container container-fluid">
-          <header class="our-services__header">
-            <div class="row">
-              <div class="col-12 col-md-9 col-xl-10">
-                <h2 class="our-services__title">Our Services</h2>
-              </div>
-              <div class="col-4 col-md-3 col-xl-2 align-self-end align-self-md-start text-md-right">
-                <a class="our-services__more arrow-link--white arrow-link" href="services.html">
-                  <span class="arrow-link__text">View all</span>
-                  <span class="arrow-link__icon">
-                    <svg width="75" height="75">
-                      <use xlink:href="#link-arrow"></use>
-                    </svg>
-                  </span>
-                </a>
-              </div>
-            </div>
-          </header>
-          <div class="our-services__accordion accordion">
-            <div class="accordion__item">
-              <button class="accordion__item-header" type="button">
-                <div class="row align-items-md-center">
-                  <div class="accordion__item-title col-11 col-md-6">Design</div>
-                  <div class="accordion__item-short col-11 col-md-5">Our intelligent digital strategy and a pragmatic and thoughtful approach to solving business calls deliver a successful framework for both you and your audience.</div>
-                </div>
-              </button>
-              <div class="accordion__item-body">
-                <div class="row">
-                  <div class="accordion__item-left col-12 col-md-6">
-                    <picture>
-                      <source type="image/webp" srcset="img/picture/mono/accordion-large.webp 1x, img/picture/mono/accordion-large@2x.webp 2x">
-                      <!-- 1х: 810px; 2x: 1620px-->
-                      <img src="img/picture/mono/accordion-large.jpg" srcset="img/picture/mono/accordion-large@2x.jpg 2x" width="810" height="530" alt="Concept">
-                    </picture>
-                  </div>
-                  <div class="accordion__item-right col-12 col-md-6">
-                    <picture>
-                      <source type="image/webp" srcset="img/picture/mono/accordion-small.webp 1x, img/picture/mono/accordion-small@2x.webp 2x">
-                      <!-- 1х: 348px; 2x: 696px-->
-                      <img src="img/picture/mono/accordion-small.jpg" srcset="img/picture/mono/accordion-small@2x.jpg 2x" width="348" height="287" alt="Concept">
-                    </picture>
-                    <div class="accordion__item-text">In the design process, they create both functional and beautiful things. The team possesses unique individuality and strong qualifications and can easily translate something so abstract and visionary into a digital experience. They always put the clients first no matter how complicated the tasks are.</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="accordion__item">
-              <button class="accordion__item-header" type="button">
-                <div class="row align-items-md-center">
-                  <div class="accordion__item-title col-11 col-md-6">Development</div>
-                  <div class="accordion__item-short col-11 col-md-5">We make our customers ' products valuable in the eyes of customers. To do this, we analyze and study people, build long-term strategies for interacting with them, develop creative ideas and create a bright design.</div>
-                </div>
-              </button>
-              <div class="accordion__item-body">
-                <div class="row">
-                  <div class="accordion__item-left col-12 col-md-6">
-                    <picture>
-                      <source type="image/webp" srcset="img/picture/mono/accordion-large.webp 1x, img/picture/mono/accordion-large@2x.webp 2x">
-                      <!-- 1х: 810px; 2x: 1620px-->
-                      <img src="img/picture/mono/accordion-large.jpg" srcset="img/picture/mono/accordion-large@2x.jpg 2x" width="810" height="530" alt="Concept">
-                    </picture>
-                  </div>
-                  <div class="accordion__item-right col-12 col-md-6">
-                    <picture>
-                      <source type="image/webp" srcset="img/picture/mono/accordion-small.webp 1x, img/picture/mono/accordion-small@2x.webp 2x">
-                      <!-- 1х: 348px; 2x: 696px-->
-                      <img src="img/picture/mono/accordion-small.jpg" srcset="img/picture/mono/accordion-small@2x.jpg 2x" width="348" height="287" alt="Concept">
-                    </picture>
-                    <div class="accordion__item-text">In the design process, they create both functional and beautiful things. The team possesses unique individuality and strong qualifications and can easily translate something so abstract and visionary into a digital experience. They always put the clients first no matter how complicated the tasks are.</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="accordion__item">
-              <button class="accordion__item-header" type="button">
-                <div class="row align-items-md-center">
-                  <div class="accordion__item-title col-11 col-md-6">Graphic</div>
-                  <div class="accordion__item-short col-11 col-md-5">Our intelligent digital strategy and a pragmatic and thoughtful approach to solving business calls deliver a successful framework for both you and your audience.</div>
-                </div>
-              </button>
-              <div class="accordion__item-body">
-                <div class="row">
-                  <div class="accordion__item-left col-12 col-md-6">
-                    <picture>
-                      <source type="image/webp" srcset="img/picture/mono/accordion-large.webp 1x, img/picture/mono/accordion-large@2x.webp 2x">
-                      <!-- 1х: 810px; 2x: 1620px-->
-                      <img src="img/picture/mono/accordion-large.jpg" srcset="img/picture/mono/accordion-large@2x.jpg 2x" width="810" height="530" alt="Concept">
-                    </picture>
-                  </div>
-                  <div class="accordion__item-right col-12 col-md-6">
-                    <picture>
-                      <source type="image/webp" srcset="img/picture/mono/accordion-small.webp 1x, img/picture/mono/accordion-small@2x.webp 2x">
-                      <!-- 1х: 348px; 2x: 696px-->
-                      <img src="img/picture/mono/accordion-small.jpg" srcset="img/picture/mono/accordion-small@2x.jpg 2x" width="348" height="287" alt="Concept">
-                    </picture>
-                    <div class="accordion__item-text">In the design process, they create both functional and beautiful things. The team possesses unique individuality and strong qualifications and can easily translate something so abstract and visionary into a digital experience. They always put the clients first no matter how complicated the tasks are.</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="accordion__item">
-              <button class="accordion__item-header" type="button">
-                <div class="row align-items-md-center">
-                  <div class="accordion__item-title col-11 col-md-6">Wordpress</div>
-                  <div class="accordion__item-short col-11 col-md-5">Our intelligent digital strategy and a pragmatic and thoughtful approach to solving business calls deliver a successful framework for both you and your audience.</div>
-                </div>
-              </button>
-              <div class="accordion__item-body">
-                <div class="row">
-                  <div class="accordion__item-left col-12 col-md-6">
-                    <picture>
-                      <source type="image/webp" srcset="img/picture/mono/accordion-large.webp 1x, img/picture/mono/accordion-large@2x.webp 2x">
-                      <!-- 1х: 810px; 2x: 1620px-->
-                      <img src="img/picture/mono/accordion-large.jpg" srcset="img/picture/mono/accordion-large@2x.jpg 2x" width="810" height="530" alt="Concept">
-                    </picture>
-                  </div>
-                  <div class="accordion__item-right col-12 col-md-6">
-                    <picture>
-                      <source type="image/webp" srcset="img/picture/mono/accordion-small.webp 1x, img/picture/mono/accordion-small@2x.webp 2x">
-                      <!-- 1х: 348px; 2x: 696px-->
-                      <img src="img/picture/mono/accordion-small.jpg" srcset="img/picture/mono/accordion-small@2x.jpg 2x" width="348" height="287" alt="Concept">
-                    </picture>
-                    <div class="accordion__item-text">In the design process, they create both functional and beautiful things. The team possesses unique individuality and strong qualifications and can easily translate something so abstract and visionary into a digital experience. They always put the clients first no matter how complicated the tasks are.</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="carousel-section">
-        <div class="carousel-section__container container-fluid">
-          <header class="carousel-section__header row">
-            <h2 class="carousel-section__title col-8 col-md-6">Latest news</h2>
-            <div class="carousel-section__nav col-12 col-md-3 order-last order-md-0">
-              <button class="nav-btn nav-btn--prev __js_navbtn-latest-news" type="button">
-                <svg width="50" height="16">
-                  <use xlink:href="#long-arrow-left"></use>
-                </svg>
-              </button>
-              <button class="nav-btn nav-btn--next __js_navbtn-latest-news" type="button">
-                <svg width="50" height="16">
-                  <use xlink:href="#long-arrow-right"></use>
-                </svg>
-              </button>
-            </div>
-            <div class="col-4 col-md-3 align-self-md-start text-right">
-              <a class="carousel-section__more arrow-link" href="blog-masonry.html">
-                <span class="arrow-link__text">View all</span>
-                <span class="arrow-link__icon">
-                  <svg width="75" height="75">
-                    <use xlink:href="#link-arrow"></use>
-                  </svg>
-                </span>
-              </a>
-            </div>
-          </header>
-          <div class="carousel-section__carousel carousel carousel--slide-auto swiper-container __js_carousel-latest-projects">
-            <div class="swiper-wrapper">
-              <a class="carousel__item carousel-card swiper-slide" href="single-project.html">
-                <picture>
-                  <source type="image/webp" srcset="img/picture/carousel/1.webp 1x, img/picture/carousel/1@2x.webp 2x">
-                  <!-- 1х: 662px; 2x: 1324px-->
-                  <img src="img/picture/carousel/1.jpg" srcset="img/picture/carousel/1@2x.jpg 2x" width="662" height="510" alt="Desk Issue 0.1">
-                </picture>
-                <span class="carousel-card__bottom">
-                  <span class="carousel-card__title">Desk Issue 0.1</span>
-                  <span class="carousel-card__icon">
-                    <svg width="29" height="29">
-                      <use xlink:href="#link-arrow"></use>
-                    </svg>
-                  </span>
-                </span>
-              </a>
-              <a class="carousel__item carousel-card swiper-slide" href="single-project.html">
-                <picture>
-                  <source type="image/webp" srcset="img/picture/carousel/2.webp 1x, img/picture/carousel/2@2x.webp 2x">
-                  <!-- 1х: 662px; 2x: 1324px-->
-                  <img src="img/picture/carousel/2.jpg" srcset="img/picture/carousel/2@2x.jpg 2x" width="662" height="510" alt="Desk Issue 0.1">
-                </picture>
-                <span class="carousel-card__bottom">
-                  <span class="carousel-card__title">Desk Issue 0.1</span>
-                  <span class="carousel-card__icon">
-                    <svg width="29" height="29">
-                      <use xlink:href="#link-arrow"></use>
-                    </svg>
-                  </span>
-                </span>
-              </a>
-              <a class="carousel__item carousel-card swiper-slide" href="single-project.html">
-                <picture>
-                  <source type="image/webp" srcset="img/picture/carousel/3.webp 1x, img/picture/carousel/3@2x.webp 2x">
-                  <!-- 1х: 662px; 2x: 1324px-->
-                  <img src="img/picture/carousel/3.jpg" srcset="img/picture/carousel/3@2x.jpg 2x" width="662" height="510" alt="Desk Issue 0.1">
-                </picture>
-                <span class="carousel-card__bottom">
-                  <span class="carousel-card__title">Desk Issue 0.1</span>
-                  <span class="carousel-card__icon">
-                    <svg width="29" height="29">
-                      <use xlink:href="#link-arrow"></use>
-                    </svg>
-                  </span>
-                </span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!--+-->
-      <div class="partners partners--pt-0">
-        <div class="partners__container container">
-          <ul class="partners__list row justify-content-between align-items-center">
-            <li class="partners__item col-auto">
-              <picture>
-                <source type="image/webp" srcset="img/picture/partners/1.webp 1x, img/picture/partners/1@2x.webp 2x">
-                <img src="img/picture/partners/1.jpg" srcset="img/picture/partners/1@2x.jpg 2x" width="117" height="47" alt="behr handelsagentur">
-              </picture>
-            </li>
-            <li class="partners__item col-auto">
-              <picture>
-                <source type="image/webp" srcset="img/picture/partners/2.webp 1x, img/picture/partners/2@2x.webp 2x">
-                <img src="img/picture/partners/2.jpg" srcset="img/picture/partners/2@2x.jpg 2x" width="139" height="68" alt="christopher willis">
-              </picture>
-            </li>
-            <li class="partners__item col-auto">
-              <picture>
-                <source type="image/webp" srcset="img/picture/partners/3.webp 1x, img/picture/partners/3@2x.webp 2x">
-                <img src="img/picture/partners/3.jpg" srcset="img/picture/partners/3@2x.jpg 2x" width="150" height="45" alt="artchive crafts gallery">
-              </picture>
-            </li>
-            <li class="partners__item col-auto">
-              <picture>
-                <source type="image/webp" srcset="img/picture/partners/4.webp 1x, img/picture/partners/4@2x.webp 2x">
-                <img src="img/picture/partners/4.jpg" srcset="img/picture/partners/4@2x.jpg 2x" width="125" height="32" alt="artchive crasfts gallery">
-              </picture>
-            </li>
-          </ul>
-        </div>
-      </div>
+      </article>
     </main>
     <footer class="footer">
       <div class="footer__container container-fluid">
