@@ -15,7 +15,7 @@
   <!-- CSS-->
   <link rel="stylesheet" href="css/bootstrap-grid.min.css">
   <link rel="stylesheet" href="css/main.css">
-  <title>Centrix | Blog Listing</title>
+  <title>Centrix | About Us</title>
 </head>
 
 <body class="webpage">
@@ -97,9 +97,9 @@
     </svg>
   </div>
   <div class="animsition">
-    <header class="header header--secondary header--absolute">
+    <header class="header header--separator">
       <div class="header__container container-fluid">
-        <a class="header__logo logo">
+        <a class="header__logo logo" href="agency-default.html">
           <svg width="76" height="19">
             <use xlink:href="#logo"></use>
           </svg>
@@ -183,8 +183,8 @@
                   </ul>
                 </div>
               </li>
-              <li class="navigation__item">
-                <a class="navigation__link animsition-link" href="about-us.html">Pages<span class="navigation__link-icon">
+              <li class="navigation__item navigation__item--current">
+                <a class="navigation__link">Pages<span class="navigation__link-icon">
                     <svg width="12" height="13">
                       <use xlink:href="#link-arrow"></use>
                     </svg>
@@ -192,8 +192,8 @@
                 </a>
                 <div class="navigation__dropdown">
                   <ul class="navigation__dropdown-list">
-                    <li class="navigation__dropdown-item">
-                      <a class="animsition-link" href="about-us.html">About us<span class="navigation__dropdown-icon">
+                    <li class="navigation__dropdown-item navigation__dropdown-item--current">
+                      <a>About us<span class="navigation__dropdown-icon">
                           <svg width="12" height="13">
                             <use xlink:href="#link-arrow"></use>
                           </svg>
@@ -311,8 +311,8 @@
                   </ul>
                 </div>
               </li>
-              <li class="navigation__item navigation__item--current">
-                <a class="navigation__link" href="blog-masonry.html">Blog<span class="navigation__link-icon">
+              <li class="navigation__item">
+                <a class="navigation__link animsition-link" href="blog-masonry.html">Blog<span class="navigation__link-icon">
                     <svg width="12" height="13">
                       <use xlink:href="#link-arrow"></use>
                     </svg>
@@ -336,8 +336,8 @@
                         </span>
                       </a>
                     </li>
-                    <li class="navigation__dropdown-item navigation__dropdown-item--current">
-                      <a>Listing<span class="navigation__dropdown-icon">
+                    <li class="navigation__dropdown-item">
+                      <a class="animsition-link" href="blog-listing.html">Listing<span class="navigation__dropdown-icon">
                           <svg width="12" height="13">
                             <use xlink:href="#link-arrow"></use>
                           </svg>
@@ -365,7 +365,41 @@
               </li>
             </ul>
           </nav>
-          <a class="mobile-canvas__phone" href="tel:+34255216021">+ 3 (425) 521 60 21</a>
+          <!-- Social-->
+          <ul class="header__social social">
+            <li class="social__item">
+              <a class="social__link" href="#" target="_blank">
+                <svg width="20" height="20" aria-label="linkedin icon">
+                  <use xlink:href="#linkedin"></use>
+                </svg>
+                <span class="visually-hidden">linkedin</span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__link" href="#" target="_blank">
+                <svg width="20" height="20" aria-label="facebook icon">
+                  <use xlink:href="#facebook"></use>
+                </svg>
+                <span class="visually-hidden">facebook</span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__link" href="#" target="_blank">
+                <svg width="20" height="20" aria-label="instagram icon">
+                  <use xlink:href="#instagram"></use>
+                </svg>
+                <span class="visually-hidden">instagram</span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__link" href="#" target="_blank">
+                <svg width="20" height="20" aria-label="twitter icon">
+                  <use xlink:href="#twitter"></use>
+                </svg>
+                <span class="visually-hidden">twitter</span>
+              </a>
+            </li>
+          </ul>
         </div>
         <button class="header__menu-toggle menu-toggle" type="button">
           <span class="menu-toggle__line"></span>
@@ -374,158 +408,70 @@
       </div>
     </header>
     <main>
-      <article class="blog-grid blog-grid--listing">
-        <div class="blog-grid__first-screen">
-          <h1 class="heading heading--size-large blog-grid__title">Blog</h1>
-        </div>
-        <div class="container container--small blog-grid__container">
-          <!-- Filter news-->
-          <div class="filter blog-grid__filter">
-            <button class="filter__item filter__item--active __js_filter-btn" type="button" data-filter="*">all</button>
-            <button class="filter__item __js_filter-btn" type="button" data-filter=".__js_design">design</button>
-            <button class="filter__item __js_filter-btn" type="button" data-filter=".__js_marketing">marketing</button>
-            <button class="filter__item __js_filter-btn" type="button" data-filter=".__js_business">business</button>
-            <button class="filter__item __js_filter-btn" type="button" data-filter=".__js_photography">photography</button>
-          </div>
-          <ul class="row blog-grid__row __js_blog-grid">
-            <li class="news-card __js_masonry-item col-12 col-lg-4 col-md-6 __js_design __js_business">
-              <div class="news-card__wrapper">
-                <div class="news-card__pic">
-                  <img src="img/news/blog-5-2.jpg" srcset="img/news/blog-5-2@2x.jpg" alt="" />
+      <article class="single-project">
+        <div class="container single-project__container">
+          <section class="projects-listing">
+            <h1 class="visually-hidden">Projects</h1>
+            <ul class="projects-listing__list">
+              <li class="projects-listing__item project-card row g-0">
+                <a class="project-card__image col-12 col-md-8" href="#">
+                  <picture>
+                    <source type="image/webp" srcset="img/picture/vertical-projects/1.webp 1x, img/picture/vertical-projects/1@2x.webp 2x">
+                    <img src="img/picture/vertical-projects/1.jpg" srcset="img/picture/vertical-projects/1@2x.jpg 2x" width="785" height="747" alt="project photo">
+                  </picture>
+                </a>
+                <div class="project-card__main col-12 col-md-4 order-md-first">
+                  <div class="project-card__main-left">
+                    <h2 class="project-card__title">Nike Sneakers Photo</h2>
+                  </div>
+                  <a class="project-card__more arrow-link" href="#">
+                    <span class="arrow-link__icon">
+                      <svg width="75" height="75">
+                        <use xlink:href="#link-arrow"></use>
+                      </svg>
+                    </span>
+                  </a>
+                  <div class="project-card__text">
+                    Alienum phaedrum torquatos nec eu, detr periculis ex, nihil expetendis in mei. Mei an pericula euripidis hinc partem ei est. Eos ei nisl graecis, vix aperiri consequat an. Eius lorem tincidunt vix at, vel
+                    pertinax sensibus id, error epicurei mea et. Mea facilisis urbanitas moderatius id. Vis ei rationibus definiebas.
+                  </div>
                 </div>
-                <div class="news-card__content">
-                  <div class="news-card__top">
-                    <div class="news-card__date">
-                      <span>16</span>
-                      <span>&nbsp;</span>
-                      <span>Jan</span>
-                      <span>,&nbsp;</span>
-                      <span>2020</span>
-                      <span>&nbsp;/&nbsp;</span>
-                      <span>Design</span>
-                    </div>
-                    <div class="news-card__title">A few words
-                      <br> about us
-                    </div>
-                  </div>
-                  <div class="news-card__bottom">
-                    <div class="news-card__text">We make our customers &#39; products valuable in the eyes of customers. To do this, we analyze and study people,</div>
-                    <a class="arrow-link" href="#">
-                      <span class="arrow-link__icon">
-                        <svg width="75" height="75">
-                          <use xlink:href="#link-arrow"></use>
-                        </svg>
-                      </span>
-                    </a>
-                  </div>
+              </li>
+            </ul>
+          </section>
+          <section class="meta">
+            <div class="row">
+              <div class="meta__image col-12 col-md-4">
+                <img src="img/picture/single-project/1.jpg" srcset="img/picture/single-project/1@2x.jpg 2x" alt="">
+              </div>
+              <div class="meta__info col-12 col-md-8">
+                <div class="meta__info-item">
+                  <span>
+                    <span class="num">01.</span> Date
+                  </span>
+                  <span>15 January, 2021</span>
+                </div>
+                <div class="meta__info-item">
+                  <span>
+                    <span class="num">02.</span> Designer
+                  </span>
+                  <span>Paul</span>
+                </div>
+                <div class="meta__info-item">
+                  <span>
+                    <span class="num">03.</span> Client
+                  </span>
+                  <span>Themeforest</span>
+                </div>
+                <div class="meta__info-item">
+                  <span>
+                    <span class="num">04.</span> Project type
+                  </span>
+                  <span>Photography design</span>
                 </div>
               </div>
-            </li>
-            <li class="news-card __js_masonry-item col-12 col-lg-4 col-md-6 __js_design">
-              <div class="news-card__wrapper">
-                <div class="news-card__pic">
-                  <img src="img/news/blog-9-3.jpg" srcset="img/news/blog-9-3@2x.jpg" alt="" />
-                </div>
-                <div class="news-card__content">
-                  <div class="news-card__top">
-                    <div class="news-card__date">
-                      <span>16</span>
-                      <span>&nbsp;</span>
-                      <span>Jan</span>
-                      <span>,&nbsp;</span>
-                      <span>2020</span>
-                      <span>&nbsp;/&nbsp;</span>
-                      <span>Design</span>
-                    </div>
-                    <div class="news-card__title">A few words
-                      <br> about us
-                    </div>
-                  </div>
-                  <div class="news-card__bottom">
-                    <div class="news-card__text">We make our customers &#39; products valuable in the eyes of customers. To do this, we analyze and study people,</div>
-                    <a class="arrow-link" href="#">
-                      <span class="arrow-link__icon">
-                        <svg width="75" height="75">
-                          <use xlink:href="#link-arrow"></use>
-                        </svg>
-                      </span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li class="news-card __js_masonry-item col-12 col-lg-4 col-md-6 __js_marketing __js_design">
-              <div class="news-card__wrapper">
-                <div class="news-card__pic">
-                  <img src="img/news/blog-3-3.jpg" srcset="img/news/blog-3-3@2x.jpg" alt="" />
-                </div>
-                <div class="news-card__content">
-                  <div class="news-card__top">
-                    <div class="news-card__date">
-                      <span>16</span>
-                      <span>&nbsp;</span>
-                      <span>Jan</span>
-                      <span>,&nbsp;</span>
-                      <span>2020</span>
-                      <span>&nbsp;/&nbsp;</span>
-                      <span>Design</span>
-                    </div>
-                    <div class="news-card__title">A few words
-                      <br> about us
-                    </div>
-                  </div>
-                  <div class="news-card__bottom">
-                    <div class="news-card__text">We make our customers &#39; products valuable in the eyes of customers. To do this, we analyze and study people,</div>
-                    <a class="arrow-link" href="#">
-                      <span class="arrow-link__icon">
-                        <svg width="75" height="75">
-                          <use xlink:href="#link-arrow"></use>
-                        </svg>
-                      </span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li class="news-card __js_masonry-item col-12 col-lg-4 col-md-6 __js_photography __js_marketing">
-              <div class="news-card__wrapper">
-                <div class="news-card__pic">
-                  <img src="img/news/blog-8-2.jpg" srcset="img/news/blog-8-2@2x.jpg" alt="" />
-                </div>
-                <div class="news-card__content">
-                  <div class="news-card__top">
-                    <div class="news-card__date">
-                      <span>16</span>
-                      <span>&nbsp;</span>
-                      <span>Jan</span>
-                      <span>,&nbsp;</span>
-                      <span>2020</span>
-                      <span>&nbsp;/&nbsp;</span>
-                      <span>Design</span>
-                    </div>
-                    <div class="news-card__title">A few words
-                      <br> about us
-                    </div>
-                  </div>
-                  <div class="news-card__bottom">
-                    <div class="news-card__text">We make our customers &#39; products valuable in the eyes of customers. To do this, we analyze and study people,</div>
-                    <a class="arrow-link" href="#">
-                      <span class="arrow-link__icon">
-                        <svg width="75" height="75">
-                          <use xlink:href="#link-arrow"></use>
-                        </svg>
-                      </span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </li>
-          </ul>
-          <a class="blog-grid__more circle-link" href="#">
-            <svg width="30" height="32">
-              <use xlink:href="#arrow-down"></use>
-            </svg>
-          </a>
+            </div>
+          </section>
         </div>
       </article>
     </main>
@@ -547,8 +493,8 @@
                   <li class="footer__menu-item">
                     <a class="footer__menu-link" href="agency-default.html">Home</a>
                   </li>
-                  <li class="footer__menu-item">
-                    <a class="footer__menu-link" href="about-us.html">Pages</a>
+                  <li class="footer__menu-item footer__menu-item--current">
+                    <a class="footer__menu-link">Pages</a>
                   </li>
                   <li class="footer__menu-item">
                     <a class="footer__menu-link" href="blog-masonry.html">Blog</a>

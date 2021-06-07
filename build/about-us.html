@@ -15,7 +15,7 @@
   <!-- CSS-->
   <link rel="stylesheet" href="css/bootstrap-grid.min.css">
   <link rel="stylesheet" href="css/main.css">
-  <title>Centrix | Blog Listing</title>
+  <title>Centrix | About Us</title>
 </head>
 
 <body class="webpage">
@@ -97,9 +97,9 @@
     </svg>
   </div>
   <div class="animsition">
-    <header class="header header--secondary header--absolute">
+    <header class="header header--bg-white">
       <div class="header__container container-fluid">
-        <a class="header__logo logo">
+        <a class="header__logo logo" href="agency-default.html">
           <svg width="76" height="19">
             <use xlink:href="#logo"></use>
           </svg>
@@ -183,8 +183,8 @@
                   </ul>
                 </div>
               </li>
-              <li class="navigation__item">
-                <a class="navigation__link animsition-link" href="about-us.html">Pages<span class="navigation__link-icon">
+              <li class="navigation__item navigation__item--current">
+                <a class="navigation__link">Pages<span class="navigation__link-icon">
                     <svg width="12" height="13">
                       <use xlink:href="#link-arrow"></use>
                     </svg>
@@ -192,8 +192,8 @@
                 </a>
                 <div class="navigation__dropdown">
                   <ul class="navigation__dropdown-list">
-                    <li class="navigation__dropdown-item">
-                      <a class="animsition-link" href="about-us.html">About us<span class="navigation__dropdown-icon">
+                    <li class="navigation__dropdown-item navigation__dropdown-item--current">
+                      <a>About us<span class="navigation__dropdown-icon">
                           <svg width="12" height="13">
                             <use xlink:href="#link-arrow"></use>
                           </svg>
@@ -311,8 +311,8 @@
                   </ul>
                 </div>
               </li>
-              <li class="navigation__item navigation__item--current">
-                <a class="navigation__link" href="blog-masonry.html">Blog<span class="navigation__link-icon">
+              <li class="navigation__item">
+                <a class="navigation__link animsition-link" href="blog-masonry.html">Blog<span class="navigation__link-icon">
                     <svg width="12" height="13">
                       <use xlink:href="#link-arrow"></use>
                     </svg>
@@ -336,8 +336,8 @@
                         </span>
                       </a>
                     </li>
-                    <li class="navigation__dropdown-item navigation__dropdown-item--current">
-                      <a>Listing<span class="navigation__dropdown-icon">
+                    <li class="navigation__dropdown-item">
+                      <a class="animsition-link" href="blog-listing.html">Listing<span class="navigation__dropdown-icon">
                           <svg width="12" height="13">
                             <use xlink:href="#link-arrow"></use>
                           </svg>
@@ -365,7 +365,41 @@
               </li>
             </ul>
           </nav>
-          <a class="mobile-canvas__phone" href="tel:+34255216021">+ 3 (425) 521 60 21</a>
+          <!-- Social-->
+          <ul class="header__social social">
+            <li class="social__item">
+              <a class="social__link" href="#" target="_blank">
+                <svg width="20" height="20" aria-label="linkedin icon">
+                  <use xlink:href="#linkedin"></use>
+                </svg>
+                <span class="visually-hidden">linkedin</span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__link" href="#" target="_blank">
+                <svg width="20" height="20" aria-label="facebook icon">
+                  <use xlink:href="#facebook"></use>
+                </svg>
+                <span class="visually-hidden">facebook</span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__link" href="#" target="_blank">
+                <svg width="20" height="20" aria-label="instagram icon">
+                  <use xlink:href="#instagram"></use>
+                </svg>
+                <span class="visually-hidden">instagram</span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__link" href="#" target="_blank">
+                <svg width="20" height="20" aria-label="twitter icon">
+                  <use xlink:href="#twitter"></use>
+                </svg>
+                <span class="visually-hidden">twitter</span>
+              </a>
+            </li>
+          </ul>
         </div>
         <button class="header__menu-toggle menu-toggle" type="button">
           <span class="menu-toggle__line"></span>
@@ -374,159 +408,418 @@
       </div>
     </header>
     <main>
-      <article class="blog-grid blog-grid--listing">
-        <div class="blog-grid__first-screen">
-          <h1 class="heading heading--size-large blog-grid__title">Blog</h1>
-        </div>
-        <div class="container container--small blog-grid__container">
-          <!-- Filter news-->
-          <div class="filter blog-grid__filter">
-            <button class="filter__item filter__item--active __js_filter-btn" type="button" data-filter="*">all</button>
-            <button class="filter__item __js_filter-btn" type="button" data-filter=".__js_design">design</button>
-            <button class="filter__item __js_filter-btn" type="button" data-filter=".__js_marketing">marketing</button>
-            <button class="filter__item __js_filter-btn" type="button" data-filter=".__js_business">business</button>
-            <button class="filter__item __js_filter-btn" type="button" data-filter=".__js_photography">photography</button>
+      <article class="about-us">
+        <div class="first-banner about-us__banner">
+          <div class="first-banner__image">
+            <img src="img/banner-about.jpg" srcset="img/banner-about@2x.jpg 2x" alt="" />
           </div>
-          <ul class="row blog-grid__row __js_blog-grid">
-            <li class="news-card __js_masonry-item col-12 col-lg-4 col-md-6 __js_design __js_business">
-              <div class="news-card__wrapper">
-                <div class="news-card__pic">
-                  <img src="img/news/blog-5-2.jpg" srcset="img/news/blog-5-2@2x.jpg" alt="" />
-                </div>
-                <div class="news-card__content">
-                  <div class="news-card__top">
-                    <div class="news-card__date">
-                      <span>16</span>
-                      <span>&nbsp;</span>
-                      <span>Jan</span>
-                      <span>,&nbsp;</span>
-                      <span>2020</span>
-                      <span>&nbsp;/&nbsp;</span>
-                      <span>Design</span>
-                    </div>
-                    <div class="news-card__title">A few words
-                      <br> about us
-                    </div>
-                  </div>
-                  <div class="news-card__bottom">
-                    <div class="news-card__text">We make our customers &#39; products valuable in the eyes of customers. To do this, we analyze and study people,</div>
-                    <a class="arrow-link" href="#">
-                      <span class="arrow-link__icon">
-                        <svg width="75" height="75">
-                          <use xlink:href="#link-arrow"></use>
-                        </svg>
-                      </span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li class="news-card __js_masonry-item col-12 col-lg-4 col-md-6 __js_design">
-              <div class="news-card__wrapper">
-                <div class="news-card__pic">
-                  <img src="img/news/blog-9-3.jpg" srcset="img/news/blog-9-3@2x.jpg" alt="" />
-                </div>
-                <div class="news-card__content">
-                  <div class="news-card__top">
-                    <div class="news-card__date">
-                      <span>16</span>
-                      <span>&nbsp;</span>
-                      <span>Jan</span>
-                      <span>,&nbsp;</span>
-                      <span>2020</span>
-                      <span>&nbsp;/&nbsp;</span>
-                      <span>Design</span>
-                    </div>
-                    <div class="news-card__title">A few words
-                      <br> about us
-                    </div>
-                  </div>
-                  <div class="news-card__bottom">
-                    <div class="news-card__text">We make our customers &#39; products valuable in the eyes of customers. To do this, we analyze and study people,</div>
-                    <a class="arrow-link" href="#">
-                      <span class="arrow-link__icon">
-                        <svg width="75" height="75">
-                          <use xlink:href="#link-arrow"></use>
-                        </svg>
-                      </span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li class="news-card __js_masonry-item col-12 col-lg-4 col-md-6 __js_marketing __js_design">
-              <div class="news-card__wrapper">
-                <div class="news-card__pic">
-                  <img src="img/news/blog-3-3.jpg" srcset="img/news/blog-3-3@2x.jpg" alt="" />
-                </div>
-                <div class="news-card__content">
-                  <div class="news-card__top">
-                    <div class="news-card__date">
-                      <span>16</span>
-                      <span>&nbsp;</span>
-                      <span>Jan</span>
-                      <span>,&nbsp;</span>
-                      <span>2020</span>
-                      <span>&nbsp;/&nbsp;</span>
-                      <span>Design</span>
-                    </div>
-                    <div class="news-card__title">A few words
-                      <br> about us
-                    </div>
-                  </div>
-                  <div class="news-card__bottom">
-                    <div class="news-card__text">We make our customers &#39; products valuable in the eyes of customers. To do this, we analyze and study people,</div>
-                    <a class="arrow-link" href="#">
-                      <span class="arrow-link__icon">
-                        <svg width="75" height="75">
-                          <use xlink:href="#link-arrow"></use>
-                        </svg>
-                      </span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li class="news-card __js_masonry-item col-12 col-lg-4 col-md-6 __js_photography __js_marketing">
-              <div class="news-card__wrapper">
-                <div class="news-card__pic">
-                  <img src="img/news/blog-8-2.jpg" srcset="img/news/blog-8-2@2x.jpg" alt="" />
-                </div>
-                <div class="news-card__content">
-                  <div class="news-card__top">
-                    <div class="news-card__date">
-                      <span>16</span>
-                      <span>&nbsp;</span>
-                      <span>Jan</span>
-                      <span>,&nbsp;</span>
-                      <span>2020</span>
-                      <span>&nbsp;/&nbsp;</span>
-                      <span>Design</span>
-                    </div>
-                    <div class="news-card__title">A few words
-                      <br> about us
-                    </div>
-                  </div>
-                  <div class="news-card__bottom">
-                    <div class="news-card__text">We make our customers &#39; products valuable in the eyes of customers. To do this, we analyze and study people,</div>
-                    <a class="arrow-link" href="#">
-                      <span class="arrow-link__icon">
-                        <svg width="75" height="75">
-                          <use xlink:href="#link-arrow"></use>
-                        </svg>
-                      </span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </li>
-          </ul>
-          <a class="blog-grid__more circle-link" href="#">
-            <svg width="30" height="32">
-              <use xlink:href="#arrow-down"></use>
-            </svg>
-          </a>
+          <h1 class="heading heading--size-large blog-grid__title">We create
+            <br>
+            <span>digital</span> products
+          </h1>
         </div>
+        <section class="about-video-section about-us__stat">
+          <div class="about-video-section__container container-fluid">
+            <div class="row">
+              <div class="about-video-section__main col-12 col-md">
+                <div class="about-video-section__title">Our team consists of practitioners who have 15 years of experience in launching and managing projects.
+                  <br> worked with a wide array of clients across the globe to
+                  <br> apply design fundamentals of elegance, simplicity
+                </div>
+                <div class="row align-items-end">
+                  <div class="col-4 col-md-5 col-xl-4">
+                    <a class="about-video-section__more arrow-link" href="about-us.html">
+                      <span class="arrow-link__text">About us</span>
+                      <span class="arrow-link__icon">
+                        <svg width="75" height="75">
+                          <use xlink:href="#link-arrow"></use>
+                        </svg>
+                      </span>
+                    </a>
+                  </div>
+                  <div class="col-8 col-md-7 col-xl-8">
+                    <div class="about-video-section__text">We make our customers ' products valuable in the eyes of customers. To do this, we analyze and study people, build long-term strategies for interacting with them, develop creative ideas and create a bright design. We use all opportunities to solve business problems.</div>
+                  </div>
+                </div>
+              </div>
+              <div class="about-video-section__aside col-12 col-md order-first order-md-0">
+                <div class="about-video-section__video video-block">
+                  <img src="img/picture/common/poster.jpg" srcset="img/picture/common/poster@2x.jpg 2x" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="about-video-section__statistics statistics">
+            <div class="statistics__container container-fluid">
+              <div class="row justify-content-between">
+                <div class="statistics__item col-auto">
+                  <div class="statistics__item-value">
+                    <span class="__js_number" data-end-value="25">0</span>
+                  </div>
+                  <div class="statistics__item-text">managers</div>
+                </div>
+                <div class="statistics__item col-auto">
+                  <div class="statistics__item-value">
+                    <span class="__js_number" data-end-value="200">0</span>
+                  </div>
+                  <div class="statistics__item-text">the person
+                    <br>in the team
+                  </div>
+                </div>
+                <div class="statistics__item col-auto">
+                  <div class="statistics__item-value">
+                    <span class="__js_number" data-end-value="15">0</span>
+                  </div>
+                  <div class="statistics__item-text">Years
+                    <br>experience
+                  </div>
+                </div>
+                <div class="statistics__item col-auto">
+                  <div class="statistics__item-value">
+                    <span class="__js_number" data-end-value="7">0</span>
+                  </div>
+                  <div class="statistics__item-text">awards and
+                    <br>accolades
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="our-services about-us__services">
+          <div class="our-services__container container-fluid">
+            <header class="our-services__header">
+              <div class="row">
+                <div class="col-5">
+                  <h2 class="our-services__title">Our services</h2>
+                </div>
+                <div class="col-7 align-self-end align-self-start text-right">
+                  <a class="our-services__more arrow-link--white arrow-link" href="services.html">
+                    <span class="arrow-link__text">View all</span>
+                    <span class="arrow-link__icon">
+                      <svg width="75" height="75">
+                        <use xlink:href="#link-arrow"></use>
+                      </svg>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </header>
+            <div class="our-services__accordion accordion">
+              <div class="accordion__item">
+                <button class="accordion__item-header" type="button">
+                  <div class="row align-items-md-center">
+                    <div class="accordion__item-title col-11 col-md-6">Design</div>
+                    <div class="accordion__item-short col-11 col-md-5">Our intelligent digital strategy and a pragmatic and thoughtful approach to solving business calls deliver a successful framework for both you and your audience.</div>
+                  </div>
+                </button>
+                <div class="accordion__item-body">
+                  <div class="row">
+                    <div class="accordion__item-left col-12 col-md-6">
+                      <picture>
+                        <source type="image/webp" srcset="img/picture/home/accordion-large.webp 1x, img/picture/home/accordion-large@2x.webp 2x">
+                        <!-- 1х: 810px; 2x: 1620px-->
+                        <img src="img/picture/home/accordion-large.jpg" srcset="img/picture/home/accordion-large@2x.jpg 2x" width="810" height="530" alt="Concept">
+                      </picture>
+                    </div>
+                    <div class="accordion__item-right col-12 col-md-6">
+                      <picture>
+                        <source type="image/webp" srcset="img/picture/home/accordion-small.webp 1x, img/picture/home/accordion-small@2x.webp 2x">
+                        <!-- 1х: 348px; 2x: 696px-->
+                        <img src="img/picture/home/accordion-small.jpg" srcset="img/picture/home/accordion-small@2x.jpg 2x" width="348" height="287" alt="Concept">
+                      </picture>
+                      <div class="accordion__item-text">In the design process, they create both functional and beautiful things. The team possesses unique individuality and strong qualifications and can easily translate something so abstract and visionary into a digital experience. They always put the clients first no matter how complicated the tasks are.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion__item">
+                <button class="accordion__item-header" type="button">
+                  <div class="row align-items-md-center">
+                    <div class="accordion__item-title col-11 col-md-6">Development</div>
+                    <div class="accordion__item-short col-11 col-md-5">We make our customers ' products valuable in the eyes of customers. To do this, we analyze and study people, build long-term strategies for interacting with them, develop creative ideas and create a bright design.</div>
+                  </div>
+                </button>
+                <div class="accordion__item-body">
+                  <div class="row">
+                    <div class="accordion__item-left col-12 col-md-6">
+                      <picture>
+                        <source type="image/webp" srcset="img/picture/home/accordion-large.webp 1x, img/picture/home/accordion-large@2x.webp 2x">
+                        <!-- 1х: 810px; 2x: 1620px-->
+                        <img src="img/picture/home/accordion-large.jpg" srcset="img/picture/home/accordion-large@2x.jpg 2x" width="810" height="530" alt="Concept">
+                      </picture>
+                    </div>
+                    <div class="accordion__item-right col-12 col-md-6">
+                      <picture>
+                        <source type="image/webp" srcset="img/picture/home/accordion-small.webp 1x, img/picture/home/accordion-small@2x.webp 2x">
+                        <!-- 1х: 348px; 2x: 696px-->
+                        <img src="img/picture/home/accordion-small.jpg" srcset="img/picture/home/accordion-small@2x.jpg 2x" width="348" height="287" alt="Concept">
+                      </picture>
+                      <div class="accordion__item-text">In the design process, they create both functional and beautiful things. The team possesses unique individuality and strong qualifications and can easily translate something so abstract and visionary into a digital experience. They always put the clients first no matter how complicated the tasks are.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion__item">
+                <button class="accordion__item-header" type="button">
+                  <div class="row align-items-md-center">
+                    <div class="accordion__item-title col-11 col-md-6">Graphic</div>
+                    <div class="accordion__item-short col-11 col-md-5">We use all opportunities to solve business problems. Our intelligent digital strategy and a pragmatic and thoughtful approach to solving business calls deliver a successful framework for both you and your audience.</div>
+                  </div>
+                </button>
+                <div class="accordion__item-body">
+                  <div class="row">
+                    <div class="accordion__item-left col-12 col-md-6">
+                      <picture>
+                        <source type="image/webp" srcset="img/picture/home/accordion-large.webp 1x, img/picture/home/accordion-large@2x.webp 2x">
+                        <!-- 1х: 810px; 2x: 1620px-->
+                        <img src="img/picture/home/accordion-large.jpg" srcset="img/picture/home/accordion-large@2x.jpg 2x" width="810" height="530" alt="Concept">
+                      </picture>
+                    </div>
+                    <div class="accordion__item-right col-12 col-md-6">
+                      <picture>
+                        <source type="image/webp" srcset="img/picture/home/accordion-small.webp 1x, img/picture/home/accordion-small@2x.webp 2x">
+                        <!-- 1х: 348px; 2x: 696px-->
+                        <img src="img/picture/home/accordion-small.jpg" srcset="img/picture/home/accordion-small@2x.jpg 2x" width="348" height="287" alt="Concept">
+                      </picture>
+                      <div class="accordion__item-text">In the design process, they create both functional and beautiful things. The team possesses unique individuality and strong qualifications and can easily translate something so abstract and visionary into a digital experience. They always put the clients first no matter how complicated the tasks are.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion__item">
+                <button class="accordion__item-header" type="button">
+                  <div class="row align-items-md-center">
+                    <div class="accordion__item-title col-11 col-md-6">Wordpress</div>
+                    <div class="accordion__item-short col-11 col-md-5">Our intelligent digital strategy and a pragmatic and thoughtful approach to solving business calls deliver a successful framework for both you and your audience.</div>
+                  </div>
+                </button>
+                <div class="accordion__item-body">
+                  <div class="row">
+                    <div class="accordion__item-left col-12 col-md-6">
+                      <picture>
+                        <source type="image/webp" srcset="img/picture/home/accordion-large.webp 1x, img/picture/home/accordion-large@2x.webp 2x">
+                        <!-- 1х: 810px; 2x: 1620px-->
+                        <img src="img/picture/home/accordion-large.jpg" srcset="img/picture/home/accordion-large@2x.jpg 2x" width="810" height="530" alt="Concept">
+                      </picture>
+                    </div>
+                    <div class="accordion__item-right col-12 col-md-6">
+                      <picture>
+                        <source type="image/webp" srcset="img/picture/home/accordion-small.webp 1x, img/picture/home/accordion-small@2x.webp 2x">
+                        <!-- 1х: 348px; 2x: 696px-->
+                        <img src="img/picture/home/accordion-small.jpg" srcset="img/picture/home/accordion-small@2x.jpg 2x" width="348" height="287" alt="Concept">
+                      </picture>
+                      <div class="accordion__item-text">In the design process, they create both functional and beautiful things. The team possesses unique individuality and strong qualifications and can easily translate something so abstract and visionary into a digital experience. They always put the clients first no matter how complicated the tasks are.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="partners about-us__partners">
+          <div class="partners__container container">
+            <ul class="partners__list row justify-content-between align-items-center">
+              <li class="partners__item col-auto">
+                <picture>
+                  <source type="image/webp" srcset="img/picture/partners/1.webp 1x, img/picture/partners/1@2x.webp 2x">
+                  <img src="img/picture/partners/1.jpg" srcset="img/picture/partners/1@2x.jpg 2x" width="117" height="47" alt="behr handelsagentur">
+                </picture>
+              </li>
+              <li class="partners__item col-auto">
+                <picture>
+                  <source type="image/webp" srcset="img/picture/partners/2.webp 1x, img/picture/partners/2@2x.webp 2x">
+                  <img src="img/picture/partners/2.jpg" srcset="img/picture/partners/2@2x.jpg 2x" width="139" height="68" alt="christopher willis">
+                </picture>
+              </li>
+              <li class="partners__item col-auto">
+                <picture>
+                  <source type="image/webp" srcset="img/picture/partners/3.webp 1x, img/picture/partners/3@2x.webp 2x">
+                  <img src="img/picture/partners/3.jpg" srcset="img/picture/partners/3@2x.jpg 2x" width="150" height="45" alt="artchive crafts gallery">
+                </picture>
+              </li>
+              <li class="partners__item col-auto">
+                <picture>
+                  <source type="image/webp" srcset="img/picture/partners/4.webp 1x, img/picture/partners/4@2x.webp 2x">
+                  <img src="img/picture/partners/4.jpg" srcset="img/picture/partners/4@2x.jpg 2x" width="125" height="32" alt="artchive crasfts gallery">
+                </picture>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <section class="team-section team-section--pb-0 about-us__team-section">
+          <div class="team-section__container container-fluid">
+            <h2 class="team-section__title">Our magic team</h2>
+            <div class="team-section__grid swiper-container __js_team-carousel-only-mobile">
+              <div class="swiper-wrapper">
+                <div class="team-section__item swiper-slide">
+                  <div class="member-card">
+                    <div class="member-card__image">
+                      <picture>
+                        <source type="image/webp" srcset="img/picture/team/1.webp 1x, img/picture/team/1@2x.webp 2x">
+                        <img src="img/picture/team/1.jpg" srcset="img/picture/team/1@2x.jpg 2x" width="385" height="548" alt="Sam Flex photo">
+                      </picture>
+                    </div>
+                    <div class="member-card__info">
+                      <div class="member-card__title">Sam Flex</div>
+                      <div class="member-card__post">Director</div>
+                      <!-- Social-->
+                      <ul class="member-card__social social--hover-secondary social">
+                        <li class="social__item">
+                          <a class="social__link" href="#" target="_blank">
+                            <svg width="20" height="20" aria-label="linkedin icon">
+                              <use xlink:href="#linkedin"></use>
+                            </svg>
+                            <span class="visually-hidden">linkedin</span>
+                          </a>
+                        </li>
+                        <li class="social__item">
+                          <a class="social__link" href="#" target="_blank">
+                            <svg width="20" height="20" aria-label="facebook icon">
+                              <use xlink:href="#facebook"></use>
+                            </svg>
+                            <span class="visually-hidden">facebook</span>
+                          </a>
+                        </li>
+                        <li class="social__item">
+                          <a class="social__link" href="#" target="_blank">
+                            <svg width="20" height="20" aria-label="twitter icon">
+                              <use xlink:href="#twitter"></use>
+                            </svg>
+                            <span class="visually-hidden">twitter</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="team-section__item swiper-slide">
+                  <div class="member-card">
+                    <div class="member-card__image">
+                      <picture>
+                        <source type="image/webp" srcset="img/picture/team/2.webp 1x, img/picture/team/2@2x.webp 2x">
+                        <img src="img/picture/team/2.jpg" srcset="img/picture/team/2@2x.jpg 2x" width="355" height="241" alt="Kate Larson photo">
+                      </picture>
+                    </div>
+                    <div class="member-card__info">
+                      <div class="member-card__title">Kate Larson</div>
+                      <div class="member-card__post">Manager</div>
+                      <!-- Social-->
+                      <ul class="member-card__social social--hover-secondary social">
+                        <li class="social__item">
+                          <a class="social__link" href="#" target="_blank">
+                            <svg width="20" height="20" aria-label="linkedin icon">
+                              <use xlink:href="#linkedin"></use>
+                            </svg>
+                            <span class="visually-hidden">linkedin</span>
+                          </a>
+                        </li>
+                        <li class="social__item">
+                          <a class="social__link" href="#" target="_blank">
+                            <svg width="20" height="20" aria-label="facebook icon">
+                              <use xlink:href="#facebook"></use>
+                            </svg>
+                            <span class="visually-hidden">facebook</span>
+                          </a>
+                        </li>
+                        <li class="social__item">
+                          <a class="social__link" href="#" target="_blank">
+                            <svg width="20" height="20" aria-label="twitter icon">
+                              <use xlink:href="#twitter"></use>
+                            </svg>
+                            <span class="visually-hidden">twitter</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="team-section__item swiper-slide">
+                  <div class="member-card">
+                    <div class="member-card__image">
+                      <picture>
+                        <source type="image/webp" srcset="img/picture/team/3.webp 1x, img/picture/team/3@2x.webp 2x">
+                        <img src="img/picture/team/3.jpg" srcset="img/picture/team/3@2x.jpg 2x" width="474" height="450" alt="Bobby Fish photo">
+                      </picture>
+                    </div>
+                    <div class="member-card__info">
+                      <div class="member-card__title">Bobby Fish</div>
+                      <div class="member-card__post">Designer</div>
+                      <!-- Social-->
+                      <ul class="member-card__social social--hover-secondary social">
+                        <li class="social__item">
+                          <a class="social__link" href="#" target="_blank">
+                            <svg width="20" height="20" aria-label="linkedin icon">
+                              <use xlink:href="#linkedin"></use>
+                            </svg>
+                            <span class="visually-hidden">linkedin</span>
+                          </a>
+                        </li>
+                        <li class="social__item">
+                          <a class="social__link" href="#" target="_blank">
+                            <svg width="20" height="20" aria-label="facebook icon">
+                              <use xlink:href="#facebook"></use>
+                            </svg>
+                            <span class="visually-hidden">facebook</span>
+                          </a>
+                        </li>
+                        <li class="social__item">
+                          <a class="social__link" href="#" target="_blank">
+                            <svg width="20" height="20" aria-label="twitter icon">
+                              <use xlink:href="#twitter"></use>
+                            </svg>
+                            <span class="visually-hidden">twitter</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="team-section__item swiper-slide">
+                  <div class="member-card">
+                    <div class="member-card__image">
+                      <picture>
+                        <source type="image/webp" srcset="img/picture/team/4.webp 1x, img/picture/team/4@2x.webp 2x">
+                        <img src="img/picture/team/4.jpg" srcset="img/picture/team/4@2x.jpg 2x" width="326" height="548" alt="Amanda James photo">
+                      </picture>
+                    </div>
+                    <div class="member-card__info">
+                      <div class="member-card__title">Amanda James</div>
+                      <div class="member-card__post">Programmer</div>
+                      <!-- Social-->
+                      <ul class="member-card__social social--hover-secondary social">
+                        <li class="social__item">
+                          <a class="social__link" href="#" target="_blank">
+                            <svg width="20" height="20" aria-label="linkedin icon">
+                              <use xlink:href="#linkedin"></use>
+                            </svg>
+                            <span class="visually-hidden">linkedin</span>
+                          </a>
+                        </li>
+                        <li class="social__item">
+                          <a class="social__link" href="#" target="_blank">
+                            <svg width="20" height="20" aria-label="facebook icon">
+                              <use xlink:href="#facebook"></use>
+                            </svg>
+                            <span class="visually-hidden">facebook</span>
+                          </a>
+                        </li>
+                        <li class="social__item">
+                          <a class="social__link" href="#" target="_blank">
+                            <svg width="20" height="20" aria-label="twitter icon">
+                              <use xlink:href="#twitter"></use>
+                            </svg>
+                            <span class="visually-hidden">twitter</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </article>
     </main>
     <footer class="footer">
@@ -547,8 +840,8 @@
                   <li class="footer__menu-item">
                     <a class="footer__menu-link" href="agency-default.html">Home</a>
                   </li>
-                  <li class="footer__menu-item">
-                    <a class="footer__menu-link" href="about-us.html">Pages</a>
+                  <li class="footer__menu-item footer__menu-item--current">
+                    <a class="footer__menu-link">Pages</a>
                   </li>
                   <li class="footer__menu-item">
                     <a class="footer__menu-link" href="blog-masonry.html">Blog</a>

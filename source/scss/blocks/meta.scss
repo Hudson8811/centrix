@@ -1,0 +1,29 @@
+.meta {
+	padding: 93px 0 80px;
+
+	&__info {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+	}
+
+	&__info-item {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		align-self: flex-end;
+		max-width: 785px;
+		width: 100%;
+		padding: 10px 0;
+		border-bottom: 1px solid $color-default-black;
+
+		span {
+			font-size: 20px;
+			line-height: 140%;
+
+			&.num {
+				padding-right: 10px;
+			}
+		}
+	}
+}

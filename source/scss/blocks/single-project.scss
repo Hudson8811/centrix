@@ -1,0 +1,35 @@
+.single-project {
+	&__container {
+		padding: 60px 15px 100px;
+	}
+
+	.projects-listing {
+
+	}
+
+	.project-card {
+		.arrow-link__icon {
+			margin: 85px 0 40px 0;
+		}
+
+		&__main {
+			justify-content: flex-start;
+		}
+
+		&__image {
+			display: flex;
+			justify-content: flex-end;
+			height: 747px;
+
+			@include hover {
+				img {
+					transform: none;
+				}
+			}
+		}
+
+		&__text {
+			margin-top: auto;
+		}
+	}
+}
