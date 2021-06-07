@@ -1619,6 +1619,72 @@ a:hover, a:focus {
   }
 }
 
+/* Service preview card */
+.service-preview {
+  position: relative;
+  display: block;
+}
+
+@media (min-width: 992px) {
+  .service-preview {
+    display: inline-block;
+    vertical-align: top;
+  }
+}
+
+.service-preview:focus {
+  outline: none;
+}
+
+@media (min-width: 992px) {
+  .service-preview:hover .service-preview__caption, .service-preview:focus .service-preview__caption {
+    color: #000000;
+    background-color: #fffe55;
+  }
+}
+
+.service-preview img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (min-width: 992px) {
+  .service-preview img {
+    display: inline-block;
+    vertical-align: top;
+    width: auto;
+    max-width: 100%;
+  }
+}
+
+.service-preview__caption {
+  display: block;
+  padding: 32px 45px 38px;
+  font-size: 26px;
+  line-height: 1.30769;
+  color: #ffffff;
+  text-transform: uppercase;
+  background-color: #000000;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.service-preview__caption br {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .service-preview__caption {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+  .service-preview__caption br {
+    display: block;
+  }
+}
+
 /* Carousel card */
 .carousel-card {
   position: relative;
@@ -5407,6 +5473,60 @@ a:hover, a:focus {
   }
 }
 
+/* Grid in services page */
+.services__item {
+  margin-top: 40px;
+}
+
+@media (min-width: 992px) {
+  .services__item {
+    margin-top: 120px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .services__item {
+    margin-top: 263px;
+  }
+}
+
+@media (min-width: 992px) {
+  .services__item--first {
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .services__item--first {
+    padding-left: 55px;
+    padding-right: 9px;
+  }
+}
+
+@media (min-width: 992px) {
+  .services__item--margin-negative {
+    margin-top: -40px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .services__item--left-shift {
+    padding-left: 7.03125vw;
+  }
+}
+
+@media (min-width: 1920px) {
+  .services__item--left-shift {
+    padding-left: 135px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .services__item--last {
+    padding-left: 50px;
+  }
+}
+
 /* 2.2 Header */
 .header {
   position: relative;
@@ -5623,8 +5743,8 @@ a:hover, a:focus {
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  width: 100%;
-  max-width: 1726px;
+  width: calc(100% - 24px);
+  max-width: 1720px;
   border-top: solid 1px #000000;
 }
 
@@ -6246,6 +6366,7 @@ a:hover, a:focus {
 }
 
 .article__text {
+  max-width: 420px;
   font-size: 16px;
   line-height: 1.27273;
   color: #000000;

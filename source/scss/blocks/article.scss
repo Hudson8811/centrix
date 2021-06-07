@@ -36,6 +36,8 @@
 	}
 
 	&__text {
+		max-width: 420px;
+
 		@include text(16px, 28 / 22, $color-default-black);
 
 		@include media(md) {

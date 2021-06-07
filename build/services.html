@@ -15,10 +15,10 @@
   <!-- CSS-->
   <link rel="stylesheet" href="css/bootstrap-grid.min.css">
   <link rel="stylesheet" href="css/main.css">
-  <title>Centrix | Contact</title>
+  <title>Centrix | Services</title>
 </head>
 
-<body class="webpage">
+<body class="webpage webpage--bg-smoky">
   <div style="display: none">
     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
       <symbol id="close" viewBox="0 0 64 64">
@@ -97,7 +97,7 @@
     </svg>
   </div>
   <div class="animsition">
-    <header class="header header--bg-white header--separator">
+    <header class="header header--absolute header--separator">
       <div class="header__container container-fluid">
         <a class="header__logo logo" href="agency-default.html">
           <svg width="76" height="19">
@@ -200,8 +200,8 @@
                         </span>
                       </a>
                     </li>
-                    <li class="navigation__dropdown-item">
-                      <a class="animsition-link" href="services.html">Services<span class="navigation__dropdown-icon">
+                    <li class="navigation__dropdown-item navigation__dropdown-item--current">
+                      <a>Services<span class="navigation__dropdown-icon">
                           <svg width="12" height="13">
                             <use xlink:href="#link-arrow"></use>
                           </svg>
@@ -240,8 +240,8 @@
                         </span>
                       </a>
                     </li>
-                    <li class="navigation__dropdown-item navigation__dropdown-item--current">
-                      <a>Contact<span class="navigation__dropdown-icon">
+                    <li class="navigation__dropdown-item">
+                      <a class="animsition-link" href="contact.html">Contact<span class="navigation__dropdown-icon">
                           <svg width="12" height="13">
                             <use xlink:href="#link-arrow"></use>
                           </svg>
@@ -408,66 +408,57 @@
       </div>
     </header>
     <main>
-      <article class="contact">
-        <section class="contact-section">
-          <div class="contact-section__container container-fluid">
-            <div class="row">
-              <div class="contact-section__main col-12 col-md">
-                <h2 class="contact-section__title">Contact</h2>
-                <address class="contact-section__address">269 King Str, 05th Floor, Utral Hosue Building, Melbourne, VIC 3000, Australia.</address>
-                <div class="contact-section__link">
-                  <a href="tel:+34255216021">+3 (425) 521 60 21</a>
-                </div>
-                <div class="contact-section__link">
-                  <a href="mailto:info@centrix.com">info@centrix.com</a>
-                </div>
-                <ul class="contact-section__social">
-                  <li>
-                    <a href="#">Facebook</a>
-                  </li>
-                  <li>
-                    <a href="#">Twitter</a>
-                  </li>
-                  <li>
-                    <a href="#">Instagram</a>
-                  </li>
-                  <li>
-                    <a href="#">LinkedIn</a>
-                  </li>
-                </ul>
-              </div>
-              <div class="contact-section__aside col-12 col-md">
-                <div class="contact-section__form-wrapper">
-                  <form action="#" method="post">
-                    <label class="contact-section__field field">
-                      <input type="text" name="name">
-                      <span class="field__hint">Name</span>
-                    </label>
-                    <label class="contact-section__field field">
-                      <input type="email" name="email">
-                      <span class="field__hint">Email</span>
-                    </label>
-                    <label class="contact-section__field contact-section__field--textarea field">
-                      <textarea name="message" required></textarea>
-                      <span class="field__hint">Message*</span>
-                    </label>
-                    <button class="btn--black contact-section__send btn" type="submit">
-                      <span class="btn__text">Submit</span>
-                      <span class="btn__icon">
-                        <svg width="19" height="19">
-                          <use xlink:href="#link-arrow"></use>
-                        </svg>
-                      </span>
-                    </button>
-                  </form>
-                </div>
-              </div>
+      <article class="article services">
+        <div class="article__container container-fluid">
+          <div class="row">
+            <header class="article__header col-12 col-lg-7 col-xl-6">
+              <h1 class="article__title">Our
+                <br>services
+              </h1>
+              <div class="article__text">In the design process, they create both functional and beautiful things. The team possesses unique</div>
+            </header>
+            <div class="services__item services__item--first col-12 col-sm-6 col-lg-5 col-xl-6">
+              <a class="service-preview" href="service-detail.html">
+                <picture>
+                  <source type="image/webp" srcset="img/picture/services/1.webp 1x, img/picture/services/1@2x.webp 2x">
+                  <img src="img/picture/services/1.jpg" srcset="img/picture/services/1@2x.jpg 2x" width="810" height="783" alt="Photography &lt;br&gt;&amp; Illustration">
+                </picture>
+                <span class="service-preview__caption">Photography
+                  <br>& Illustration
+                </span>
+              </a>
+            </div>
+            <div class="services__item services__item--margin-negative col-12 col-sm-6 col-lg-4">
+              <a class="service-preview" href="service-detail.html">
+                <picture>
+                  <source type="image/webp" srcset="img/picture/services/2.webp 1x, img/picture/services/2@2x.webp 2x">
+                  <img src="img/picture/services/2.jpg" srcset="img/picture/services/2@2x.jpg 2x" width="410" height="490" alt="Mobile &lt;br&gt;apps design">
+                </picture>
+                <span class="service-preview__caption">Mobile
+                  <br>apps design
+                </span>
+              </a>
+            </div>
+            <div class="services__item services__item--left-shift col-12 col-sm-6 col-lg-8">
+              <a class="service-preview" href="service-detail.html">
+                <picture>
+                  <source type="image/webp" srcset="img/picture/services/3.webp 1x, img/picture/services/3@2x.webp 2x">
+                  <img src="img/picture/services/3.jpg" srcset="img/picture/services/3@2x.jpg 2x" width="616" height="496" alt="Web development">
+                </picture>
+                <span class="service-preview__caption">Web development</span>
+              </a>
+            </div>
+            <div class="services__item services__item--last col-12 col-sm-6 col-lg-10 offset-lg-1">
+              <a class="service-preview" href="service-detail.html">
+                <picture>
+                  <source type="image/webp" srcset="img/picture/services/4.webp 1x, img/picture/services/4@2x.webp 2x">
+                  <img src="img/picture/services/4.jpg" srcset="img/picture/services/4@2x.jpg 2x" width="1238" height="527" alt="Marketing">
+                </picture>
+                <span class="service-preview__caption">Marketing</span>
+              </a>
             </div>
           </div>
-          <div class="contact-section__map">
-            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A351063e7db352f0133fe8dca1724bd5b8208d2a14e4ca511a12b61acfa0179d0&amp;source=constructor" width="100%" height="100%" frameborder="0"></iframe>
-          </div>
-        </section>
+        </div>
       </article>
     </main>
     <footer class="footer">
