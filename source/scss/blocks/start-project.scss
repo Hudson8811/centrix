@@ -19,6 +19,10 @@
 
 	&__container {
 		max-width: $width--full;
+
+		&--small {
+			max-width: $width--middle;
+		}
 	}
 
 	&__title {
@@ -49,15 +53,31 @@
 			@include fluid-font-size(150px, 209px, 1200px, 1920px, 180px);
 		}
 
-		&--size-small {
+		&--size-middle {
 			text-transform: inherit;
 
 			@include media(lg) {
-				max-width: 520px;
 				font-size: 140px !important;
+				//max-width: 520px;
 			}
 			@include media(xl) {
 				margin-bottom: 163px;
+			}
+		}
+
+		&--size-small {
+			text-transform: inherit;
+
+			@include media(md) {
+				margin-bottom: 84px;
+				font-size: 100px !important;
+			}
+
+			@include media(lg) {
+				max-width: 520px;
+			}
+			@include media(xl) {
+				//margin-bottom: 163px;
 				//font-size: 140px !important;
 			}
 		}

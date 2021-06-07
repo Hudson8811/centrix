@@ -1,0 +1,18 @@
+section.tooltip.tooltip--theme-dark
+	.tooltip__container.container-fluid
+		a.tooltip__btn.round-button(href="#")
+			span.round-button__circle
+				+icon('circle-text')(width="251", height="251")
+			span.round-button__c
+				+icon('c')(width="67", height="61")
+		.tooltip__section
+			.tooltip__marquee.__js-marquee
+				.tooltip__list
+					each item in MARQUEE_WORDS
+						a.tooltip__item.animsition-link(href= item.url, data-image= item.image['1x'], data-image2x= item.image['2x'], data-image-w= item.image.w, data-image-h= item.image.h)= item.text
+		.tooltip__section
+			.tooltip__marquee.__js-marquee--reverse
+				.tooltip__list
+					each item in MARQUEE_WORDS
+						a.tooltip__item.animsition-link(href= item.url, data-image= item.image['1x'], data-image2x= item.image['2x'], data-image-w= item.image.w, data-image-h= item.image.h)= item.text
+

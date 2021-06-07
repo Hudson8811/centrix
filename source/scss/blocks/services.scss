@@ -1,0 +1,46 @@
+.services {
+	&__item {
+		margin-top: 40px;
+
+		@include media(lg) {
+			margin-top: 120px;
+		}
+
+		@include media(xl) {
+			margin-top: 263px;
+		}
+
+		&--first {
+			@include media(lg) {
+				margin-top: 0;
+			}
+
+			@include media(xl) {
+				padding-left: 55px;
+				padding-right: 9px;
+			}
+		}
+
+		&--margin-negative {
+			@include media(lg) {
+				margin-top: -40px;
+			}
+		}
+
+		&--left-shift {
+			@include media(xl) {
+				padding-left: vw(135);
+			}
+
+			@include media(full) {
+				padding-left: 135px;
+			}
+		}
+
+		&--last {
+			@include media(xl) {
+				padding-left: 50px;
+			}
+		}
+	}
+}

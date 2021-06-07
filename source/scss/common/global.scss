@@ -68,10 +68,11 @@ body {
 	-webkit-locale: auto;
 	white-space: normal;
 
-	background-color: $color-smoky;
+	//background-color: $color-smoky;
 }
 
-.container {
+.container,
+.container-fluid {
 	@include media(xxl) {
 		padding: 0 15px;
 		max-width: 1750px;
@@ -87,6 +88,13 @@ body {
 		@include media(xxl) {
 			max-width: 760px;
 		}
+	}
+}
+
+[class*="col-"] {
+	@include media(xxl) {
+		padding-left: 15px;
+		padding-right: 15px;
 	}
 }
 

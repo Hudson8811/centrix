@@ -85,6 +85,9 @@
 /* Feature card */
 @import "blocks/feature-card";
 
+/* Service preview card */
+@import "blocks/service-preview";
+
 /* Carousel card */
 @import "blocks/carousel-card";
 
@@ -130,6 +133,9 @@
 /* 2.2 Hero section in modern homepage */
 @import "blocks/modern-hero";
 
+/* 2.2 Hero section in creative homepage */
+@import "blocks/creative-hero";
+
 /* 2.2 Features section in homepage */
 @import "blocks/features";
 
@@ -168,6 +174,21 @@
 
 /* Projects listing */
 @import "blocks/projects-listing";
+
+/* Portfolio section */
+@import "blocks/portfolio-section";
+
+/* Services section */
+@import "blocks/services-section";
+
+/* Plans section in creative homepage */
+@import "blocks/plans-section";
+
+/* Grid in team page */
+@import "blocks/team";
+
+/* Grid in services page */
+@import "blocks/services";
 
 /* 2.2 Header */
 @import "blocks/header";
