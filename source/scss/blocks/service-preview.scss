@@ -1,0 +1,56 @@
+.service-preview {
+	$self: &;
+
+	position: relative;
+	display: block;
+
+	@include media(lg) {
+		display: inline-block;
+		vertical-align: top;
+	}
+
+	@include hover {
+		#{$self}__caption {
+			color: $color-default-black;
+			background-color: $color-yellow;
+		}
+	}
+
+	img {
+		display: block;
+		width: 100%;
+		height: auto;
+
+		@include media(lg) {
+			display: inline-block;
+			vertical-align: top;
+			width: auto;
+			max-width: 100%;
+		}
+	}
+
+	&__caption {
+		display: block;
+		padding: 32px 45px 38px;
+
+		@include text(26px, 34 / 26, $color-default-white);
+		text-transform: uppercase;
+		background-color: $color-default-black;
+
+		@include transition(all);
+
+		br {
+			display: none;
+		}
+
+		@include media(lg) {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+
+			br {
+				display: block;
+			}
+		}
+	}
+}
