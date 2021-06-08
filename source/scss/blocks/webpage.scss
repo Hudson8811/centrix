@@ -1,6 +1,5 @@
 .webpage {
 	$self: &;
-	background-color: $color-smoky;
 
 	.animsition {
 		display: flex;
@@ -17,11 +16,11 @@
 	}
 
 	&--bg {
-		&-smoky {
-			background-color: $color-smoky;
+		&-white {
+			background-color: $color-default-white;
 
 			main {
-				background-color: $color-smoky;
+				background-color: $color-default-white;
 			}
 		}
 

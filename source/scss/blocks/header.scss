@@ -13,13 +13,6 @@
 		padding: 40px 0;
 	}
 
-	&--absolute {
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-	}
-
 	&--secondary {
 		@include media(lg) {
 			padding: 52px 0;
@@ -64,6 +57,17 @@
 				}
 			}
 		}
+		.social__link {
+			svg {
+				fill: $color-default-white;
+			}
+
+			@include hover {
+				svg {
+					fill: $color-yellow;
+				}
+			}
+		}
 
 		&#{$self}--separator {
 			#{$self}__container {
@@ -78,12 +82,24 @@
 				color: $color-default-white;
 
 				@include hover {
-					color: $color-yellow;
+					//color: $color-yellow;
+
+					.navigation__link-icon {
+						svg {
+							fill: $color-default-white;
+						}
+					}
 				}
 			}
 
 			.navigation__item--current .navigation__link {
-				color: $color-yellow;
+				color: $color-default-white;
+
+				.navigation__link-icon {
+					svg {
+						fill: $color-default-white;
+					}
+				}
 			}
 		}
 	}
@@ -141,88 +157,9 @@
 		}
 	}
 
-	/*&--fixed {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		z-index: 2;
-		background-color: $color-default-white;
-		border-top: none;
-		transition: transform 0.5s ease;
-
-		@include media(lg) {
-			.social {
-				&__link {
-					svg {
-						fill: $color-default-black;
-					}
-
-					&:focus {
-						svg {
-							fill: $color-yellow;
-						}
-					}
-
-					@include hover {
-						svg {
-							fill: $color-yellow;
-						}
-					}
-				}
-			}
-		}
-
-		#{$self}__inner {
-			padding-top: 15px;
-			padding-bottom: 15px;
-
-			@include media(xxl) {
-				padding-top: 24px;
-				padding-bottom: 24px;
-			}
-		}
-
-		#{$self}__logo {
-			@include media(lg) {
-				margin-right: calc(11.71vw + 25px);
-			}
-		}
-
-		.navigation {
-			&__link {
-				color: $color-default-black;
-
-				&:hover,
-				&:focus {
-					color: $color-yellow;
-				}
-			}
-
-			&__item {
-				&--current {
-					.navigation__link {
-						color: $color-yellow !important;
-					}
-				}
-			}
-
-			&__dropdown {
-				@include media(lg) {
-					bottom: -24px;
-				}
-			}
-		}
-
-		.menu-toggle {
-			&::before,
-			&::after {
-				border-top: solid 3px $color-default-black;
-			}
-		}
-	}*/
-
 	&--separator {
+		position: relative;
+
 		#{$self}__container {
 			//position: relative;
 
@@ -237,6 +174,13 @@
 				border-top: solid 1px $color-default-black;
 			}
 		}
+	}
+
+	&--absolute {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
 	}
 
 	&--leftward {
@@ -417,6 +361,58 @@
 				transform: rotate(-90deg) translateX(-100%) translateY(50%);
 				transform-origin: 0 0;
 			}
+		}
+	}
+
+	&--fixed {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		z-index: 2;
+		background-color: $color-default-black;
+		border-top: none;
+		border-bottom: none;
+		transition: transform 0.5s ease;
+
+		#{$self}__container {
+			&::before {
+				display: none;
+			}
+		}
+
+		&.header--bg-white {
+			background-color: $color-default-white;
+		}
+
+		@include media(lg) {
+			/*.social {
+				&__link {
+					svg {
+						fill: $color-default-black;
+					}
+
+					&:focus {
+						svg {
+							fill: $color-yellow;
+						}
+					}
+
+					@include hover {
+						svg {
+							fill: $color-yellow;
+						}
+					}
+				}
+			}*/
+		}
+
+		padding-top: 20px;
+		padding-bottom: 20px;
+
+		@include media(lg) {
+			padding-top: 40px;
+			padding-bottom: 40px;
 		}
 	}
 

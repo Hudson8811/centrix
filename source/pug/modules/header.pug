@@ -1,4 +1,16 @@
-if isLeftwardHeader
+if isSecondaryHeader
+	header.header.header--secondary(class= headerClasses ? headerClasses : '')
+		.header__container.container-fluid
+			a.header__logo.logo
+				+icon('logo')(width="76" height="19")
+			.header__mobile.mobile-canvas
+				nav.mobile-canvas__nav.navigation
+					include menu
+				a.mobile-canvas__phone(href="tel:+34255216021") + 3 (425) 521 60 21
+			button.header__menu-toggle.menu-toggle(type="button")
+				span.menu-toggle__line
+				span.visually-hidden Menu toggle
+else if isLeftwardHeader
 	header.header.header--leftward(class= headerClasses ? headerClasses : '')
 		.header__container.container-fluid
 			if isHome

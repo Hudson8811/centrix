@@ -68,7 +68,7 @@ body {
 	-webkit-locale: auto;
 	white-space: normal;
 
-	//background-color: $color-smoky;
+	background-color: $color-smoky;
 }
 
 .container,
@@ -102,8 +102,8 @@ main {
 	position: relative;
 	z-index: 1;
 	flex-grow: 1;
-	border-bottom: solid 1px transparent;
-	background-color: $color-default-white;
+	//border-bottom: solid 1px transparent;
+	background-color: $color-smoky;
 }
 
 a {

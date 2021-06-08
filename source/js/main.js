@@ -12,6 +12,9 @@ function setOverlay(cb) {
 	return overlay;
 }
 
+/* 4. Fixed header */
+//= parts/fixed-header.js
+
 /* 2. Animsition init */
 //= parts/animsition-init.js
 

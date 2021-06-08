@@ -13,7 +13,8 @@
 
 	var ModifierClass = {
 		MENU: 'mobile-canvas--opened',
-		TOGGLE: 'menu-toggle--opened'
+		TOGGLE: 'menu-toggle--opened',
+		CURRENT_ITEM: 'navigation__item--current'
 	};
 
 	changeClassNavLink();
@@ -54,7 +55,12 @@
 				}
 			});
 		} else {
-			mobileDropdownLinks.addClass('animsition-link');
+			mobileDropdownLinks.each(function() {
+				var parent = $(this).parent();
+				if (!parent.hasClass(ModifierClass.CURRENT_ITEM)) {
+					$(this).addClass('animsition-link');
+				}
+			})
 		}
 	}
 

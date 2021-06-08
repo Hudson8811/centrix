@@ -1,4 +1,8 @@
 /* ------------------------------------------------------------------------------
+	Template Name: Centrix
+  Description: Centrix - Personal CV/Resume HTML Template
+  Author: Paul
+  Author URI: http://themeforest.net/user/Paul_tf
 
   1. Global
 		1.1 General
@@ -109,6 +113,7 @@ body {
   font-weight: 500;
   -webkit-locale: auto;
   white-space: normal;
+  background-color: #f7f7f7;
 }
 
 @media (min-width: 1400px) {
@@ -146,8 +151,7 @@ main {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
-  border-bottom: solid 1px transparent;
-  background-color: #ffffff;
+  background-color: #f7f7f7;
 }
 
 a {
@@ -1336,12 +1340,8 @@ a:hover, a:focus {
   margin-right: 0;
 }
 
-.navigation__item--current .navigation__link {
-  color: #fffe55;
-}
-
 .navigation__item--current .navigation__link-icon svg {
-  fill: #fffe55;
+  fill: #000000;
 }
 
 .navigation__link {
@@ -1371,8 +1371,6 @@ a:hover, a:focus {
   fill: transparent;
   -webkit-transition: fill 0.3s ease;
   transition: fill 0.3s ease;
-  -webkit-transition-delay: 0.3s;
-          transition-delay: 0.3s;
 }
 
 .navigation__link:focus {
@@ -1382,11 +1380,10 @@ a:hover, a:focus {
 @media (min-width: 992px) {
   .navigation__link:hover, .navigation__link:focus {
     outline: none;
-    color: #fffe55;
     position: relative;
   }
   .navigation__link:hover .navigation__link-icon svg, .navigation__link:focus .navigation__link-icon svg {
-    fill: #fffe55;
+    fill: #000000;
   }
   .navigation__link:hover::after, .navigation__link:focus::after {
     content: "";
@@ -2636,6 +2633,9 @@ a:hover, a:focus {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-transform: translateX(100%);
           transform: translateX(100%);
   -webkit-transition: -webkit-transform 0.3s ease;
@@ -5532,99 +5532,12 @@ a:hover, a:focus {
   position: relative;
   z-index: 2;
   padding: 20px 0;
-  /*&--fixed {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		z-index: 2;
-		background-color: $color-default-white;
-		border-top: none;
-		transition: transform 0.5s ease;
-
-		@include media(lg) {
-			.social {
-				&__link {
-					svg {
-						fill: $color-default-black;
-					}
-
-					&:focus {
-						svg {
-							fill: $color-yellow;
-						}
-					}
-
-					@include hover {
-						svg {
-							fill: $color-yellow;
-						}
-					}
-				}
-			}
-		}
-
-		.header__inner {
-			padding-top: 15px;
-			padding-bottom: 15px;
-
-			@include media(xxl) {
-				padding-top: 24px;
-				padding-bottom: 24px;
-			}
-		}
-
-		.header__logo {
-			@include media(lg) {
-				margin-right: calc(11.71vw + 25px);
-			}
-		}
-
-		.navigation {
-			&__link {
-				color: $color-default-black;
-
-				&:hover,
-				&:focus {
-					color: $color-yellow;
-				}
-			}
-
-			&__item {
-				&--current {
-					.navigation__link {
-						color: $color-yellow !important;
-					}
-				}
-			}
-
-			&__dropdown {
-				@include media(lg) {
-					bottom: -24px;
-				}
-			}
-		}
-
-		.menu-toggle {
-			&::before,
-			&::after {
-				border-top: solid 3px $color-default-black;
-			}
-		}
-	}*/
 }
 
 @media (min-width: 992px) {
   .header {
     padding: 40px 0;
   }
-}
-
-.header--absolute, .header--leftward {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
 }
 
 @media (min-width: 992px) {
@@ -5664,6 +5577,20 @@ a:hover, a:focus {
   border-top-color: #000000;
 }
 
+.header--white .social__link svg {
+  fill: #ffffff;
+}
+
+.header--white .social__link:focus {
+  outline: none;
+}
+
+@media (min-width: 992px) {
+  .header--white .social__link:hover svg, .header--white .social__link:focus svg {
+    fill: #fffe55;
+  }
+}
+
 .header--white.header--separator .header__container::before {
   border-top: solid 1px #ffffff;
 }
@@ -5678,14 +5605,17 @@ a:hover, a:focus {
 }
 
 @media (min-width: 992px) and (min-width: 992px) {
-  .header--white .navigation__link:hover, .header--white .navigation__link:focus {
-    color: #fffe55;
+  .header--white .navigation__link:hover .navigation__link-icon svg, .header--white .navigation__link:focus .navigation__link-icon svg {
+    fill: #ffffff;
   }
 }
 
 @media (min-width: 992px) {
   .header--white .navigation__item--current .navigation__link {
-    color: #fffe55;
+    color: #ffffff;
+  }
+  .header--white .navigation__item--current .navigation__link .navigation__link-icon svg {
+    fill: #ffffff;
   }
 }
 
@@ -5736,6 +5666,10 @@ a:hover, a:focus {
   }
 }
 
+.header--separator {
+  position: relative;
+}
+
 .header--separator .header__container::before {
   content: "";
   position: absolute;
@@ -5746,6 +5680,13 @@ a:hover, a:focus {
   width: calc(100% - 24px);
   max-width: 1720px;
   border-top: solid 1px #000000;
+}
+
+.header--absolute, .header--leftward {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 .header--leftward .mobile-canvas {
@@ -5950,6 +5891,62 @@ a:hover, a:focus {
             transform: rotate(-90deg) translateX(-100%) translateY(50%);
     -webkit-transform-origin: 0 0;
             transform-origin: 0 0;
+  }
+}
+
+.header--fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  background-color: #000000;
+  border-top: none;
+  border-bottom: none;
+  -webkit-transition: -webkit-transform 0.5s ease;
+  transition: -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.header--fixed .header__container::before {
+  display: none;
+}
+
+.header--fixed.header--bg-white {
+  background-color: #ffffff;
+}
+
+@media (min-width: 992px) {
+  .header--fixed {
+    /*.social {
+				&__link {
+					svg {
+						fill: $color-default-black;
+					}
+
+					&:focus {
+						svg {
+							fill: $color-yellow;
+						}
+					}
+
+					@include hover {
+						svg {
+							fill: $color-yellow;
+						}
+					}
+				}
+			}*/
+  }
+}
+
+@media (min-width: 992px) {
+  .header--fixed {
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
 }
 
@@ -6380,7 +6377,6 @@ a:hover, a:focus {
 
 /* 1.16 Webpage */
 .webpage {
-  background-color: #f7f7f7;
   /*
 	&::before {
 		content: "";
@@ -6409,12 +6405,12 @@ a:hover, a:focus {
   color: #000000;
 }
 
-.webpage--bg-smoky {
-  background-color: #f7f7f7;
+.webpage--bg-white {
+  background-color: #ffffff;
 }
 
-.webpage--bg-smoky main {
-  background-color: #f7f7f7;
+.webpage--bg-white main {
+  background-color: #ffffff;
 }
 
 .webpage--bg-grey {

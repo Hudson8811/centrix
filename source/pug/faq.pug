@@ -4,7 +4,7 @@ block variables
 	- let isHome = false; //- Если true то логотип не будет ссылкой
 	- let currentPage = 2.05; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
 	- let currentSection = 2; // // Для каждой раздела уникален. Home -1, projects - 2, news - 3, pages - 4
-	- headerClasses = 'header--bg-white';
+	- let headerClasses = '__js_fixed-header';
 
 block header
 	include modules/header
@@ -80,7 +80,7 @@ block content
 
 			.faq__discuss.discuss-project.discuss-project--no-padding.col-12
 				.discuss-project__wrapper
-					.discuss-project__title Ask  Question
+					.discuss-project__title Ask Question
 
 					form(action="#", method="post")
 						.row.justify-content-between.gx-0

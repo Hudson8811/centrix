@@ -4,11 +4,11 @@ block variables
 	- let isHome = false; //- Если true то логотип не будет ссылкой
 	- let currentPage = 2.02; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
 	- let currentSection = 2; // // Для каждой раздела уникален. Home -1, projects - 2, news - 3, pages - 4
-	- let headerClasses = 'header--absolute header--separator';
+	- let headerClasses = 'header--absolute header--separator __js_fixed-header';
 	//- let socialModClass = '';
 	//- let navigationModClass = 'navigation--hover-white';
 	//- let isLeftwardHeader = true;
-	- let bodyModClass = 'webpage--bg-smoky';
+	- let bodyModClass = '';
 
 block header
 	include modules/header
