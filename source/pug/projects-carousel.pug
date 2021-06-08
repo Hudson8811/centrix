@@ -1,0 +1,68 @@
+extends templates/main
+block variables
+	- let pageTitle = TITLE_PART + ' | Projects Carousel';
+	- let isHome = false; //- Если true то логотип не будет ссылкой
+	- let currentPage = 3.02; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+	- let currentSection = 3; // // Для каждой раздела уникален. Home -1, projects - 2, news - 3, pages - 4
+	- headerClasses = 'header--bg-white header--separator';
+
+block header
+	include modules/header
+
+block content
+	article.projects-carousel
+		section.carousel-section.projects-carousel__carousel
+			.carousel-section__container.container-fluid
+				header.carousel-section__header.row.align-items-end.align-items-md-center
+					h2.carousel-section__title.col-12.col-md-10 Projects
+					.carousel-section__nav.col-12.col-md-2.order-last.order-md-0.justify-content-md-end
+						button.nav-btn.nav-btn--prev.__js_navbtn-latest-projects(type="button")
+							+icon('long-arrow-left')(width="50", height="16")
+						button.nav-btn.nav-btn--next.__js_navbtn-latest-projects(type="button")
+							+icon('long-arrow-right')(width="50", height="16")
+
+
+
+				.carousel-section__carousel.carousel.carousel--slide-auto.swiper-container.__js_carousel-latest-projects
+					.swiper-wrapper
+						a.carousel__item.project-preview.swiper-slide(href= URLS.projects.single)
+							picture
+								source(type="image/webp" srcset="img/picture/carousel/8.webp 1x, img/picture/carousel/8@2x.webp 2x")
+								// 1х: 720px; 2x: 1440px
+								img(src="img/picture/carousel/8.jpg", srcset="img/picture/carousel/8@2x.jpg 2x", width="720", height="548", alt="swiss typography")
+							span.project-preview__bottom
+								span.project-preview__title Swiss typography
+								span.project-preview__icon
+									+icon('link-arrow2')(width="24" height="23")
+						a.carousel__item.project-preview.swiper-slide(href= URLS.projects.single)
+							picture
+								source(type="image/webp" srcset="img/picture/carousel/9.webp 1x, img/picture/carousel/9@2x.webp 2x")
+								// 1х: 334px; 2x: 668px
+								img(src="img/picture/carousel/9.jpg", srcset="img/picture/carousel/9@2x.jpg 2x", width="334", height="255", alt="the act")
+							span.project-preview__bottom
+								span.project-preview__title The act
+								span.project-preview__icon
+									+icon('link-arrow2')(width="24" height="23")
+						a.carousel__item.project-preview.swiper-slide(href= URLS.projects.single)
+							picture
+								source(type="image/webp" srcset="img/picture/carousel/10.webp 1x, img/picture/carousel/10@2x.webp 2x")
+								// 1х: 404px; 2x: 808px
+								img(src="img/picture/carousel/10.jpg", srcset="img/picture/carousel/10@2x.jpg 2x", width="404", height="494", alt="Copenhagen")
+							span.project-preview__bottom
+								span.project-preview__title Copenhagen
+								span.project-preview__icon
+									+icon('link-arrow2')(width="24" height="23")
+						a.carousel__item.project-preview.swiper-slide(href= URLS.projects.single)
+							picture
+								source(type="image/webp" srcset="img/picture/carousel/11.webp 1x, img/picture/carousel/11@2x.webp 2x")
+								// 1х: 662px; 2x: 1324px
+								img(src="img/picture/carousel/11.jpg", srcset="img/picture/carousel/11@2x.jpg 2x", width="434", height="321", alt="Mobile app")
+							span.project-preview__bottom
+								span.project-preview__title Mobile app
+								span.project-preview__icon
+									+icon('link-arrow2')(width="24" height="23")
+
+
+
+block footer
+	include modules/footer

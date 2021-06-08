@@ -1,0 +1,39 @@
+.projects-carousel {
+	&__carousel {
+		padding: 70px 0 100px;
+
+		@include media(lg) {
+			padding: 109px 0 116px;
+		}
+
+		.carousel-section {
+			&__header {
+				@include media(md) {
+					margin-bottom: 106px;
+				}
+			}
+
+			&__title {
+				font-size: 50px;
+				line-height: 110%;
+				text-align: center;
+
+				@include media(md) {
+					font-size: 70px;
+					text-align: left;
+				}
+
+				@include media(lg) {
+					font-size: 100px;
+					line-height: 95%;
+				}
+			}
+
+			&__nav {
+				@include media(xl) {
+					left: 0;
+				}
+			}
+		}
+	}
+}

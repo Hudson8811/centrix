@@ -1,0 +1,102 @@
+.about-us {
+	padding-bottom: 70px;
+
+	@include media(md) {
+		padding-bottom: 120px;
+	}
+
+	@include media(xl) {
+		padding-bottom: 240px;
+	}
+
+	&__banner {
+		@include media(xl) {
+			align-items: flex-start;
+			justify-content: flex-end;
+		}
+
+		h1 {
+			text-align: center;
+
+			@include media(xl) {
+				padding-left: 100px;
+				padding-bottom: 10.6%;
+				text-align: left;
+			}
+
+			span {
+				color: $color-yellow;
+			}
+		}
+	}
+
+	&__stat {
+		padding-top: 70px;
+		padding-bottom: 70px;
+
+		@include media(md) {
+			padding-top: 140px;
+			padding-bottom: 140px;
+		}
+
+		@include media(xl) {
+			padding-top: 217px;
+			padding-bottom: 247px;
+		}
+
+		.about-video-section {
+			&__title {
+				max-width: 100%;
+				font-size: 32px;
+				line-height: 130%;
+
+				br {
+					display: none;
+
+					@include media(lg) {
+						display: block;
+					}
+				}
+			}
+		}
+	}
+
+	&__services {
+		@include media(xl) {
+			padding-bottom: 177px;
+		}
+
+		.our-services {
+			&__more {
+				@include media(xl) {
+					right: 52px;
+					font-size: 20px;
+					line-height: 24px;
+					font-weight: 400;
+				}
+
+				.arrow-link__icon {
+					@include media(lg) {
+						margin-left: 38px;
+					}
+				}
+			}
+		}
+	}
+
+	&__partners {
+		padding: 90px 0 20px;
+
+		@include media(lg) {
+			padding: 167px 0 143px;
+		}
+
+		@include media(xl) {
+			padding-top: 240px;
+		}
+	}
+
+	&__team-section {
+		padding-top: 54px;
+	}
+}
