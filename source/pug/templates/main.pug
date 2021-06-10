@@ -34,9 +34,16 @@ html.no-js(lang="en", class= htmlModClass)
 		div(style="display: none")
 			include ../../../build/img/sprite.svg
 		.animsition
-			block header
-			main
-				block content
+			if isLeftwardHeader
+				.leftward-wrapper
+					.leftward-wrapper__container
+						block header
+						main
+							block content
+			else
+				block header
+				main
+					block content
 			block footer
 			//-include ../modules/video
 			//-include ../modules/modal

@@ -2,14 +2,14 @@ section.works
 	.works__container.container-fluid
 		header.works__header
 			.row
-				.col-8
+				.col-8(data-aos="fade-up")
 					h2.works__title
 						span Look what
 						| We do
-				.col-4.text-md-right
+				.col-4.text-md-right(data-aos="fade-up")
 					+arrow-link('View all', URLS.projects.masonry, 'works__more arrow-link--white')
 
-		.works__carousel.carousel.swiper-container.__js_carousel
+		.works__carousel.carousel.swiper-container.__js_carousel(data-aos="fade-up")
 			.carousel__navigation
 				button.carousel__btn.carousel__btn--prev(type="button") Prev
 				button.carousel__btn.carousel__btn--next(type="button") Next

@@ -4,7 +4,7 @@
 	.animsition {
 		display: flex;
 		flex-direction: column;
-		height: 100vh;
+		min-height: 100vh;
 	}
 
 	&--parallax-dark {
@@ -19,16 +19,30 @@
 		&-white {
 			background-color: $color-default-white;
 
-			main {
+			main,
+			.leftward-wrapper {
 				background-color: $color-default-white;
+				box-shadow: 0 0 0 20px $color-default-white;
+			}
+		}
+
+		&-black {
+			background-color: $color-default-black;
+
+			main,
+			.leftward-wrapper {
+				background-color: $color-default-black;
+				box-shadow: 0 0 0 20px $color-default-black;
 			}
 		}
 
 		&-grey {
 			background-color: $color-grey-e5;
 
-			main {
+			main,
+			.leftward-wrapper {
 				background-color: $color-grey-e5;
+				box-shadow: 0 0 0 20px $color-grey-e5;
 			}
 		}
 	}

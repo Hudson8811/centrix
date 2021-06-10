@@ -13,25 +13,24 @@ if isSecondaryHeader
 else if isLeftwardHeader
 	header.header.header--leftward(class= headerClasses ? headerClasses : '')
 		.header__container.container-fluid
-			if isHome
-				a.header__logo.logo
-					+icon('logo')(width="76" height="19")
-			else
-				a.header__logo.logo(href= URLS.home.default)
-					+icon('logo')(width="76" height="19")
-			.header__mobile.mobile-canvas
-				button.mobile-canvas__close(type="button")
-					span.visually-hidden Close menu
-				nav.mobile-canvas__nav.navigation(class= navigationModClass ? navigationModClass : '')
+			.header__menu
+				nav.navigation
 					include menu
+			.header__panel
+
+				button.header__menu-toggle.menu-toggle(type="button")
+					span.menu-toggle__line
+					span.visually-hidden Menu toggle
+
+				if isHome
+					a.header__logo.logo
+						+icon('logo')(width="76" height="19")
+				else
+					a.header__logo.logo(href= URLS.home.default)
+						+icon('logo')(width="76" height="19")
+
 				+social('header__social' + (socialModClass ? ' ' + socialModClass : ''), ['linkedin', 'facebook', 'instagram', 'twitter'])
 
-
-			+social('header__social' + (socialModClass ? ' ' + socialModClass : ''), ['linkedin', 'facebook', 'instagram', 'twitter'])
-
-			button.header__menu-toggle.menu-toggle(type="button")
-				span.menu-toggle__line
-				span.visually-hidden Menu toggle
 
 else
 	header.header(class= headerClasses ? headerClasses : '')

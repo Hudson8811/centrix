@@ -18,15 +18,15 @@ block content
 		.article__container.container-fluid
 			.row
 				header.article__header.col-12.col-lg-7.col-xl-6
-					h1.article__title Our <br>services
-					.article__text In the design process, they create both functional and beautiful things. The team possesses unique
+					h1.article__title(data-aos="fade-up") Our <br>services
+					.article__text(data-aos="fade-up") In the design process, they create both functional and beautiful things. The team possesses unique
 
 
 				each item in SERVICES_CARDS
 					- let addCl = item.addCl ? item.addCl : '';
 					//- let bootstrapCl = item.bootstrapCl ? item.bootstrapCl : 'col-12 col-sm-6 col-md-4';
 					- let classes = addCl + ' ' + item.bootstrapCl;
-					.services__item(class= classes)
+					.services__item(class= classes, data-aos="fade-up")
 						a.service-preview(href= URLS.pages.serviceDetail)
 							picture
 								source(type="image/webp" srcset="img/picture/services/" + item.image.url + ".webp 1x, img/picture/services/" + item.image.url + "@2x.webp 2x")

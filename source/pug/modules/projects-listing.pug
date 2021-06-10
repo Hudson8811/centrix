@@ -5,13 +5,13 @@ section.projects-listing
 		ul.projects-listing__list
 			each item in VERTICAL_PROJECTS
 				li.projects-listing__item.project-card.row.g-0
-					a.project-card__image.col-12.col-md-6(href= URLS.projects.single)
+					a.project-card__image.col-12.col-md-6(href= URLS.projects.single, data-aos="fade-up")
 						picture
 							source(type="image/webp", srcset="img/picture/vertical-projects/" + item.image + ".webp 1x, img/picture/vertical-projects/" + item.image + "@2x.webp 2x")
 							img(src="img/picture/vertical-projects/" + item.image + ".jpg", srcset="img/picture/vertical-projects/" + item.image + "@2x.jpg 2x", width="908", height="976", alt="project photo")
 					.project-card__main.col-12.col-md-6.order-md-first
 						.project-card__main-left
 							if item.category
-								a.project-card__category(href= URLS.projects.masonry)= item.category
-							h2.project-card__title!= item.title
-						+arrow-link('', URLS.projects.single, 'project-card__more')
+								a.project-card__category(href= URLS.projects.masonry, data-aos="fade-up")= item.category
+							h2.project-card__title(data-aos="fade-up")!= item.title
+						+arrow-link('', URLS.projects.single, 'project-card__more')(data-aos="fade-up")

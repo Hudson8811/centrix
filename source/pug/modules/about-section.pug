@@ -2,14 +2,14 @@ section.about-section
 	.about-section__container.container-fluid
 		.row.g-0
 			.about-section__main.col-12.col-md-4.order-1
-				h2.about-section__title About us
+				h2.about-section__title(data-aos="fade-up") About us
 
 				.about-section__wrapper
-					.about-section__text Our intelligent digital strategy and a pragmatic and thoughtful approach to solving business calls deliver a successful framework for both you and your audience.  business calls deliver a successful framework for both you and
+					.about-section__text(data-aos="fade-up") Our intelligent digital strategy and a pragmatic and thoughtful approach to solving business calls deliver a successful framework for both you and your audience.  business calls deliver a successful framework for both you and
 
-					+arrow-link('Services', URLS.pages.services, 'about-section__more')
+					+arrow-link('Services', URLS.pages.services, 'about-section__more')(data-aos="fade-up")
 			.about-section__aside.col-md-8
-				.about-section__image
+				.about-section__image(data-aos="fade-up")
 					picture
 						source(type="image/webp" srcset="img/picture/modern/about.webp 1x, img/picture/modern/about@2x.webp 2x")
 						// 1х: 1110px; 2x: 2220px
@@ -17,7 +17,7 @@ section.about-section
 
 
 			.about-section__steps.col-12.col-md-8.order-md-last
-				ul.about-section__list
+				ul.about-section__list(data-aos="fade-up")
 						each item in ['01 Web Deveopment', '02 Brand Design', '03 WordPress', '04 Photography']
 							li.about-section__item
 								a(href= URLS.pages.serviceDetail)= item

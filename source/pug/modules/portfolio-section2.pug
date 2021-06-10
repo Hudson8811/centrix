@@ -6,7 +6,7 @@ section.portfolio-section
 		ul.portfolio-section__grid.__js_portfolio-section-masonry
 			each item in PORTFOLIO_CARDS
 				- let cl2 = item.cl2 ? ' portfolio-section__item' + item.cl2: '';
-				li.portfolio-section__item.__js_masonry-item(class= cl2)
+				li.portfolio-section__item.__js_masonry-item(class= cl2, data-aos="fade-up")
 					a.project-preview.project-preview--elastic(href= URLS.projects.single)
 						picture
 							source(type="image/webp" srcset="img/picture/common/portfolio-section/" + item.image.url + ".webp 1x, img/picture/common/portfolio-section/" + item.image.url + "@2x.webp 2x")
@@ -17,5 +17,5 @@ section.portfolio-section
 							span.project-preview__icon
 								+icon('link-arrow2')(width="24" height="23")
 
-		+circle-link('', 'portfolio-section__more')
+		+circle-link('', 'portfolio-section__more')(data-aos="fade-up")
 
