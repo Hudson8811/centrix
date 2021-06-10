@@ -2626,6 +2626,7 @@ a:hover, a:focus {
   z-index: 1000;
   width: 85%;
   max-width: 460px;
+  height: 100vh;
   padding: 60px 60px 40px;
   background-color: #ffffff;
   display: -webkit-box;
@@ -2660,6 +2661,7 @@ a:hover, a:focus {
   .mobile-canvas {
     position: static;
     width: auto;
+    height: auto;
     max-width: none;
     padding: 0;
     -webkit-box-orient: horizontal;
