@@ -11,33 +11,35 @@ html {
 	-webkit-text-size-adjust: 100%;
 	text-size-adjust: 100%;
 
-	::-webkit-scrollbar {
-		width: 10px;
-		height: 10px;
-	}
+	@include media(lg) {
+		::-webkit-scrollbar {
+			width: 10px;
+			height: 10px;
+		}
 
-	::-webkit-scrollbar-button {
-		display: none;
-	}
+		::-webkit-scrollbar-button {
+			display: none;
+		}
 
-	::-webkit-scrollbar-track {
-	}
+		::-webkit-scrollbar-track {
+		}
 
-	::-webkit-scrollbar-track-piece {
-		background-color: $color-grey;
-	}
+		::-webkit-scrollbar-track-piece {
+			background-color: $color-grey;
+		}
 
-	::-webkit-scrollbar-thumb {
-		background-color: $color-yellow;
-		border-radius: none;
-	}
+		::-webkit-scrollbar-thumb {
+			background-color: $color-yellow;
+			border-radius: none;
+		}
 
-	::-webkit-scrollbar-corner {
-		background-color: #999;
-	}
+		::-webkit-scrollbar-corner {
+			background-color: #999;
+		}
 
-	::-webkit-resizer {
-		background-color: #666;
+		::-webkit-resizer {
+			background-color: #666;
+		}
 	}
 }
 
@@ -68,7 +70,7 @@ body {
 	-webkit-locale: auto;
 	white-space: normal;
 
-	//background-color: $color-smoky;
+	background-color: $color-smoky;
 }
 
 .container,
@@ -102,8 +104,8 @@ main {
 	position: relative;
 	z-index: 1;
 	flex-grow: 1;
-	border-bottom: solid 1px transparent;
-	background-color: $color-default-white;
+	//border-bottom: solid 1px transparent;
+	background-color: $color-smoky;
 }
 
 a {

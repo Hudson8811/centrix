@@ -11,6 +11,7 @@
 	background-color: $color-default-white;
 	display: flex;
 	flex-direction: column;
+	justify-content: space-between;
 	transform: translateX(100%);
 	@include transition(transform);
 

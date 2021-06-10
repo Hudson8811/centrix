@@ -1,40 +1,40 @@
 section.start-project
 	.start-project__container.container-fluid
-		h1.start-project__title Start A PROJECT?
+		h1.start-project__title(data-aos="fade-up") Start A PROJECT?
 
 		.start-project__grid.row.g-0
 			.start-project__discuss.discuss-project.discuss-project--no-padding.col-12.col-lg-8
-				.discuss-project__wrapper
-					.discuss-project__title Discuss the project
+				.discuss-project__wrapper(data-aos="fade-up")
+					.discuss-project__title(data-aos="fade-up") Discuss the project
 
 					form(action="#", method="post")
 						.row.justify-content-between.gx-0
-							.discuss-project__field-wrapper.col-12.col-md-6
+							.discuss-project__field-wrapper.col-12.col-md-6(data-aos="fade-up")
 								label.discuss-project__field.field
 									input(type="text", name="name")
 									span.field__hint Name
-							.discuss-project__field-wrapper.col-12.col-md-6
+							.discuss-project__field-wrapper.col-12.col-md-6(data-aos="fade-up")
 								label.discuss-project__field.field
 									input(type="email", name="email")
 									span.field__hint Email
-							.col-12
+							.col-12(data-aos="fade-up")
 								label.discuss-project__field.discuss-project__field--textarea.field
 									textarea(name="message", required)
 									span.field__hint Message
 							.discuss-project__bottom.col-12
-								.discuss-project__file.file-upload
+								.discuss-project__file.file-upload(data-aos="fade-up")
 									label.file-upload__label
 										input.visually-hidden(type="file")
 										span.file-upload__icon
 											+icon('paper-clip')(width="16", height="16")
 										span.file-upload__text Attach a file
-								+btn(true, 'Submit', '', 'discuss-project__send btn--theme-black')(type="submit")
+								+btn(true, 'Submit', '', 'discuss-project__send btn--theme-black')(type="submit", data-aos="fade-up")
 
 			.start-project__partners.partners.partners--no-padding.col-12.col-lg-4
 				ul.partners__list.row.align-items-center
 					- let i = 0;
 					while i < 6
-						li.partners__item.col-12.col-sm-6.col-md-3.col-lg-12.col-xl-6
+						li.partners__item.col-12.col-sm-6.col-md-3.col-lg-12.col-xl-6(data-aos="fade-up")
 							//-.col-auto
 							picture
 								source(type="image/webp" srcset="img/picture/partners/" + (i + 1) + ".webp 1x, img/picture/partners/" + (i + 1) + "@2x.webp 2x")

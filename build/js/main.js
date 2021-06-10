@@ -12,65 +12,241 @@ function setOverlay(cb) {
 	return overlay;
 }
 
-/* 2. Animsition init */
+function getScrollbarWidth() {
+	var block = $('<div>').css({'height':'50px','width':'50px'});
+	var indicator = $('<div>').css({'height':'200px'});
+
+	$('body').append(block.append(indicator));
+
+	var w1 = $('div', block).innerWidth();
+	block.css('overflow-y', 'scroll');
+
+	var w2 = $('div', block).innerWidth();
+	$(block).remove();
+
+	return (w1 - w2);
+}
+
+/* AOS init */
 (function() {
-	//$(document).ready(function() {
-		$(".animsition").animsition({
-			inClass: 'fade-in',
-			outClass: 'fade-out',
-			inDuration: 1500,
-			outDuration: 1000,
-			linkElement: '.animsition-link',
-			// e.g. linkElement: 'a:not([target="_blank"]):not([href^="#"])'
-			loading: true,
-			loadingParentElement: 'body', //animsition wrapper element
-			loadingClass: 'preloader',//'animsition-loading',
-			loadingInner: `<div class="preloader__spinner">
-				<span class="preloader__double-bounce"></span>
-				<span class="preloader__double-bounce preloader__double-bounce--delay"></span>
-			</div>`, // e.g '<img src="loading.svg" />
-			timeout: false,
-			timeoutCountdown: 5000,
-			onLoadEvent: true,
-			browser: [ 'animation-duration', '-webkit-animation-duration'],
-			// "browser" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
-			// The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
-			overlay : false,
-			overlayClass : 'animsition-overlay-slide',
-			overlayParentElement : 'body',
-			transition: function(url){ window.location.href = url; }
+	$('window').on('animsition.inEnd', function(){});
+
+	var isotopIsThere = $('*').is('.__js_portfolio-section-masonry') || $('*').is('.__js_blog-grid');
+
+
+	$(window).on('load', function() {
+
+		if (!isotopIsThere) {
+			AOS.init({
+				duration: 1000
+			});
+		} else {
+			setTimeout(function() {
+				AOS.init({
+					duration: 1000
+				});
+			}, 1500)
+		}
+
+	});
+})();
+/* 1. Header */
+(function() {
+	var header = $('.header');
+	var leftward = $('.leftward-wrapper');
+	var ModifierClass = {
+		FIXED: 'header--fixed',
+		IS_FIXED: 'is-fixed',
+		ABSOLUTE: 'header--absolute',
+		WHITE: 'header--white',
+		BG_WHITE: 'header--bg-white',
+		LEFTWARD: 'header--leftward'
+	};
+
+	var headerClasses = header.hasClass(ModifierClass.BG_WHITE) || header.hasClass(ModifierClass.WHITE) ? ModifierClass.FIXED : ModifierClass.WHITE + ' ' + ModifierClass.FIXED;
+
+	var windowWidth = $(window).width();
+	var headerOffset = header.offset().top;
+	var scroll = $(window).scrollTop();
+
+	var isScroll = false;
+	var isMobileWidth = windowWidth < mobileBreakpoint;
+	var isStaticHeader = !header.hasClass(ModifierClass.ABSOLUTE);
+	var isLeftwardHeader = header.hasClass(ModifierClass.LEFTWARD);
+
+	$(window).on('animsition.inEnd', function(){
+		var Height = {
+			HEADER: header.outerHeight(),
+			LEFTWARD: leftward.length !== 0 ? leftward.outerHeight() : 0
+		};
+
+		changeStateHandler();
+
+		$(window).on('resize', function() {
+			setTimeout(function() {
+				Height.HEADER = header.outerHeight();
+				Height.LEFTWARD = leftward.outerHeight();
+				windowWidth = $(window).width();
+				isMobileWidth = windowWidth < mobileBreakpoint;
+				changeStateHandler();
+			}, DURATION);
 		});
 
-		setTimeout(function(){
-			//preloader.fadeOut(DURATION);
-		}, 1000);
+		function changeStateHandler() {
+			if ( isLeftwardHeader && isMobileWidth || !isLeftwardHeader) {
+				resetHeader();
+				window.onscroll = onScrollTwo;
 
-	//})
+			} else  {
+				resetHeader();
+				window.onscroll = onScrollOne;
+			}
+		}
+
+		function onScrollOne() {
+			scroll = $(window).scrollTop();
+
+			if(scroll > Height.LEFTWARD - Height.HEADER) {
+
+				header.css({'position': 'absolute', 'top': 'auto', 'bottom': '0'})
+			} else {
+				header.removeAttr('style');
+			}
+		}
+
+		function onScrollTwo() {
+			scroll = $(window).scrollTop();
+
+			if (scroll >= headerOffset + Height.HEADER) {
+				isScroll = true;
+
+				header.addClass(headerClasses);
+				Height.HEADER = isScroll ? header.outerHeight() : Height.HEADER;
+
+
+				if (!header.hasClass(ModifierClass.IS_FIXED)) {
+					header.css({'top': -Height.HEADER + 'px', 'transform': ' translateY(' + Height.HEADER + 'px)'}).addClass(ModifierClass.IS_FIXED);
+
+					if (isStaticHeader) {
+						body.css('padding-top', Height.HEADER + 'px');
+					}
+				}
+			} else {
+				isScroll = false;
+				header.removeClass(headerClasses + ' ' + ModifierClass.IS_FIXED).removeAttr('style');
+
+				if (isStaticHeader) {
+					body.css('padding-top', 0);
+				}
+			}
+		}
+
+		function resetHeader() {
+			header.removeClass(headerClasses + ' ' + ModifierClass.IS_FIXED).removeAttr('style');
+			body.css('padding-top', '0');
+		}
+	});
 })();
+
+					/* 4. Fixed header */
+					// parts/fixed-header.js
+
+					/* 4. sticky header */
+					// parts/leftward-header.js
+
+/* 13. Fixed footer */
+(function() {
+
+	$(window).on('load', function() {
+		var footer = $('.__js_fixed-footer');
+		var footerHeight = footer.innerHeight();
+
+		if(footer.length !== 0) {
+			if (footerHeight <= $(window).height()) {
+				footer.css({ 'position': 'fixed', 'left': '0', 'right': '0', 'bottom': '0'});
+				body.css('padding-bottom', footerHeight);
+			} else {
+				body.css('padding-bottom', '0');
+				footer.removeAttr('style')
+			}
+
+			$(window).on('resize', function() {
+				footerHeight = footer.innerHeight();
+
+				if (footerHeight <= $(window).height()) {
+					footer.css({ 'position': 'fixed', 'left': '0', 'right': '0', 'bottom': '0'});
+					body.css('padding-bottom', footerHeight);
+				} else {
+					body.css('padding-bottom', '0');
+					footer.removeAttr('style');
+				}
+			});
+		}
+	});
+})();
+
+/* 2. Animsition init */
+(function() {
+	$(".animsition").animsition({
+		inClass: 'fade-in',
+		outClass: 'fade-out',
+		inDuration: 1500,
+		outDuration: 1000,
+		linkElement: '.animsition-link',
+		// e.g. linkElement: 'a:not([target="_blank"]):not([href^="#"])'
+		loading: true,
+		loadingParentElement: 'body', //animsition wrapper element
+		loadingClass: 'preloader',//'animsition-loading',
+		loadingInner: `<div class="preloader__spinner">
+			<span class="preloader__double-bounce"></span>
+			<span class="preloader__double-bounce preloader__double-bounce--delay"></span>
+		</div>`, // e.g '<img src="loading.svg" />
+		timeout: false,
+		timeoutCountdown: 5000,
+		onLoadEvent: true,
+		browser: [ 'animation-duration', '-webkit-animation-duration'],
+		// "browser" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+		// The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+		overlay : false,
+		overlayClass : 'animsition-overlay-slide',
+		overlayParentElement : 'body',
+		transition: function(url){ window.location.href = url; }
+	});
+})();
+
 
 /* 3. Mobile menu */
 (function() {
 	var menuOpenBtn = $('.menu-toggle');
 	var menuCloseBtn = $('.mobile-canvas__close');
 	var menu = $('.mobile-canvas');
+	var header = $('.header');
+	var menu2 = $('.header__menu');
 	var headerContainer = $('.header__container');
+
 	var animsition = $('.animsition');
 	var isHandled = false;
 	var menuIsOpened = false;
-	var isLeftwardHeader = $('.header').is('.header--leftward');
+	var isLeftwardHeader = $('.header').hasClass('header--leftward');
 
 	//var dropdownLinks = menu.find('.__js_menu-dropdown-link');
 	var mobileDropdownLinks = $('.navigation__link');
 
 	var ModifierClass = {
-		MENU: 'mobile-canvas--opened',
-		TOGGLE: 'menu-toggle--opened'
+		MOBILE_CANVAS: 'mobile-canvas--opened',
+		MENU: 'header__menu--opened',
+		TOGGLE: 'menu-toggle--opened',
+		CURRENT_ITEM: 'navigation__item--current'
 	};
 
 	changeClassNavLink();
 
 	menuOpenBtn.on('click', function() {
-		menuIsOpened ? closeMenu() : openMenu();
+		if (isLeftwardHeader && $(window).width() < mobileBreakpoint || !isLeftwardHeader) {
+			menuIsOpened ? closeMenu() : openMenu();
+		} else {
+			menuIsOpened ? closeLeftwardHeader() : openLeftwardHeader();
+		}
 	});
 
 	if (menuCloseBtn.length > 0) {
@@ -78,14 +254,14 @@ function setOverlay(cb) {
 	}
 
 
-	if ($(window).width() < mobileBreakpoint && !isHandled || isLeftwardHeader) {
+	if ( ($(window).width() < mobileBreakpoint || isLeftwardHeader) && !isHandled ) {
 		mobileDropdownLinks.on('click', openMobileDropdown);
 		isHandled = true;
 	}
 
 	$(window).on('resize', function() {
 
-		if ($(window).width() < mobileBreakpoint && !isHandled || isLeftwardHeader) {
+		if ( ($(window).width() < mobileBreakpoint || isLeftwardHeader) && !isHandled ) {
 			mobileDropdownLinks.on('click', openMobileDropdown);
 			isHandled = true;
 		} else {
@@ -105,53 +281,106 @@ function setOverlay(cb) {
 				}
 			});
 		} else {
-			mobileDropdownLinks.addClass('animsition-link');
+			mobileDropdownLinks.each(function() {
+				var parent = $(this).parent();
+				if (!parent.hasClass(ModifierClass.CURRENT_ITEM)) {
+					$(this).addClass('animsition-link');
+				}
+			})
 		}
 	}
 
 	function openMobileDropdown(evt) {
 		var dropdown = $(this).next();
-		$('.navigation__dropdown').slideUp(DURATION);
+
+
 
 		if (dropdown.length !== 0) {
 			evt.preventDefault();
-			dropdown.find('a[href]').on('click', closeMenu);
-			dropdown.css('display') === 'block' ? dropdown.slideUp(DURATION) : dropdown.slideDown(DURATION);
+			//dropdown.find('a[href]').on('click', closeMenu);
+
+			//$('.navigation__dropdown').slideUp(DURATION).removeClass('is-open');
+
+				$(this).parent().siblings().find('.navigation__dropdown').removeClass('is-open').slideUp(DURATION);
+
+			if (dropdown.hasClass('is-open')) {
+
+				dropdown.slideUp(DURATION).removeClass('is-open');
+
+			} else {
+
+				dropdown.slideDown(DURATION).addClass('is-open');
+
+			}
+
+			//dropdown.css('display') === 'block' ? dropdown.slideUp(DURATION) : dropdown.slideDown(DURATION);
+
+
 		}
 	}
 
 	function openMenu() {
-		var overlay = setOverlay(closeMenu);//
+		var overlay = setOverlay(closeMenu);
 		headerContainer.append(overlay);
-
-		menuOpenBtn.addClass(ModifierClass.TOGGLE);
 		menuIsOpened = true;
 
 		setTimeout(function() {
 			overlay.fadeIn(DURATION);
 
-			menu.addClass(ModifierClass.MENU);
+			menuOpenBtn.addClass(ModifierClass.TOGGLE);
+			if (isLeftwardHeader) {
+				menu2.addClass(ModifierClass.MENU);
+			} else {
+				menu.addClass(ModifierClass.MOBILE_CANVAS);
+			}
 		}, DURATION + 50);
 	}
 
 	function closeMenu() {
-		//menuCloseBtn.off('click', closeMenu);
-		menu.removeClass(ModifierClass.MENU);
-		//menuOpenBtn.removeClass(ModifierClass.TOGGLE);
+		if (isLeftwardHeader) {
+			menu2.removeClass(ModifierClass.MENU);
+		} else {
+			menu.removeClass(ModifierClass.MOBILE_CANVAS);
+		}
+
+		menuOpenBtn.removeClass(ModifierClass.TOGGLE);
 		var overlay = $('.overlay').fadeOut(DURATION);
 		menuIsOpened = false;
 
 		setTimeout(function() {
-			menuOpenBtn.removeClass(ModifierClass.TOGGLE);
 			overlay.remove();
 		}, DURATION + 50);
+	}
+
+
+	function openLeftwardHeader() {
+		menuOpenBtn.addClass(ModifierClass.TOGGLE);
+		header.addClass('shifted');
+		header.next().css('transform', 'translateX(300px)');
+		body.css({'overflow': 'hidden', 'margin-right': getScrollbarWidth() + 'px'});
+		menuIsOpened = true;
+	}
+
+	function closeLeftwardHeader() {
+		menuOpenBtn.removeClass(ModifierClass.TOGGLE);
+		header.removeClass('shifted');
+		header.next().css('transform', 'translateX(0)');
+
+		setTimeout(function() {
+			body.css({'overflow': '', 'margin-right': '0'});
+			menuIsOpened = false;
+		}, DURATION + 50);
+
+
 	}
 
 	$(window).on('resize', function() {
 		var windowWidth = $(window).width();
 
-		if (windowWidth >= mobileBreakpoint) {
+		if (windowWidth >= mobileBreakpoint && !isLeftwardHeader) {
 			closeMenu();
+		} else if (isLeftwardHeader) {
+			closeLeftwardHeader();
 		}
 	});
 })();
@@ -390,7 +619,7 @@ function setOverlay(cb) {
 		var filterItemAll = $('.filter__item[data-filter="*"]');
 		var filterActiveClass = 'filter__item--active';
 
-		var grid = $('.__js_blog-grid').isotope({
+		var grid = $('.__js_blog-grid, .__js_portfolio-section-masonry').isotope({
 			itemSelector: '.__js_masonry-item',
 			layoutMode: 'packery',
 			packery: {
@@ -398,13 +627,17 @@ function setOverlay(cb) {
 			},
 		});
 
-		var portfolioGrid = $('.__js_portfolio-section-masonry').isotope({
+		grid.on( 'layoutComplete', function() {
+			console.log('done!')
+		} );
+
+		/*var portfolioGrid = $('.__js_portfolio-section-masonry').isotope({
 			itemSelector: '.__js_masonry-item',
 			layoutMode: 'packery',
 			packery: {
 				gutter: 0
 			}
-		});
+		});*/
 
 		filterItem.on('click', function() {
 			var filterValue = $(this).attr('data-filter');
@@ -417,6 +650,9 @@ function setOverlay(cb) {
 
 /* 9. Pagepiling */
 (function(){
+	var headerClasses = $('.header').attr('class');
+
+
 	initFullPage();
 
 	if ($('#pagepiling .section.active').hasClass('dark')) {
@@ -451,10 +687,12 @@ function setOverlay(cb) {
 
 	function setDark() {
 		$('.webpage').addClass('webpage--parallax-dark');
+		$('.header').removeClass('header--white');
 	}
 
 	function removeDark() {
 		$('.webpage').removeClass('webpage--parallax-dark');
+		$('.header').addClass(headerClasses);
 	}
 })();
 
@@ -526,4 +764,21 @@ function setOverlay(cb) {
 			});
 		}
 	});
+})();
+
+/* 11. Init simple parallax */
+(function () {
+	var images = document.querySelectorAll('.__js_parallax-image');
+
+	if (images) {
+		for (var image of images) {
+			new simpleParallax(image, {
+				delay: 0,
+				orientation: 'down',
+				scale: 1.5,
+			});
+		}
+	}
+
+
 })();

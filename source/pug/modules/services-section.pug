@@ -1,9 +1,9 @@
 section.services-section
 	.services-section__container.services-section__container--small.container-fluid
-		h2.services-section__title Services
+		h2.services-section__title(data-aos="fade-up") Services
 
 		.services-section__main
-			.services-section__image
+			.services-section__image(data-aos="fade-up")
 				picture
 					source(type="image/webp", srcset="img/picture/creative/services.webp 1x, img/picture/creative/services@2x.webp 2x")
 					img(src="img/picture/creative/services.jpg", srcset="img/picture/creative/services@2x.jpg 2x", width="823", height="417", alt="")
@@ -11,7 +11,7 @@ section.services-section
 			.services-section__menu
 				ul.services-section__list
 					each item in SERVICES_LIST
-						li.services-section__item
+						li.services-section__item(data-aos="fade-up")
 							a.services-section__link(href= URLS.pages.serviceDetail)= item
 								span
 									+icon('link-arrow2')(width="24", height="23")

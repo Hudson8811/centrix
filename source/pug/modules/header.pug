@@ -1,25 +1,36 @@
-if isLeftwardHeader
-	header.header.header--leftward(class= headerClasses ? headerClasses : '')
+if isSecondaryHeader
+	header.header.header--secondary(class= headerClasses ? headerClasses : '')
 		.header__container.container-fluid
-			if isHome
-				a.header__logo.logo
-					+icon('logo')(width="76" height="19")
-			else
-				a.header__logo.logo(href= URLS.home.default)
-					+icon('logo')(width="76" height="19")
+			a.header__logo.logo
+				+icon('logo')(width="76" height="19")
 			.header__mobile.mobile-canvas
-				button.mobile-canvas__close(type="button")
-					span.visually-hidden Close menu
-				nav.mobile-canvas__nav.navigation(class= navigationModClass ? navigationModClass : '')
+				nav.mobile-canvas__nav.navigation
 					include menu
-				+social('header__social' + (socialModClass ? ' ' + socialModClass : ''), ['linkedin', 'facebook', 'instagram', 'twitter'])
-
-
-			+social('header__social' + (socialModClass ? ' ' + socialModClass : ''), ['linkedin', 'facebook', 'instagram', 'twitter'])
-
+				a.mobile-canvas__phone(href="tel:+34255216021") + 3 (425) 521 60 21
 			button.header__menu-toggle.menu-toggle(type="button")
 				span.menu-toggle__line
 				span.visually-hidden Menu toggle
+else if isLeftwardHeader
+	header.header.header--leftward(class= headerClasses ? headerClasses : '')
+		.header__container.container-fluid
+			.header__menu
+				nav.navigation
+					include menu
+			.header__panel
+
+				button.header__menu-toggle.menu-toggle(type="button")
+					span.menu-toggle__line
+					span.visually-hidden Menu toggle
+
+				if isHome
+					a.header__logo.logo
+						+icon('logo')(width="76" height="19")
+				else
+					a.header__logo.logo(href= URLS.home.default)
+						+icon('logo')(width="76" height="19")
+
+				+social('header__social' + (socialModClass ? ' ' + socialModClass : ''), ['linkedin', 'facebook', 'instagram', 'twitter'])
+
 
 else
 	header.header(class= headerClasses ? headerClasses : '')

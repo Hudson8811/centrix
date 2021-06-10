@@ -167,11 +167,11 @@
 
 		&--current {
 			#{$self}__link {
-				color: $color-yellow;
+				//color: $color-yellow;
 
 				&-icon {
 					svg {
-						fill: $color-yellow;
+						fill: $color-default-black;
 					}
 				}
 			}
@@ -201,19 +201,19 @@
 				fill: transparent;
 
 				@include transition(fill);
-				transition-delay: 0.3s;
+				//transition-delay: 0.3s;
 			}
 		}
 
 		@include hover {
 			outline: none;
-			color: $color-yellow;
+			//color: $color-yellow;
 			position: relative;
 
 			#{$self}__link {
 				&-icon {
 					svg {
-						fill: $color-yellow;
+						fill: $color-default-black;
 					}
 				}
 			}

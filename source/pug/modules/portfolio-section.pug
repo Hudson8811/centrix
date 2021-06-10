@@ -1,17 +1,16 @@
 section.portfolio-section.portfolio-section--no-padding
 	.portfolio-section__container.container-fluid
 		header.portfolio-section__header.row.align-items-end
-			.col-8.col-xl-6.offset-xl-2
+			.col-8.col-xl-6.offset-xl-2(data-aos="fade-up")
 				h2.portfolio-section__title Latest works
-			.col-4.text-right
+			.col-4.text-right(data-aos="fade-up")
 				+arrow-link('View all', URLS.projects.masonry, 'portfolio-section__more')
 
 		ul.portfolio-section__grid.__js_portfolio-section-masonry
 			- let count = 0;
 			while count < 4
 				- let cl2 = PORTFOLIO_CARDS[count].cl2 ? ' portfolio-section__item' + PORTFOLIO_CARDS[count].cl2: '';
-				li.portfolio-section__item.__js_masonry-item(class= cl2)
-					//-(class= PORTFOLIO_CARDS[count].cl)
+				li.portfolio-section__item.__js_masonry-item(class= cl2, data-aos="fade-up")
 					a.project-preview.project-preview--elastic(href= URLS.projects.single)
 						picture
 							source(type="image/webp" srcset="img/picture/common/portfolio-section/" + PORTFOLIO_CARDS[count].image.url + ".webp 1x, img/picture/common/portfolio-section/" + PORTFOLIO_CARDS[count].image.url + "@2x.webp 2x")

@@ -1,17 +1,17 @@
 section.carousel-section.carousel-section--separator
 	.carousel-section__container.container-fluid
 		header.carousel-section__header.row.align-items-end.align-items-md-center
-			h2.carousel-section__title.col-8.col-md-6 Our latest projects
-			.carousel-section__nav.col-12.col-md-3.order-last.order-md-0
+			h2.carousel-section__title.col-8.col-md-6(data-aos="fade-up") Our latest projects
+			.carousel-section__nav.col-12.col-md-3.order-last.order-md-0(data-aos="fade-up")
 				button.nav-btn.nav-btn--prev.__js_navbtn-latest-projects(type="button")
 					+icon('long-arrow-left')(width="50", height="16")
 				button.nav-btn.nav-btn--next.__js_navbtn-latest-projects(type="button")
 					+icon('long-arrow-right')(width="50", height="16")
 
-			.col-4.col-md-3.align-self-md-start.text-right
+			.col-4.col-md-3.align-self-md-start.text-right(data-aos="fade-up")
 				+arrow-link('View all', URLS.projects.masonry, 'carousel-section__more')
 
-		.carousel-section__carousel.carousel.carousel--slide-auto.swiper-container.__js_carousel-latest-projects
+		.carousel-section__carousel.carousel.carousel--slide-auto.swiper-container.__js_carousel-latest-projects(data-aos="fade-up")
 			.swiper-wrapper
 				a.carousel__item.project-preview.swiper-slide(href= URLS.projects.single)
 					picture
