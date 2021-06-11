@@ -8647,12 +8647,10 @@ a:hover, a:focus {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
   max-width: 785px;
   width: 100%;
   margin-top: 20px;
+  margin-left: auto;
 }
 
 @media (min-width: 992px) {
@@ -8889,7 +8887,7 @@ a:hover, a:focus {
 }
 
 .single-project__services .services-section__menu {
-  right: -16%;
+  right: -6%;
   z-index: 1;
 }
 
@@ -8911,9 +8909,9 @@ a:hover, a:focus {
 }
 
 .single-project__next a {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -8955,4 +8953,10 @@ a:hover, a:focus {
   margin-left: 26px;
   -webkit-transition: fill 0.3s ease;
   transition: fill 0.3s ease;
+}
+
+@media (min-width: 992px) {
+  .single-project__next a svg {
+    margin-left: 45px;
+  }
 }

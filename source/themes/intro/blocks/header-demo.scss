@@ -1,0 +1,13 @@
+.header--demo {
+	.mobile-canvas__nav {
+		left: 0;
+
+		@include media(lg) {
+			margin: 0 0 0 50px;
+		}
+
+		@include media(xl) {
+			margin: 0 auto;
+		}
+	}
+}

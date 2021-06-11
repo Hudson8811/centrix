@@ -45,3 +45,6 @@ function setOverlay(cb) {
 
 /* 10. Animation of skills */
 //= parts/skills.js
+
+/* 11. Anchor */
+//= parts/anchor.js

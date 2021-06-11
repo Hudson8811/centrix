@@ -22,10 +22,10 @@
 	&__info {
 		display: flex;
 		flex-direction: column;
-		justify-content: flex-end;
 		max-width: 785px;
 		width: 100%;
 		margin-top: 20px;
+		margin-left: auto;
 
 		@include media(lg) {
 			margin-top: 0;

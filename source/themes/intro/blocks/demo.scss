@@ -1,0 +1,295 @@
+.demo {
+	$self: &;
+
+	position: relative;
+
+	.container {
+		@include media(xxl) {
+			max-width: 1350px;
+		}
+	}
+
+	&__section {
+		width: 100%;
+		background-color: $color-grey-e5;
+
+		&--banner {
+			min-height: 100vh;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+
+		&--choose {
+			padding: 60px 0;
+
+			@include media(xl) {
+				padding: 135px 0 32px;
+			}
+
+			#{$self} {
+				&__subtitle {
+					margin-bottom: 70px;
+
+					@include media(xl) {
+						margin-bottom: 130px;
+					}
+				}
+			}
+		}
+
+		&--projects {
+			padding: 60px 0;
+			position: relative;
+
+			@include media(xl) {
+				padding: 121px 0 20px;
+			}
+
+			img {
+				width: 100%;
+				margin-bottom: 30px;
+
+				@include media(lg) {
+					margin-bottom: 50px;
+				}
+
+				@media (min-width: 1830px) {
+					margin-bottom: 95px;
+				}
+			}
+
+			.container {
+				position: relative;
+				z-index: 1;
+			}
+
+			#{$self} {
+				&__title {
+					color: $color-default-white;
+					margin-bottom: 50px;
+
+					@include media(xl) {
+						margin-bottom: 120px;
+					}
+				}
+
+				&__bg {
+					background-color: $color-dark-1d;
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
+
+					@include media(md) {
+						bottom: 50px;
+					}
+
+					@include media(lg) {
+						bottom:150px;
+					}
+
+					@media (min-width: 1830px) {
+						bottom: 268px;
+					}
+				}
+			}
+		}
+
+		&--blog {
+			padding-top: 60px;
+
+			@include media(lg) {
+				padding-top: 0;
+			}
+
+			#{$self} {
+				&__title {
+					margin-bottom: 50px;
+
+					@include media(xl) {
+						margin-bottom: 120px;
+					}
+				}
+
+				&__col {
+					width: 100%;
+					margin-bottom: 30px;
+
+					@include media(md) {
+						width: calc(33.3333% - 30px);
+						margin: 0 15px 30px;
+					}
+
+					@include media(lg) {
+						width: calc(33.3333% - 50px);
+						margin: 0 25px 60px;
+					}
+
+					@include media(xxl) {
+						width: calc(25% - 100px);
+						margin: 0 50px 100px;
+					}
+
+					img {
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		height: 100vh;
+		padding: 110px 0 14px;
+	}
+
+	&__main-title {
+		font-size: 70px;
+		line-height: 110%;
+		color: $color-yellow;
+		margin-bottom: 35px;
+
+		@include media(lg) {
+			font-size: 100px;
+			line-height: 95%;
+			margin-bottom: 55px;
+		}
+
+		span {
+			font-style: italic;
+		}
+	}
+
+	&__title {
+		font-size: 30px;
+		line-height: 110%;
+		text-align: center;
+		margin-bottom: 30px;
+
+		@include media(md) {
+			font-size: 40px;
+		}
+
+		@include media(lg) {
+			font-size: 50px;
+			line-height: 95%;
+			margin-bottom: 40px;
+		}
+	}
+
+	&__subtitle {
+		font-size: 16px;
+		line-height: 120%;
+		color: $color-default-white;
+		text-align: center;
+		margin-bottom: 35px;
+
+		@include media(md) {
+			font-size: 18px;
+		}
+
+		@include media(lg) {
+			font-size: 25px;
+			line-height: 140%;
+			margin-bottom: 55px;
+		}
+
+		br {
+			display: none;
+
+			@include media(lg) {
+				display: block;
+			}
+		}
+
+		&--black {
+			color: $color-default-black;
+		}
+	}
+
+	&__row {
+		display: flex;
+		flex-wrap: wrap;
+
+		@include media(md) {
+			margin: 0 -15px;
+		}
+
+		@include media(lg) {
+			margin: 0 -25px;
+		}
+
+		@media (min-width: 1830px) {
+			margin: 0 -50px;
+		}
+	}
+
+	&__card,
+	&__col {
+		width: 100%;
+		margin-bottom: 30px;
+
+		@include media(md) {
+			width: calc(33.3333% - 30px);
+			margin: 0 15px 30px;
+		}
+
+		@include media(lg) {
+			width: calc(33.3333% - 50px);
+			margin: 0 25px 60px;
+		}
+
+		@media (min-width: 1830px) {
+			width: calc(33.3333% - 100px);
+			margin: 0 50px 100px;
+		}
+	}
+
+	&__col {
+		margin-bottom: 0;
+	}
+
+	&__anchor {
+		display: none;
+		position: fixed;
+		bottom: 0;
+		left: 40px;
+		z-index: 20;
+		cursor: pointer;
+		@include transition(transform);
+
+		@include media(lg) {
+			display: block;
+		}
+
+		@include media(xl) {
+			left: 123px;
+		}
+
+		@include hover {
+			transform: scale(1.02);
+		}
+
+		svg {
+			fill: $color-yellow;
+			width: 45px;
+			height: 45px;
+
+			@include media(xl) {
+				width: 75px;
+				height: 75px;
+			}
+		}
+	}
+
+	&__btn {
+		.btn__icon {
+			transform: rotate(90deg);
+		}
+	}
+}

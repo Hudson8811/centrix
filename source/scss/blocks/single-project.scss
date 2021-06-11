@@ -109,7 +109,7 @@
 			}
 
 			&__menu {
-				right: -16%;
+				right: -6%;
 				z-index: 1;
 
 				@include media(lg) {
@@ -128,7 +128,7 @@
 		}
 
 		a {
-			display: flex;
+			display: inline-flex;
 			align-items: center;
 			justify-content: flex-end;
 			font-size: 40px;
@@ -154,6 +154,10 @@
 			svg {
 				margin-left: 26px;
 				@include transition(fill);
+
+				@include media(lg) {
+					margin-left: 45px;
+				}
 			}
 		}
 	}
