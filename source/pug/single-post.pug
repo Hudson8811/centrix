@@ -2,23 +2,24 @@ extends templates/main
 block variables
 	- let pageTitle = TITLE_PART + ' | Single Post';
 	- let isHome = false; //- Если true то логотип не будет ссылкой
-	- let currentPage = 4.01; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+	- let currentPage = 4.04; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
 	- let currentSection = 4; // // Для каждой раздела уникален. Home -1, projects - 2, news - 3, pages - 4
+	- let headerClasses = '__js_fixed-header';
 
 block header
-	include modules/header-secondary
+	include modules/header
 
 block content
 	article.blog-grid.blog-grid--post
 		.blog-grid__first-screen
-			.blog-grid__tag Design
-			h1.heading.heading--size-large.blog-grid__title Color cheme
+			.blog-grid__tag(data-aos="fade-up") Design
+			h1.heading.heading--size-large.blog-grid__title(data-aos="fade-up") Color cheme
 
 		.single-post
 			.container.container--xsmall
-				.single-post__date Admin on Jule 3, 2020
-				.single-post__title To mark the first UK show of artist Henri Barande, graphic designer Paul
-				.single-post__text
+				.single-post__date(data-aos="fade-up") Admin on Jule 3, 2020
+				.single-post__title(data-aos="fade-up") To mark the first UK show of artist Henri Barande, graphic designer Paul
+				.single-post__text(data-aos="fade-up")
 					p This response is important for our ability to learn from mistakes, but it alsogives rise to self-criticism, because it is part
 						|  of the threat-protection system. In other words, what keeps us safe can go too far, and keep us too safe. In fact it can trigger self-censoring.
 					p One touch of a red-hot stove is usually all we need to avoid that kind of discomfort in the future. The same is true as we experience
@@ -26,12 +27,12 @@ block content
 						|  avoid potentially stressful situations of all kinds, including the most common of all:
 
 			.container.container--small
-				.single-post__image
+				.single-post__image(data-aos="fade-up")
 					img(src='img/news/post/post-1.jpg', srcset='img/news/post/post-1@2x.jpg', alt='')
 
 			.container.container--xsmall
-				.single-post__subtitle Methods for Everyone
-				.single-post__text
+				.single-post__subtitle(data-aos="fade-up") Methods for Everyone
+				.single-post__text(data-aos="fade-up")
 					p Everything along the way, to and from, fascinated her: every pebble, ant, stick, leaf, blade of grass, and crack in the sidewalk was
 						|  something to be picked up, looked at, tasted, smelled, and shaken. Everything was interesting to her. She knew nothing. I knew
 						|  everything…been there, done that. She was in the moment, I was in the past. She was mindful. I was mindless.
@@ -40,7 +41,7 @@ block content
 						|  automatically avoid potentially stressful situations of all kinds, including the most common of all: making mistakes.
 
 				// Quote
-				blockquote.quote.single-post__quote
+				blockquote.quote.single-post__quote(data-aos="fade-up")
 					p Our greatest weakness lies in giving up. The most certain way to succeed is always to try just one more time.
 						|  emotional sensation of stress from our firs
 					cite
@@ -49,15 +50,15 @@ block content
 
 			.container.container--small
 				.single-post__gallery
-					.single-post__gallery-col
+					.single-post__gallery-col(data-aos="fade-up")
 						img(src='img/news/post/post-2.jpg', srcset='img/news/post/post-2@2x.jpg', alt='')
 						img(src='img/news/post/post-3.jpg', srcset='img/news/post/post-3@2x.jpg', alt='')
-					.single-post__gallery-col
+					.single-post__gallery-col(data-aos="fade-up")
 						img(src='img/news/post/post-4.jpg', srcset='img/news/post/post-4@2x.jpg', alt='')
 
 			.container.container--xsmall
-				.single-post__subtitle.single-post__subtitle--margin Challenge
-				.single-post__text
+				.single-post__subtitle.single-post__subtitle--margin(data-aos="fade-up") Challenge
+				.single-post__text(data-aos="fade-up")
 					p Everything along the way, to and from, fascinated her: every pebble, ant, stick, leaf, blade of grass, and crack in the sidewalk was
 						|  something to be picked up, looked at, tasted, smelled, and shaken. Everything was interesting to her. She knew nothing. I knew
 						|  everything…been there, done that. She was in the moment, I was in the past. She was mindful. I was mindless.
@@ -65,8 +66,8 @@ block content
 						|  the emotional sensation of stress from our first instances of social rejection or ridicule. We quickly learn to fear and thus
 						|  automatically avoid potentially stressful situations of all kinds, including the most common of all: making mistakes.
 				.single-post__nav
-					.single-post__tags <b>Tags:</b> Inspiration, Workspace, Minimal, Decoation
-					.single-post__share
+					.single-post__tags(data-aos="fade-up") <b>Tags:</b> Inspiration, Workspace, Minimal, Decoation
+					.single-post__share(data-aos="fade-up")
 						b Share:
 						a.single-post__share-icon(href='#', target='_blank')
 							+icon('soc-fb')
@@ -74,19 +75,19 @@ block content
 							+icon('soc-tw')
 						a.single-post__share-icon(href='#', target='_blank')
 							+icon('soc-pinterest')
-				.single-post__subtitle Related posts
+				.single-post__subtitle(data-aos="fade-up") Related posts
 
 			.container
 				ul.row.blog-grid__row.single-post__related
-					+news-card('blog-1', '16', 'Jan', '2020', 'Design', 'A few words <br> about us', 'We make our customers &#39; products valuable in the eyes of customers. To do this, we analyze and study people,', '#')
-					+news-card('blog-2', '16', 'Jan', '2020', 'Design', 'A few words <br> about us', 'We make our customers &#39; products valuable in the eyes of customers. To do this, we analyze and study people,', '#')
-					+news-card('blog-5', '16', 'Jan', '2020', 'Design', 'A few words <br> about us', 'We make our customers &#39; products valuable in the eyes of customers. To do this, we analyze and study people,', '#')
+					+news-card('blog-1', '16', 'Jan', '2020', 'Design', 'A few words <br> about us', 'We make our customers &#39; products valuable in the eyes of customers. To do this, we analyze and study people,', '#')(data-aos="fade-up")
+					+news-card('blog-2', '16', 'Jan', '2020', 'Design', 'A few words <br> about us', 'We make our customers &#39; products valuable in the eyes of customers. To do this, we analyze and study people,', '#')(data-aos="fade-up")
+					+news-card('blog-5', '16', 'Jan', '2020', 'Design', 'A few words <br> about us', 'We make our customers &#39; products valuable in the eyes of customers. To do this, we analyze and study people,', '#')(data-aos="fade-up")
 
 			.container.container--xsmall
-				.single-post__subtitle Comments
+				.single-post__subtitle(data-aos="fade-up") Comments
 				.comment.single-post__comment
 					.comment__wrapper
-						.comment-item
+						.comment-item(data-aos="fade-up")
 							.comment-item__photo
 								img(src="img/news/post/comment-1.jpg", srcset="img/news/post/comment-1@2x.jpg", alt="")
 							.comment-item__content
@@ -95,7 +96,7 @@ block content
 									.comment-item__sent Jul 03, 2020 at 15 hours ago
 								.comment-item__text Everything along the way, to and from, fascinated her: every pebble, ant, stick, leaf, blade of grass, and crack in the sidewalk was something to be picked up
 								button.comment-item__reply Reply
-						.comment-item.comment-item--replyed
+						.comment-item.comment-item--replyed(data-aos="fade-up")
 							.comment-item__photo
 								img(src="img/news/post/comment-2.jpg", srcset="img/news/post/comment-2@2x.jpg", alt="")
 							.comment-item__content
@@ -104,7 +105,7 @@ block content
 									.comment-item__sent Jul 03, 2020 at 15 hours ago
 								.comment-item__text Everything along the way, to and from, fascinated her: every pebble, ant, stick, leaf, blade of grass
 								button.comment-item__reply Reply
-						.comment-item
+						.comment-item(data-aos="fade-up")
 							.comment-item__photo
 								img(src="img/news/post/comment-3.jpg", srcset="img/news/post/comment-3@2x.jpg", alt="")
 							.comment-item__content
@@ -115,24 +116,24 @@ block content
 								button.comment-item__reply Reply
 
 			.container.container--small
-				.form.single-post__form
-					.form__title Post a comment
+				.form.single-post__form(data-aos="fade-up")
+					.form__title(data-aos="fade-up") Post a comment
 					form(action='#', method='post')
 						.form__row
-							label.field
+							label.field(data-aos="fade-up")
 								input(type='text', name='name')
 								span.field__hint Name
-							label.field
+							label.field(data-aos="fade-up")
 								input(type='email', name='email')
 								span.field__hint E-mail
-						label.field
+						label.field(data-aos="fade-up")
 							textarea(name='message' required)
 							span.field__hint Message*
-						label.field-file
+						label.field-file(data-aos="fade-up")
 							input(type='file', name='file')
 							+icon('clip')
 							span Attach a file
-						+btn(true, 'Submit', '', 'btn--black')
+						+btn(true, 'Submit', '', 'btn--black')(data-aos="fade-up")
 
 
 

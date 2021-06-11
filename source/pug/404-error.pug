@@ -4,20 +4,21 @@ block variables
 	- let isHome = false; //- Если true то логотип не будет ссылкой
 	- let currentPage = 2.08; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
 	- let currentSection = 2; // // Для каждой раздела уникален. Home -1, projects - 2, news - 3, pages - 4
+	- let headerClasses = 'header--separator __js_fixed-header';
 
 block header
-	include modules/header-secondary
+	include modules/header
 
 block content
 	article.page-404
 		.container.page-404__container
 			.page-404__wrapper
-				.page-404__img
+				.page-404__img(data-aos="fade-right")
 					img(src="img/404.jpg", srcset="img/404@2x.jpg", alt="")
-				.page-404__content
-					.page-404__title 404.
-					.page-404__subtitle The page you were looking for could <br> not be found.
-					+btn(false, 'Back home', '/')
+				.page-404__content(data-aos="fade-left")
+					.page-404__title(data-aos="fade-up", data-aos-delay="500") 404.
+					.page-404__subtitle(data-aos="fade-up", data-aos-delay="600") The page you were looking for could <br> not be found.
+					+btn(false, 'Back home', '/')(data-aos="fade-up", data-aos-delay="700")
 
 
 

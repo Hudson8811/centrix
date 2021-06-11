@@ -1,11 +1,11 @@
 section.team-section.team-section--pb-0
 	.team-section__container.container-fluid
-		h2.team-section__title Our magic team
+		h2.team-section__title(data-aos="fade-up") Our magic team
 		.team-section__grid.swiper-container.__js_team-carousel-only-mobile
 			.swiper-wrapper
 				each item in MEMBERS_CARDS
 					.team-section__item.swiper-slide
-						.member-card
+						.member-card(data-aos="fade-up")
 							.member-card__image
 								picture
 									source(type="image/webp", srcset="img/picture/team/" + item.image.url + ".webp 1x, img/picture/team/" + item.image.url + "@2x.webp 2x")

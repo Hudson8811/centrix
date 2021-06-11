@@ -1,4 +1,7 @@
 (function(){
+	var headerClasses = $('.header').attr('class');
+
+
 	initFullPage();
 
 	if ($('#pagepiling .section.active').hasClass('dark')) {
@@ -33,9 +36,11 @@
 
 	function setDark() {
 		$('.webpage').addClass('webpage--parallax-dark');
+		$('.header').removeClass('header--white');
 	}
 
 	function removeDark() {
 		$('.webpage').removeClass('webpage--parallax-dark');
+		$('.header').addClass(headerClasses);
 	}
 })();

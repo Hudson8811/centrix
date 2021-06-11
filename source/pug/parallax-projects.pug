@@ -2,11 +2,12 @@ extends templates/main
 block variables
 	- let pageTitle = TITLE_PART + ' | Parallax Projects';
 	- let isHome = false; //- Если true то логотип не будет ссылкой
-	- let currentPage = 3.07; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
-	- let currentSection = 3; // // Для каждой раздела уникален. Home -1, projects - 2, news - 3, pages - 4
+	- let currentPage = 1.07; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+	- let currentSection = 1; // // Для каждой раздела уникален. Home -1, projects - 2, news - 3, pages - 4
+	- let headerClasses = 'header--absolute header--white';
 
 block header
-	//include modules/header-secondary
+	include modules/header
 
 block content
 	article#pagepiling.parallax-projects

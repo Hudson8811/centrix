@@ -1,5 +1,5 @@
 mixin arrow-link(text, url, cl)
-	a(class= cl ? cl + ' arrow-link' : 'arrow-link', href= url ? url : '#')
+	a(class= cl ? cl + ' arrow-link' : 'arrow-link', href= url ? url : '#')&attributes(attributes)
 		if text
 			span.arrow-link__text= text ? text : 'link anchor'
 		span.arrow-link__icon

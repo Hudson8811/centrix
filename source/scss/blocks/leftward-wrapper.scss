@@ -1,0 +1,24 @@
+.leftward-wrapper {
+	position: relative;
+	z-index: 1;
+	background-color: $color-smoky;
+
+	&__container {
+		position: relative;
+		width: 100%;
+		max-width: 1920px;
+		margin: 0 auto;
+		display: flex;
+		align-items: flex-start;
+		overflow: hidden;
+
+		@include media(lg) {
+			padding-left: 80px;
+			padding-right: 80px;
+		}
+	}
+
+	main {
+		@include transition(transform);
+	}
+}

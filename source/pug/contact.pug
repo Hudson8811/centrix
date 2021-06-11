@@ -2,9 +2,9 @@ extends templates/main
 block variables
 	- let pageTitle = TITLE_PART + ' | Contact';
 	- let isHome = false; //- Если true то логотип не будет ссылкой
-	- let currentPage = 2.07; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
-	- let currentSection = 2; // // Для каждой раздела уникален. Home -1, projects - 2, news - 3, pages - 4
-	- headerClasses = 'header--bg-white header--separator';
+	- let currentPage = 5.01; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+	- let currentSection = 5; // // Для каждой раздела уникален. Home -1, projects - 2, news - 3, pages - 4
+	- let headerClasses = 'header--separator __js_fixed-header';
 
 block header
 	include modules/header
@@ -15,32 +15,32 @@ block content
 			.contact-section__container.container-fluid
 				.row
 					.contact-section__main.col-12.col-md
-						h2.contact-section__title Contact
-						address.contact-section__address 269 King Str, 05th Floor, Utral Hosue Building, Melbourne, VIC 3000, Australia.
+						h2.contact-section__title(data-aos="fade-up") Contact
+						address.contact-section__address(data-aos="fade-up") 269 King Str, 05th Floor, Utral Hosue Building, Melbourne, VIC 3000, Australia.
 
-						.contact-section__link
+						.contact-section__link(data-aos="fade-up")
 							a(href="tel:+34255216021") +3 (425) 521 60 21
-						.contact-section__link
+						.contact-section__link(data-aos="fade-up")
 							a(href="mailto:info@centrix.com") info@centrix.com
 
-						ul.contact-section__social
+						ul.contact-section__social(data-aos="fade-up")
 							each item in FOOTER_MENU_2
 								li
 									a(href= item.url)= item.name
 					.contact-section__aside.col-12.col-md
 						.contact-section__form-wrapper
 							form(action="#", method="post")
-								label.contact-section__field.field
+								label.contact-section__field.field(data-aos="fade-up")
 									input(type="text", name="name")
 									span.field__hint Name
-								label.contact-section__field.field
+								label.contact-section__field.field(data-aos="fade-up")
 									input(type="email", name="email")
 									span.field__hint Email
-								label.contact-section__field.contact-section__field--textarea.field
+								label.contact-section__field.contact-section__field--textarea.field(data-aos="fade-up")
 									textarea(name="message", required)
 									span.field__hint Message*
-								+btn(true, 'Submit', '', 'btn--black contact-section__send')(type="submit")
-			.contact-section__map
+								+btn(true, 'Submit', '', 'btn--black contact-section__send')(type="submit", data-aos="fade-up")
+			.contact-section__map(data-aos="fade-up")
 				iframe(src='https://yandex.ru/map-widget/v1/?um=constructor%3A351063e7db352f0133fe8dca1724bd5b8208d2a14e4ca511a12b61acfa0179d0&source=constructor' width='100%' height='100%' frameborder='0')
 
 

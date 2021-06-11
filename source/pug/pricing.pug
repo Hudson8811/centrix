@@ -4,7 +4,7 @@ block variables
 	- let isHome = false; //- Если true то логотип не будет ссылкой
 	- let currentPage = 2.06; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
 	- let currentSection = 2; // // Для каждой раздела уникален. Home -1, projects - 2, news - 3, pages - 4
-	- headerClasses = 'header--bg-white';
+	- let headerClasses = '__js_fixed-header';
 
 block header
 	include modules/header
@@ -14,58 +14,58 @@ block content
 		+first-banner('Plans', 'banner-pricing')
 		.container.pricing__container
 			.row.pricing__grid
-				section.card-price.pricing__card.col-12.col-lg-4
+				section.card-price.pricing__card.col-12.col-lg-4(data-aos="fade-up")
 					.card-price__wrapper
-						.card-price__plan Basic
-						.card-price__price <sup>$</sup> 29 <span>/ mo</span>
+						.card-price__plan(data-aos="fade-up") Basic
+						.card-price__price(data-aos="fade-up") <sup>$</sup> 29 <span>/ mo</span>
 						ul.card-price__list
-							li.yellow Gathered day, years she'd upon, greater.
-							li Kind cattle won't bearing.
-							li own night two above.
-				section.card-price.card-price--gradient.pricing__card.col-12.col-lg-4
+							li.yellow(data-aos="fade-up") Gathered day, years she'd upon, greater.
+							li(data-aos="fade-up") Kind cattle won't bearing.
+							li(data-aos="fade-up") own night two above.
+				section.card-price.card-price--gradient.pricing__card.col-12.col-lg-4(data-aos="fade-up")
 					.card-price__wrapper
-						.card-price__plan Standard
-						.card-price__price <sup>$</sup> 39 <span>/ mo</span>
+						.card-price__plan(data-aos="fade-up") Standard
+						.card-price__price(data-aos="fade-up") <sup>$</sup> 39 <span>/ mo</span>
 						ul.card-price__list
-							li.yellow Gathered day, years she'd upon, greater.
-							li.yellow Kind cattle won't bearing.
-							li own night two above.
-						+btn(false, 'join now', '#', 'btn--outline card-price__btn card-price__btn--outline')
-				section.card-price.pricing__card.col-12.col-lg-4
+							li.yellow(data-aos="fade-up") Gathered day, years she'd upon, greater.
+							li.yellow(data-aos="fade-up") Kind cattle won't bearing.
+							li(data-aos="fade-up") own night two above.
+						+btn(false, 'join now', '#', 'btn--outline card-price__btn card-price__btn--outline')(data-aos="fade-up")
+				section.card-price.pricing__card.col-12.col-lg-4(data-aos="fade-up")
 					.card-price__wrapper
-						.card-price__plan Advanced
-						.card-price__price <sup>$</sup> 49 <span>/ mo</span>
+						.card-price__plan(data-aos="fade-up") Advanced
+						.card-price__price(data-aos="fade-up") <sup>$</sup> 49 <span>/ mo</span>
 						ul.card-price__list
-							li.yellow Gathered day, years she'd upon, greater.
-							li.yellow Kind cattle won't bearing.
-							li.yellow own night two above.
-						+btn(false, 'join now', '#', 'card-price__btn')
-				section.card-price.pricing__card.col-12.col-lg-4
+							li.yellow(data-aos="fade-up") Gathered day, years she'd upon, greater.
+							li.yellow(data-aos="fade-up") Kind cattle won't bearing.
+							li.yellow(data-aos="fade-up") own night two above.
+						+btn(false, 'join now', '#', 'card-price__btn')(data-aos="fade-up")
+				section.card-price.pricing__card.col-12.col-lg-4(data-aos="fade-up")
 					.card-price__wrapper
-						.card-price__plan Community
-						.card-price__price <sup>$</sup> 59 <span>/ mo</span>
+						.card-price__plan(data-aos="fade-up") Community
+						.card-price__price(data-aos="fade-up") <sup>$</sup> 59 <span>/ mo</span>
 						ul.card-price__list
-							li.yellow Gathered day, years she'd upon, greater.
-							li Kind cattle won't bearing.
-							li own night two above.
-				section.card-price.card-price--yellow.pricing__card.col-12.col-lg-4
+							li.yellow(data-aos="fade-up") Gathered day, years she'd upon, greater.
+							li(data-aos="fade-up") Kind cattle won't bearing.
+							li(data-aos="fade-up") own night two above.
+				section.card-price.card-price--yellow.pricing__card.col-12.col-lg-4(data-aos="fade-up")
 					.card-price__wrapper
-						.card-price__plan Support
-						.card-price__price <sup>$</sup> 69 <span>/ mo</span>
+						.card-price__plan(data-aos="fade-up") Support
+						.card-price__price(data-aos="fade-up") <sup>$</sup> 69 <span>/ mo</span>
 						ul.card-price__list
-							li.yellow Gathered day, years she'd upon, greater.
-							li Kind cattle won't bearing.
-							li own night two above.
-						+btn(false, 'join now', '#', 'btn--outline card-price__btn card-price__btn--outline')
-				section.card-price.pricing__card.col-12.col-lg-4
+							li.yellow(data-aos="fade-up") Gathered day, years she'd upon, greater.
+							li(data-aos="fade-up") Kind cattle won't bearing.
+							li(data-aos="fade-up") own night two above.
+						+btn(false, 'join now', '#', 'btn--outline card-price__btn card-price__btn--outline')(data-aos="fade-up")
+				section.card-price.pricing__card.col-12.col-lg-4(data-aos="fade-up")
 					.card-price__wrapper
-						.card-price__plan Analytics
-						.card-price__price <sup>$</sup> 79 <span>/ mo</span>
+						.card-price__plan(data-aos="fade-up") Analytics
+						.card-price__price(data-aos="fade-up") <sup>$</sup> 79 <span>/ mo</span>
 						ul.card-price__list
-							li.yellow Gathered day, years she'd upon, greater.
-							li Kind cattle won't bearing.
-							li own night two above.
-						+btn(false, 'join now', '#', 'card-price__btn')
+							li.yellow(data-aos="fade-up") Gathered day, years she'd upon, greater.
+							li(data-aos="fade-up") Kind cattle won't bearing.
+							li(data-aos="fade-up") own night two above.
+						+btn(false, 'join now', '#', 'card-price__btn')(data-aos="fade-up")
 
 
 

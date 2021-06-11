@@ -1,20 +1,34 @@
 .vcard {
+	position: relative;
+	z-index: 0;
 	padding: 160px 0 100px;
-	background-color: $color-default-black;
-	background-size: 200% auto;
-	background-position: 50% 0;
-	background-repeat: no-repeat;
-
-	@include media(sm) {
-		background-size: 150% auto;
-	}
-
-	@include media(md) {
-		background-size: 100% auto;
-	}
+	//background-color: $color-default-black;
 
 	@include media(xl) {
 		padding: 263px 0 220px;
+	}
+
+	&__image {
+		position: absolute;
+		left: 50%;
+		top: 0;
+		z-index: -1;
+		transform: translateX(-50%);
+		width: 200vw;
+
+		@include media(sm) {
+			width: 150vw;
+		}
+
+		@include media(md) {
+			width: 100vw;
+		}
+
+		img {
+			display: block;
+			max-width: 100%;
+			height: auto;
+		}
 	}
 
 	&__container {
