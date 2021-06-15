@@ -14,7 +14,9 @@ block content
 		.container.page-404__container
 			.page-404__wrapper
 				.page-404__img(data-aos="fade-right")
-					img(src="img/404.jpg", srcset="img/404@2x.jpg", alt="")
+					picture
+						source(type="image/webp", srcset="img/picture/404.webp 1x, img/picture/404@2x.webp 2x")
+						img(src="img/picture/404.jpg", srcset="img/picture/404@2x.jpg 2x", alt="")
 				.page-404__content(data-aos="fade-left")
 					.page-404__title(data-aos="fade-up", data-aos-delay="500") 404.
 					.page-404__subtitle(data-aos="fade-up", data-aos-delay="600") The page you were looking for could <br> not be found.

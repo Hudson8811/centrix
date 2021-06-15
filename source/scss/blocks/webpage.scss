@@ -24,6 +24,10 @@
 				background-color: $color-default-white;
 				box-shadow: 0 0 0 20px $color-default-white;
 			}
+
+			.carousel::before {
+				background-color: $color-default-white;
+			}
 		}
 
 		&-black {
@@ -34,6 +38,10 @@
 				background-color: $color-default-black;
 				box-shadow: 0 0 0 20px $color-default-black;
 			}
+
+			.carousel::before {
+				background-color: $color-default-black;
+			}
 		}
 
 		&-grey {
@@ -43,6 +51,10 @@
 			.leftward-wrapper {
 				background-color: $color-grey-e5;
 				box-shadow: 0 0 0 20px $color-grey-e5;
+			}
+
+			.carousel::before {
+				background-color: $color-grey-e5;
 			}
 		}
 	}

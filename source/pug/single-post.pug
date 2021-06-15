@@ -12,6 +12,10 @@ block header
 block content
 	article.blog-grid.blog-grid--post
 		.blog-grid__first-screen
+			.blog-grid__first-screen-image.parallax-bg
+				picture
+					source(type="image/webp" srcset="img/picture/news/banner-blog-1.webp 1x, img/picture/news/banner-blog-1@2x.webp 2x")
+					img(src="img/picture/news/banner-blog-1.jpg", srcset="img/picture/news/banner-blog-1@2x.jpg 2x", width="1920", height="1099", alt="")
 			.blog-grid__tag(data-aos="fade-up") Design
 			h1.heading.heading--size-large.blog-grid__title(data-aos="fade-up") Color cheme
 
@@ -28,7 +32,9 @@ block content
 
 			.container.container--small
 				.single-post__image(data-aos="fade-up")
-					img(src='img/news/post/post-1.jpg', srcset='img/news/post/post-1@2x.jpg', alt='')
+					picture
+						source(type="image/webp", srcset="img/picture/news/post/post-1.webp 1x, img/picture/news/post/post-1@2x.webp 2x")
+						img(src="img/picture/news/post/post-1.jpg", srcset="img/picture/news/post/post-1@2x.jpg 2x", width="1110", height="628", alt="")
 
 			.container.container--xsmall
 				.single-post__subtitle(data-aos="fade-up") Methods for Everyone
@@ -51,10 +57,16 @@ block content
 			.container.container--small
 				.single-post__gallery
 					.single-post__gallery-col(data-aos="fade-up")
-						img(src='img/news/post/post-2.jpg', srcset='img/news/post/post-2@2x.jpg', alt='')
-						img(src='img/news/post/post-3.jpg', srcset='img/news/post/post-3@2x.jpg', alt='')
+						piscture
+							source(type="image/webp", srcset="img/picture/news/post/post-2.webp 1x, img/picture/news/post/post-2@2x.webp 2x")
+							img(src="img/picture/news/post/post-2.jpg", srcset="img/picture/news/post/post-2@2x.jpg 2x", width="540", height="302", alt="")
+						picture
+							source(type="image/webp", srcset="img/picture/news/post/post-3.webp 1x, img/picture/news/post/post-3@2x.webp 2x")
+							img(src="img/picture/news/post/post-3.jpg", srcset="img/picture/news/post/post-3@2x.jpg 2x", width="540", height="302", alt='')
 					.single-post__gallery-col(data-aos="fade-up")
-						img(src='img/news/post/post-4.jpg', srcset='img/news/post/post-4@2x.jpg', alt='')
+						picture
+							source(type="image/webp", srcset="img/picture/news/post/post-4.webp 1x, img/picture/news/post/post-4@2x.webp 2x")
+							img(src="img/picture/news/post/post-4.jpg", srcset="img/picture/news/post/post-4@2x.jpg 2x", width="540", height="634", alt="")
 
 			.container.container--xsmall
 				.single-post__subtitle.single-post__subtitle--margin(data-aos="fade-up") Challenge
@@ -79,9 +91,9 @@ block content
 
 			.container
 				ul.row.blog-grid__row.single-post__related
-					+news-card('blog-1', '16', 'Jan', '2020', 'Design', 'A few words <br> about us', 'We make our customers &#39; products valuable in the eyes of customers. To do this, we analyze and study people,', '#')(data-aos="fade-up")
-					+news-card('blog-2', '16', 'Jan', '2020', 'Design', 'A few words <br> about us', 'We make our customers &#39; products valuable in the eyes of customers. To do this, we analyze and study people,', '#')(data-aos="fade-up")
-					+news-card('blog-5', '16', 'Jan', '2020', 'Design', 'A few words <br> about us', 'We make our customers &#39; products valuable in the eyes of customers. To do this, we analyze and study people,', '#')(data-aos="fade-up")
+					+news-card({n: 'blog-1', w: '533', h: '510'}, '16', 'Jan', '2020', 'Design', 'A few words <br> about us', 'We make our customers &#39; products valuable in the eyes of customers. To do this, we analyze and study people,', '#')(data-aos="fade-up")
+					+news-card({n: 'blog-2', w: '533', h: '510'}, '16', 'Jan', '2020', 'Design', 'A few words <br> about us', 'We make our customers &#39; products valuable in the eyes of customers. To do this, we analyze and study people,', '#')(data-aos="fade-up")
+					+news-card({n: 'blog-5', w: '533', h: '510'}, '16', 'Jan', '2020', 'Design', 'A few words <br> about us', 'We make our customers &#39; products valuable in the eyes of customers. To do this, we analyze and study people,', '#')(data-aos="fade-up")
 
 			.container.container--xsmall
 				.single-post__subtitle(data-aos="fade-up") Comments
@@ -89,7 +101,9 @@ block content
 					.comment__wrapper
 						.comment-item(data-aos="fade-up")
 							.comment-item__photo
-								img(src="img/news/post/comment-1.jpg", srcset="img/news/post/comment-1@2x.jpg", alt="")
+								picture
+									source(type="image/webp", srcset="img/picture/news/post/comment-1.webp 1x, img/picture/news/post/comment-1@2x.webp 2x")
+									img(src="img/picture/news/post/comment-1.jpg", srcset="img/picture/news/post/comment-1@2x.jpg 2x", width="80", height="80", alt="")
 							.comment-item__content
 								.comment-item__top
 									.comment-item__name Hayley
@@ -98,7 +112,9 @@ block content
 								button.comment-item__reply Reply
 						.comment-item.comment-item--replyed(data-aos="fade-up")
 							.comment-item__photo
-								img(src="img/news/post/comment-2.jpg", srcset="img/news/post/comment-2@2x.jpg", alt="")
+								picture
+									source(type="image/webp", srcset="img/picture/news/post/comment-2.webp 1x, img/picture/news/post/comment-2@2x.webp 2x")
+									img(src="img/picture/news/post/comment-2.jpg", srcset="img/picture/news/post/comment-2@2x.jpg 2x", width="80", height="80", alt="")
 							.comment-item__content
 								.comment-item__top
 									.comment-item__name Denzel
@@ -107,7 +123,9 @@ block content
 								button.comment-item__reply Reply
 						.comment-item(data-aos="fade-up")
 							.comment-item__photo
-								img(src="img/news/post/comment-3.jpg", srcset="img/news/post/comment-3@2x.jpg", alt="")
+								picture
+									source(type="image/webp", srcset="img/picture/news/post/comment-3.webp 1x, img/picture/news/post/comment-3@2x.webp 2x")
+									img(src="img/picture/news/post/comment-3.jpg", srcset="img/picture/news/post/comment-3@2x.jpg 2x", width="80", height="80", alt="")
 							.comment-item__content
 								.comment-item__top
 									.comment-item__name Amanda

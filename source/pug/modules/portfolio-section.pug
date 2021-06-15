@@ -12,10 +12,11 @@ section.portfolio-section.portfolio-section--no-padding
 				- let cl2 = PORTFOLIO_CARDS[count].cl2 ? ' portfolio-section__item' + PORTFOLIO_CARDS[count].cl2: '';
 				li.portfolio-section__item.__js_masonry-item(class= cl2, data-aos="fade-up")
 					a.project-preview.project-preview--elastic(href= URLS.projects.single)
-						picture
-							source(type="image/webp" srcset="img/picture/common/portfolio-section/" + PORTFOLIO_CARDS[count].image.url + ".webp 1x, img/picture/common/portfolio-section/" + PORTFOLIO_CARDS[count].image.url + "@2x.webp 2x")
+						span.project-preview__image
+							picture
+								source(type="image/webp" srcset="img/picture/common/portfolio-section/" + PORTFOLIO_CARDS[count].image.url + ".webp 1x, img/picture/common/portfolio-section/" + PORTFOLIO_CARDS[count].image.url + "@2x.webp 2x")
 
-							img(src="img/picture/common/portfolio-section/" + PORTFOLIO_CARDS[count].image.url + ".jpg", srcset="img/picture/common/portfolio-section/" + PORTFOLIO_CARDS[count].image.url + "@2x.jpg 2x", width= PORTFOLIO_CARDS[count].image.w, height= PORTFOLIO_CARDS[count].image.h, alt= PORTFOLIO_CARDS[count].title)
+								img(src="img/picture/common/portfolio-section/" + PORTFOLIO_CARDS[count].image.url + ".jpg", srcset="img/picture/common/portfolio-section/" + PORTFOLIO_CARDS[count].image.url + "@2x.jpg 2x", width= PORTFOLIO_CARDS[count].image.w, height= PORTFOLIO_CARDS[count].image.h, alt= PORTFOLIO_CARDS[count].title)
 						span.project-preview__bottom
 							span.project-preview__title= PORTFOLIO_CARDS[count].title
 							span.project-preview__icon

@@ -33,11 +33,7 @@ function getScrollbarWidth() {
 /* 1. Header */
 //= parts/header.js
 
-					/* 4. Fixed header */
-					// parts/fixed-header.js
 
-					/* 4. sticky header */
-					// parts/leftward-header.js
 
 /* Change opacity logo on scroll */
 //= parts/opacity-logo.js

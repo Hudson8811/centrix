@@ -2,13 +2,15 @@
 	$self: &;
 
 	&__first-screen {
+		position: relative;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
 		height: 300px;
-		background: url("../img/news/banner-blog-1.jpg") no-repeat;
-		background-size: cover;
+		//background: url("../img/news/banner-blog-1.jpg") no-repeat;
+		//background-size: cover;
+		overflow: hidden;
 
 		@include media(md) {
 			height: 400px;
@@ -23,7 +25,13 @@
 		}
 
 		@include retina {
-			background: url("../img/news/banner-blog-1@2x.jpg") no-repeat;
+			//background: url("../img/news/banner-blog-1@2x.jpg") no-repeat;
+		}
+
+		&-image {
+			position: absolute;
+			left: 0;
+			top: 0;
 		}
 
 		h1 {
