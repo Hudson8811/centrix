@@ -1,0 +1,98 @@
+.demo-card {
+	$self: &;
+
+	box-sizing: border-box;
+
+	&__image {
+		display: block;
+		max-height: 458px;
+		position: relative;
+		cursor: pointer;
+		overflow: hidden;
+
+		@include hover {
+			.demo-card__btn {
+				opacity: 1;
+			}
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+	}
+
+	&__btn {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 97px;
+		height: 97px;
+		background-color: $color-yellow;
+		border-radius: 50%;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		opacity: 0;
+		@include transition(opacity);
+
+		svg {
+			width: 30%;
+			height: 30%;
+		}
+	}
+
+	&__link {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding-top: 27px;
+		font-size: 20px;
+		line-height: 140%;
+		color: $color-default-black;
+		@include transition(color);
+
+		@include hover {
+			color: $color-yellow;
+
+			svg {
+				fill: $color-yellow;
+			}
+		}
+
+		svg {
+			fill: $color-default-black;
+			@include transition(fill);
+		}
+	}
+
+	&--coming {
+		#{$self} {
+			&__image {
+				padding-top: 90.5%;
+				font-size: 50px;
+				line-height: 95%;
+				background-color: $color-yellow;
+				cursor: default;
+				position: relative;
+
+				&::before {
+					content: 'Coming Soon';
+					font-size: 50px;
+					line-height: 95%;
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+				}
+			}
+
+			&__link {
+				opacity: 0;
+				pointer-events: none;
+			}
+		}
+	}
+}

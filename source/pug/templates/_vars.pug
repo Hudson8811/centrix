@@ -12,7 +12,7 @@
 
 	let URLS = {
 		intro: {
-			default: '#'
+			default: 'demo.html'
 		},
 
 		home: {
@@ -86,6 +86,7 @@
 			url: URLS.home.default,
 			currentSection: 1, currentPage: 1.01,
 			submenu: [
+				{name: 'Demo', url: URLS.intro.default, currentSection: 0, currentPage: 0},
 				{name: 'Agency default', url: URLS.home.default, currentSection: 1, currentPage: 1.01},
 				{name: 'Agency mono', url: URLS.home.mono, currentSection: 1, currentPage: 1.02},
 				{name: 'Agency modern', url: URLS.home.modern, currentSection: 1, currentPage: 1.03},

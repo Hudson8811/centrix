@@ -85,3 +85,6 @@ function getScrollbarWidth() {
 
 /* 11. Init simple parallax */
 //= parts/simple-parallax.js
+
+/* 12. Anchor */
+//= parts/anchor.js
