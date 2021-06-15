@@ -3792,6 +3792,12 @@ a:hover, a:focus {
   margin-top: 40px;
 }
 
+.contact-section__map iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
 @media (min-width: 768px) {
   .contact-section__map {
     height: 400px;
