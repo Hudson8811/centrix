@@ -1,4 +1,8 @@
-section.hero(style="background-image: url('img/picture/home/hero.jpg')")
+section.hero
+	.hero__bg.parallax-bg
+		picture
+			source(type="image/webp" srcset="img/picture/home/hero.webp 1x, img/picture/home/hero@2x.webp 2x")
+			img(src="img/picture/home/hero.jpg", srcset="img/picture/hero@2x.jpg 2x", width="1920", height="1318", alt="")
 	.hero__container.container-fluid
 		header.hero__header
 			h1.hero__title
@@ -6,7 +10,12 @@ section.hero(style="background-image: url('img/picture/home/hero.jpg')")
 				span with the times
 			+arrow-link('About us', URLS.pages.about, 'hero__more')
 		.hero__content
-			.hero__logo-wrap
+			//.hero__logo-wrap
 				.hero__logo.logo.logo--filled
 					+icon('logo')(width="240", height="57")
+			.hero__vertical.vertical-logo
+				.vertical-logo__layer.vertical-logo__layer--yellow
+					+icon('vertical-logo')(width="59", height="242")
+				.vertical-logo__layer.vertical-logo__layer--black
+					+icon('vertical-logo')(width="59", height="242")
 			.hero__text Taking growth channels to, consequently, create a better customer experience. Create custom solutions with a goal to innovate. Grow user engagement but increase viewability. Utilising custom solutions with the aim to surprise and delight.

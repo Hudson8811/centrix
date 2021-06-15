@@ -900,7 +900,13 @@ a:hover, a:focus {
   color: #000000;
   border: none;
   border-bottom: solid 1px #000000;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
   background-color: transparent;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   -webkit-transition: border-color 0.3s ease;
   transition: border-color 0.3s ease;
 }
@@ -1455,6 +1461,30 @@ a:hover, a:focus {
   }
 }
 
+.vertical-logo__layer {
+  padding: 100px 82px 100px 88px;
+}
+
+.vertical-logo__layer--black {
+  background-color: #000000;
+}
+
+.vertical-logo__layer--black svg {
+  fill: #ffffff;
+}
+
+.vertical-logo__layer--yellow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #fffe55;
+  opacity: 0;
+}
+
+.vertical-logo__layer--yellow svg {
+  fill: #000000;
+}
+
 /* 1.10 Social */
 .social {
   list-style: none;
@@ -1580,6 +1610,22 @@ a:hover, a:focus {
 
 .social__link:active {
   opacity: 0.7;
+}
+
+/* Parallax background block */
+.parallax-bg {
+  width: 100%;
+  min-height: 100%;
+}
+
+.parallax-bg img {
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  display: block;
+  width: auto;
+  min-height: 100%;
 }
 
 /* Feature card */
@@ -2767,14 +2813,15 @@ a:hover, a:focus {
 
 /* 2.2 Hero section in homepage */
 .hero {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   height: 100vh;
   min-height: 480px;
   padding-top: 80px;
-  background-size: cover;
-  background-position: 50% 0;
+  overflow: hidden;
+  z-index: 0;
 }
 
 @media (min-width: 576px) {
@@ -2788,6 +2835,14 @@ a:hover, a:focus {
     min-height: 800px;
     padding-top: 223px;
   }
+}
+
+.hero__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
 }
 
 .hero__container {
@@ -2893,6 +2948,12 @@ a:hover, a:focus {
   .hero__logo {
     padding: 86px 104px;
   }
+}
+
+.hero__vertical {
+  position: absolute;
+  left: 5px;
+  top: 0;
 }
 
 .hero__text {

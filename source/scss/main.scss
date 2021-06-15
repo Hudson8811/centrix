@@ -82,9 +82,13 @@
 
 /* 1.9 Logo */
 @import "blocks/logo";
+@import "blocks/vertical-logo";
 
 /* 1.10 Social */
 @import "blocks/social";
+
+/* Parallax background block */
+@import "blocks/parallax-bg";
 
 /* Feature card */
 @import "blocks/feature-card";

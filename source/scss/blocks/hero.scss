@@ -1,11 +1,14 @@
 .hero {
+	position: relative;
 	display: flex;
 	height: 100vh;
 	min-height: 480px;
 
 	padding-top: 80px;
-	background-size: cover;
-	background-position: 50% 0;
+	//background-size: cover;
+	//background-position: 50% 0;
+	overflow: hidden;
+	z-index: 0;
 
 	@include media(sm) {
 		padding-top: 123px;
@@ -14,6 +17,15 @@
 	@include media(lg) {
 		min-height: 800px;
 		padding-top: 223px;
+	}
+
+	&__bg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		//transform: translateX(-50%);
+		width: 100%;
+		z-index: -1;
 	}
 
 	&__container {
@@ -89,6 +101,12 @@
 		@include media(xl) {
 			padding: 86px 104px;
 		}
+	}
+
+	&__vertical {
+		position: absolute;
+		left: 5px;
+		top: 0;
 	}
 
 	&__text {

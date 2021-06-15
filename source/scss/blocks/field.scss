@@ -17,7 +17,10 @@
 		@include text(16px, 1);
 		border: none;
 		border-bottom: solid 1px $color-default-black;
+		border-radius: 0;
+		box-shadow: none;
 		background-color: transparent;
+		appearance: none;
 
 		@include transition(border-color);
 
