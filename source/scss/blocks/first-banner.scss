@@ -6,6 +6,8 @@
 	height: 300px;
 	position: relative;
 
+	overflow: hidden;
+
 	@include media(md) {
 		height: 400px;
 	}
@@ -22,8 +24,8 @@
 		position: absolute;
 		top: 0;
 		left: 0;
-		right: 0;
-		bottom: 0;
+		/*right: 0;
+		bottom: 0;*/
 
 		img {
 			width: 100%;

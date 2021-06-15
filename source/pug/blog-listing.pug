@@ -12,6 +12,10 @@ block header
 block content
 	article.blog-grid.blog-grid--listing
 		.blog-grid__first-screen
+			.blog-grid__first-screen-image.parallax-bg
+				picture
+					source(type="image/webp" srcset="img/picture/news/banner-blog-2.webp 1x, img/picture/news/banner-blog-2@2x.webp 2x")
+					img(src="img/picture/news/banner-blog-2.jpg", srcset="img/picture/news/banner-blog-2@2x.jpg 2x", width="1920", height="1063", alt="")
 			h1.heading.heading--size-large.blog-grid__title(data-aos="fade-up") Blog
 		.container.container--small.blog-grid__container
 			// Filter news
@@ -22,10 +26,10 @@ block content
 					button(class="filter__item" + activeClass + ' __js_filter-btn', type="button", data-filter= filterVal)= item
 
 			ul.row.blog-grid__row.__js_blog-grid
-				+news-card('blog-5-2', '16', 'Jan', '2020', 'Design', 'A few words <br> about us', 'We make our customers &#39; products valuable in the eyes of customers. To do this, we analyze and study people,', '#')(class='__js_design __js_business', data-aos="fade-up")
-				+news-card('blog-9-3', '16', 'Jan', '2020', 'Design', 'A few words <br> about us', 'We make our customers &#39; products valuable in the eyes of customers. To do this, we analyze and study people,', '#')(class='__js_design', data-aos="fade-up")
-				+news-card('blog-3-3', '16', 'Jan', '2020', 'Design', 'A few words <br> about us', 'We make our customers &#39; products valuable in the eyes of customers. To do this, we analyze and study people,', '#')(class='__js_marketing __js_design', data-aos="fade-up")
-				+news-card('blog-8-2', '16', 'Jan', '2020', 'Design', 'A few words <br> about us', 'We make our customers &#39; products valuable in the eyes of customers. To do this, we analyze and study people,', '#')(class='__js_photography __js_marketing', data-aos="fade-up")
+				+news-card({n: 'blog-5-2', w: '1221', h: '409'}, '16', 'Jan', '2020', 'Design', 'A few words <br> about us', 'We make our customers &#39; products valuable in the eyes of customers. To do this, we analyze and study people,', '#')(class='__js_design __js_business', data-aos="fade-up")
+				+news-card({n: 'blog-9-3', w: '1221', h: '409'}, '16', 'Jan', '2020', 'Design', 'A few words <br> about us', 'We make our customers &#39; products valuable in the eyes of customers. To do this, we analyze and study people,', '#')(class='__js_design', data-aos="fade-up")
+				+news-card({n: 'blog-3-3', w: '1229', h: '409'}, '16', 'Jan', '2020', 'Design', 'A few words <br> about us', 'We make our customers &#39; products valuable in the eyes of customers. To do this, we analyze and study people,', '#')(class='__js_marketing __js_design', data-aos="fade-up")
+				+news-card({n: 'blog-8-2', w: '1221', h: '409'}, '16', 'Jan', '2020', 'Design', 'A few words <br> about us', 'We make our customers &#39; products valuable in the eyes of customers. To do this, we analyze and study people,', '#')(class='__js_photography __js_marketing', data-aos="fade-up")
 			+circle-link('', 'blog-grid__more')(data-aos="fade-up")
 
 

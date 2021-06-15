@@ -29,14 +29,17 @@ function getScrollbarWidth() {
 
 /* AOS init */
 //= parts/aos-init.js
+
 /* 1. Header */
 //= parts/header.js
 
-					/* 4. Fixed header */
-					// parts/fixed-header.js
 
-					/* 4. sticky header */
-					// parts/leftward-header.js
+
+/* Change opacity logo on scroll */
+//= parts/opacity-logo.js
+
+/* Parallax first screen on scroll */
+//= parts/parallax-bg.js
 
 /* 13. Fixed footer */
 //= parts/fixed-footer.js

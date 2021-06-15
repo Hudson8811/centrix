@@ -1,0 +1,27 @@
+.vertical-logo {
+	&__layer {
+		//229
+		//448
+		padding: 100px 82px 100px 88px;
+
+		&--black {
+			background-color: $color-default-black;
+
+			svg {
+				fill: $color-default-white;
+			}
+		}
+
+		&--yellow {
+			position: absolute;
+			top: 0;
+			left: 0;
+			background-color: $color-yellow;
+			opacity: 0;
+
+			svg {
+				fill: $color-default-black;
+			}
+		}
+	}
+}

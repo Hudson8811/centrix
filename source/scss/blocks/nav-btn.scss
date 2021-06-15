@@ -13,21 +13,21 @@
 		@include transition(transform);
 	}
 
-	@include hover {
+	&:hover {
 		svg {
 			fill: lighten($color-default-black, 30%);
 		}
 	}
 
 	&--next {
-		@include hover {
+		&:hover {
 			svg {
 				transform: translateX(30%);
 			}
 		}
 	}
 	&--prev {
-		@include hover {
+		&:hover {
 			svg {
 				transform: translateX(-30%);
 			}

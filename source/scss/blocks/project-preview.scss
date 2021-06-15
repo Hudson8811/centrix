@@ -1,7 +1,7 @@
 .project-preview {
 	$self: &;
 	display: inline-block;
-	overflow: hidden;
+	vertical-align: top;
 
 	&--elastic {
 		display: block;
@@ -11,6 +11,12 @@
 			height: 100%;
 			object-fit: cover;
 		}
+	}
+
+	&__image {
+		display: inline-block;
+		vertical-align: top;
+		overflow: hidden;
 	}
 
 	img {
@@ -42,7 +48,7 @@
 		justify-content: space-between;
 		align-items: center;
 		padding-top: 24px;
-		background-color: $color-default-white;
+		//background-color: $color-default-white;
 	}
 
 	&__title {

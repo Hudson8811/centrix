@@ -1,0 +1,13 @@
+.parallax-bg {
+	width: 100%;
+	min-height: 100%;
+
+	img {
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
+		display: block;
+		width: auto;
+		min-height: 100%;
+	}
+}

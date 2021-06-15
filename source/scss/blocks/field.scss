@@ -11,20 +11,20 @@
 		display: block;
 		width: 100%;
 		padding: 0 0 14px;
-		//border: solid 1px $color-grey7;
 		font-family: $font-family--main;
 
 		@include text(16px, 1);
 		border: none;
 		border-bottom: solid 1px $color-default-black;
+		border-radius: 0;
+		box-shadow: none;
 		background-color: transparent;
+		appearance: none;
 
 		@include transition(border-color);
 
 		&:focus {
 			outline: none;
-			//border-color: $color-default-black;
-			//color: $color-default-black;
 		}
 
 		&:hover + #{$self}__hint {

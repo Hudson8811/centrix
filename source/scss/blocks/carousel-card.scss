@@ -3,12 +3,24 @@
 	position: relative;
 	overflow: hidden;
 
+	&--greyscale {
+		img {
+			filter: grayscale(1);
+		}
+
+		@include hover {
+			img {
+				filter: grayscale(0);
+			}
+		}
+	}
+
 	img {
 		display: block;
 		max-width: 100%;
 		height: auto;
 
-		@include transition(transform);
+		@include transition(all);
 	}
 
 	@include hover {
