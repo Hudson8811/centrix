@@ -10,16 +10,28 @@
 	}
 
 	@include hover {
+		img {
+			transform: scale(1.15) rotate(-4deg);
+		}
+
 		#{$self}__caption {
 			color: $color-default-black;
 			background-color: $color-yellow;
 		}
 	}
 
+	&__image {
+		display: inline-block;
+		vertical-align: top;
+		overflow: hidden;
+	}
+
 	img {
 		display: block;
 		width: 100%;
 		height: auto;
+
+		@include transition(transform);
 
 		@include media(lg) {
 			display: inline-block;

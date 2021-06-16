@@ -1633,9 +1633,34 @@ a:hover, a:focus {
   display: block;
 }
 
+.feature-card:focus {
+  outline: none;
+}
+
+@media (min-width: 992px) {
+  .feature-card:hover img, .feature-card:focus img {
+    -webkit-transform: scale(1.15) rotate(-4deg);
+            transform: scale(1.15) rotate(-4deg);
+  }
+  .feature-card:hover .feature-card__caption, .feature-card:focus .feature-card__caption {
+    color: #000000;
+    background-color: #fffe55;
+  }
+}
+
+.feature-card__image {
+  display: inline-block;
+  vertical-align: top;
+  overflow: hidden;
+}
+
 .feature-card img {
   max-width: 100%;
   height: auto;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
 }
 
 .feature-card__caption {
@@ -1646,6 +1671,8 @@ a:hover, a:focus {
   color: #ffffff;
   text-transform: uppercase;
   background-color: #000000;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .feature-card__caption br {
@@ -1681,16 +1708,30 @@ a:hover, a:focus {
 }
 
 @media (min-width: 992px) {
+  .service-preview:hover img, .service-preview:focus img {
+    -webkit-transform: scale(1.15) rotate(-4deg);
+            transform: scale(1.15) rotate(-4deg);
+  }
   .service-preview:hover .service-preview__caption, .service-preview:focus .service-preview__caption {
     color: #000000;
     background-color: #fffe55;
   }
 }
 
+.service-preview__image {
+  display: inline-block;
+  vertical-align: top;
+  overflow: hidden;
+}
+
 .service-preview img {
   display: block;
   width: 100%;
   height: auto;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
 }
 
 @media (min-width: 992px) {
@@ -8286,13 +8327,11 @@ a:hover, a:focus {
           transform: translateX(-50%);
   /*right: 0;
 		bottom: 0;*/
-}
-
-.first-banner__image img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  /*img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}*/
 }
 
 .first-banner h1 {

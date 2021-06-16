@@ -4,9 +4,28 @@
 	position: relative;
 	display: block;
 
+	@include hover {
+		img {
+			transform: scale(1.15) rotate(-4deg);
+		}
+
+		#{$self}__caption {
+			color: $color-default-black;
+			background-color: $color-yellow;
+		}
+	}
+
+	&__image {
+		display: inline-block;
+		vertical-align: top;
+		overflow: hidden;
+	}
+
 	img {
 		max-width: 100%;
 		height: auto;
+
+		@include transition(transform);
 	}
 
 	&__caption {
@@ -16,6 +35,8 @@
 		@include text(26px, 34 / 26, $color-default-white);
 		text-transform: uppercase;
 		background-color: $color-default-black;
+
+		@include transition(all);
 
 		br {
 			display: none;
