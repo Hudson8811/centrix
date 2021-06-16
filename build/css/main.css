@@ -1129,10 +1129,10 @@ a:hover, a:focus {
   left: 0;
   width: 100%;
   border-top: solid 3px #000000;
-  -webkit-transition: border-top-color 0.3s ease, -webkit-transform 0.3s ease;
-  transition: border-top-color 0.3s ease, -webkit-transform 0.3s ease;
-  transition: border-top-color 0.3s ease, transform 0.3s ease;
-  transition: border-top-color 0.3s ease, transform 0.3s ease, -webkit-transform 0.3s ease;
+  -webkit-transition: border-top-color 0.3s ease, color 0.3s ease, -webkit-transform 0.3s ease;
+  transition: border-top-color 0.3s ease, color 0.3s ease, -webkit-transform 0.3s ease;
+  transition: border-top-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  transition: border-top-color 0.3s ease, color 0.3s ease, transform 0.3s ease, -webkit-transform 0.3s ease;
 }
 
 .menu-toggle::before {
@@ -1150,10 +1150,8 @@ a:hover, a:focus {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-  -webkit-transition: -webkit-transform 0.3s ease;
-  transition: -webkit-transform 0.3s ease;
-  transition: transform 0.3s ease;
-  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 /* 1.8 Navigation */
@@ -1444,7 +1442,19 @@ a:hover, a:focus {
 }
 
 .vertical-logo__layer {
-  padding: 100px 82px 100px 88px;
+  padding: 48px 32px;
+}
+
+@media (min-width: 992px) {
+  .vertical-logo__layer {
+    padding: 72px 56px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .vertical-logo__layer {
+    padding: 100px 82px 100px 88px;
+  }
 }
 
 .vertical-logo__layer--black {
@@ -1597,7 +1607,14 @@ a:hover, a:focus {
 /* Parallax background block */
 .parallax-bg {
   width: 100%;
+  min-width: 1000px;
   min-height: 100%;
+}
+
+@media (min-width: 576px) {
+  .parallax-bg {
+    min-width: 1200px;
+  }
 }
 
 .parallax-bg img {
@@ -1606,8 +1623,8 @@ a:hover, a:focus {
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   display: block;
-  width: auto;
-  min-height: 100%;
+  width: 100%;
+  height: auto;
 }
 
 /* Feature card */
@@ -2832,7 +2849,6 @@ a:hover, a:focus {
   height: 100vh;
   min-height: 480px;
   padding-top: 80px;
-  overflow: hidden;
   z-index: 0;
 }
 
@@ -2854,7 +2870,17 @@ a:hover, a:focus {
   top: 0;
   left: 0;
   width: 100%;
+  height: 100%;
   z-index: -1;
+  overflow: hidden;
+}
+
+.hero__bg .parallax-bg {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
 .hero__container {
@@ -3324,6 +3350,7 @@ a:hover, a:focus {
 .features {
   padding: 80px 0;
   background-color: #000000;
+  overflow: hidden;
 }
 
 @media (min-width: 992px) {
@@ -7154,6 +7181,20 @@ a:hover, a:focus {
   }
 }
 
+.blog-grid {
+  /*&--post {
+		.blog-grid {
+			&__first-screen {
+				background: url("../img/news/banner-blog-2.jpg") no-repeat;
+
+				@include retina {
+					background: url("../img/news/banner-blog-2@2x.jpg") no-repeat;
+				}
+			}
+		}
+	}*/
+}
+
 .blog-grid__first-screen {
   position: relative;
   display: -webkit-box;
@@ -7193,8 +7234,10 @@ a:hover, a:focus {
 
 .blog-grid__first-screen-image {
   position: absolute;
-  left: 0;
+  left: 50%;
   top: 0;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
 .blog-grid__first-screen h1 {
@@ -7243,14 +7286,7 @@ a:hover, a:focus {
 
 .blog-grid__row {
   list-style: none;
-  margin: 0 -30px;
   padding: 0;
-}
-
-@media (min-width: 768px) {
-  .blog-grid__row {
-    margin: 0 -5px;
-  }
 }
 
 @media (min-width: 1200px) {
@@ -7303,16 +7339,6 @@ a:hover, a:focus {
     bottom: unset;
     -webkit-transform: translate(100%, 0);
             transform: translate(100%, 0);
-  }
-}
-
-.blog-grid--post .blog-grid__first-screen {
-  background: url("../img/news/banner-blog-2.jpg") no-repeat;
-}
-
-@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
-  .blog-grid--post .blog-grid__first-screen {
-    background: url("../img/news/banner-blog-2@2x.jpg") no-repeat;
   }
 }
 
@@ -8255,7 +8281,9 @@ a:hover, a:focus {
 .first-banner__image {
   position: absolute;
   top: 0;
-  left: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   /*right: 0;
 		bottom: 0;*/
 }

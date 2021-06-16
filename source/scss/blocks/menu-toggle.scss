@@ -49,7 +49,7 @@
 		border-top: solid 3px $color-default-black;
 
 		transition: border-top-color $default-transition-settings,
-			transform $default-transition-settings;
+			color $default-transition-settings, transform $default-transition-settings;
 	}
 
 	&::before {
@@ -66,7 +66,7 @@
 		border-top: solid 3px $color-default-black;
 		align-self: center;
 
-		@include transition(transform);
+		@include transition(all);
 	}
 
 	/*&:hover,

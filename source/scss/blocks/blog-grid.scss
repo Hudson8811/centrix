@@ -30,8 +30,9 @@
 
 		&-image {
 			position: absolute;
-			left: 0;
+			left: 50%;
 			top: 0;
+			transform: translateX(-50%);
 		}
 
 		h1 {
@@ -75,11 +76,11 @@
 
 	&__row {
 		list-style: none;
-		margin: 0 -30px;
+		//margin: 0 -30px;
 		padding: 0;
 
 		@include media(md) {
-			margin: 0 -5px;
+			//margin: 0 -5px;
 		}
 
 		@include media(xl) {
@@ -137,7 +138,7 @@
 		}
 	}
 
-	&--post {
+	/*&--post {
 		#{$self} {
 			&__first-screen {
 				background: url("../img/news/banner-blog-2.jpg") no-repeat;
@@ -147,5 +148,5 @@
 				}
 			}
 		}
-	}
+	}*/
 }

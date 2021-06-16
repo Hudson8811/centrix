@@ -19,26 +19,31 @@
 			var triggerHeight = parentHeight / 2;
 
 
-			console.clear()
-			console.log(offset, scroll);
 
 				var isEqual = scroll >= offset;
 
 				if (isEqual) {
-					console.log('scroll > offset');
-
-						var shiftPercent = (scroll - offset) / triggerHeight;
-						var shift = distance * shiftPercent;
+					var shiftPercent = (scroll - offset) / triggerHeight;
+					var shift = distance * shiftPercent;
 
 					if (shift < distance && height > parentHeight) {
-						item.css({'transform': 'translateY(' + -shift + 'px)'})
+						//item.css({'transform': 'translateY(' + -shift + 'px)'})
+
+						item.css({'top': -shift + 'px'});
+
+
+						/*animate({
+							duration: 300,
+							timing(timeFraction) {
+								return timeFraction;
+							},
+							draw(progress) {
+
+							}
+						});*/
 					}
 				}
 
 		});
-
-
-
-
   }
 })();

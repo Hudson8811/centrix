@@ -2,7 +2,15 @@
 	&__layer {
 		//229
 		//448
-		padding: 100px 82px 100px 88px;
+		padding: 48px 32px;
+
+		@include media(lg) {
+			padding: 72px 56px;
+		}
+
+		@include media(xl) {
+			padding: 100px 82px 100px 88px;
+		}
 
 		&--black {
 			background-color: $color-default-black;

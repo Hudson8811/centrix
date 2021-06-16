@@ -38,7 +38,11 @@ const sassLibs = {
 gulp.task('server', function() {
 	browserSync.init({
     server: './build',
-    index: 'index.html'
+    index: 'index.html',
+    notify: false,
+    open: true,
+    cors: true,
+    ui: false
 	});
 
    gulp.watch('source/scss/**/*.scss', gulp.series('sass'));

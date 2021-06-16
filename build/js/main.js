@@ -27,6 +27,26 @@ function getScrollbarWidth() {
 	return (w1 - w2);
 }
 
+function animate({timing, draw, duration}) {
+  let start = performance.now();
+
+  requestAnimationFrame(function animate(time) {
+    let timeFraction = (time - start) / duration;
+
+    if (timeFraction > 1) {
+			timeFraction = 1;
+		}
+
+    let progress = timing(timeFraction);
+
+    draw(progress);
+
+    if (timeFraction < 1) {
+      requestAnimationFrame(animate);
+    }
+  });
+}
+
 /* AOS init */
 (function() {
 	$('window').on('animsition.inEnd', function(){});
@@ -63,90 +83,91 @@ function getScrollbarWidth() {
 		BG_WHITE: 'header--bg-white',
 		LEFTWARD: 'header--leftward'
 	};
+	if (header.length !== 0) {
+		var headerClasses = header.hasClass(ModifierClass.BG_WHITE) || header.hasClass(ModifierClass.WHITE) ? ModifierClass.FIXED : ModifierClass.WHITE + ' ' + ModifierClass.FIXED;
 
-	var headerClasses = header.hasClass(ModifierClass.BG_WHITE) || header.hasClass(ModifierClass.WHITE) ? ModifierClass.FIXED : ModifierClass.WHITE + ' ' + ModifierClass.FIXED;
+		var windowWidth = $(window).width();
+		var headerOffset = header.offset().top;
+		var scroll = $(window).scrollTop();
 
-	var windowWidth = $(window).width();
-	var headerOffset = header.offset().top;
-	var scroll = $(window).scrollTop();
+		var isScroll = false;
+		var isMobileWidth = windowWidth < mobileBreakpoint;
+		var isStaticHeader = !header.hasClass(ModifierClass.ABSOLUTE);
+		var isLeftwardHeader = header.hasClass(ModifierClass.LEFTWARD);
 
-	var isScroll = false;
-	var isMobileWidth = windowWidth < mobileBreakpoint;
-	var isStaticHeader = !header.hasClass(ModifierClass.ABSOLUTE);
-	var isLeftwardHeader = header.hasClass(ModifierClass.LEFTWARD);
+		$(window).on('animsition.inEnd', function(){
+			var Height = {
+				HEADER: header.outerHeight(),
+				LEFTWARD: leftward.length !== 0 ? leftward.outerHeight() : 0
+			};
 
-	$(window).on('animsition.inEnd', function(){
-		var Height = {
-			HEADER: header.outerHeight(),
-			LEFTWARD: leftward.length !== 0 ? leftward.outerHeight() : 0
-		};
+			changeStateHandler();
 
-		changeStateHandler();
+			$(window).on('resize', function() {
+				setTimeout(function() {
+					Height.HEADER = header.outerHeight();
+					Height.LEFTWARD = leftward.outerHeight();
+					windowWidth = $(window).width();
+					isMobileWidth = windowWidth < mobileBreakpoint;
+					changeStateHandler();
+				}, DURATION);
+			});
 
-		$(window).on('resize', function() {
-			setTimeout(function() {
-				Height.HEADER = header.outerHeight();
-				Height.LEFTWARD = leftward.outerHeight();
-				windowWidth = $(window).width();
-				isMobileWidth = windowWidth < mobileBreakpoint;
-				changeStateHandler();
-			}, DURATION);
-		});
+			function changeStateHandler() {
+				if ( isLeftwardHeader && isMobileWidth || !isLeftwardHeader) {
+					resetHeader();
+					window.onscroll = onScrollTwo;
 
-		function changeStateHandler() {
-			if ( isLeftwardHeader && isMobileWidth || !isLeftwardHeader) {
-				resetHeader();
-				window.onscroll = onScrollTwo;
-
-			} else  {
-				resetHeader();
-				window.onscroll = onScrollOne;
+				} else  {
+					resetHeader();
+					window.onscroll = onScrollOne;
+				}
 			}
-		}
 
-		function onScrollOne() {
-			scroll = $(window).scrollTop();
+			function onScrollOne() {
+				scroll = $(window).scrollTop();
 
-			if(scroll > Height.LEFTWARD - Height.HEADER) {
+				if(scroll > Height.LEFTWARD - Height.HEADER) {
 
-				header.css({'position': 'absolute', 'top': 'auto', 'bottom': '0'})
-			} else {
-				header.removeAttr('style');
+					header.css({'position': 'absolute', 'top': 'auto', 'bottom': '0'})
+				} else {
+					header.removeAttr('style');
+				}
 			}
-		}
 
-		function onScrollTwo() {
-			scroll = $(window).scrollTop();
+			function onScrollTwo() {
+				scroll = $(window).scrollTop();
 
-			if (scroll >= headerOffset + Height.HEADER) {
-				isScroll = true;
+				if (scroll >= headerOffset + Height.HEADER) {
+					isScroll = true;
 
-				header.addClass(headerClasses);
-				Height.HEADER = isScroll ? header.outerHeight() : Height.HEADER;
+					header.addClass(headerClasses);
+					Height.HEADER = isScroll ? header.outerHeight() : Height.HEADER;
 
 
-				if (!header.hasClass(ModifierClass.IS_FIXED)) {
-					header.css({'top': -Height.HEADER + 'px', 'transform': ' translateY(' + Height.HEADER + 'px)'}).addClass(ModifierClass.IS_FIXED);
+					if (!header.hasClass(ModifierClass.IS_FIXED)) {
+						header.css({'top': -Height.HEADER + 'px', 'transform': ' translateY(' + Height.HEADER + 'px)'}).addClass(ModifierClass.IS_FIXED);
+
+						if (isStaticHeader) {
+							body.css('padding-top', Height.HEADER + 'px');
+						}
+					}
+				} else {
+					isScroll = false;
+					header.removeClass(headerClasses + ' ' + ModifierClass.IS_FIXED).removeAttr('style');
 
 					if (isStaticHeader) {
-						body.css('padding-top', Height.HEADER + 'px');
+						body.css('padding-top', 0);
 					}
 				}
-			} else {
-				isScroll = false;
-				header.removeClass(headerClasses + ' ' + ModifierClass.IS_FIXED).removeAttr('style');
-
-				if (isStaticHeader) {
-					body.css('padding-top', 0);
-				}
 			}
-		}
 
-		function resetHeader() {
-			header.removeClass(headerClasses + ' ' + ModifierClass.IS_FIXED).removeAttr('style');
-			body.css('padding-top', '0');
-		}
-	});
+			function resetHeader() {
+				header.removeClass(headerClasses + ' ' + ModifierClass.IS_FIXED).removeAttr('style');
+				body.css('padding-top', '0');
+			}
+		});
+	}
 })();
 
 
@@ -214,27 +235,32 @@ function getScrollbarWidth() {
 			var triggerHeight = parentHeight / 2;
 
 
-			console.clear()
-			console.log(offset, scroll);
 
 				var isEqual = scroll >= offset;
 
 				if (isEqual) {
-					console.log('scroll > offset');
-
-						var shiftPercent = (scroll - offset) / triggerHeight;
-						var shift = distance * shiftPercent;
+					var shiftPercent = (scroll - offset) / triggerHeight;
+					var shift = distance * shiftPercent;
 
 					if (shift < distance && height > parentHeight) {
-						item.css({'transform': 'translateY(' + -shift + 'px)'})
+						//item.css({'transform': 'translateY(' + -shift + 'px)'})
+
+						item.css({'top': -shift + 'px'});
+
+
+						/*animate({
+							duration: 300,
+							timing(timeFraction) {
+								return timeFraction;
+							},
+							draw(progress) {
+
+							}
+						});*/
 					}
 				}
 
 		});
-
-
-
-
   }
 })();
 
@@ -245,7 +271,7 @@ function getScrollbarWidth() {
 		var footer = $('.__js_fixed-footer');
 		var footerHeight = footer.innerHeight();
 
-		if(footer.length !== 0) {
+		if(footer.length !== 0 && $(window).width() >= mobileBreakpoint) {
 			if (footerHeight <= $(window).height()) {
 				footer.css({ 'position': 'fixed', 'left': '0', 'right': '0', 'bottom': '0'});
 				body.css('padding-bottom', footerHeight);
