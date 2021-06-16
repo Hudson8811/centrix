@@ -1,0 +1,26 @@
+extends templates/titular
+block variables
+	- let pageTitle = TITLE_PART + ' | Intro';
+	- let isHome = true; //- Если true то логотип не будет ссылкой
+	- let currentPage = 0; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+	- let currentSection = 0; // // Для каждой раздела уникален. Home -1, about - 2, works - 3, news - 4, pages - 5
+	- let isIntro = true;
+
+//-block header
+	//-include modules/header-intro
+block content
+	.container
+		.row
+			.col-12
+				h1.heading Страницы проекта
+
+				ul.list
+					each item in MAIN_MENU
+						li.list__item
+							a.list__link(href= item.url)= item.name
+
+							if item.submenu
+								ul.list
+									each subitem in item.submenu
+										li.list__item
+											a.list__link(href= subitem.url)= subitem.name
