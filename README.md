@@ -1,1 +1,1 @@
-# Larson Interior Studio
+# Centrix template
