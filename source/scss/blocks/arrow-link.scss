@@ -5,6 +5,12 @@
 	flex-direction: column-reverse;
 	align-items: flex-end;
 
+	@include hover {
+		#{$self}__icon {
+			transform: scale(0.33);
+		}
+	}
+
 	@include media(md) {
 		flex-direction: row;
 	}
@@ -36,6 +42,9 @@
 		margin-left: 12px;
 		margin-bottom: 8px;
 		width: 48px;
+		transform-origin: 0 100%;
+
+		@include transition(transform);
 
 		@include media(lg) {
 			margin-left: 20px;

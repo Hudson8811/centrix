@@ -50,6 +50,13 @@
 		font-weight: 500;
 		border: none;
 		background-color: transparent;
+		cursor: pointer;
+
+		@include transition(color);
+
+		@include hover {
+			color: $color-grey;
+		}
 
 		@include media(md) {
 			font-size: 40px;

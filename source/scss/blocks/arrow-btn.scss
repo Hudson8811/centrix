@@ -7,10 +7,20 @@
 	background-color: transparent;
 	cursor: pointer;
 
+	@include hover {
+		svg {
+			transform: scale(0.33);
+		}
+	}
+
 	svg {
 		display: block;
 		width: 100%;
 		height: auto;
+
+		transform-origin: 0 100%;
+
+		@include transition(transform);
 	}
 
 	&--size-large {

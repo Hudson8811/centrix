@@ -90,15 +90,31 @@
 		}
 
 		a {
+			position: relative;
+
 			@include text(15px, 21 / 15, $color-default-black);
 			text-transform: uppercase;
+
+			&::before {
+				content: "";
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				width: 100%;
+				border-top: solid 1px $color-default-black;
+				transform: scale(0, 1);
+
+				@include transition(transform);
+			}
 
 			&:focus {
 				outline: none;
 			}
 
 			@include hover {
-				color: $color-yellow;
+				&::before {
+					transform: scale(1, 1);
+				}
 			}
 		}
 	}

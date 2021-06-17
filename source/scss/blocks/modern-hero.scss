@@ -32,11 +32,14 @@
 		align-items: flex-end;
 		margin: 0 0 60px;
 
-		@include text(42px, 198 / 209, $color-default-black);
+		//@include text(42px, 198 / 209, $color-default-black);
+		line-height: (198 / 209);
+		color: $color-default-black;
 		font-weight: 500;
 		text-transform: uppercase;
 		//209 / 198
 		opacity: 0.95;
+		@include fluid-font-size(42px, 72px, 320px, 576px, 42px);
 
 		@include media(sm) {
 			font-size: 72px;

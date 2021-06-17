@@ -113,7 +113,7 @@
 			}
 
 			&::before {
-				content: '';
+				content: "";
 				display: block;
 				max-width: 27px;
 				width: 100%;
@@ -150,10 +150,6 @@
 
 		&--outline {
 			border: 1px solid $color-default-black;
-
-			@include hover {
-				background-color: transparent;
-			}
 		}
 	}
 

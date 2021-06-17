@@ -135,8 +135,8 @@
 		}
 
 		.partners__item {
+			margin-bottom: 56px;
 			@include media(lg) {
-				margin-bottom: 56px;
 			}
 
 			@include media(xl) {

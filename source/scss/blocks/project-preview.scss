@@ -31,14 +31,6 @@
 		img {
 			transform: scale(1.15) rotate(-4deg);
 		}
-
-		#{$self}__title {
-			color: $color-yellow;
-		}
-
-		#{$self}__icon svg {
-			fill: $color-yellow;
-		}
 	}
 
 	&__bottom {

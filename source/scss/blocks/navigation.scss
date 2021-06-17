@@ -76,11 +76,23 @@
 
 			&--current {
 				a {
-					color: $color-yellow !important;
+					//color: $color-yellow !important;
 
 					#{$self}__dropdown-icon {
 						svg {
-							fill: $color-yellow !important;
+							fill: $color-default-black !important;
+						}
+					}
+				}
+
+				@include media(lg) {
+					a {
+						color: $color-yellow !important;
+
+						#{$self}__dropdown-icon {
+							svg {
+								fill: $color-yellow !important;
+							}
 						}
 					}
 				}
@@ -105,11 +117,17 @@
 				&:hover,
 				&:focus {
 					outline: none;
-					color: $color-yellow;
+					//color: $color-yellow;
+					text-decoration: underline;
+
+					@include media(lg) {
+						text-decoration: none;
+						color: $color-yellow;
+					}
 
 					#{$self}__dropdown-icon {
 						svg {
-							fill: $color-yellow !important;
+							//fill: $color-yellow !important;
 						}
 					}
 				}

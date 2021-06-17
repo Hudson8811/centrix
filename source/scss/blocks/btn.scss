@@ -13,10 +13,36 @@
 
 	@include transition(background-color);
 
+	&:focus {
+		outline: none;
+	}
+
+	@include hover {
+		box-shadow: none;
+		background-color: $color-default-black;
+
+		#{$self}__text {
+			color: $color-default-white;
+		}
+
+		#{$self}__icon {
+			svg {
+				fill: $color-default-white;
+			}
+		}
+	}
+
+	&:active {
+		opacity: 0.7;
+		box-shadow: none;
+	}
+
 	&__text {
 		@include text(15px, 18 / 15, $color-default-black);
 		text-transform: uppercase;
 		font-weight: 500;
+
+		@include transition(color);
 	}
 
 	&__icon {
@@ -25,24 +51,8 @@
 		svg {
 			display: block;
 			fill: $color-default-black;
+			@include transition(fill);
 		}
-	}
-
-	@include media(md) {
-		//padding: 17px 44px;
-	}
-
-	&:hover,
-	&:focus {
-		outline: none;
-		background-color: $color-yellow-hover;
-		color: $color-default-black;
-		box-shadow: none;
-	}
-
-	&:active {
-		opacity: 0.7;
-		box-shadow: none;
 	}
 
 	&--outline {
@@ -51,13 +61,6 @@
 		border-color: $color-yellow;
 		transition: background-color $default-transition-settings,
 			color $default-transition-settings;
-
-		&:hover,
-		&:focus {
-			outline: none;
-			background-color: $color-yellow;
-			color: $color-default-white;
-		}
 	}
 
 	&--theme-black {
@@ -96,6 +99,26 @@
 			}
 
 			&__icon {
+				svg {
+					fill: $color-default-white;
+				}
+			}
+		}
+	}
+
+	&--hover-white {
+		@include transition(all);
+
+		@include hover {
+			padding: 15px 19px 14px 24px;
+			border: 1px solid $color-default-white;
+			background-color: transparent;
+
+			#{$self}__text {
+				color: $color-default-white;
+			}
+
+			#{$self}__icon {
 				svg {
 					fill: $color-default-white;
 				}

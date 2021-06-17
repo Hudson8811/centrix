@@ -132,47 +132,6 @@
 
 	&--leftward {
 		@extend #{$self}--absolute;
-		//background-color: yellow;
-
-		/*.mobile-canvas {
-			position: fixed;
-			top: 0;
-			bottom: 0;
-			right: 0;
-			z-index: 1000;
-			width: 85%;
-			max-width: 460px;
-			padding: 60px 60px 40px;
-			background-color: $color-default-white;
-			display: flex;
-			flex-direction: column;
-			transform: translateX(100%);
-			@include transition(transform);
-
-			@include media(lg) {
-				left: 0;
-				right: auto;
-
-				transform: translateX(-100%);
-
-				#{$self}__social {
-					margin-left: auto;
-				}
-			}
-
-			&--opened {
-				transform: translateX(0);
-			}
-
-			&__nav {
-				margin-bottom: 20px;
-				flex-grow: 1;
-
-				@include media(lg) {
-					margin: 0 0 20px;
-				}
-			}
-		}*/
 
 		.navigation {
 			width: 100%;
@@ -250,6 +209,46 @@
 						margin-bottom: 32px;
 					}
 				}
+			}
+
+			&__dropdown-item--current {
+				a {
+					color: $color-default-black !important;
+
+					.navigation__dropdown-icon {
+						svg {
+							fill: $color-default-black !important;
+						}
+					}
+				}
+			}
+			&__dropdown-item {
+				a {
+					position: relative;
+
+					&::before {
+						content: "";
+						position: absolute;
+						left: 0;
+						bottom: 0;
+						width: calc(100% - 22px);
+						border-top: solid 1px $color-default-black;
+						transform: scale(0, 1);
+
+						@include transition(transform);
+					}
+
+					@include hover {
+						color: $color-default-black;
+
+						&::before {
+							transform: scale(1, 1);
+						}
+					}
+				}
+			}
+
+			&__link {
 			}
 		}
 
@@ -359,6 +358,36 @@
 				margin-right: 0;
 				transform: rotate(-90deg) translateX(-100%) translateY(50%);
 				transform-origin: 0 0;
+			}
+		}
+
+		@include media(full) {
+			left: calc((100vw - 1920px) / 2);
+
+			#{$self}__menu {
+				position: relative;
+				overflow: hidden;
+
+				&::before {
+					content: "";
+					position: fixed;
+					top: 0;
+					left: 0;
+					z-index: 1;
+					width: 100%;
+					height: 100%;
+					background-color: $color-default-white;
+
+					@include transition(transform);
+				}
+			}
+
+			&.shifted {
+				#{$self}__menu {
+					&::before {
+						transform: translateX(-100%);
+					}
+				}
 			}
 		}
 	}
