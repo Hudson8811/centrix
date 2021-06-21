@@ -14,6 +14,10 @@
 
 		@include media(lg) {
 			padding-left: 80px;
+			padding-right: 55px;
+		}
+
+		@include media(xl) {
 			padding-right: 80px;
 		}
 	}

@@ -104,3 +104,6 @@ function animate({timing, draw, duration}) {
 
 /* 12. Anchor */
 //= parts/anchor.js
+
+/* 13. Projects listing */
+//= parts/projects-listing.js

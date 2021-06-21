@@ -638,8 +638,6 @@ a:hover, a:focus {
 
 .arrow-link__icon {
   display: block;
-  margin-left: 12px;
-  margin-bottom: 8px;
   width: 48px;
   -webkit-transform-origin: 0 100%;
           transform-origin: 0 100%;
@@ -651,7 +649,6 @@ a:hover, a:focus {
 
 @media (min-width: 992px) {
   .arrow-link__icon {
-    margin-left: 20px;
     width: 75px;
   }
 }
@@ -660,6 +657,17 @@ a:hover, a:focus {
   display: block;
   width: 100%;
   height: auto;
+}
+
+.arrow-link__text + .arrow-link__icon {
+  margin-left: 12px;
+  margin-bottom: 8px;
+}
+
+@media (min-width: 992px) {
+  .arrow-link__text + .arrow-link__icon {
+    margin-left: 20px;
+  }
 }
 
 .arrow-link--white .arrow-link__text {
@@ -2029,7 +2037,6 @@ a:hover, a:focus {
 /* Project card in listing */
 .project-card__image {
   display: block;
-  margin-bottom: 40px;
   overflow: hidden;
   padding: 0 !important;
 }
@@ -3410,6 +3417,18 @@ a:hover, a:focus {
   padding: 100px 0 70px;
 }
 
+@media (min-width: 992px) {
+  .creative-hero {
+    padding-top: 75px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .creative-hero {
+    padding-top: 100px;
+  }
+}
+
 .creative-hero__container {
   position: relative;
   display: -webkit-box;
@@ -3433,8 +3452,8 @@ a:hover, a:focus {
 
 @media (min-width: 1200px) {
   .creative-hero__main {
-    top: 46.5%;
-    left: calc(0.162 * 100vw + 12px);
+    top: 50%;
+    left: calc(16.6666666667% + 15px);
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
   }
@@ -5361,14 +5380,133 @@ a:hover, a:focus {
 }
 
 .projects-listing__container {
+  position: relative;
   max-width: 1845px;
 }
 
 @media (min-width: 1200px) {
   .projects-listing__container {
     padding-left: 42px;
-    -webkit-transform: translateX(50px);
-            transform: translateX(50px);
+    left: 50px;
+  }
+}
+
+.projects-listing__aside {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 12px 15px;
+  background-color: #ffffff;
+}
+
+@media (min-width: 768px) {
+  .projects-listing__aside {
+    position: absolute;
+    top: 0;
+    left: 12px;
+    right: auto;
+    bottom: auto;
+    padding: 0;
+    -webkit-transition: -webkit-transform 0.3s ease;
+    transition: -webkit-transform 0.3s ease;
+    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+  }
+}
+
+@media (min-width: 1200px) {
+  .projects-listing__aside {
+    left: 42px;
+  }
+}
+
+.projects-listing__aside-left {
+  width: calc(100% - 72px);
+  margin-right: 24px;
+}
+
+@media (min-width: 768px) {
+  .projects-listing__aside-left {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 24px;
+  }
+}
+
+@media (min-width: 992px) {
+  .projects-listing__aside-left {
+    margin-bottom: 72px;
+  }
+}
+
+.projects-listing__category {
+  display: inline-block;
+  font-size: 15px;
+  line-height: 1.4;
+  color: #000000;
+  text-transform: uppercase;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+}
+
+.projects-listing__category + * {
+  margin-top: 12px !important;
+}
+
+.projects-listing__category:focus {
+  outline: none;
+}
+
+@media (min-width: 992px) {
+  .projects-listing__category:hover, .projects-listing__category:focus {
+    color: #fffe55;
+  }
+}
+
+.projects-listing__title {
+  margin: 0;
+  font-size: 32px;
+  line-height: 0.95;
+  color: #000000;
+  font-weight: 500;
+}
+
+@media (min-width: 768px) {
+  .projects-listing__title {
+    font-size: 64px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .projects-listing__title {
+    font-size: 100px;
+  }
+}
+
+@media (min-width: 768px) {
+  .projects-listing__title span {
+    display: block;
+  }
+}
+
+.projects-listing__more {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  .projects-listing__more {
+    margin-left: 0;
   }
 }
 
@@ -6712,6 +6850,12 @@ a:hover, a:focus {
 @media (min-width: 992px) {
   .leftward-wrapper__container {
     padding-left: 80px;
+    padding-right: 55px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .leftward-wrapper__container {
     padding-right: 80px;
   }
 }

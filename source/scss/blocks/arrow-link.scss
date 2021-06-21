@@ -39,15 +39,12 @@
 
 	&__icon {
 		display: block;
-		margin-left: 12px;
-		margin-bottom: 8px;
 		width: 48px;
 		transform-origin: 0 100%;
 
 		@include transition(transform);
 
 		@include media(lg) {
-			margin-left: 20px;
 			width: 75px;
 		}
 
@@ -55,6 +52,15 @@
 			display: block;
 			width: 100%;
 			height: auto;
+		}
+	}
+
+	&__text + &__icon {
+		margin-left: 12px;
+		margin-bottom: 8px;
+
+		@include media(lg) {
+			margin-left: 20px;
 		}
 	}
 

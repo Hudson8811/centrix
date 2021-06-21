@@ -2,7 +2,10 @@
 	padding: 100px 0 70px;
 
 	@include media(lg) {
-		//padding-top: 50px;
+		padding-top: 75px;
+	}
+	@include media(xl) {
+		padding-top: 100px;
 	}
 
 	&__container {
@@ -21,8 +24,8 @@
 		}
 
 		@include media(xl) {
-			top: 46.5%;
-			left: calc(0.162 * 100vw + 12px);
+			top: 50%;
+			left: calc(16.6666666667% + 15px);
 			transform: translateY(-50%);
 		}
 	}
