@@ -1,8 +1,10 @@
 .services {
 	&__item {
+		display: flex;
 		margin-top: 40px;
 
 		@include media(lg) {
+			display: block;
 			margin-top: 120px;
 		}
 
@@ -22,7 +24,7 @@
 		}
 
 		&--margin-negative {
-			@include media(lg) {
+			@include media(xl) {
 				margin-top: -40px;
 			}
 		}
