@@ -1,44 +1,47 @@
 footer.footer.__js_fixed-footer
-	.footer__container.container-fluid
-		.row
-			.footer__logo-wrap.col-12.col-sm-3.col-xl-2
-				.footer__logo.logo.logo--filled
-					+icon('logo')(width="240", height="57")
-			.col-12.col-sm-9.col-xl-10
-				.row
-					.footer__menu.col-6.col-sm-5.col-lg-3
-						.footer__title Quick Links
-						ul.footer__menu-list
-							each item in FOOTER_MENU_1
-								if currentPage === item.currentPage
-									li.footer__menu-item.footer__menu-item--current
-										a.footer__menu-link= item.name
-								else
-									li.footer__menu-item
-										a.footer__menu-link(href= item.url)= item.name
-					.footer__menu.col-6.col-sm-5.col-lg-3
-						.footer__title Follow
-						ul.footer__menu-list
-							each item in FOOTER_MENU_2
-								if currentPage === item.currentPage
-									li.footer__menu-item.footer__menu-item--current
-										a.footer__menu-link= item.name
-								else
-									li.footer__menu-item
-										a.footer__menu-link(href= item.url)= item.name
+	.footer__container.container.container--size-large
+		.footer__grid
+			if isHome
+				a.footer__logo
+					+icon('vertical-logo')(width="59", height="242")
+			else
+				a.footer__logo(href= URLS.home.default)
+					+icon('vertical-logo')(width="59", height="242")
+			.footer__phone
+				a(href="tel:+34255216021") +3(425) 521 60 21
 
-					.footer__phone.col-12.col-sm-2.col-lg-1.order-sm-first
-						a(href="tel:+34255216021") +3(425) 521 60 21
-					.footer__feedback.col-12.col-lg-5
-						.footer__title Sign up to our newsletter
-						form.footer__feedback-form(action="#", method="post")
-							label.footer__feedback-field.field
-								input(type="email", name="email")
-								span.field__hint E-mail
-							button.footer__feedback-send.arrow-btn.arrow-btn--size-large(type="button")
-								+icon('link-arrow')(width="75", height="75")
-						.footer__feedback-notice This site is protected by reCAPTHCHA and the <a href="#" target="_blank">Google Privacy Policy</a> and <a href="#" target="_blank">Terms of Service apply</a>.
-					.footer__bottom.col-12
-						.footer__copyright © Centrix  2021. All Rights Resevered
-						a.footer__privacy(href="#") Privacy Policy
+			.footer__menu
+				.footer__title Quick Links
+				ul.footer__menu-list
+					each item in FOOTER_MENU_1
+						if currentPage === item.currentPage
+							li.footer__menu-item.footer__menu-item--current
+								a.footer__menu-link= item.name
+						else
+							li.footer__menu-item
+								a.footer__menu-link(href= item.url)= item.name
 
+			.footer__menu
+				.footer__title Follow
+				ul.footer__menu-list
+					each item in FOOTER_MENU_2
+						if currentPage === item.currentPage
+							li.footer__menu-item.footer__menu-item--current
+								a.footer__menu-link= item.name
+						else
+							li.footer__menu-item
+								a.footer__menu-link(href= item.url)= item.name
+
+			.footer__feedback
+				.footer__title Sign up to our newsletter
+				form.footer__feedback-form(action="#", method="post")
+					label.footer__feedback-field.field
+						input(type="email", name="email")
+						span.field__hint E-mail
+					button.footer__feedback-send.arrow-btn.arrow-btn--size-large(type="button")
+						+icon('link-arrow')(width="75", height="75")
+				.footer__feedback-notice This site is protected by reCAPTHCHA and the <a href="#" target="_blank">Google Privacy Policy</a> and <a href="#" target="_blank">Terms of Service apply</a>.
+
+			.footer__bottom
+				.footer__copyright © Centrix  2021. All Rights Resevered
+				a.footer__privacy(href="#") Privacy Policy

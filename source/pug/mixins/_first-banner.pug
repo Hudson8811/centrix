@@ -1,7 +1,8 @@
 mixin first-banner(title, pic, className)
 	.first-banner(class=className)
-		.first-banner__image.parallax-bg
+		.first-banner__image.__js_parallax
 			picture
 				source(type="image/webp", srcset="img/picture/first-banner/" + pic.n + ".webp 1x, img/picture/first-banner/" + pic.n + "@2x.webp 2x")
 				img(src="img/picture/first-banner/" + pic.n + ".jpg", srcset="img/picture/first-banner/" + pic.n + "@2x.jpg 2x", width= pic.w, height= pic.h, alt="")
-		h1.heading.heading--size-large.blog-grid__title(data-aos="fade")!= title
+		.container.container--size-large
+			h1.first-banner__title.heading.heading--size-large(data-aos="fade")!= title

@@ -9,7 +9,7 @@
 		#{$self}__link {
 			@include hover {
 				svg {
-					fill: $color-default-white;
+					fill: $color-default-white !important;
 				}
 			}
 		}

@@ -1,6 +1,6 @@
 if isSecondaryHeader
 	header.header.header--secondary(class= headerClasses ? headerClasses : '')
-		.header__container.container-fluid
+		.header__container.container.container--size-large
 			a.header__logo.logo
 				+icon('logo')(width="76" height="19")
 			.header__mobile.mobile-canvas
@@ -12,7 +12,7 @@ if isSecondaryHeader
 				span.visually-hidden Menu toggle
 else if isLeftwardHeader
 	header.header.header--leftward(class= headerClasses ? headerClasses : '')
-		.header__container.container-fluid
+		.header__container.container.container--size-large
 			.header__menu
 				nav.navigation
 					include menu
@@ -34,7 +34,7 @@ else if isLeftwardHeader
 
 else
 	header.header(class= headerClasses ? headerClasses : '')
-		.header__container.container-fluid
+		.header__container.container.container--size-large
 			if isHome
 				a.header__logo.logo
 					+icon('logo')(width="76" height="19")

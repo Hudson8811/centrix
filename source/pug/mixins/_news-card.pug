@@ -18,4 +18,4 @@ mixin news-card(image, day, month, year, tag, title, text, href)
 					.news-card__title!= title
 				.news-card__bottom
 					.news-card__text!= text
-					+arrow-link()
+					+arrow-link('', URLS.blog.post, 'arrow-link--no-scale')

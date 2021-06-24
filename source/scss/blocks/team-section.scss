@@ -15,66 +15,56 @@
 	}
 
 	&__container {
-		max-width: $width--full;
 	}
 
 	&__title {
 		margin: 0 0 48px;
 
-		@include text(24px, 1, $color-default-black);
+		@include text(48px, 1, $color-default-black);
 		font-weight: 500;
-
-		@include media(sm) {
-			font-size: 36px;
-		}
 
 		@include media(md) {
 			margin-bottom: 64px;
 		}
 
+		@include media(lg) {
+			font-size: 58px;
+		}
+
 		@include media(xl) {
 			margin-bottom: 105px;
-			font-size: 58px;
 		}
 	}
 
 	&__grid {
-		@include media(sm) {
-			.swiper-wrapper {
-				display: flex;
-				flex-wrap: wrap;
-				width: auto;
-				margin-left: -24px;
-			}
-
-			.swiper-slide {
-				//width: auto;
-			}
+		@include media(xs) {
+			display: flex;
+			flex-wrap: wrap;
+			margin-left: -24px;
 		}
 
 		@include media(lg) {
-			.swiper-wrapper {
-				flex-wrap: nowrap;
-			}
+			flex-wrap: nowrap;
 		}
 
 		@include media(xl) {
-			.swiper-wrapper {
-				margin-left: vw(-60);
-			}
+			position: relative;
+			margin-left: vw(-60);
+		}
+
+		@include media(xxl) {
+			margin-left: vw(-118);
 		}
 
 		@include media(full) {
-			.swiper-wrapper {
-				margin-left: -60px;
-			}
+			margin-left: -118px;
 		}
 	}
 
 	&__item {
-		max-width: calc(100% - 80px);
+		margin-top: 40px;
 
-		@include media(sm) {
+		@include media(xs) {
 			width: calc(50% - 24px);
 			margin-left: 24px;
 
@@ -84,8 +74,8 @@
 		}
 
 		@include media(lg) {
-			flex-shrink: 1;
-			width: auto;
+			width: calc(25% - 24px);
+			margin-top: 0;
 
 			&:nth-child(n + 3) {
 				margin-top: 0;
@@ -93,11 +83,19 @@
 		}
 
 		@include media(xl) {
+			max-width: calc(25% - ((60 * 100) / 1920) * 1px);
+			flex-shrink: 1;
+			width: auto;
 			margin-left: vw(60);
 		}
 
+		@include media(xxl) {
+			max-width: calc(25% - ((118 * 100) / 1920) * 1px);
+			margin-left: vw(118);
+		}
+
 		@include media(full) {
-			margin-left: 60px;
+			margin-left: 118px;
 		}
 	}
 }

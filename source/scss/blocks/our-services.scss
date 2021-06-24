@@ -8,7 +8,6 @@
 	}
 
 	&__container {
-		max-width: $width--full;
 	}
 
 	&__header {
@@ -33,10 +32,10 @@
 			#{$self}__title {
 				text-transform: uppercase;
 
-				@include media(md) {
+				@include media(sm) {
 					max-width: 230px;
-					margin: 0;
-					font-size: 52px;
+					//margin: 0;
+					font-size: 72px;
 				}
 
 				@include media(lg) {
@@ -53,14 +52,13 @@
 
 	&__title {
 		width: 100%;
-		margin: 0 0 8px;
+		margin: 0 0 24px;
 
-		@include text(30px, 1, $color-default-white);
+		@include text(52px, 1, $color-default-white);
 		font-weight: 500;
 
 		@include media(md) {
 			margin: 0;
-			font-size: 52px;
 		}
 
 		@include media(lg) {
@@ -69,13 +67,20 @@
 	}
 
 	&__short {
+		margin-bottom: 24px;
 		//max-width: calc(100% - 80px);
 
 		@include text(15px, 21 / 15, $color-default-white);
 
+		@include media(md) {
+			margin: 24px 0 0;
+			font-size: 24px;
+		}
+
 		@include media(xl) {
 			max-width: 693px;
 			margin-left: auto;
+			margin-top: 0;
 
 			@include text(32px, 42 / 32, $color-default-white);
 		}
@@ -85,9 +90,11 @@
 		display: inline-flex;
 		margin-left: auto;
 
-		@include media(xl) {
-			position: relative;
-			top: -26px;
+		&--negative-top {
+			@include media(xl) {
+				position: relative;
+				top: -26px;
+			}
 		}
 	}
 

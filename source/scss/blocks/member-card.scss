@@ -1,14 +1,14 @@
 .member-card {
 	$self: &;
 
-	display: inline-block;
-	vertical-align: top;
+	//display: inline-block;
+	//vertical-align: top;
 	position: relative;
 	overflow: hidden;
 
-	@include media(sm) {
+	/*@include media(sm) {
 		display: block;
-	}
+	}*/
 
 	@include media(lg) {
 		display: inline-block;
@@ -48,19 +48,25 @@
 	&__image {
 		overflow: hidden;
 
+		height: 300px;
+
 		@include media(sm) {
 			height: 300px;
 		}
 
-		@include media(lg) {
+		@include media(xl) {
 			height: auto;
 		}
 
 		img {
-			display: inline-block;
-			vertical-align: top;
-			max-width: 100%;
-			height: auto;
+			//display: inline-block;
+			//vertical-align: top;
+			//max-width: 100%;
+			//height: auto;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: top;
 
 			@include media(sm) {
 				width: 100%;
@@ -69,10 +75,11 @@
 				object-position: top;
 			}
 
-			@include media(lg) {
-				width: auto;
-				height: auto;
-				object-fit: none;
+			@include media(xl) {
+				//max-width: 100%;
+				//width: auto;
+				//height: auto;
+				object-fit: contain;
 			}
 		}
 	}

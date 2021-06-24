@@ -12,7 +12,7 @@ block header
 block content
 	article.blog-grid.blog-grid--post
 		.blog-grid__first-screen
-			.blog-grid__first-screen-image.parallax-bg
+			.blog-grid__first-screen-image.__js_parallax
 				picture
 					source(type="image/webp" srcset="img/picture/news/banner-blog-1.webp 1x, img/picture/news/banner-blog-1@2x.webp 2x")
 					img(src="img/picture/news/banner-blog-1.jpg", srcset="img/picture/news/banner-blog-1@2x.jpg 2x", width="1920", height="1099", alt="")
@@ -89,7 +89,7 @@ block content
 							+icon('soc-pinterest')
 				.single-post__subtitle(data-aos="fade-up") Related posts
 
-			.container
+			.container.container--size-large
 				ul.row.blog-grid__row.single-post__related
 					+news-card({n: 'blog-1', w: '533', h: '510'}, '16', 'Jan', '2020', 'Design', 'A few words <br> about us', 'We make our customers &#39; products valuable in the eyes of customers. To do this, we analyze and study people,', '#')(data-aos="fade-up")
 					+news-card({n: 'blog-2', w: '533', h: '510'}, '16', 'Jan', '2020', 'Design', 'A few words <br> about us', 'We make our customers &#39; products valuable in the eyes of customers. To do this, we analyze and study people,', '#')(data-aos="fade-up")

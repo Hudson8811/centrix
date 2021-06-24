@@ -13,7 +13,8 @@
 		});
 
 		grid.on( 'layoutComplete', function() {
-			console.log('done!')
+			//console.log('done!')
+
 		} );
 
 		/*var portfolioGrid = $('.__js_portfolio-section-masonry').isotope({

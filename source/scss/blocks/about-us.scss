@@ -15,13 +15,11 @@
 			justify-content: flex-end;
 		}
 
-		h1 {
-			text-align: center;
+		.first-banner__title {
+			text-align: left;
 
 			@include media(xl) {
-				padding-left: 100px;
 				padding-bottom: 10.6%;
-				text-align: left;
 			}
 
 			span {
@@ -47,8 +45,8 @@
 		.about-video-section {
 			&__title {
 				max-width: 100%;
-				font-size: 32px;
-				line-height: 130%;
+				//font-size: 32px;
+				//line-height: 130%;
 
 				br {
 					display: none;
@@ -73,12 +71,6 @@
 					font-size: 20px;
 					line-height: 24px;
 					font-weight: 400;
-				}
-
-				.arrow-link__icon {
-					@include media(lg) {
-						margin-left: 38px;
-					}
 				}
 			}
 		}

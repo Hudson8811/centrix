@@ -18,15 +18,15 @@ block content
 		.article__container.container-fluid
 			.row
 				header.article__header.col-12.col-lg-7
-					h1.article__title(data-aos="fade-up") Our <br>magic team
-					.article__text(data-aos="fade-up") The best design team in NYC
+					h1.article__title Our <br>magic team
+					.article__text The best design team in NYC
 
-				each item in MEMBERS_CARDS_2
+				each item, index in MEMBERS_CARDS_2
 					- let addCl = item.addCl ? item.addCl : '';
 					- let bootstrapCl = item.bootstrapCl ? 'col-12 col-sm-6 col-md-4 ' + item.bootstrapCl : 'col-12 col-sm-6 col-md-4';
 					- let classes = addCl + ' ' + bootstrapCl;
 
-					.team__item(class= classes, data-aos="fade-up")
+					.team__item(class= classes, data-aos= index > 0 ? "fade-up" : "")
 						.member-card.member-card--elastic
 							.member-card__image
 								picture

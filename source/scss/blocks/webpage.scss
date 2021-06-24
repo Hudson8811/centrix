@@ -28,6 +28,12 @@
 			.carousel::before {
 				background-color: $color-default-white;
 			}
+
+			.header__menu {
+				&::before {
+					background-color: $color-default-white;
+				}
+			}
 		}
 
 		&-black {
@@ -35,12 +41,18 @@
 
 			main,
 			.leftward-wrapper {
-				background-color: $color-default-black;
-				box-shadow: 0 0 0 20px $color-default-black;
+				background-color: transparent;
+				box-shadow: none;
 			}
 
 			.carousel::before {
 				background-color: $color-default-black;
+			}
+
+			.header__menu {
+				&::before {
+					background-color: $color-default-black;
+				}
 			}
 		}
 
@@ -56,17 +68,12 @@
 			.carousel::before {
 				background-color: $color-grey-e5;
 			}
+
+			.header__menu {
+				&::before {
+					background-color: $color-grey-e5;
+				}
+			}
 		}
 	}
-	/*
-	&::before {
-		content: "";
-		position: fixed;
-		z-index: 3;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		width: 50px;
-		background-color: rgba(red, 0.5);
-	}*/
 }

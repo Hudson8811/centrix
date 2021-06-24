@@ -8,31 +8,7 @@
 		padding: 263px 0 220px;
 	}
 
-	&__image {
-		position: absolute;
-		left: 50%;
-		top: 0;
-		z-index: -1;
-		transform: translateX(-50%);
-		width: 200vw;
-
-		@include media(sm) {
-			width: 150vw;
-		}
-
-		@include media(md) {
-			width: 100vw;
-		}
-
-		img {
-			display: block;
-			max-width: 100%;
-			height: auto;
-		}
-	}
-
 	&__container {
-		max-width: $width--middle;
 	}
 
 	&__header {
@@ -54,15 +30,13 @@
 	&__title {
 		margin: 0 0 16px;
 
-		@include text(42px, 133 / 140, $color-yellow);
+		@include fluid-font-size(42px, 110px, 320px, 576px, 42px);
+		line-height: (133 / 140);
+		color: $color-yellow;
 		font-weight: 500;
 
 		@include media(sm) {
 			margin-bottom: 0;
-			font-size: 72px;
-		}
-
-		@include media(md) {
 			font-size: 110px;
 		}
 
@@ -74,7 +48,9 @@
 	&__post {
 		margin-bottom: 16px;
 
-		@include text(16px, 36 / 26, $color-yellow);
+		@include fluid-font-size(16px, 26px, 320px, 576px, 16px);
+		color: $color-yellow;
+		line-height: (36 / 26);
 
 		@include media(sm) {
 			font-size: 26px;
@@ -89,9 +65,17 @@
 		border-top: solid 1px $color-yellow;
 		border-bottom: solid 1px $color-yellow;
 
+		br {
+			display: none;
+		}
+
 		@include media(sm) {
 			padding: 35px 0;
 			font-size: 22px;
+
+			br {
+				display: block;
+			}
 		}
 	}
 
@@ -126,22 +110,22 @@
 			padding: 20px 0;
 			vertical-align: top;
 
-			@include text(15px, 42 / 32, $color-yellow);
+			@include text(15px, 30 / 22, $color-yellow);
 			border-top: solid 1px $color-yellow;
 			border-bottom: solid 1px $color-yellow;
 
 			&:first-child {
-				width: 50%;
+				width: 54.4%;
 				padding-right: 20px;
-				font-size: 18px;
+				//font-size: 45px; //18px;
+				@include fluid-font-size(30px, 45px, 320px, 576px, 20px);
 			}
 
 			@include media(sm) {
 				padding: 35px 0;
-				font-size: 32px;
+				font-size: 22px;
 
 				&:first-child {
-					width: 54.4%;
 					padding-right: 35px;
 					font-size: 45px;
 				}

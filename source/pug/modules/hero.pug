@@ -1,19 +1,15 @@
 section.hero
-	.hero__bg
-		.parallax-bg
-			picture
-				source(type="image/webp" srcset="img/picture/home/hero.webp 1x, img/picture/home/hero@2x.webp 2x")
-				img(src="img/picture/home/hero.jpg", srcset="img/picture/home/hero@2x.jpg 2x", width="1920", height="1318", alt="")
-	.hero__container.container-fluid
+	.hero__bg.__js_parallax
+		picture
+			source(type="image/webp" srcset="img/picture/home/hero.webp 1x, img/picture/home/hero@2x.webp 2x")
+			img(src="img/picture/home/hero.jpg", srcset="img/picture/home/hero@2x.jpg 2x", width="1920", height="1080", alt="")
+	.hero__container.container.container--size-large
 		header.hero__header
 			h1.hero__title
 				| Unique Design in step
 				span with the times
 			+arrow-link('About us', URLS.pages.about, 'hero__more')
 		.hero__content
-			//.hero__logo-wrap
-				.hero__logo.logo.logo--filled
-					+icon('logo')(width="240", height="57")
 			.hero__vertical.vertical-logo
 				.vertical-logo__layer.vertical-logo__layer--yellow
 					+icon('vertical-logo')(width="59", height="242")

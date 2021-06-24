@@ -1,0 +1,18 @@
+.vcard-image {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	z-index: -1;
+
+	img {
+		width: 150%;
+		height: 150%;
+		object-fit: cover;
+
+		@include media(sm) {
+			width: 100%;
+			height: 100%;
+		}
+	}
+}

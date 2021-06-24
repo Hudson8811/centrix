@@ -77,18 +77,24 @@ body {
 .container-fluid {
 	@include media(xxl) {
 		padding: 0 15px;
-		max-width: 1750px;
+		//max-width: 1750px;
+	}
+
+	&--size-large {
+		@include media(xxl) {
+			max-width: 1920px;
+		}
 	}
 
 	&--small {
 		@include media(xxl) {
-			max-width: 1140px;
+			//max-width: 1140px;
 		}
 	}
 
 	&--xsmall {
 		@include media(xxl) {
-			max-width: 760px;
+			//max-width: 760px;
 		}
 	}
 }
@@ -97,6 +103,12 @@ body {
 	@include media(xxl) {
 		padding-left: 15px;
 		padding-right: 15px;
+	}
+}
+.g-0 [class*="col-"] {
+	@include media(xxl) {
+		padding-left: 0;
+		padding-right: 0;
 	}
 }
 

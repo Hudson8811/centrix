@@ -14,10 +14,10 @@
 		padding-top: 0;
 		padding-bottom: 0;
 	}
-
+	/*
 	&__container {
 		max-width: $width--middle;
-	}
+	}*/
 
 	&__wrapper {
 		padding: 40px 32px;
@@ -29,24 +29,16 @@
 	}
 
 	&__title {
-		max-width: 120px;
-		margin: -57px auto 40px;
+		max-width: 190px;
+		margin: -70px auto 60px;
 
-		@include text(24px, 1, $color-default-black);
+		@include text(40px, 1, $color-default-black);
 		text-align: center;
 		font-weight: 500;
 
-		@include media(sm) {
-			max-width: 150px;
-			margin-top: -63px;
-			font-size: 32px;
-		}
-
 		@include media(md) {
-			max-width: 190px;
 			margin-top: -105px;
 			margin-bottom: 80px;
-			font-size: 40px;
 		}
 
 		@include media(lg) {

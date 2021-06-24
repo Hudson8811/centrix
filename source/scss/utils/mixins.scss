@@ -70,6 +70,12 @@
 	}
 }
 
+@mixin media-custom-max-height($height) {
+	@media (max-height: $height) {
+		@content;
+	}
+}
+
 // Отзывчатый размер шрифта - источник https://habr.com/ru/post/310186/
 // Пример использования - https://codepen.io/ROBsoer/pen/PGkWbK
 @mixin fluid-font-size($f-min, $f-max, $w-min, $w-max, $fallback: false) {

@@ -27,3 +27,8 @@
 	$resolutiond: 1920;
 	@return (($px/$resolutiond) * 100) + vw;
 }
+
+@function vh($px) {
+	$height: 1080;
+	@return (($px/$height) * 100) + vh;
+}

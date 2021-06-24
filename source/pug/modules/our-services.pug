@@ -1,13 +1,13 @@
 section.our-services
-	.our-services__container.container-fluid
+	.our-services__container.container.container--size-large
 		header.our-services__header.our-services__header--large(data-aos="fade-up")
 			.row
-				.col-12.col-md-5(data-aos="fade-up")
+				.col-12.col-md-6.col-lg-5(data-aos="fade-up")
 					h2.our-services__title.our-services__title--upper Our Services
-				.col-8.col-md-4.col-xl-5(data-aos="fade-up")
-					.our-services__short  We’ve worked with a wide array of clients across the globe to apply design fundamentals of elegance, simplicity
-				.col-4.col-md-3.col-xl-2.align-self-end.align-self-md-start.text-md-right(data-aos="fade-up")
-					+arrow-link('View all', URLS.pages.services, 'our-services__more arrow-link--white')
+				.col-12.col-md-12.col-xl-5.order-md-1.order-xl-0(data-aos="fade-up")
+					.our-services__short We’ve worked with a wide array of clients across the globe to apply design fundamentals of elegance, simplicity
+				.col-12.col-md-auto.col-xl-2.ml-auto.text-md-right(data-aos="fade-up")
+					+arrow-link('View all', URLS.pages.services, 'our-services__more our-services__more--negative-top arrow-link--white')
 
 		.our-services__accordion.accordion
 			.accordion__item(data-aos="fade-up")

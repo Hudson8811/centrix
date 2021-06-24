@@ -5,9 +5,11 @@
 	flex-direction: column-reverse;
 	align-items: flex-end;
 
-	@include hover {
-		#{$self}__icon {
-			transform: scale(0.33);
+	&:not(&--no-scale) {
+		@include hover {
+			#{$self}__icon {
+				transform: scale(0.33);
+			}
 		}
 	}
 

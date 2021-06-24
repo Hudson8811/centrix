@@ -31,12 +31,12 @@ block content
 			include modules/statistics
 
 		section.our-services.about-us__services
-			.our-services__container.container-fluid
+			.our-services__container.container.container--size-large
 				header.our-services__header
-					.row
-						.col-5(data-aos="fade-up")
+					.row.align-items-baseline
+						.col-12.col-md-6.col-lg-5(data-aos="fade-up")
 							h2.our-services__title Our services
-						.col-7.align-self-end.align-self-start.text-right(data-aos="fade-up")
+						.col-12.col-md-auto.col-xl-2.ml-auto.text-md-right(data-aos="fade-up")
 							+arrow-link('View all', URLS.pages.services, 'our-services__more arrow-link--white')
 
 				.our-services__accordion.accordion
@@ -125,28 +125,27 @@ block content
 				ul.partners__list.row.justify-content-between.align-items-center
 					- let i = 0;
 					while i < 4
-						li.partners__item.col-auto(data-aos="fade-up")
+						li.partners__item.col-12.col-sm-6.col-lg-3(data-aos="fade-up")
 							picture
 								source(type="image/webp" srcset="img/picture/partners/" + (i + 1) + ".webp 1x, img/picture/partners/" + (i + 1) + "@2x.webp 2x")
 								img(src="img/picture/partners/" + (i + 1) + ".png", srcset="img/picture/partners/" + (i + 1) + "@2x.png 2x", width= PARTNERS_LOGO[i].w, height= PARTNERS_LOGO[i].h, alt= PARTNERS_LOGO[i].alt)
 						- i++;
 
-		section.team-section.team-section--pb-0.about-us__team-section
-			.team-section__container.container-fluid
+		section.about-us__team-section.team-section.team-section--pb-0
+			.team-section__container.container.container--size-large
 				h2.team-section__title(data-aos="fade-up") Our magic team
-				.team-section__grid.swiper-container.__js_team-carousel-only-mobile
-					.swiper-wrapper
-						each item in MEMBERS_CARDS
-							.team-section__item.swiper-slide(data-aos="fade-up")
-								.member-card
-									.member-card__image
-										picture
-											source(type="image/webp", srcset="img/picture/team/" + item.image.url + ".webp 1x, img/picture/team/" + item.image.url + "@2x.webp 2x")
-											img(src="img/picture/team/" + item.image.url + ".jpg" srcset="img/picture/team/" + item.image.url + "@2x.jpg 2x", width= item.image.w, height= item.image.h, alt= item.name + " photo")
-									.member-card__info
-										.member-card__title= item.name
-										.member-card__post= item.post
-										+social('member-card__social social--hover-secondary', ['linkedin', 'facebook', 'twitter'])
+				.team-section__grid
+					each item in MEMBERS_CARDS
+						.team-section__item(data-aos="fade-up")
+							.member-card
+								.member-card__image
+									picture
+										source(type="image/webp", srcset="img/picture/team/" + item.image.url + ".webp 1x, img/picture/team/" + item.image.url + "@2x.webp 2x")
+										img(src="img/picture/team/" + item.image.url + ".jpg" srcset="img/picture/team/" + item.image.url + "@2x.jpg 2x", width= item.image.w, height= item.image.h, alt= item.name + " photo")
+								.member-card__info
+									.member-card__title= item.name
+									.member-card__post= item.post
+									+social('member-card__social social--hover-white', ['linkedin', 'facebook', 'twitter'])
 
 
 

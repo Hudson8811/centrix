@@ -19,9 +19,12 @@
 			bottom: 0;
 			left: 50%;
 			transform: translateX(-50%);
-			width: 100%;
-			max-width: $width--full - 24;
+			width: calc(100% - 24px);
 			border-bottom: solid 1px $color-default-black;
+
+			@include media(xxl) {
+				width: calc(100% - 30px);
+			}
 		}
 	}
 
@@ -32,7 +35,6 @@
 	}
 
 	&__container {
-		max-width: $width--full;
 	}
 
 	&__header {
@@ -44,24 +46,21 @@
 	}
 
 	&__title {
-		margin: 0;
-		//max-width: 120px;
-		//margin: -57px auto 40px;
+		margin: 0 0 24px;
 
-		@include text(30px, 1, $color-default-black);
+		@include text(48px, 1, $color-default-black);
 		font-weight: 500;
 
 		@include media(sm) {
-			//max-width: 150px;
-			//margin-top: -63px;
-			font-size: 36px;
+			//font-size: 36px;
 		}
 
 		@include media(md) {
+			margin: 0;
 			/*max-width: 190px;
 			margin-top: -105px;
 			margin-bottom: 80px;*/
-			font-size: 48px;
+			//font-size: 48px;
 		}
 
 		@include media(lg) {
@@ -73,14 +72,23 @@
 	}
 
 	&__nav {
-		display: flex;
+		/*display: flex;
 		justify-content: center;
 		align-items: center;
-		margin-top: 40px;
+		margin-top: 40px;*/
 
-		@include media(md) {
+		display: none;
+
+		/*@include media(md) {
 			margin-top: 0;
+		}*/
+
+		@include media(lg) {
+			display: flex;
+			justify-content: center;
+			align-items: center;
 		}
+
 		@include media(xl) {
 			position: relative;
 			left: -82px;
@@ -92,9 +100,19 @@
 	}
 
 	&__more {
-		@include media(xl) {
+		@include media(md) {
 			position: relative;
-			top: -26px;
+			padding-right: 60px;
+
+			.arrow-link__icon {
+				position: absolute;
+				right: 0;
+				bottom: 8;
+			}
+		}
+
+		@include media(lg) {
+			padding-right: 95px;
 		}
 	}
 

@@ -2,14 +2,36 @@
 	&__layer {
 		//229
 		//448
-		padding: 48px 32px;
+		padding: 44px 36px 44px 39px;
+
+		svg {
+			display: block;
+			width: 26px;
+			height: auto;
+		}
+
+		@include media-custom-height(480px) {
+			padding: vh(100) vh(82) vh(100) vh(88);
+
+			svg {
+				width: vh(59);
+			}
+		}
+
+		@include media-custom-height(1080px) {
+			padding: 100px 82px 100px 88px;
+
+			svg {
+				width: 59px;
+			}
+		}
 
 		@include media(lg) {
-			padding: 72px 56px;
+			//padding: 72px 56px;
 		}
 
 		@include media(xl) {
-			padding: 100px 82px 100px 88px;
+			//padding: 100px 82px 100px 88px;
 		}
 
 		&--black {

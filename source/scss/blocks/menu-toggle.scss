@@ -3,8 +3,8 @@
 
 	position: relative;
 	display: flex;
-	width: 44px;
-	height: 30px; //12px;
+	width: 30px;
+	height: 20px;
 	padding: 0;
 	border: none;
 	background-color: transparent;
@@ -12,6 +12,11 @@
 	cursor: pointer;
 
 	@include transition(transform);
+
+	@include media(lg) {
+		width: 44px;
+		height: 30px;
+	}
 
 	&--white {
 		&::before,
@@ -46,10 +51,14 @@
 		position: absolute;
 		left: 0;
 		width: 100%;
-		border-top: solid 3px $color-default-black;
+		border-top: solid 2px $color-default-black;
 
 		transition: border-top-color $default-transition-settings,
 			color $default-transition-settings, transform $default-transition-settings;
+
+		@include media(lg) {
+			border-top-width: 3px;
+		}
 	}
 
 	&::before {
@@ -63,10 +72,14 @@
 	&__line {
 		display: block;
 		width: 100%;
-		border-top: solid 3px $color-default-black;
+		border-top: solid 2px $color-default-black;
 		align-self: center;
 
 		@include transition(all);
+
+		@include media(lg) {
+			border-top-width: 3px;
+		}
 	}
 
 	/*&:hover,

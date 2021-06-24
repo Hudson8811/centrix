@@ -8,9 +8,33 @@
 		padding-bottom: 80px;
 	}
 
-	&__container {
-		@include media(xl) {
-			max-width: $width--full;
+	&__grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 30px;
+
+		@include media(xs) {
+			grid-template-columns: 103px 35px 1fr 1fr;
+
+			grid-gap: 50px;
+		}
+
+		@include media(md) {
+			grid-template-columns: 125px 85px 1fr 1fr;
+		}
+
+		@include media(lg) {
+			grid-template-columns: 190px 35px 1fr 1fr 3fr;
+		}
+
+		@include media(xxl) {
+			grid-template-columns: 190px vw(135) 1fr 1fr vw(505);
+			grid-gap: vw(100);
+		}
+
+		@include media(full) {
+			grid-template-columns: 190px 135px 1fr 1fr 505px;
+			grid-gap: 100px;
 		}
 	}
 
@@ -22,12 +46,6 @@
 	}
 
 	&__menu {
-		@include media(xl) {
-			padding-left: vw(185);
-		}
-		@include media(full) {
-			padding-left: 185px;
-		}
 		&-list {
 			@include list-reset;
 		}
@@ -38,27 +56,23 @@
 			&:first-child {
 				margin-top: 0;
 			}
+
+			&--current {
+				#{$self}__menu-link {
+					pointer-events: none;
+
+					&::before {
+						transform: scale(1, 1);
+					}
+				}
+			}
 		}
 
 		&-link {
+			position: relative;
+
 			@include text(15px, 21 / 15, $color-default-black);
 			text-transform: uppercase;
-		}
-	}
-
-	&__phone {
-		padding-top: 40px;
-		padding-bottom: 20px;
-
-		@include media(sm) {
-			padding-top: 0;
-			padding-bottom: 0;
-		}
-
-		a {
-			position: relative;
-			@include text(28px, 34 / 28, $color-default-black);
-			font-weight: 500;
 
 			&::before {
 				content: "";
@@ -67,9 +81,9 @@
 				bottom: 0;
 				width: 100%;
 				height: 1px;
-				background-color: #000;
+				background-color: $color-default-black;
 				transform: scale(0, 1);
-				transform-origin: 0 50%;
+				//transform-origin: 0 50%;
 
 				@include transition(transform);
 			}
@@ -79,37 +93,48 @@
 					transform: scale(1, 1);
 				}
 			}
+		}
+	}
+
+	&__phone {
+		a {
+			position: relative;
+
+			@include text(28px, 34 / 28, $color-default-black);
+			font-weight: 500;
+			writing-mode: vertical-lr;
+			transform: scale(-1, -1);
+
+			@include transition(color);
 
 			@include media(sm) {
-				display: inline-block;
-				white-space: nowrap;
-				transform: rotate(-90deg) translateX(-100%);
-				transform-origin: 0 0;
+				font-size: 24px;
 			}
 
-			@include media(xl) {
-				//margin-left: 30px;
+			@include media(md) {
+				font-size: 28px;
+			}
+
+			@include hover {
+				color: $color-default-white;
 			}
 		}
 	}
 
 	&__feedback {
-		margin-bottom: 110px;
+		grid-column: 1 / span 2;
 
-		@include media(sm) {
-			margin-top: 50px;
+		@include media(xs) {
+			grid-column: 1 / span 4;
+		}
+
+		@include media(md) {
+			grid-column: 2 / span 4;
 		}
 
 		@include media(lg) {
-			margin-top: 0;
-		}
-
-		@include media(xl) {
-			padding-left: vw(95);
-		}
-
-		@include media(full) {
-			padding-left: 95px;
+			grid-column: auto;
+			align-self: start;
 		}
 
 		&-form {
@@ -142,41 +167,63 @@
 		}
 	}
 
-	&__copyright {
-		//margin-bottom: 12px;
-
-		//@include text(16px, 1.625, $color-default-black);
-
-		@include media(md) {
-			//margin-bottom: 0;
-		}
-
-		@include media(xl) {
-			//font-size: 16px;
-		}
-	}
-
 	&__logo {
-		margin-bottom: 36px;
+		justify-self: start;
+
+		display: inline-block;
+		vertical-align: top;
+		//margin-bottom: 40px;
+		//height: 128px;
+		//padding: 24px 24px 24px 18px;
+		//height: 193px;
+		//padding: 36px 36px 36px 28px;
+		height: 257px;
+		padding: 48px 48px 48px 36px;
+		//height: 386px;
+		//padding: 72px 72px 72px 56px;
+		background-color: $color-default-black;
 
 		@include media(sm) {
 			margin-bottom: 0;
-			transform: rotate(-90deg) translateX(-100%);
-			transform-origin: 0 0;
+			height: 193px;
+			padding: 36px 36px 36px 28px;
+		}
+
+		@include media(md) {
+			height: 257px;
+			padding: 48px 48px 48px 36px;
 		}
 
 		@include media(lg) {
+			grid-row: 1 / span 2;
+			height: 386px;
+			padding: 72px 73px 72px 58px;
 		}
 
-		&-wrap {
-			// то до удалить
-			@include media(sm) {
-				//background-image: linear-gradient(to right, red 12px, grey 12px);
-			}
+		svg {
+			display: block;
+			width: auto;
+			max-width: 100%;
+			height: 100%;
+			fill: $color-default-white;
 		}
 	}
 
 	&__bottom {
+		grid-column: 1 / span 2;
+
+		@include media(xs) {
+			grid-column: 1 / span 4;
+		}
+
+		@include media(md) {
+			grid-column: 2 / span 4;
+		}
+
+		@include media(md) {
+			align-self: end;
+		}
+
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;

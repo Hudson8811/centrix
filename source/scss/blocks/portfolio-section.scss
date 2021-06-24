@@ -10,7 +10,6 @@
 	}
 
 	&__container {
-		max-width: $width--full;
 		margin: 0 auto;
 	}
 
@@ -41,24 +40,19 @@
 			margin-left: -24px;
 		}
 
-		@include media(xl) {
+		@include media(xxl) {
 			margin-left: -60px;
 		}
 	}
 
 	&__item {
-		//display: block;
 		width: 100%;
 		margin-bottom: 45px;
 
 		@include media(sm) {
 			width: calc(50% - 24px);
-			margin-bottom: 38px;
+			margin-bottom: 30px;
 			margin-left: 24px;
-
-			&--two-thirds {
-				width: calc(100% - 24px);
-			}
 		}
 
 		@include media(lg) {
@@ -72,9 +66,20 @@
 		}
 
 		@include media(xl) {
+			//width: calc(33.33% - 60px);
+			//margin-right: 60px;
+			//margin-left: 60px;
+
+			&--two-thirds {
+				width: calc(66.66% - 24px);
+			}
+		}
+
+		@include media(xxl) {
 			width: calc(33.33% - 60px);
 			//margin-right: 60px;
 			margin-left: 60px;
+			margin-bottom: 45px;
 
 			&--two-thirds {
 				width: calc(66.66% - 60px);

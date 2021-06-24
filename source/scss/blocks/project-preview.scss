@@ -6,10 +6,77 @@
 	&--elastic {
 		display: block;
 
-		img {
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
+		#{$self}__image {
+			display: block;
+			height: 300px;
+
+			img {
+				display: block;
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+
+			@include media(lg) {
+				height: 250px;
+				//height: auto;
+			}
+
+			@include media(xl) {
+				height: 296px;
+			}
+
+			@include media(xxl) {
+				height: 420px;
+			}
+
+			@include media(full) {
+				height: 488px;
+			}
+		}
+
+		#{$self}__title {
+			max-width: 245px;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+
+			@include media(xl) {
+				max-width: 300px;
+			}
+
+			@include media(xxl) {
+				max-width: vw(520);
+			}
+
+			@include media(full) {
+				max-width: 520px;
+			}
+		}
+	}
+
+	&--vertical {
+		@include media(lg) {
+			#{$self}__image {
+				height: 583px;
+			}
+		}
+		@include media(xl) {
+			#{$self}__image {
+				height: 680px;
+			}
+		}
+
+		@include media(xxl) {
+			#{$self}__image {
+				height: 943px;
+			}
+		}
+
+		@include media(full) {
+			#{$self}__image {
+				height: 1079px;
+			}
 		}
 	}
 
@@ -52,6 +119,10 @@
 		@include transition(color);
 
 		@include media(lg) {
+			font-size: 24px;
+		}
+
+		@include media(xl) {
 			font-size: 28px;
 		}
 	}

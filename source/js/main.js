@@ -47,6 +47,13 @@ function animate({timing, draw, duration}) {
   });
 }
 
+
+
+var images = document.querySelectorAll('.__js_parallax img');
+new simpleParallax(images, {
+	scale: 1.3
+});
+
 /* AOS init */
 //= parts/aos-init.js
 

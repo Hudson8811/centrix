@@ -24,15 +24,7 @@
 			}
 
 			&__title {
-				text-align: center;
-
-				@include media(md) {
-					text-align: left;
-				}
-
-				@include media(lg) {
-					font-size: 40px;
-				}
+				font-size: 40px;
 			}
 
 			&__nav {

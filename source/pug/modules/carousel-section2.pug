@@ -1,5 +1,5 @@
 section.carousel-section
-	.carousel-section__container.container-fluid
+	.carousel-section__container.container.container--size-large
 		header.carousel-section__header.row
 			h2.carousel-section__title.col-8.col-md-6(data-aos="fade-up") Latest news
 			.carousel-section__nav.col-12.col-md-3.order-last.order-md-0(data-aos="fade-up")
@@ -13,7 +13,7 @@ section.carousel-section
 
 		.carousel-section__carousel.carousel.carousel--slide-auto.swiper-container.__js_carousel-latest-news(data-aos="fade-up")
 			.swiper-wrapper
-				a.carousel__item.carousel-card.carousel-card--greyscale.swiper-slide(href= URLS.projects.single)
+				a.carousel__item.carousel-card.carousel-card--greyscale.swiper-slide(href= URLS.blog.post)
 					picture
 						source(type="image/webp" srcset="img/picture/carousel/12.webp 1x, img/picture/carousel/12@2x.webp 2x")
 
@@ -22,7 +22,7 @@ section.carousel-section
 						span.carousel-card__title A few words about us
 						span.carousel-card__icon
 							+icon('link-arrow')(width="29", height="29")
-				a.carousel__item.carousel-card.carousel-card--greyscale.swiper-slide(href= URLS.projects.single)
+				a.carousel__item.carousel-card.carousel-card--greyscale.swiper-slide(href= URLS.blog.post)
 					picture
 						source(type="image/webp" srcset="img/picture/carousel/13.webp 1x, img/picture/carousel/13@2x.webp 2x")
 						img(src="img/picture/carousel/13.jpg", srcset="img/picture/carousel/13@2x.jpg 2x", width="662", height="510", alt="")
@@ -30,7 +30,7 @@ section.carousel-section
 						span.carousel-card__title A few words about us
 						span.carousel-card__icon
 							+icon('link-arrow')(width="29", height="29")
-				a.carousel__item.carousel-card.carousel-card--greyscale.swiper-slide(href= URLS.projects.single)
+				a.carousel__item.carousel-card.carousel-card--greyscale.swiper-slide(href= URLS.blog.post)
 					picture
 						source(type="image/webp" srcset="img/picture/carousel/14.webp 1x, img/picture/carousel/14@2x.webp 2x")
 
