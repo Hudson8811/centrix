@@ -1,5 +1,6 @@
 .single-post {
 	padding: 40px 0;
+	overflow: hidden;
 
 	@include media(lg) {
 		padding: 80px 0;

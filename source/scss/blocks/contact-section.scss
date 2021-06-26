@@ -121,7 +121,7 @@
 	&__main {
 		margin-bottom: 60px;
 
-		@include media(md) {
+		@include media(lg) {
 			display: flex;
 			flex-direction: column;
 			margin-bottom: 0;

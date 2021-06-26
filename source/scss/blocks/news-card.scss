@@ -1,15 +1,33 @@
 .news-card {
-	margin-bottom: 20px;
+	$self: &;
 
 	@include media(md) {
-		padding: 0 10px;
+		padding: 0 15px;
 	}
 
-	@include media(xl) {
-		padding: 0 30px;
-		margin-bottom: 60px;
+	@include media(xxl) {
+		padding: 0 30px !important;
 	}
 
+	&--vertical {
+		#{$self}__pic {
+			@include media(lg) {
+				height: 588px;
+			}
+
+			@include media(xl) {
+				height: 730px;
+			}
+
+			@include media(xxl) {
+				height: vw(1080);
+			}
+
+			@include media(full) {
+				height: 1080px;
+			}
+		}
+	}
 	&__wrapper {
 		position: relative;
 		overflow: hidden;
@@ -32,18 +50,23 @@
 		}
 
 		@include media(lg) {
-			height: 280px;
+			height: 279px;
 		}
 
 		@include media(xl) {
-			height: 340px;
+			height: 350px;
 		}
 
 		@include media(xxl) {
+			height: vw(510);
+		}
+
+		@include media(full) {
 			height: 510px;
 		}
 
 		img {
+			display: block;
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
@@ -65,11 +88,8 @@
 		box-sizing: border-box;
 		background-color: $color-yellow;
 		position: relative;
-		@include transition(transform);
 
-		@include media(md) {
-			top: -6px;
-		}
+		@include transition(transform);
 
 		@include media(lg) {
 			position: absolute;

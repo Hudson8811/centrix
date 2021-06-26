@@ -141,7 +141,7 @@ new simpleParallax(images, {
 
 				if(scroll > Height.LEFTWARD - Height.HEADER) {
 
-					header.css({'position': 'absolute', 'top': 'auto', 'bottom': '0'})
+					header.css({'position': 'absolute', 'top': 'auto', 'left': '0', 'bottom': '0'})
 				} else {
 					header.removeAttr('style');
 				}
@@ -345,14 +345,10 @@ new simpleParallax(images, {
 	var header = $('.header');
 	var menu2 = $('.header__menu');
 	var headerContainer = $('.header__container');
+	var mobileDropdownLinks = $('.navigation__link');
 
-	var animsition = $('.animsition');
 	var menuIsOpened = false;
 	var isLeftwardHeader = $('.header').hasClass('header--leftward');
-	var isHandled = false;
-
-	//var dropdownLinks = menu.find('.__js_menu-dropdown-link');
-	var mobileDropdownLinks = $('.navigation__link');
 
 	var ModifierClass = {
 		MOBILE_CANVAS: 'mobile-canvas--opened',
@@ -376,26 +372,7 @@ new simpleParallax(images, {
 		menuCloseBtn.on('click', closeMenu);
 	}
 
-	if ( ($(window).width() < mobileBreakpoint || isLeftwardHeader) && !isHandled ) {
-		mobileDropdownLinks.on('click', openMobileDropdown);
-		isHandled = true;
-	}
-
-	$(window).on('resize', function() {
-		var isMob = $(window).width() < mobileBreakpoint;
-
-		if ( (isMob || isLeftwardHeader) && !isHandled ) {
-			mobileDropdownLinks.on('click', openMobileDropdown);
-			isHandled = true;
-		} else {
-			mobileDropdownLinks.off('click', openMobileDropdown);
-			isHandled = false;
-		}
-
-		changeClassNavLink();
-
-	});
-
+	mobileDropdownLinks.on('click', openMobile);
 
 	$(window).on('resize', function() {
 		var windowWidth = $(window).width();
@@ -405,17 +382,20 @@ new simpleParallax(images, {
 		} else if (isLeftwardHeader) {
 			closeLeftwardHeader();
 		}
+
+		changeClassNavLink();
 	});
 
 	$('main').on('transitionend', removeStyleAttrOnMain);
 
 	function changeClassNavLink() {
-		var link = $(this);
 		var isMob = $(window).width() < mobileBreakpoint;
-		var hasNext = $(this).next().length !== 0;
-		var isActiveParent = $(this).parent().hasClass(ModifierClass.CURRENT_ITEM);
 
 		mobileDropdownLinks.each(function() {
+			var link = $(this);
+			var hasNext = link.next().length !== 0;
+			var isActiveParent = link.parent().hasClass(ModifierClass.CURRENT_ITEM);
+
 			if ( ((isLeftwardHeader || isMob) && hasNext) || isActiveParent) {
 				link.removeClass(ModifierClass.ANIMSITION);
 			} else if (!isLeftwardHeader && !isMob && !isActiveParent) {
@@ -423,47 +403,22 @@ new simpleParallax(images, {
 			}
 		});
 
-		/*if (isMob || isLeftwardHeader) {
-			mobileDropdownLinks.each(function() {
-				if($(this).next().length !== 0) {
-					$(this).removeClass('animsition-link');
-				}
-			});
-		} else {
-			mobileDropdownLinks.each(function() {
-				var parent = $(this).parent();
-				if (!parent.hasClass(ModifierClass.CURRENT_ITEM)) {
-					$(this).addClass('animsition-link');
-				}
-			})
-		}*/
+
 	}
 
-	function openMobileDropdown(evt) {
-		var dropdown = $(this).next();
+	function openMobile(evt) {
+		var link = $(this);
+		var dropdown = link.next();
+		var width = $(window).width();
 
+		if (width < mobileBreakpoint || isLeftwardHeader) {
+			if (dropdown.length !== 0) {
+				evt.preventDefault();
+				var targetParent = link.parent();
 
-
-		if (dropdown.length !== 0) {
-			evt.preventDefault();
-			//dropdown.find('a[href]').on('click', closeMenu);
-
-			//$('.navigation__dropdown').slideUp(DURATION).removeClass('is-open');
-
-				$(this).parent().siblings().find('.navigation__dropdown').removeClass('is-open').slideUp(DURATION);
-
-			if (dropdown.hasClass('is-open')) {
-
-				dropdown.slideUp(DURATION).removeClass('is-open');
-
-			} else {
-
-				dropdown.slideDown(DURATION).addClass('is-open');
-
+				targetParent.siblings().find('.navigation__dropdown').slideUp();
+				dropdown.slideToggle();
 			}
-
-			//dropdown.css('display') === 'block' ? dropdown.slideUp(DURATION) : dropdown.slideDown(DURATION);
-
 
 		}
 	}
@@ -532,9 +487,7 @@ new simpleParallax(images, {
 			var scroll = $(window).scrollTop();
 			var parentOffsetTop = aside.parent().offset().top;
 			var left = aside.parent().css('padding-left');
-			var offsetTop = scroll > parentOffsetTop ? scroll - parentOffsetTop : /*parentOffsetTop - */scroll;
-
-
+			var offsetTop = scroll > parentOffsetTop ? scroll - parentOffsetTop : scroll;
 
 			if (isOpen) {
 				aside.css({'position': 'absolute', 'left': left, 'top': offsetTop + 'px'})
@@ -549,7 +502,6 @@ new simpleParallax(images, {
 			$(this).removeAttr('style');
 		}
 	}
-
 })();
 
 /* 3. Hint fields */

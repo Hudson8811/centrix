@@ -33,7 +33,7 @@
 			var scroll = $(window).scrollTop();
 
 			if(scroll > Height.PARENT - Height.HEADER) {
-				header.css({'position': 'absolute', 'top': 'auto', 'bottom': '0'})
+				header.css({'position': 'absolute', 'top': 'auto',  'bottom': '0'})
 			} else {
 				header.removeAttr('style');
 			}

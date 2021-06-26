@@ -1,5 +1,6 @@
 .blog-grid {
 	$self: &;
+	overflow: hidden;
 
 	&__first-screen {
 		position: relative;
@@ -91,25 +92,51 @@
 		padding: 0;
 
 		@include media(md) {
-			//margin: 0 -5px;
+			margin: 0 -15px;
 		}
 
-		@include media(xl) {
+		@include media(xxl) {
 			margin: 0 -30px;
 		}
 	}
 
-	&__more {
-		margin: 0 auto;
+	&__card {
+		margin-top: 20px;
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		@include media(md) {
+			margin-top: 30px;
+
+			&:not(.blog-grid__card--listing):nth-child(2) {
+				margin-top: 0;
+			}
+		}
 
 		@include media(lg) {
-			margin: 41px auto 0;
+			&:not(.blog-grid__card--listing):nth-child(3) {
+				margin-top: 0;
+			}
+		}
+
+		@include media(xxl) {
+			margin-top: 60px;
+		}
+	}
+
+	&__more {
+		margin: 40px auto 0;
+
+		@include media(xxl) {
+			margin-top: 100px;
 		}
 	}
 
 	&--masonry {
 		.news-card__pic {
-			height: auto;
+			//height: auto;
 		}
 	}
 

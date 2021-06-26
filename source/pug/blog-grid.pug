@@ -21,16 +21,9 @@ block content
 					- let activeClass = item === 'all' ? ' filter__item--active' : '';
 					button(class="filter__item" + activeClass + ' __js_filter-btn', type="button", data-filter= filterVal)= item
 
-			ul.row.blog-grid__row.__js_blog-grid
-				+news-card({n: 'blog-1', w: '533', h: '510'}, '16', 'Jan', '2020', 'Design', 'A few words <br> about us', 'We make our customers &#39; products valuable in the eyes of customers. To do this, we analyze and study people,', '#')(class='__js_design __js_business')
-				+news-card({n: 'blog-2', w: '533', h: '510'}, '16', 'Jan', '2020', 'Design', 'A few words <br> about us', 'We make our customers &#39; products valuable in the eyes of customers. To do this, we analyze and study people,', '#')(class='__js_design')
-				+news-card({n: 'blog-3', w: '533', h: '510'}, '16', 'Jan', '2020', 'Design', 'A few words <br> about us', 'We make our customers &#39; products valuable in the eyes of customers. To do this, we analyze and study people,', '#')(class='__js_marketing __js_design')
-				+news-card({n: 'blog-4', w: '533', h: '510'}, '16', 'Jan', '2020', 'Design', 'A few words <br> about us', 'We make our customers &#39; products valuable in the eyes of customers. To do this, we analyze and study people,', '#')(class='__js_photography __js_marketing')
-				+news-card({n: 'blog-5', w: '533', h: '510'}, '16', 'Jan', '2020', 'Design', 'A few words <br> about us', 'We make our customers &#39; products valuable in the eyes of customers. To do this, we analyze and study people,', '#')(class='__js_marketing')
-				+news-card({n: 'blog-6', w: '533', h: '510'}, '16', 'Jan', '2020', 'Design', 'A few words <br> about us', 'We make our customers &#39; products valuable in the eyes of customers. To do this, we analyze and study people,', '#')(class='__js_photography __js_business')
-				+news-card({n: 'blog-7', w: '533', h: '510'}, '16', 'Jan', '2020', 'Design', 'A few words <br> about us', 'We make our customers &#39; products valuable in the eyes of customers. To do this, we analyze and study people,', '#')(class='__js_business')
-				+news-card({n: 'blog-8', w: '533', h: '510'}, '16', 'Jan', '2020', 'Design', 'A few words <br> about us', 'We make our customers &#39; products valuable in the eyes of customers. To do this, we analyze and study people,', '#')(class='__js_photography __js_design')
-				+news-card({n: 'blog-9', w: '533', h: '510'}, '16', 'Jan', '2020', 'Design', 'A few words <br> about us', 'We make our customers &#39; products valuable in the eyes of customers. To do this, we analyze and study people,', '#')(class='__js_photography')
+			ul.blog-grid__row.row.g-0.__js_blog-grid
+				each item in BLOG_GRID_CARDS
+					+news-card2(item.image, item.day, item.month, item.year, item.tag, item.title, item.text, item.href, item.modCl, item.elemCl, item.btstrCl, item.masonryCl)
 			+circle-link('', 'blog-grid__more')
 
 

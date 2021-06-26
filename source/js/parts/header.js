@@ -55,7 +55,7 @@
 
 				if(scroll > Height.LEFTWARD - Height.HEADER) {
 
-					header.css({'position': 'absolute', 'top': 'auto', 'bottom': '0'})
+					header.css({'position': 'absolute', 'top': 'auto', 'left': '0', 'bottom': '0'})
 				} else {
 					header.removeAttr('style');
 				}
