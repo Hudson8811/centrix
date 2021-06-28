@@ -40,8 +40,9 @@ block content
 									textarea(name="message", required)
 									span.field__hint Message*
 								+btn(true, 'Submit', '', 'btn--black contact-section__send')(type="submit", data-aos="fade-up")
-			.contact-section__map(data-aos="fade-up")
-				iframe(src='https://yandex.ru/map-widget/v1/?um=constructor%3A351063e7db352f0133fe8dca1724bd5b8208d2a14e4ca511a12b61acfa0179d0&source=constructor')
+			.contact-section__map(id="map", data-aos="fade-up")
+				//iframe(src='https://yandex.ru/map-widget/v1/?um=constructor%3A351063e7db352f0133fe8dca1724bd5b8208d2a14e4ca511a12b61acfa0179d0&source=constructor')
+			script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&libraries=&v=weekly", async)
 
 
 
