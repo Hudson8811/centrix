@@ -50,13 +50,19 @@
 		left: 12px;
 		right: 12px;
 		bottom: 36px;
-		//width: 100%;
 		display: flex;
 		justify-content: flex-end;
 		align-items: flex-end;
 		order: 1;
 		margin-top: auto;
-		//padding-bottom: 36px;
+
+		@include media(xxl) {
+			width: 100%;
+			max-width: 1890px;
+			left: 50%;
+			right: auto;
+			transform: translateX(-50%);
+		}
 	}
 
 	&__title {

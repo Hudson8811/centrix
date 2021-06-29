@@ -11,6 +11,7 @@
 	}
 
 	&__section {
+		position: relative;
 		width: 100%;
 		background-color: $color-grey-e5;
 
@@ -256,8 +257,7 @@
 	}
 
 	&__anchor {
-		display: none;
-		position: fixed;
+		position: absolute;
 		bottom: 0;
 		left: 40px;
 		z-index: 20;

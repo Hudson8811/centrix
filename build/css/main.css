@@ -4276,6 +4276,17 @@ a:hover, a:focus {
   margin-top: auto;
 }
 
+@media (min-width: 1400px) {
+  .hero__header {
+    width: 100%;
+    max-width: 1890px;
+    left: 50%;
+    right: auto;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+}
+
 .hero__title {
   position: absolute;
   left: 0;

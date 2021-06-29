@@ -4,6 +4,7 @@
 }
 
 .demo__section {
+  position: relative;
   width: 100%;
   background-color: #e5e5e5;
 }
@@ -294,8 +295,7 @@
 }
 
 .demo__anchor {
-  display: none;
-  position: fixed;
+  position: absolute;
   bottom: 0;
   left: 40px;
   z-index: 20;
