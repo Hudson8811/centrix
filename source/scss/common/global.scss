@@ -94,7 +94,7 @@ body {
 
 	&--xsmall {
 		@include media(xxl) {
-			//max-width: 760px;
+			max-width: 760px;
 		}
 	}
 }

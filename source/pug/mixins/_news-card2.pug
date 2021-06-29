@@ -1,14 +1,16 @@
 mixin news-card2(image, day, month, year, tag, title, text, href, modCl, elemCl, btstrCl, masonryCl)
 	- let masonryClasses = masonryCl ? ' __js_masonry-item ' + masonryCl : '';
 	- let classes = modCl + ' ' +  btstrCl + masonryClasses;
+	- let breakpoint = image.mobileBreakpoint ? image.mobileBreakpoint : '992';
+
 	li(class= (elemCl ? elemCl + ' ' : '') + 'news-card ' + classes)&attributes(attributes)
 		.news-card__wrapper
 			.news-card__pic
 				picture
 					if image.mobile
-						source(type="image/webp", media="(min-width: 992px)", srcset="img/picture/news/" + image.n + ".webp 1x, img/picture/news/" + image.n + "@2x.webp 2x")
+						source(type="image/webp", media="(min-width: " + breakpoint + "px)", srcset="img/picture/news/" + image.n + ".webp 1x, img/picture/news/" + image.n + "@2x.webp 2x")
 						source(type="image/webp", srcset="img/picture/news/" + image.mobile + ".webp 1x, img/picture/news/" + image.mobile + "@2x.webp 2x")
-						source(media="(min-width: 992px)", srcset="img/picture/news/" + image.n + ".jpg 1x, img/picture/news/" + image.n + "@2x.jpg 2x")
+						source(media="(min-width: " + breakpoint + "px)", srcset="img/picture/news/" + image.n + ".jpg 1x, img/picture/news/" + image.n + "@2x.jpg 2x")
 						img(src="img/picture/news/" + image.mobile + ".jpg", srcset="img/picture/news/" + image.mobile + "@2x.jpg 2x", alt="")
 					else
 						source(type="image/webp", srcset="img/picture/news/" + image.n + ".webp 1x, img/picture/news/" + image.n + "@2x.webp 2x")

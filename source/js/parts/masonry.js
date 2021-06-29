@@ -12,19 +12,6 @@
 			},
 		});
 
-		grid.on( 'layoutComplete', function() {
-			//console.log('done!')
-
-		} );
-
-		/*var portfolioGrid = $('.__js_portfolio-section-masonry').isotope({
-			itemSelector: '.__js_masonry-item',
-			layoutMode: 'packery',
-			packery: {
-				gutter: 0
-			}
-		});*/
-
 		filterItem.on('click', function() {
 			var filterValue = $(this).attr('data-filter');
 

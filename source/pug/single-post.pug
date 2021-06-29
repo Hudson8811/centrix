@@ -92,7 +92,7 @@ block content
 			.container.container--size-large
 				ul.blog-grid__row.row.g-0.single-post__related
 					each item in BLOG_RELATED_CARDS
-						+news-card2(item.image, item.day, item.month, item.year, item.tag, item.title, item.text, item.href, item.modCl, item.elemCl, item.btstrCl, item.masonryCl)
+						+news-card2(item.image, item.day, item.month, item.year, item.tag, item.title, item.text, item.href, item.modCl, item.elemCl, item.btstrCl, item.masonryCl)(data-aos="fade-up")
 
 			.container.container--xsmall
 				.single-post__subtitle(data-aos="fade-up") Comments

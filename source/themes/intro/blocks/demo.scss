@@ -2,10 +2,11 @@
 	$self: &;
 
 	position: relative;
+	overflow: hidden;
 
 	.container {
 		@include media(xxl) {
-			max-width: 1350px;
+			//max-width: 1350px;
 		}
 	}
 
@@ -86,7 +87,7 @@
 					}
 
 					@include media(lg) {
-						bottom:150px;
+						bottom: 150px;
 					}
 
 					@media (min-width: 1830px) {

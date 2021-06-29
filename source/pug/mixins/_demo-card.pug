@@ -5,6 +5,16 @@ mixin demo-card(pic, galHref, text, href, className, coming)
 			a.demo-card__link(href=href)= text
 				+icon('link-arrow')(width='22', height='22')
 		else
+			a.demo-card__image(href= href)
+				//-(href="img/picture/demo/" + galHref + ".jpg")
+				picture
+					source(type="image/webp", srcset="img/picture/demo/" + pic + ".webp 1x, img/picture/demo/" + pic + "@2x.webp 2x")
+					img(src="img/picture/demo/" + pic + ".jpg", srcset="img/picture/demo/" + pic + "@2x.jpg 2x", alt="")
+				.demo-card__btn
+					+icon('link-arrow')
+			a.demo-card__link(href=href)= text
+				+icon('link-arrow')(width='22', height='22')
+		//-else
 			a.demo-card__image(href="img/picture/demo/" + galHref + ".jpg", data-fancybox='gallery')
 				img(src="img/picture/demo/" + pic + ".jpg", srcset="img/picture/demo/" + pic + "@2x.jpg 2x", alt="")
 				.demo-card__btn

@@ -1,5 +1,39 @@
 'use strict';
 
+/******************
+	Template Name: Centrix
+  Description: Centrix - Personal CV/Resume HTML Template
+  Author: Paul
+  Author URI: http://themeforest.net/user/Paul_tf
+
+
+	1. Common
+	2. Inits
+		2.1 Init parallax
+		2.2 Init google map
+		2.3 Animsition init
+		2.4 AOS init
+	3. Header
+	4. Change opacity logo on scroll
+	5. Fixed footer
+	6. Mobile menu
+	7. Hint fields
+	8. Accordion
+	9. Carousels
+		9.1 Carousel
+		9.2 Team carousel
+	10. Animation of statistics
+	11. Tooltip pages
+	12. Masonry
+	13. Pagepiling
+	14. Animation of skills
+	15. Anchor
+	16. Projects listing
+
+***************/
+
+/*** 1. Common ***/
+
 var body = $('body');
 var DURATION = 300;
 var preloader = $('.preloader');
@@ -47,52 +81,68 @@ function animate({timing, draw, duration}) {
   });
 }
 
+/*** 2. Inits ***/
 
-
-var images = document.querySelectorAll('.__js_parallax img');
-new simpleParallax(images, {
-	scale: 1.3
-});
-
-let map;
-
-function initMap() {
-  map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: -34.397, lng: 150.644 },
-    zoom: 8,
-  });
-}
-
-/* AOS init */
+/* 2.1 Init parallax */
 (function() {
-	$('window').on('animsition.inEnd', function(){});
-
-	var isotopIsThere = $('*').is('.__js_portfolio-section-masonry') || $('*').is('.__js_blog-grid');
-
-
-	/*$(window).on('load', function() {
-		if (!isotopIsThere) {
-			AOS.init({
-				duration: 1000
-			});
-		} else {
-			setTimeout(function() {
-				AOS.init({
-					duration: 1000
-				});
-				$(window).on('resize', function() {
-					AOS.refresh();
-				})
-			}, 1500)
-		}
-	});*/
-	AOS.init({
-		duration: 1000
+	var images = document.querySelectorAll('.__js_parallax img');
+	new simpleParallax(images, {
+		scale: 1.3
 	});
-
 })();
 
-/* 1. Header */
+/* 2.2 Init google map */
+(function() {
+	var map = '';
+
+	function initMap() {
+		map = new google.maps.Map(document.getElementById("map"), {
+			center: { lat: -34.397, lng: 150.644 },
+			zoom: 8,
+		});
+	}
+})();
+
+/* 2.3 Animsition init */
+(function() {
+	$(".animsition").animsition({
+		inClass: 'fade-in',
+		outClass: 'fade-out',
+		inDuration: 1500,
+		outDuration: 1000,
+		linkElement: '.animsition-link',
+		// e.g. linkElement: 'a:not([target="_blank"]):not([href^="#"])'
+		loading: true,
+		loadingParentElement: 'body', //animsition wrapper element
+		loadingClass: 'preloader',//'animsition-loading',
+		loadingInner: `<div class="preloader__spinner">
+			<span class="preloader__double-bounce"></span>
+			<span class="preloader__double-bounce preloader__double-bounce--delay"></span>
+		</div>`, // e.g '<img src="loading.svg" />
+		timeout: false,
+		timeoutCountdown: 5000,
+		onLoadEvent: true,
+		browser: [ 'animation-duration', '-webkit-animation-duration'],
+		// "browser" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+		// The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+		overlay : false,
+		overlayClass : 'animsition-overlay-slide',
+		overlayParentElement : 'body',
+		transition: function(url){ window.location.href = url; }
+	});
+})();
+
+/* 2.4 AOS init */
+(function() {
+	$('.animsition').on('animsition.inEnd', function(){
+		AOS.init({
+			duration: 1000
+		});
+	});
+})();
+
+
+/* 3. Header */
 (function() {
 	var header = $('.header');
 	var leftward = $('.leftward-wrapper');
@@ -191,9 +241,7 @@ function initMap() {
 	}
 })();
 
-
-
-/* Change opacity logo on scroll */
+/* 4. Change opacity logo on scroll */
 (function(){
 	var logo = $('.vertical-logo');
 
@@ -234,58 +282,7 @@ function initMap() {
 
 })();
 
-/* Parallax first screen on scroll */
-(function() {
-	var items = $('.parallax-bg');
-
-	if (items.length !== 0) {
-		$(window).on('scroll', function() {
-			var scroll = $(window).scrollTop();
-
-			shiftImage(items, scroll)
-		});
-	 }
-
-	 function shiftImage(items, scroll) {
-		items.each(function() {
-			var item = $(this);
-			var offset = item.parent().offset().top;
-			var height = item.outerHeight();
-			var parentHeight = item.parent().outerHeight();
-			var distance = height - parentHeight;
-			var triggerHeight = parentHeight / 2;
-
-
-
-				var isEqual = scroll >= offset;
-
-				if (isEqual) {
-					var shiftPercent = (scroll - offset) / triggerHeight;
-					var shift = distance * shiftPercent;
-
-					if (shift < distance && height > parentHeight) {
-						//item.css({'transform': 'translateY(' + -shift + 'px)'})
-
-						item.css({'top': -shift + 'px'});
-
-
-						/*animate({
-							duration: 300,
-							timing(timeFraction) {
-								return timeFraction;
-							},
-							draw(progress) {
-
-							}
-						});*/
-					}
-				}
-
-		});
-  }
-})();
-
-/* 13. Fixed footer */
+/* 5. Fixed footer */
 (function() {
 
 	$(window).on('load', function() {
@@ -316,37 +313,7 @@ function initMap() {
 	});
 })();
 
-/* 2. Animsition init */
-(function() {
-	$(".animsition").animsition({
-		inClass: 'fade-in',
-		outClass: 'fade-out',
-		inDuration: 1500,
-		outDuration: 1000,
-		linkElement: '.animsition-link',
-		// e.g. linkElement: 'a:not([target="_blank"]):not([href^="#"])'
-		loading: true,
-		loadingParentElement: 'body', //animsition wrapper element
-		loadingClass: 'preloader',//'animsition-loading',
-		loadingInner: `<div class="preloader__spinner">
-			<span class="preloader__double-bounce"></span>
-			<span class="preloader__double-bounce preloader__double-bounce--delay"></span>
-		</div>`, // e.g '<img src="loading.svg" />
-		timeout: false,
-		timeoutCountdown: 5000,
-		onLoadEvent: true,
-		browser: [ 'animation-duration', '-webkit-animation-duration'],
-		// "browser" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
-		// The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
-		overlay : false,
-		overlayClass : 'animsition-overlay-slide',
-		overlayParentElement : 'body',
-		transition: function(url){ window.location.href = url; }
-	});
-})();
-
-
-/* 3. Mobile menu */
+/* 6. Mobile menu */
 (function() {
 	var menuOpenBtn = $('.menu-toggle');
 	var menuCloseBtn = $('.mobile-canvas__close');
@@ -513,7 +480,7 @@ function initMap() {
 	}
 })();
 
-/* 3. Hint fields */
+/* 7. Hint fields */
 (function() {
 	var fields = $('.field input, .field textarea');
 	//var fields = $('.field input').add('.field textarea');
@@ -530,7 +497,7 @@ function initMap() {
 	});
 })();
 
-/* 4. Accordion */
+/* 8. Accordion */
 (function(){
 	var btn = $('.accordion__item-header');
 	var content = $('.accordion__item-body');
@@ -541,8 +508,9 @@ function initMap() {
 	});
 })();
 
-/* 5. Carousels */
-/* 5.1 Carousel */
+/*** 9. Carousels ***/
+
+/* 9.1 Carousel */
 (function() {
 	var carouselSelectors = ['.__js_carousel-latest-news', '.__js_carousel-latest-projects'];
 
@@ -569,7 +537,7 @@ function initMap() {
 	});
 })();
 
-/* 5.2 Team carousel */
+/* 9.2 Team carousel */
 (function() {
 	var carouselSelector = '.__js_team-carousel-only-mobile';
 	var carousel;
@@ -599,7 +567,7 @@ function initMap() {
 	}
 })();
 
-/* 6. Animation of statistics */
+/* 10. Animation of statistics */
 (function() {
 	$(window).on('load', function() {
 		var statistics = $('.statistics');
@@ -640,7 +608,7 @@ function initMap() {
 	});
 })();
 
-/* 7. Tooltip pages */
+/* 11. Tooltip pages */
 (function() {
 	var windowWidth = $(window).width();
 
@@ -685,14 +653,15 @@ function initMap() {
 	function onMarqueeItemHover() {
 		var current = $(this);
 		var parent = current.closest('.tooltip__marquee');
-		var itemImage = {
+		var imageData = {
 			url: current.attr('data-image'),
 			url2x: current.attr('data-image2x'),
 			w: current.attr('data-image-w'),
-			h: current.attr('data-image-h')
+			h: current.attr('data-image-h'),
+			isWebp: current.attr('data-webp')
 		};
 
-		var itemCard = createItemCard(itemImage);
+		var itemCard = createItemCard(imageData);
 
 		parent.marquee('pause');
 		current.append(itemCard);
@@ -720,7 +689,15 @@ function initMap() {
 				'2x': imageData.url2x ? imageData.url2x.slice(0, -format.length) : imageData.url.slice(0, -format.length)
 			};
 
-			var image = $('<picture><source type="image/webp" srcset="' + path['1x'] + '.webp 1x, ' + path['2x'] + '.webp 2x"><img src="' + path['1x'] + format + '" srcset="' + path['2x'] + format + ' 2x" width="' + imageData.w + '" height="' + imageData.h + '" alt=""></picture>');
+			if (imageData.isWebp) {
+
+				var image = $('<picture><source type="image/webp" srcset="' + path['1x'] + '.webp 1x, ' + path['2x'] + '.webp 2x"><img src="' + path['1x'] + format + '" srcset="' + path['2x'] + format + ' 2x" width="' + imageData.w + '" height="' + imageData.h + '" alt=""></picture>');
+
+			} else {
+
+				var image = $('<img src="' + path['1x'] + format + '" srcset="' + path['2x'] + format + ' 2x" width="' + imageData.w + '" height="' + imageData.h + '" alt="">');
+
+			}
 
 			card.append(image);
 			card.css({'position': 'absolute'})
@@ -730,7 +707,7 @@ function initMap() {
 	}
 })();
 
-/* 8. Masonry */
+/* 12. Masonry */
 (function() {
 	$(window).on('load', function(){
 		var filterItem = $('.filter__item');
@@ -745,19 +722,6 @@ function initMap() {
 			},
 		});
 
-		grid.on( 'layoutComplete', function() {
-			//console.log('done!')
-
-		} );
-
-		/*var portfolioGrid = $('.__js_portfolio-section-masonry').isotope({
-			itemSelector: '.__js_masonry-item',
-			layoutMode: 'packery',
-			packery: {
-				gutter: 0
-			}
-		});*/
-
 		filterItem.on('click', function() {
 			var filterValue = $(this).attr('data-filter');
 
@@ -767,7 +731,7 @@ function initMap() {
 	});
 })();
 
-/* 9. Pagepiling */
+/* 13. Pagepiling */
 (function(){
 	var headerClasses = $('.header').attr('class');
 
@@ -815,7 +779,7 @@ function initMap() {
 	}
 })();
 
-/* 10. Animation of skills */
+/* 14. Animation of skills */
 (function() {
 	$(window).on('load', function() {
 		var skills = $('.skills');
@@ -864,20 +828,6 @@ function initMap() {
 				var current = $(this);
 				var progress = current.find('.skill__progress');
 				var percent = parseInt(current.attr('data-percent'), 10);
-				//var interval = duration / percent;
-
-				var count = 1;
-
-				/*var idInterval = setInterval(function() {
-					progress.attr('style', 'transform: scale(' + (count / 100) + ', 1)')
-					count++;
-
-					if (count === percent) {
-						clearInterval(idInterval);
-					}
-				}, interval);*/
-
-
 
 				progress.attr('style', 'transform: scale(' + (percent / 100) + ', 1)')
 			});
@@ -885,24 +835,7 @@ function initMap() {
 	});
 })();
 
-/* 11. Init simple parallax */
-(function () {
-	var images = document.querySelectorAll('.__js_parallax-image');
-
-	if (images) {
-		for (var image of images) {
-			new simpleParallax(image, {
-				delay: 0,
-				orientation: 'down',
-				scale: 1.5,
-			});
-		}
-	}
-
-
-})();
-
-/* 12. Anchor */
+/* 15. Anchor */
 (function(){
 	anchorScroll($('.anchor'));
 
@@ -917,7 +850,7 @@ function initMap() {
 	}
 })();
 
-/* 13. Projects listing */
+/* 16. Projects listing */
 (function() {
 	var container = $('.projects-listing__container');
 

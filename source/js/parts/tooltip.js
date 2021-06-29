@@ -42,14 +42,15 @@
 	function onMarqueeItemHover() {
 		var current = $(this);
 		var parent = current.closest('.tooltip__marquee');
-		var itemImage = {
+		var imageData = {
 			url: current.attr('data-image'),
 			url2x: current.attr('data-image2x'),
 			w: current.attr('data-image-w'),
-			h: current.attr('data-image-h')
+			h: current.attr('data-image-h'),
+			isWebp: current.attr('data-webp')
 		};
 
-		var itemCard = createItemCard(itemImage);
+		var itemCard = createItemCard(imageData);
 
 		parent.marquee('pause');
 		current.append(itemCard);
@@ -77,7 +78,15 @@
 				'2x': imageData.url2x ? imageData.url2x.slice(0, -format.length) : imageData.url.slice(0, -format.length)
 			};
 
-			var image = $('<picture><source type="image/webp" srcset="' + path['1x'] + '.webp 1x, ' + path['2x'] + '.webp 2x"><img src="' + path['1x'] + format + '" srcset="' + path['2x'] + format + ' 2x" width="' + imageData.w + '" height="' + imageData.h + '" alt=""></picture>');
+			if (imageData.isWebp) {
+
+				var image = $('<picture><source type="image/webp" srcset="' + path['1x'] + '.webp 1x, ' + path['2x'] + '.webp 2x"><img src="' + path['1x'] + format + '" srcset="' + path['2x'] + format + ' 2x" width="' + imageData.w + '" height="' + imageData.h + '" alt=""></picture>');
+
+			} else {
+
+				var image = $('<img src="' + path['1x'] + format + '" srcset="' + path['2x'] + format + ' 2x" width="' + imageData.w + '" height="' + imageData.h + '" alt="">');
+
+			}
 
 			card.append(image);
 			card.css({'position': 'absolute'})

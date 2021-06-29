@@ -1,5 +1,39 @@
 'use strict';
 
+/******************
+	Template Name: Centrix
+  Description: Centrix - Personal CV/Resume HTML Template
+  Author: Paul
+  Author URI: http://themeforest.net/user/Paul_tf
+
+
+	1. Common
+	2. Inits
+		2.1 Init parallax
+		2.2 Init google map
+		2.3 Animsition init
+		2.4 AOS init
+	3. Header
+	4. Change opacity logo on scroll
+	5. Fixed footer
+	6. Mobile menu
+	7. Hint fields
+	8. Accordion
+	9. Carousels
+		9.1 Carousel
+		9.2 Team carousel
+	10. Animation of statistics
+	11. Tooltip pages
+	12. Masonry
+	13. Pagepiling
+	14. Animation of skills
+	15. Anchor
+	16. Projects listing
+
+***************/
+
+/*** 1. Common ***/
+
 var body = $('body');
 var DURATION = 300;
 var preloader = $('.preloader');
@@ -47,79 +81,64 @@ function animate({timing, draw, duration}) {
   });
 }
 
+/*** 2. Inits ***/
 
+/* 2.1 Init parallax */
+//= parts/init-parallax.js
 
-var images = document.querySelectorAll('.__js_parallax img');
-new simpleParallax(images, {
-	scale: 1.3
-});
+/* 2.2 Init google map */
+//= parts/init-map.js
 
-let map;
-
-function initMap() {
-  map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: -34.397, lng: 150.644 },
-    zoom: 8,
-  });
-}
-
-/* AOS init */
-//= parts/aos-init.js
-
-/* 1. Header */
-//= parts/header.js
-
-
-
-/* Change opacity logo on scroll */
-//= parts/opacity-logo.js
-
-/* Parallax first screen on scroll */
-//= parts/parallax-bg.js
-
-/* 13. Fixed footer */
-//= parts/fixed-footer.js
-
-/* 2. Animsition init */
+/* 2.3 Animsition init */
 //= parts/animsition-init.js
 
+/* 2.4 AOS init */
+//= parts/aos-init.js
 
-/* 3. Mobile menu */
+
+/* 3. Header */
+//= parts/header.js
+
+/* 4. Change opacity logo on scroll */
+//= parts/opacity-logo.js
+
+/* 5. Fixed footer */
+//= parts/fixed-footer.js
+
+/* 6. Mobile menu */
 //= parts/mobile-menu.js
 
-/* 3. Hint fields */
+/* 7. Hint fields */
 //= parts/field.js
 
-/* 4. Accordion */
+/* 8. Accordion */
 //= parts/accordion.js
 
-/* 5. Carousels */
-/* 5.1 Carousel */
+/*** 9. Carousels ***/
+
+/* 9.1 Carousel */
 //= parts/carousel.js
 
-/* 5.2 Team carousel */
+/* 9.2 Team carousel */
 //= parts/team-carousel.js
 
-/* 6. Animation of statistics */
+/* 10. Animation of statistics */
 //= parts/statistics.js
 
-/* 7. Tooltip pages */
+/* 11. Tooltip pages */
 //= parts/tooltip.js
 
-/* 8. Masonry */
+/* 12. Masonry */
 //= parts/masonry.js
 
-/* 9. Pagepiling */
+/* 13. Pagepiling */
 //= parts/pagepiling.js
 
-/* 10. Animation of skills */
+/* 14. Animation of skills */
 //= parts/skills.js
 
-/* 11. Init simple parallax */
-//= parts/simple-parallax.js
-
-/* 12. Anchor */
+/* 15. Anchor */
 //= parts/anchor.js
 
-/* 13. Projects listing */
+/* 16. Projects listing */
 //= parts/projects-listing.js

@@ -1,11 +1,6 @@
 .demo {
   position: relative;
-}
-
-@media (min-width: 1400px) {
-  .demo .container {
-    max-width: 1350px;
-  }
+  overflow: hidden;
 }
 
 .demo__section {

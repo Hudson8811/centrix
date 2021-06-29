@@ -8,7 +8,7 @@ block variables
 
 block header
 	header.header.header--demo.header--white.header--separator.header--absolute
-		.header__container.container-fluid
+		.header__container.container.container--size-large
 			a.header__logo.logo(href= URLS.home.default)
 				+icon('logo')(width="76" height="19")
 			.header__mobile.mobile-canvas
@@ -50,7 +50,7 @@ block content
 				.demo__subtitle Creative Agency & Portfolio <br> Multipurpose Theme
 				+btn(false, 'View demos', '#demo', 'demo__btn anchor')
 		section#demo.demo__section.demo__section--choose
-			.container
+			.container.container--size-large
 				.demo__title Choose your demo
 				.demo__subtitle.demo__subtitle--black Choose your perfect pre-built demo for <br> your website.
 				.demo__row
@@ -65,7 +65,7 @@ block content
 					+demo-card('', '', '', '', 'demo-card--coming demo__card', true)
 		section.demo__section.demo__section--projects
 			.demo__bg
-			.container
+			.container.container--size-large
 				.demo__title Projects
 				.demo__row
 					.demo__col
@@ -84,7 +84,7 @@ block content
 							source(type="image/webp" srcset="img/picture/demo/project-4.webp 1x, img/picture/demo/project-4@2x.webp 2x")
 							img(src="img/picture/demo/project-4.jpg", srcset="img/picture/demo/project-4@2x.jpg 2x", alt="")
 		section.demo__section.demo__section--blog
-			.container
+			.container.container--size-large
 				.demo__title Practical blog pages
 				.demo__row
 					.demo__col

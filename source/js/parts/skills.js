@@ -46,20 +46,6 @@
 				var current = $(this);
 				var progress = current.find('.skill__progress');
 				var percent = parseInt(current.attr('data-percent'), 10);
-				//var interval = duration / percent;
-
-				var count = 1;
-
-				/*var idInterval = setInterval(function() {
-					progress.attr('style', 'transform: scale(' + (count / 100) + ', 1)')
-					count++;
-
-					if (count === percent) {
-						clearInterval(idInterval);
-					}
-				}, interval);*/
-
-
 
 				progress.attr('style', 'transform: scale(' + (percent / 100) + ', 1)')
 			});
