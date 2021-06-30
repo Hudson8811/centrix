@@ -36,6 +36,13 @@
 
 
 			$(window).on('resize', function() {
+				if ($(window).width() === mobileBreakpoint) {
+					header.attr('hidden', 'true')
+
+					setTimeout(function() {
+						header.removeAttr('hidden');
+					}, DURATION)
+				}
 				setTimeout(function() {
 					Height.HEADER = header.outerHeight();
 					Height.LEFTWARD = leftward.outerHeight();
