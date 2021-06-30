@@ -5,4 +5,4 @@ mixin first-banner(title, pic, className)
 				source(type="image/webp", srcset="img/picture/first-banner/" + pic.n + ".webp 1x, img/picture/first-banner/" + pic.n + "@2x.webp 2x")
 				img(src="img/picture/first-banner/" + pic.n + ".jpg", srcset="img/picture/first-banner/" + pic.n + "@2x.jpg 2x", width= pic.w, height= pic.h, alt="")
 		.container.container--size-large
-			h1.first-banner__title.heading.heading--size-large(data-aos="fade")!= title
+			h1.first-banner__title.heading.heading--size-large!= title

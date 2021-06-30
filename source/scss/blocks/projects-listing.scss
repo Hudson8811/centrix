@@ -22,11 +22,14 @@
 		right: 0;
 		bottom: 0;
 
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
-		padding: 12px 15px;
+		padding: 12px 0;
 		background-color: $color-default-white;
+
+		.container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
 
 		@include media(md) {
 			position: absolute;
@@ -37,6 +40,11 @@
 			padding: 0;
 
 			@include transition(transform);
+
+			.container {
+				padding-left: 0;
+				padding-right: 0;
+			}
 		}
 
 		@include media(xl) {

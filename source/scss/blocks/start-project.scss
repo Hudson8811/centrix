@@ -18,7 +18,8 @@
 	}
 
 	&__container {
-		//max-width: $width--full;
+		max-width: 1320px;
+		margin: 0 auto;
 
 		&--small {
 			max-width: $width--middle;

@@ -1,33 +1,32 @@
 section.portfolio-section.portfolio-section--no-padding
-	.portfolio-section__container.container.container--size-large
-		header.portfolio-section__header.row.align-items-end
-			.col-8.col-xl-6.offset-xl-2
-				h2.portfolio-section__title Latest works
-			.col-4.text-right
-				+arrow-link('View all', URLS.projects.masonry, 'portfolio-section__more')
+	header.portfolio-section__header.row.align-items-end
+		.col-8.col-xl-6.offset-xl-2
+			h2.portfolio-section__title Latest works
+		.col-4.text-right
+			+arrow-link('View all', URLS.projects.masonry, 'portfolio-section__more')
 
-		ul.portfolio-section__grid.__js_portfolio-section-masonry
-			- let count = 0;
-			while count < 4
-				- let cl2 = PORTFOLIO_CARDS[count].cl2 ? ' portfolio-section__item' + PORTFOLIO_CARDS[count].cl2: '';
+	ul.portfolio-section__grid.__js_portfolio-section-masonry
+		- let count = 0;
+		while count < 4
+			- let cl2 = PORTFOLIO_CARDS[count].cl2 ? ' portfolio-section__item' + PORTFOLIO_CARDS[count].cl2: '';
 
-				- let cardCl = PORTFOLIO_CARDS[count].cardCl ? PORTFOLIO_CARDS[count].cardCl : '';
-				li.portfolio-section__item.__js_masonry-item(class= cl2)
-					a.project-preview.project-preview--elastic(class="project-preview" + cardCl, href= URLS.projects.single)
-						span.project-preview__image
-							picture
-								if PORTFOLIO_CARDS[count].image.isMobile
-									source(type="image/webp" media="(min-width: 992px)", srcset="img/picture/common/portfolio-section/" + PORTFOLIO_CARDS[count].image.url + ".webp 1x, img/picture/common/portfolio-section/" + PORTFOLIO_CARDS[count].image.url + "@2x.webp 2x")
-									source(type="image/webp" srcset="img/picture/common/portfolio-section/" + PORTFOLIO_CARDS[count].image.url + "-mobile.webp 1x, img/picture/common/portfolio-section/" + PORTFOLIO_CARDS[count].image.url + "-mobile@2x.webp 2x")
-									source(media="(min-width: 992px)", srcset="img/picture/common/portfolio-section/" + PORTFOLIO_CARDS[count].image.url + ".jpg 1x, img/picture/common/portfolio-section/" + PORTFOLIO_CARDS[count].image.url + "@2x.jpg 2x")
+			- let cardCl = PORTFOLIO_CARDS[count].cardCl ? PORTFOLIO_CARDS[count].cardCl : '';
+			li.portfolio-section__item.__js_masonry-item(class= cl2)
+				a.project-preview.project-preview--elastic(class="project-preview" + cardCl, href= URLS.projects.single)
+					span.project-preview__image
+						picture
+							if PORTFOLIO_CARDS[count].image.isMobile
+								source(type="image/webp" media="(min-width: 992px)", srcset="img/picture/common/portfolio-section/" + PORTFOLIO_CARDS[count].image.url + ".webp 1x, img/picture/common/portfolio-section/" + PORTFOLIO_CARDS[count].image.url + "@2x.webp 2x")
+								source(type="image/webp" srcset="img/picture/common/portfolio-section/" + PORTFOLIO_CARDS[count].image.url + "-mobile.webp 1x, img/picture/common/portfolio-section/" + PORTFOLIO_CARDS[count].image.url + "-mobile@2x.webp 2x")
+								source(media="(min-width: 992px)", srcset="img/picture/common/portfolio-section/" + PORTFOLIO_CARDS[count].image.url + ".jpg 1x, img/picture/common/portfolio-section/" + PORTFOLIO_CARDS[count].image.url + "@2x.jpg 2x")
 
-									img(src="img/picture/common/portfolio-section/" + PORTFOLIO_CARDS[count].image.url + "-mobile.jpg", srcset="img/picture/common/portfolio-section/" + PORTFOLIO_CARDS[count].image.url + "-mobile@2x.jpg 2x",  alt= PORTFOLIO_CARDS[count].title)
-								else
-									source(type="image/webp", srcset="img/picture/common/portfolio-section/" + PORTFOLIO_CARDS[count].image.url + ".webp 1x, img/picture/common/portfolio-section/" + PORTFOLIO_CARDS[count].image.url + "@2x.webp 2x")
-									img(src="img/picture/common/portfolio-section/" + PORTFOLIO_CARDS[count].image.url + ".jpg", srcset="img/picture/common/portfolio-section/" + PORTFOLIO_CARDS[count].image.url + "@2x.jpg 2x", width= PORTFOLIO_CARDS[count].image.w, height= PORTFOLIO_CARDS[count].image.h, alt= PORTFOLIO_CARDS[count].title)
-						span.project-preview__bottom
-							span.project-preview__title= PORTFOLIO_CARDS[count].title
-							span.project-preview__icon
-								+icon('link-arrow2')(width="24" height="23")
-				- count++;
+								img(src="img/picture/common/portfolio-section/" + PORTFOLIO_CARDS[count].image.url + "-mobile.jpg", srcset="img/picture/common/portfolio-section/" + PORTFOLIO_CARDS[count].image.url + "-mobile@2x.jpg 2x",  alt= PORTFOLIO_CARDS[count].title)
+							else
+								source(type="image/webp", srcset="img/picture/common/portfolio-section/" + PORTFOLIO_CARDS[count].image.url + ".webp 1x, img/picture/common/portfolio-section/" + PORTFOLIO_CARDS[count].image.url + "@2x.webp 2x")
+								img(src="img/picture/common/portfolio-section/" + PORTFOLIO_CARDS[count].image.url + ".jpg", srcset="img/picture/common/portfolio-section/" + PORTFOLIO_CARDS[count].image.url + "@2x.jpg 2x", width= PORTFOLIO_CARDS[count].image.w, height= PORTFOLIO_CARDS[count].image.h, alt= PORTFOLIO_CARDS[count].title)
+					span.project-preview__bottom
+						span.project-preview__title= PORTFOLIO_CARDS[count].title
+						span.project-preview__icon
+							+icon('link-arrow2')(width="24" height="23")
+			- count++;
 

@@ -47,14 +47,20 @@
 
 	&__header {
 		position: absolute;
-		left: 12px;
-		right: 12px;
+		left: 50%;
+		//right: 12px;
 		bottom: 36px;
-		display: flex;
-		justify-content: flex-end;
-		align-items: flex-end;
+		transform: translateX(-50%);
 		order: 1;
+		width: 100%;
 		margin-top: auto;
+
+		.container {
+			position: relative;
+			display: flex;
+			justify-content: flex-end;
+			align-items: flex-end;
+		}
 
 		@include media(xxl) {
 			width: 100%;
@@ -67,7 +73,7 @@
 
 	&__title {
 		position: absolute;
-		left: 0;
+		left: 12px;
 		bottom: -36px;
 		max-width: 230px;
 		margin: 0;
@@ -102,6 +108,10 @@
 			max-width: 930px;
 			//margin-bottom: -302px;
 			font-size: 125px;
+		}
+
+		@include media(xxl) {
+			left: 15px;
 		}
 	}
 

@@ -174,6 +174,12 @@ function animate({timing, draw, duration}) {
 
 			changeStateHandler();
 
+			if (isLeftwardHeader && !isMobileWidth) {
+				onScrollOne();
+			}
+
+
+
 			$(window).on('resize', function() {
 				setTimeout(function() {
 					Height.HEADER = header.outerHeight();
@@ -199,7 +205,6 @@ function animate({timing, draw, duration}) {
 				scroll = $(window).scrollTop();
 
 				if(scroll > Height.LEFTWARD - Height.HEADER) {
-
 					header.css({'position': 'absolute', 'top': 'auto', 'left': '0', 'bottom': '0'})
 				} else {
 					header.removeAttr('style');

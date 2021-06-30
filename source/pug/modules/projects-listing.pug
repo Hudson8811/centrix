@@ -1,12 +1,13 @@
 section.projects-listing
-	.projects-listing__container.container
+	.projects-listing__container
 		h1.visually-hidden Projects
 
 		.projects-listing__aside
-			.projects-listing__aside-left
-				.projects-listing__category.d-none= VERTICAL_PROJECTS[0].category ? VERTICAL_PROJECTS[0].category : ''
-				h2.projects-listing__title!= VERTICAL_PROJECTS[0].title
-			+arrow-link('', URLS.projects.single, 'projects-listing__more')
+			.container
+				.projects-listing__aside-left
+					.projects-listing__category.d-none= VERTICAL_PROJECTS[0].category ? VERTICAL_PROJECTS[0].category : ''
+					h2.projects-listing__title!= VERTICAL_PROJECTS[0].title
+				+arrow-link('', URLS.projects.single, 'projects-listing__more')
 
 		ul.projects-listing__list
 			each item, index in VERTICAL_PROJECTS

@@ -366,7 +366,7 @@
 		}
 
 		@include media(full) {
-			left: calc((100vw - 1920px) / 2);
+			//left: calc((100vw - 1920px) / 2);
 
 			#{$self}__menu {
 				position: relative;

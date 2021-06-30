@@ -20,7 +20,7 @@
 		transform: translateY(-50%);
 
 		@include media(sm) {
-			left: 12px;
+			left: 0;
 		}
 
 		@include media(xl) {
@@ -39,9 +39,23 @@
 
 		@include media(sm) {
 			max-width: 44.4%;
-			margin-bottom: 84px;
+			margin-bottom: 56px;
+			font-size: 48px;
 
 			@include fluid-font-size(52px, 100px, 576px, 1200px, 80px);
+		}
+
+		@include media(md) {
+			font-size: 64px;
+		}
+
+		@include media(lg) {
+			font-size: 84px;
+		}
+
+		@include media(lg) {
+			margin-bottom: 84px;
+			font-size: 100px;
 		}
 
 		@include media(xl) {
