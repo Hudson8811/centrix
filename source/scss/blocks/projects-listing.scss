@@ -34,10 +34,11 @@
 		@include media(md) {
 			position: absolute;
 			top: 0;
-			left: 12px;
+			left: 0;
 			right: auto;
 			bottom: auto;
 			padding: 0;
+			background-color: transparent;
 
 			@include transition(transform);
 
@@ -95,6 +96,10 @@
 		}
 
 		@include media(xl) {
+			font-size: 80px;
+		}
+
+		@include media(xxl) {
 			font-size: 100px;
 		}
 

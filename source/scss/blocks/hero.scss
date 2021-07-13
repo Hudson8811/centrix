@@ -1,8 +1,8 @@
 .hero {
 	position: relative;
 	display: flex;
-	height: 100vh;
-	min-height: 480px;
+	//height: 100vh;
+	min-height: 100vh;
 	//max-height: 650px;
 
 	padding-top: 80px;
@@ -14,7 +14,10 @@
 	}
 
 	@include media(md) {
-		min-height: 800px;
+		//min-height: 600px;
+	}
+
+	@include media(lg) {
 		padding-top: 223px;
 	}
 
@@ -118,38 +121,65 @@
 	&__content {
 		position: relative;
 		display: flex;
-		align-items: flex-end;
+		flex-direction: column;
+		align-items: flex-start;
 		//flex-grow: 1;
-		min-height: 180px; //276px;
-		margin-bottom: 80px;
-		padding-left: 112px;
+		//min-height: 180px; //276px;
+		min-height: 400px;
+		//margin-bottom: 80px;
+
+		padding-bottom: 108px;
+		//padding-left: 112px;
+		flex-wrap: wrap;
 
 		@include media-custom-height(480px) {
-			min-height: 50vh;
-			padding-left: vh(250);
+			//min-height: 50vh;
+			//padding-left: vh(250);
 
 			@include media(lg) {
-				padding-left: vw(990);
+				flex-direction: row;
+				//padding-left: vw(990);
+				min-height: 477px;
 			}
+
+			@include media(xl) {
+				min-height: 576px;
+			}
+
 			@include media(full) {
-				padding-left: 990px;
+				//padding-left: 990px;
 			}
 		}
 
 		@include media-custom-height(1080px) {
-			padding-left: 990px;
-			height: 550px;
+			//padding-left: 990px;
+			//height: 550px;
 		}
 
 		@include media(xxl) {
-			height: vh(550);
+			//height: vh(550);
 		}
 	}
 
 	&__vertical {
-		position: absolute;
+		//position: absolute;
 		left: 0;
 		top: 0;
+
+		margin-bottom: 24px;
+
+		@include media(lg) {
+			margin-bottom: 0;
+			margin-right: 300px;
+		}
+
+		@include media(xl) {
+			margin-right: 36%; //21.1979vw; //407px;
+		}
+
+		@include media(xxl) {
+			margin-right: 42%; //21.1979vw; //407px;
+		}
 
 		@include media(xxl) {
 			left: 5px;
@@ -157,20 +187,27 @@
 	}
 
 	&__text {
-		max-width: 366px;
-		margin: 0 auto;
+		//margin: 0 auto;
 
 		@include text(15px, 21 / 15, $color-default-black);
 
 		@include media(lg) {
 			position: relative;
+
+			max-width: 366px;
 			//left: 140px;
 			//margin-bottom: -120px;
 			margin-left: 0;
+			margin-top: 200px;
 		}
 
 		@include media(xxl) {
 			margin-left: 0;
+			margin-top: 46vh;
+
+			@include media-custom-height(1080px) {
+				margin-top: 450px;
+			}
 		}
 	}
 }

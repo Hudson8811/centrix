@@ -19,6 +19,12 @@
 		}
 	}
 
+	.start-project__conatainer {
+		@include media(xxl) {
+			max-width: 1320px;
+		}
+	}
+
 	main {
 		@include transition(transform);
 	}

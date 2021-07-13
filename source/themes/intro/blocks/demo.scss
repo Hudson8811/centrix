@@ -272,6 +272,10 @@
 			left: 123px;
 		}
 
+		@include media(full) {
+			left: calc((100% - 1890px) / 2);
+		}
+
 		@include hover {
 			transform: scale(1.02);
 		}

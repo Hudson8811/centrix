@@ -315,6 +315,12 @@
   }
 }
 
+@media (min-width: 1920px) {
+  .demo__anchor {
+    left: calc((100% - 1890px) / 2);
+  }
+}
+
 .demo__anchor:focus {
   outline: none;
 }

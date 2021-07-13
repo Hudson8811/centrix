@@ -80,4 +80,10 @@
 			}
 		}
 	}
+
+	&__full-height {
+		@include media(xl) {
+			min-height: 100vh;
+		}
+	}
 }

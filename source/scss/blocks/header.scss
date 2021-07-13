@@ -116,12 +116,27 @@
 				bottom: 0;
 				left: 50%;
 				transform: translateX(-50%);
-				width: calc(100% - 24px);
-				//max-width: $width--full - 30px;
+				width: 100%;
 				border-top: solid 1px $color-default-black;
 
+				@include media(sm) {
+					max-width: 516px;
+				}
+				@include media(md) {
+					max-width: 696px;
+				}
+				@include media(lg) {
+					max-width: 936px;
+				}
+				@include media(xl) {
+					max-width: 1116px;
+				}
 				@include media(xxl) {
-					width: calc(100% - 30px);
+					max-width: calc(100% - 30px);
+				}
+
+				@include media(full) {
+					max-width: 1890px;
 				}
 			}
 		}
