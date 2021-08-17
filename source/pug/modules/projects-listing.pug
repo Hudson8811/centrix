@@ -5,7 +5,7 @@ section.projects-listing
 		.projects-listing__aside
 			.container
 				.projects-listing__aside-left
-					.projects-listing__category.d-none= VERTICAL_PROJECTS[0].category ? VERTICAL_PROJECTS[0].category : ''
+					.projects-listing__category= VERTICAL_PROJECTS[0].category ? VERTICAL_PROJECTS[0].category : ''
 					h2.projects-listing__title!= VERTICAL_PROJECTS[0].title
 				+arrow-link('', URLS.projects.single, 'projects-listing__more')
 

@@ -2,13 +2,14 @@
 	position: relative;
 	display: flex;
 	//height: 100vh;
-	min-height: 100vh;
+	min-height: 87vh;
 	//max-height: 650px;
 
 	padding-top: 80px;
 	z-index: 0;
 
 	@include media(sm) {
+		min-height: 82vh;
 		padding-top: 123px;
 		//max-height: 800px;
 	}
@@ -18,7 +19,8 @@
 	}
 
 	@include media(lg) {
-		padding-top: 223px;
+		padding-top: 116px;
+		min-height: 74vh;
 	}
 
 	&__bg {
@@ -76,7 +78,7 @@
 
 	&__title {
 		position: absolute;
-		left: 12px;
+		left: 19px;
 		bottom: -36px;
 		max-width: 230px;
 		margin: 0;
@@ -184,29 +186,36 @@
 		@include media(xxl) {
 			left: 5px;
 		}
-	}
 
-	&__text {
-		//margin: 0 auto;
+		.vertical-logo__layer {
+			padding: 44px 36px 44px 39px;
 
-		@include text(15px, 21 / 15, $color-default-black);
+			svg {
+				width: 26px;
+			}
 
-		@include media(lg) {
-			position: relative;
+			@include media(lg) {
+				padding: 6.65vw 4.74vw;
 
-			max-width: 366px;
-			//left: 140px;
-			//margin-bottom: -120px;
-			margin-left: 0;
-			margin-top: 200px;
-		}
+				svg {
+					width: 4vw;
+				}
+			}
 
-		@include media(xxl) {
-			margin-left: 0;
-			margin-top: 46vh;
+			@include media(xl) {
+				padding: 4.65vw 2.74vw;
 
-			@include media-custom-height(1080px) {
-				margin-top: 450px;
+				svg {
+					width: 2vw;
+				}
+			}
+
+			@include media(xxl) {
+				padding: 4.65vw 2.74vw;
+
+				svg {
+					width: 2vw;
+				}
 			}
 		}
 	}

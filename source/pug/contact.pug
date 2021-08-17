@@ -27,19 +27,33 @@ block content
 							each item in FOOTER_MENU_2
 								li
 									a(href= item.url)= item.name
-					.contact-section__aside.col-12.col-md
-						.contact-section__form-wrapper
-							form(action="#", method="post")
-								label.contact-section__field.field(data-aos="fade-up")
-									input(type="text", name="name")
-									span.field__hint Name
-								label.contact-section__field.field(data-aos="fade-up")
-									input(type="email", name="email")
-									span.field__hint Email
-								label.contact-section__field.contact-section__field--textarea.field(data-aos="fade-up")
-									textarea(name="message", required)
-									span.field__hint Message*
-								+btn(true, 'Submit', '', 'btn--black contact-section__send')(type="submit", data-aos="fade-up")
+					.col-12.col-md
+						.discuss-project.discuss-project--no-padding.contact-section__aside
+							.discuss-project__wrapper(data-aos="fade-up")
+								.discuss-project__title(data-aos="fade-up") Contact
+
+								form(action="#", method="post")
+									.row.justify-content-between.gx-0
+										.discuss-project__field-wrapper.col-12.col-md-6(data-aos="fade-up")
+											label.discuss-project__field.field
+												input(type="text", name="name")
+												span.field__hint Name
+										.discuss-project__field-wrapper.col-12.col-md-6(data-aos="fade-up")
+											label.discuss-project__field.field
+												input(type="email", name="email")
+												span.field__hint Email
+										.col-12(data-aos="fade-up")
+											label.discuss-project__field.discuss-project__field--textarea.field
+												textarea(name="message", required)
+												span.field__hint Message
+										.discuss-project__bottom.col-12
+											.discuss-project__file.file-upload(data-aos="fade-up")
+												label.file-upload__label
+													input.visually-hidden(type="file")
+													span.file-upload__icon
+														+icon('paper-clip')(width="16", height="16")
+													span.file-upload__text Attach a file
+											+btn(true, 'Submit', '', 'discuss-project__send btn--theme-black')(type="submit", data-aos="fade-up")
 			.contact-section__map(id="map", data-aos="fade-up")
 				iframe(src='https://yandex.ru/map-widget/v1/?um=constructor%3A351063e7db352f0133fe8dca1724bd5b8208d2a14e4ca511a12b61acfa0179d0&source=constructor')
 			//-script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&libraries=&v=weekly", async)

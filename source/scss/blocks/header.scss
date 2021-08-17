@@ -415,6 +415,12 @@
 	}
 
 	&--yellow {
+		transition: background-color 0.3s ease, transform 0.3s ease;
+
+		&.shifted {
+			background-color: $color-default-black;
+		}
+
 		.logo {
 			svg {
 				fill: $color-yellow;
@@ -575,6 +581,12 @@
 		@include media(lg) {
 			padding-top: 40px;
 			padding-bottom: 40px;
+		}
+	}
+
+	&--height {
+		@include media(lg) {
+			padding: 38px 0;
 		}
 	}
 

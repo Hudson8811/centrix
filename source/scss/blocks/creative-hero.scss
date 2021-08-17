@@ -40,6 +40,7 @@
 		@include media(sm) {
 			max-width: 44.4%;
 			margin-bottom: 56px;
+			margin-top: 92px;
 			font-size: 48px;
 
 			@include fluid-font-size(52px, 100px, 576px, 1200px, 80px);
@@ -47,6 +48,7 @@
 
 		@include media(md) {
 			font-size: 64px;
+			margin-top: 0;
 		}
 
 		@include media(lg) {
@@ -71,10 +73,17 @@
 		margin-right: -12px;
 
 		@include media(sm) {
-			width: 73%;
-			max-width: 1100px;
+			width: calc(50% - 8px);
 			margin-left: auto;
 			margin-right: 0;
+		}
+
+		@include media(lg) {
+			width: calc(66.6666% - 6px);
+		}
+
+		@include media(xxl) {
+			width: calc(66.6666% - 20px);
 		}
 
 		img {

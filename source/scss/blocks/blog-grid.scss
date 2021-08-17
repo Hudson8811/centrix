@@ -23,11 +23,6 @@
 			height: 830px;
 		}
 
-		@include media(full) {
-			height: 43.23vw;
-			max-height: 1080px;
-		}
-
 		@include retina {
 			//background: url("../img/news/banner-blog-1@2x.jpg") no-repeat;
 		}
@@ -106,28 +101,14 @@
 	}
 
 	&__card {
-		margin-top: 20px;
-
-		&:first-child {
-			margin-top: 0;
-		}
+		margin-bottom: 20px;
 
 		@include media(md) {
-			margin-top: 30px;
-
-			&:not(.blog-grid__card--listing):nth-child(2) {
-				margin-top: 0;
-			}
-		}
-
-		@include media(lg) {
-			&:not(.blog-grid__card--listing):nth-child(3) {
-				margin-top: 0;
-			}
+			margin-bottom: 30px;
 		}
 
 		@include media(xxl) {
-			margin-top: 60px;
+			margin-bottom: 60px;
 		}
 	}
 

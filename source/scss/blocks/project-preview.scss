@@ -40,9 +40,15 @@
 			white-space: nowrap;
 			overflow: hidden;
 			text-overflow: ellipsis;
+			font-size: 14px;
+
+			@include media(lg) {
+				font-size: 20px;
+			}
 
 			@include media(xl) {
 				max-width: 300px;
+				font-size: 20px;
 			}
 
 			@include media(xxl) {

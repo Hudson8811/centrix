@@ -1,7 +1,6 @@
 .comment {
 	.comment-item {
 		display: flex;
-		align-items: center;
 		flex-direction: column;
 
 		@include media(lg) {
@@ -39,7 +38,6 @@
 
 		&__top {
 			display: flex;
-			align-items: center;
 			flex-direction: column;
 			margin-bottom: 10px;
 

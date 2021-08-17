@@ -129,6 +129,26 @@
 	}
 
 	&__aside {
+		.discuss-project {
+			&__title {
+				max-width: 100%;
+				margin-left: 0;
+				margin-top: 0;
+				text-align: left;
+
+				@include media(md) {
+					margin-bottom: 91px;
+				}
+			}
+
+			&__bottom {
+				align-items: flex-start;
+			}
+
+			&__send {
+				margin-left: 0;
+			}
+		}
 	}
 
 	&__form-wrapper {

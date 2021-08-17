@@ -3,7 +3,6 @@
 	z-index: 0;
 	display: flex;
 	height: 100vh;
-	min-height: 480px;
 	overflow: hidden;
 
 	padding-top: 80px;
@@ -13,19 +12,9 @@
 		padding-top: 120px;
 	}
 
-	@include media(lg) {
-		min-height: 700px;
-		//padding-top: 223px;
-	}
-
 	@include media(xl) {
 		padding-top: 190px;
 		padding-bottom: 60px;
-	}
-
-	@include media(full) {
-		//height: 43.23vw;
-		max-height: 1080px;
 	}
 
 	&__image {

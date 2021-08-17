@@ -181,5 +181,10 @@
 
 	&__send {
 		display: flex;
+		border: 1px solid $color-yellow;
+
+		@include hover {
+			border-color: $color-default-white;
+		}
 	}
 }

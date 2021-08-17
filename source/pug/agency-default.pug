@@ -5,17 +5,91 @@ block variables
 	- let currentPage = 1.01; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
 	- let currentSection = 1; // // Для каждой раздела уникален. Home -1, projects - 2, news - 3, pages - 4
 	- let isSecondaryHeader = true;
-	- let headerClasses = 'header--absolute __js_fixed-header';
+	- let headerClasses = 'header--absolute __js_fixed-header header--height';
 
 block header
 	include modules/header
 
 block content
 	include modules/hero
-	include modules/features
+	section.features
+		.features__container.container.container--size-large
+
+
+			.row
+				.col-12.col-lg-10
+					.features__description(data-aos="fade-up") Our intelligent digital strategy and a pragmatic and thoughtful approach to solving business calls deliver a successful framework for both you and your audience.
+			.row
+				.col-12.col-md-8.col-lg-6
+					a.features__card.features__card--size-large.feature-card(href="#", data-aos="fade-up")
+						span.feature-card__image
+							picture
+								source(type="image/webp" srcset="img/picture/home/feature-1.webp 1x, img/picture/home/feature-1@2x.webp 2x")
+								img(src="img/picture/home/feature-1.jpg", srcset="img/picture/home/feature-1@2x.jpg 2x", width="810", height="529", alt="questions")
+						span.feature-card__caption We ask right <br>questions
+				.col-12.col-md-4.col-lg-3
+					.features__text(data-aos="fade-up") In the design process, they create both functional and beautiful things. The team possesses unique individuality and strong qualifications and can easily translate something so abstract and visionary into a digital experience. They always put the clients first no matter how complicated the tasks are”.
+			.row
+				.col-12
+					.row
+						.col-12.col-sm-6.col-md-5.d-flex
+							a.features__card.features__card--size-small.feature-card.feature-card--mobile-same-size(href="#", data-aos="fade-up")
+								span.feature-card__image
+									picture
+										source(type="image/webp" srcset="img/picture/home/feature-3.webp 1x, img/picture/home/feature-3@2x.webp 2x")
+										img(src="img/picture/home/feature-3.jpg", srcset="img/picture/home/feature-3@2x.jpg 2x", width="410", height="490", alt="Concept")
+								span.feature-card__caption We achieve the <br>goal
+						.col-12.col-sm-6.col-md-7
+							a.features__card.features__card--size-middle.feature-card.feature-card--mobile-same-size(href="#", data-aos="fade-up")
+								span.feature-card__image
+									picture
+										source(type="image/webp" srcset="img/picture/home/feature-2.webp 1x, img/picture/home/feature-2@2x.webp 2x")
+										img(src="img/picture/home/feature-2.jpg", srcset="img/picture/home/feature-2@2x.jpg 2x", width="616", height="529", alt="Goal")
+								span.feature-card__caption We develop <br>a concept
+
+
 	include modules/our-services
 	include modules/works
-	include modules/contact-section
+
+
+	section.contact-section
+		.contact-section__container.container.container--size-large
+			.row
+				.contact-section__main.col-12.col-lg
+					h2.contact-section__title(data-aos="fade-up") Contact
+					address.contact-section__address(data-aos="fade-up") 269 King Str, 05th Floor, Utral Hosue Building, Melbourne, VIC 3000, Australia.
+
+					.contact-section__link(data-aos="fade-up")
+						a(href="tel:+34255216021") +3 (425) 521 60 21
+					.contact-section__link(data-aos="fade-up")
+						a(href="mailto:info@centrix.com") info@centrix.com
+
+					ul.contact-section__social(data-aos="fade-up")
+						each item in FOOTER_MENU_2
+							li
+								a(href= item.url)= item.name
+				.contact-section__aside.col-12.col-lg(data-aos="fade-up")
+					.discuss-project.discuss-project--no-padding.col-12
+						.discuss-project__wrapper(data-aos="fade-up")
+							.discuss-project__title(data-aos="fade-up") Contact
+
+							form(action="#", method="post")
+								.row.justify-content-between.gx-0
+									.col-12(data-aos="fade-up")
+										label.discuss-project__field.field
+											input(type="text", name="name")
+											span.field__hint Name
+									.col-12(data-aos="fade-up")
+										label.discuss-project__field.field
+											input(type="email", name="email")
+											span.field__hint Email
+									.col-12(data-aos="fade-up")
+										label.discuss-project__field.discuss-project__field--textarea.field
+											textarea(name="message", required)
+											span.field__hint Message
+									.discuss-project__bottom.col-12
+										+btn(true, 'Submit', '', 'discuss-project__send btn--theme-black')(type="submit", data-aos="fade-up")
+
 
 
 block footer

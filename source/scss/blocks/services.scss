@@ -13,6 +13,9 @@
 		}
 
 		&--first {
+			margin-left: auto;
+			text-align: right;
+
 			@include media(lg) {
 				margin-top: 0;
 			}

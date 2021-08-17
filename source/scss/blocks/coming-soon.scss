@@ -94,15 +94,13 @@
 
 	&__subtitle {
 		margin-bottom: 40px;
-		font-size: 14px;
-		line-height: 18px;
+		font-size: 15px;
+		line-height: 21px;
 		text-align: center;
 
 		@include media(lg) {
 			max-width: 430px;
 			margin-bottom: 88px;
-			font-size: 15px;
-			line-height: 21px;
 		}
 	}
 

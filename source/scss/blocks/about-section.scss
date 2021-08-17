@@ -44,6 +44,10 @@
 			padding-left: vw(80);
 		}
 
+		@include media(xxl) {
+			padding-left: 50px !important;
+		}
+
 		@include media(full) {
 			padding-left: 80px;
 		}

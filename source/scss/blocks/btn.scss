@@ -64,6 +64,7 @@
 	}
 
 	&--theme-black {
+		border: 1px solid $color-default-black;
 		background-color: $color-default-black;
 
 		#{$self}__text {
@@ -76,9 +77,18 @@
 			}
 		}
 
-		&:hover,
-		&:focus {
-			background-color: lighten($color-default-black, 30%);
+		@include hover {
+			background-color: transparent;
+
+			#{$self}__text {
+				color: $color-default-black;
+			}
+
+			#{$self}__icon {
+				svg {
+					fill: $color-default-black;
+				}
+			}
 		}
 	}
 

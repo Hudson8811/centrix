@@ -23,6 +23,7 @@
 	&__title {
 		font-size: 30px;
 		line-height: 120%;
+		font-weight: 500;
 		margin-bottom: 20px;
 
 		@include media(md) {
@@ -40,6 +41,7 @@
 	&__subtitle {
 		font-size: 25px;
 		line-height: 120%;
+		font-weight: 500;
 		margin-bottom: 20px;
 
 		@include media(lg) {
