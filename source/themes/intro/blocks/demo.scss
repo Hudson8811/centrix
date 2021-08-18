@@ -297,4 +297,305 @@
 			transform: rotate(90deg);
 		}
 	}
+
+	&--new {
+		#{$self} {
+			&__container {
+				max-width: 1760px;
+			}
+
+			&__section {
+				&--banner {
+					min-height: 300px;
+					background-position: bottom;
+
+					@include media(md) {
+						min-height: 500px;
+					}
+
+					@include media(lg) {
+						min-height: 710px;
+					}
+				}
+
+				&--choose {
+					@include media(xl) {
+						padding: 70px 0 35px;
+
+						@include media(lg) {
+							padding: 170px 0 66px;
+						}
+					}
+				}
+
+				&--projects {
+					padding: 70px 0 35px;
+
+					@include media(lg) {
+						padding: 107px 0 62px;
+					}
+
+					.demo__block-title-bottom {
+						margin-top: 44px;
+					}
+
+					.demo__bg {
+						bottom: 0;
+					}
+
+					.demo-card__link {
+						color: $color-default-white;
+						padding-top: 20px;
+
+						@include media(lg) {
+							padding-top: 40px;
+						}
+
+						svg {
+							fill: $color-default-white;
+						}
+					}
+
+					.demo-card__image {
+						max-height: 100%;
+
+						img {
+							margin-bottom: 0;
+						}
+					}
+				}
+
+				&--blog {
+					padding: 70px 0 35px;
+
+					@include media(lg) {
+						padding: 172px 0 49px;
+					}
+
+					.demo-card__image {
+						max-height: 100%;
+
+						img {
+							margin-bottom: 0;
+						}
+					}
+
+					.demo-card__link {
+						padding-top: 20px;
+
+						@include media(lg) {
+							padding-top: 40px;
+						}
+					}
+				}
+			}
+
+			&__block-title {
+				&--white {
+					color: $color-default-white;
+
+					.demo__block-title-bottom {
+						border-top-color: $color-default-white;
+					}
+				}
+			}
+
+			&__block-title-row {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+
+				@include media(md) {
+					flex-direction: row;
+					justify-content: space-between;
+				}
+
+				p {
+					margin: 0;
+
+					&:first-child {
+						width: 100%;
+						font-size: 32px;
+						line-height: 32px;
+						font-weight: 500;
+						text-align: center;
+
+						@include media(md) {
+							width: 45%;
+							font-size: 48px;
+							line-height: 48px;
+							text-align: left;
+						}
+
+						@include media(lg) {
+							width: 35%;
+						}
+					}
+
+					&:last-child {
+						width: 100%;
+						font-size: 14px;
+						line-height: 20px;
+						margin-top: 20px;
+						text-align: center;
+
+						@include media(md) {
+							width: 45%;
+							margin-top: 0;
+							text-align: left;
+						}
+
+						@include media(lg) {
+							width: 31%;
+						}
+					}
+				}
+			}
+
+			&__block-title-bottom {
+				font-size: 16px;
+				line-height: 14px;
+				font-weight: 500;
+				text-transform: uppercase;
+				text-align: center;
+				border-top: 1px solid $color-default-black;
+				padding-top: 15px;
+				margin-top: 15px;
+
+				@include media(md) {
+					margin-top: 53px;
+				}
+
+				@include media(lg) {
+					text-align: left;
+				}
+			}
+
+			&__row {
+				margin-top: 50px;
+
+				@include media(md) {
+					margin: 102px -15px 0;
+				}
+
+				@include media(lg) {
+					margin: 102px -25px 0;
+				}
+
+				@media (min-width: 1830px) {
+					margin: 102px -30px 0;
+				}
+			}
+
+			&__card,
+			&__column-2 {
+				width: 100%;
+				margin-bottom: 50px;
+
+				@include media(md) {
+					margin-bottom: 30px;
+				}
+
+				@include media(md) {
+					width: calc(33.3333% - 30px);
+					margin: 0 15px 30px;
+				}
+
+				@include media(lg) {
+					width: calc(33.3333% - 50px);
+					margin: 0 25px 60px;
+				}
+
+				@media (min-width: 1830px) {
+					width: calc(33.3333% - 60px);
+					margin: 0 30px 100px;
+				}
+			}
+
+			&__card:not(.demo-card--coming) {
+				@include hover {
+					.demo-card__image {
+						transform: translateY(-10px);
+					}
+
+					.demo-card__link {
+						color: $color-yellow;
+
+						svg {
+							fill: $color-yellow;
+						}
+					}
+				}
+			}
+
+			&__column-2 {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+
+				#{$self}__card {
+					width: 100%;
+					margin: 0 0 50px;
+
+					@include media(md) {
+						margin: 0 0 30px;
+					}
+
+					&:last-child {
+						margin-bottom: 0;
+					}
+				}
+			}
+		}
+
+		.demo-card {
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			&__image {
+				max-height: 481px;
+				transition: transform 0.3s ease;
+			}
+
+			&__link {
+				justify-content: center;
+				font-size: 16px;
+				line-height: 14px;
+				font-weight: 500;
+				text-transform: uppercase;
+				padding-top: 20px;
+
+				@include media(lg) {
+					padding-top: 50px;
+				}
+
+				svg {
+					width: 14px;
+					height: 14px;
+					margin-left: 15px;
+				}
+			}
+
+			&__btn {
+				display: none;
+			}
+
+			&--coming {
+				.demo-card__image {
+					background-color: $color-default-white;
+					border: 1px solid $color-default-black;
+
+					&::before {
+						max-width: 130px;
+						content: 'Coming Soon ...';
+						font-size: 35px;
+						line-height: 35px;
+						font-weight: 500;
+					}
+				}
+			}
+		}
+	}
 }

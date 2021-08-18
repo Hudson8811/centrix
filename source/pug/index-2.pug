@@ -1,0 +1,108 @@
+extends templates/main
+block variables
+	- let pageTitle = TITLE_PART + ' | Demo';
+	- let isHome = true; //- Если true то логотип не будет ссылкой
+	- let currentPage = 0; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+	- let currentSection = 0; // // Для каждой раздела уникален. Home -1, about - 2, works - 3, news - 4, pages - 5
+	- let isIntro = true;
+
+block header
+	header.header-column
+		.container.container--size-large
+			.row.header-column__menu
+				.col-12.col-md-3
+					.header-column__col
+						p grid
+						p 10 columns
+				.d-flex.flex-column.align-items-md-center.col-12.col-md-3
+					.header-column__col
+						p centrix - agency
+						p & portfolio template
+				.d-flex.flex-column.align-items-md-center.col-12.col-md-3
+					.header-column__col
+						p.pos 2021
+						p 8 homepages
+						p 17 inner pages
+						p Bootstrap 5
+				.d-flex.flex-column.align-items-md-end.col-12.col-md-3
+					.header-column__col
+						p Author
+						p Paul_tf
+			.header-column__bottom
+				+icon('link-arrow')(class='header-column__arrow')
+				+icon('logo')(class='header-column__logo')
+
+block content
+	article.demo.demo--new
+		section#start.demo__section.demo__section--banner(style='background-image: url("img/picture/demo/banner.jpg")')
+		section#demo.demo__section.demo__section--choose
+			.container.container--size-large.demo__container
+				.demo__block-title
+					.demo__block-title-row
+						p Get started with a pre-made website
+						p Centrix has included 8 Home Page layouts. <br> Approach with new trending design, focus on clean, modern
+							|  and minimalist design, Centrix will make your website look more impressive and attractive to viewers.
+							|  Included many animations help you easy to coding with special effects of it
+					.demo__block-title-bottom homepages
+				.demo__row
+					+demo-card('demo-2', 'demo-2', 'Home Mono', 'index.html', 'demo__card')
+					+demo-card('demo-4', 'demo-4', 'Home Tooltip', 'tooltip-projects.html', 'demo__card')
+					+demo-card('demo-3', 'demo-3', 'Home Modern', 'agency-modern.html', 'demo__card')
+					+demo-card('demo-5', 'demo-5', 'Home Vertical Projects', 'vertical-projects.html', 'demo__card')
+					+demo-card('demo-6', 'demo-6', 'Home Vcard', 'vcard.html', 'demo__card')
+					+demo-card('demo-7', 'demo-7', 'Home Parallax', 'parallax-projects.html', 'demo__card')
+					+demo-card('demo-8', 'demo-8', 'Home Creative', 'creative-agency.html', 'demo__card')
+					+demo-card('demo-1', 'demo-1', 'Home Classic', 'agency-default.html', 'demo__card')
+					+demo-card('', '', '', '', 'demo-card--coming demo__card', true)
+		section.demo__section.demo__section--projects
+			.demo__bg
+			.container.container--size-large.demo__container
+				.demo__block-title.demo__block-title--white
+					.demo__block-title-row
+						p Practical Project Showcases
+						p Realistic variety of single project & case-study pages with
+							|  attention to design detail & functionality.
+					.demo__block-title-bottom projects
+				.demo__row
+					.demo__column-2
+						+demo-card('project-5', 'project-5', 'Projects Carousel', 'projects-carousel.html', 'demo__card')
+						+demo-card('project-6', 'project-6', 'Projects Tooltips', 'tooltip-projects.html', 'demo__card')
+					+demo-card('project-7', 'project-7', 'Projects Masonry', 'projects-masonry.html', 'demo__card')
+					+demo-card('project-8', 'project-8', 'Single Project', 'single-project.html', 'demo__card')
+		section.demo__section.demo__section--blog
+			.container.container--size-large.demo__container
+				.demo__block-title
+					.demo__block-title-row
+						p Share your insights with Blog
+						p Not only help you SEO good, increase the traffic for website, it’s a place that you share the stories,
+							|  insights around design, career or connect with your fans, your fellows.
+					.demo__block-title-bottom blog pages
+				.demo__row
+					+demo-card('blog-2', 'blog-2', 'Blog Listing', 'blog-listing.html', 'demo__card')
+					+demo-card('blog-1', 'blog-1', 'Blog Masonry', 'blog-masonry.html', 'demo__card')
+					+demo-card('blog-4', 'blog-3', 'Single Post', 'single-post.html', 'demo__card')
+
+		section.header-column.header-column--bottom(style='background-image: url("img/picture/demo/banner-2.jpg")')
+			.container.container--size-large
+				.row.header-column__menu
+					.col-12.col-md-3
+						.header-column__col
+							p grid
+							p 10 columns
+					.d-flex.flex-column.align-items-md-center.col-12.col-md-3
+						.header-column__col
+							p centrix - agency
+							p & portfolio template
+					.d-flex.flex-column.align-items-md-center.col-12.col-md-3
+						.header-column__col
+							p.pos 2021
+							p 8 homepages
+							p 17 inner pages
+							p Bootstrap 5
+					.d-flex.flex-column.align-items-md-end.col-12.col-md-3
+						.header-column__col
+							p Author
+							p Paul_tf
+				.header-column__bottom
+					+icon('link-arrow')(class='header-column__arrow')
+					+icon('logo')(class='header-column__logo')
