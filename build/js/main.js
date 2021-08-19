@@ -84,12 +84,12 @@ function animate({timing, draw, duration}) {
 /*** 2. Inits ***/
 
 /* 2.1 Init parallax */
-(function() {
+/*(function() {
 	var images = document.querySelectorAll('.__js_parallax img');
 	new simpleParallax(images, {
 		scale: 1.3
 	});
-})();
+})();*/
 
 /* 2.2 Init google map */
 (function() {

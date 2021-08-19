@@ -27,9 +27,7 @@ block content
 					.services__item(class= classes, data-aos= index > 0 ? "fade-up" : "")
 						a.service-preview(href= URLS.pages.serviceDetail)
 							span.service-preview__image
-								picture
-									source(type="image/webp" srcset="img/picture/services/" + item.image.url + ".webp 1x, img/picture/services/" + item.image.url + "@2x.webp 2x")
-									img(src="img/picture/services/" + item.image.url + ".jpg", srcset="img/picture/services/" + item.image.url + "@2x.jpg 2x", width= item.image.w, height= item.image.h, alt= item.text)
+								img(src="img/picture/services/" + item.image.url + ".jpg", width= item.image.w, height= item.image.h, alt= item.text)
 							span.service-preview__caption!= item.text
 
 

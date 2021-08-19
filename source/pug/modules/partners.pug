@@ -4,7 +4,5 @@
 			- let i = 0;
 			while i < 4
 				li.partners__item.col-12.col-sm-6.col-lg-3(data-aos="fade-up")
-					picture
-						source(type="image/webp" srcset="img/picture/partners/" + (i + 1) + ".webp 1x, img/picture/partners/" + (i + 1) + "@2x.webp 2x")
-						img(src="img/picture/partners/" + (i + 1) + ".png", srcset="img/picture/partners/" + (i + 1) + "@2x.png 2x", width= PARTNERS_LOGO[i].w, height= PARTNERS_LOGO[i].h, alt= PARTNERS_LOGO[i].alt)
+					img(src="img/picture/partners/" + (i + 1) + ".png", width= PARTNERS_LOGO[i].w, height= PARTNERS_LOGO[i].h, alt= PARTNERS_LOGO[i].alt)
 				- i++;

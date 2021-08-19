@@ -29,9 +29,7 @@ block content
 					.team__item(class= classes, data-aos= index > 0 ? "fade-up" : "")
 						.member-card.member-card--elastic
 							.member-card__image
-								picture
-									source(type="image/webp", srcset="img/picture/team/" + item.image.url + ".webp 1x, img/picture/team/" + item.image.url + "@2x.webp 2x")
-									img(src="img/picture/team/" + item.image.url + ".jpg" srcset="img/picture/team/" + item.image.url + "@2x.jpg 2x", width= item.image.w, height= item.image.h, alt= item.name + " photo")
+								img(src="img/picture/team/" + item.image.url + ".jpg", width= item.image.w, height= item.image.h, alt= item.name + " photo")
 							.member-card__info
 								.member-card__title= item.name
 								.member-card__post= item.post

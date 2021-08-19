@@ -14,16 +14,10 @@ section.portfolio-section.portfolio-section--no-padding
 			li.portfolio-section__item.__js_masonry-item(class= cl2)
 				a.project-preview.project-preview--elastic(class="project-preview" + cardCl, href= URLS.projects.single)
 					span.project-preview__image
-						picture
-							if PORTFOLIO_CARDS[count].image.isMobile
-								source(type="image/webp" media="(min-width: 992px)", srcset="img/picture/common/portfolio-section/" + PORTFOLIO_CARDS[count].image.url + ".webp 1x, img/picture/common/portfolio-section/" + PORTFOLIO_CARDS[count].image.url + "@2x.webp 2x")
-								source(type="image/webp" srcset="img/picture/common/portfolio-section/" + PORTFOLIO_CARDS[count].image.url + "-mobile.webp 1x, img/picture/common/portfolio-section/" + PORTFOLIO_CARDS[count].image.url + "-mobile@2x.webp 2x")
-								source(media="(min-width: 992px)", srcset="img/picture/common/portfolio-section/" + PORTFOLIO_CARDS[count].image.url + ".jpg 1x, img/picture/common/portfolio-section/" + PORTFOLIO_CARDS[count].image.url + "@2x.jpg 2x")
-
-								img(src="img/picture/common/portfolio-section/" + PORTFOLIO_CARDS[count].image.url + "-mobile.jpg", srcset="img/picture/common/portfolio-section/" + PORTFOLIO_CARDS[count].image.url + "-mobile@2x.jpg 2x",  alt= PORTFOLIO_CARDS[count].title)
-							else
-								source(type="image/webp", srcset="img/picture/common/portfolio-section/" + PORTFOLIO_CARDS[count].image.url + ".webp 1x, img/picture/common/portfolio-section/" + PORTFOLIO_CARDS[count].image.url + "@2x.webp 2x")
-								img(src="img/picture/common/portfolio-section/" + PORTFOLIO_CARDS[count].image.url + ".jpg", srcset="img/picture/common/portfolio-section/" + PORTFOLIO_CARDS[count].image.url + "@2x.jpg 2x", width= PORTFOLIO_CARDS[count].image.w, height= PORTFOLIO_CARDS[count].image.h, alt= PORTFOLIO_CARDS[count].title)
+						if PORTFOLIO_CARDS[count].image.isMobile
+							img(src="img/picture/common/portfolio-section/" + PORTFOLIO_CARDS[count].image.url + "-mobile.jpg", alt= PORTFOLIO_CARDS[count].title)
+						else
+							img(src="img/picture/common/portfolio-section/" + PORTFOLIO_CARDS[count].image.url + ".jpg", width= PORTFOLIO_CARDS[count].image.w, height= PORTFOLIO_CARDS[count].image.h, alt= PORTFOLIO_CARDS[count].title)
 					span.project-preview__bottom
 						span.project-preview__title= PORTFOLIO_CARDS[count].title
 						span.project-preview__icon
