@@ -26,7 +26,7 @@
 		@include text(24px, 42 / 32, $color-default-white);
 
 		@include media(lg) {
-			margin-left: auto;
+			margin-left: 43px;
 			margin-bottom: 100px;
 			font-size: 32px;
 		}
@@ -57,6 +57,12 @@
 					margin-bottom: 144px;
 					margin-left: auto;
 				}
+
+				.feature-card__image img {
+					@include media(full) {
+						width: vw(764);
+					}
+				}
 			}
 
 			&-small {
@@ -68,6 +74,12 @@
 					margin-left: auto;
 					margin-right: 0;
 				}
+
+				.feature-card__image img {
+					@include media(full) {
+						width: vw(410);
+					}
+				}
 			}
 
 			&-middle {
@@ -76,6 +88,12 @@
 				}
 				@include media(lg) {
 					margin-left: 43px;
+				}
+
+				.feature-card__image img {
+					@include media(full) {
+						width: vw(616);
+					}
 				}
 			}
 		}

@@ -4280,6 +4280,8 @@ a:hover, a:focus {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
 }
 
 .hero__container {
@@ -4924,7 +4926,7 @@ a:hover, a:focus {
 
 @media (min-width: 992px) {
   .features__description {
-    margin-left: auto;
+    margin-left: 43px;
     margin-bottom: 100px;
     font-size: 32px;
   }
@@ -4962,6 +4964,12 @@ a:hover, a:focus {
   }
 }
 
+@media (min-width: 1920px) {
+  .features__card--size-large .feature-card__image img {
+    width: 39.79167vw;
+  }
+}
+
 @media (min-width: 576px) {
   .features__card--size-small {
     margin-bottom: 0;
@@ -4976,6 +4984,12 @@ a:hover, a:focus {
   }
 }
 
+@media (min-width: 1920px) {
+  .features__card--size-small .feature-card__image img {
+    width: 21.35417vw;
+  }
+}
+
 @media (min-width: 576px) {
   .features__card--size-middle {
     margin-bottom: 0;
@@ -4985,6 +4999,12 @@ a:hover, a:focus {
 @media (min-width: 992px) {
   .features__card--size-middle {
     margin-left: 43px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .features__card--size-middle .feature-card__image img {
+    width: 32.08333vw;
   }
 }
 
