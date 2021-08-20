@@ -42,6 +42,14 @@
 					max-width: 430px;
 					font-size: 90px;
 				}
+
+				@include media(xxl) {
+					font-size: 66px;
+				}
+
+				@include media($width--full) {
+					font-size: 90px;
+				}
 			}
 
 			#{$self}__more {

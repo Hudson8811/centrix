@@ -590,6 +590,20 @@
 		}
 	}
 
+	&--centered {
+		.navigation__list {
+			@include media(lg) {
+				padding-right: 55px;
+			}
+		}
+
+		.navigation__item {
+			@include media(lg) {
+				margin-right: 22px;
+			}
+		}
+	}
+
 	&__container {
 		display: flex;
 		align-items: center;

@@ -1,18 +1,25 @@
 .team {
 	&__item {
-		margin-top: 40px;
+		margin-top: 30px;
 
 		@include media(lg) {
-			margin-top: 80px;
+			margin-top: 40px;
+			padding-right: 20px;
+			padding-left: 20px;
 		}
 
 		@include media(xl) {
+			margin-top: 80px;
+			padding-right: 40px;
+			padding-left: 40px;
+		}
+
+		@include media(xxl) {
 			margin-top: 116px;
 		}
 
 		&--first {
 			margin-left: auto;
-			text-align: right;
 
 			@include media(lg) {
 				margin-top: 16px;
@@ -23,23 +30,68 @@
 			}
 		}
 
-		&--center {
-			text-align: center;
+		&--last {
+			@include media(lg) {
+				margin-left: 0;
+			}
+
+			@include media(xl) {
+				margin-left: 8.3333333333%;
+			}
 		}
 
-		&--right {
-			text-align: right;
+		&--row {
+			.member-card__info {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+
+				@include media(xxl) {
+					flex-direction: row;
+					align-items: flex-end;
+				}
+
+				.member-card__title {
+					margin: 0 0 8px;
+
+					@include media(xxl) {
+						margin: 0;
+					}
+				}
+
+				.member-card__post {
+					margin-right: 72px;
+				}
+
+				.member-card__social {
+					margin: 48px 0 0;
+
+					@include media(xxl) {
+						margin: 0;
+						padding-bottom: 8px;
+					}
+				}
+
+				> * {
+					margin: 0;
+				}
+			}
 		}
 
 		&--margin-negative {
 			@include media(lg) {
-				margin-top: -108px;
-				margin-bottom: -80px;
+				margin-top: 40px;
+				margin-bottom: 0;
 			}
 
 			@include media(xl) {
-				//margin-top: -226px;
-				margin-bottom: -116px;
+				margin-top: -19vw;
+				margin-bottom: -10px;
+			}
+
+			@include media(xxl) {
+				margin-top: -134px;
+				margin-bottom: -64px;
 			}
 		}
 

@@ -23,7 +23,7 @@ block content
 
 				each item, index in MEMBERS_CARDS_2
 					- let addCl = item.addCl ? item.addCl : '';
-					- let bootstrapCl = item.bootstrapCl ? 'col-12 col-sm-6 col-md-4 ' + item.bootstrapCl : 'col-12 col-sm-6 col-md-4';
+					- let bootstrapCl = item.bootstrapCl ? 'col-12 col-sm-6 col-md-6 col-lg-4 ' + item.bootstrapCl : 'col-12 col-sm-6 col-md-6 col-lg-4';
 					- let classes = addCl + ' ' + bootstrapCl;
 
 					.team__item(class= classes, data-aos= index > 0 ? "fade-up" : "")
