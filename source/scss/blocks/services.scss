@@ -24,6 +24,40 @@
 				padding-left: 55px;
 				padding-right: 9px;
 			}
+
+			img {
+				@include media(full) {
+					width: vw(810);
+					height: vh(783);
+				}
+			}
+		}
+
+		&--second img {
+			@include media(full) {
+				width: vw(410);
+				height: vh(490);
+			}
+		}
+
+		&--third img {
+			@include media(full) {
+				width: vw(616);
+				height: vh(496);
+			}
+		}
+
+		&--last {
+			@include media(xl) {
+				padding-left: 50px;
+			}
+
+			img {
+				@include media(full) {
+					width: vw(1238);
+					height: vh(527);
+				}
+			}
 		}
 
 		&--margin-negative {
@@ -39,12 +73,6 @@
 
 			@include media(full) {
 				padding-left: 135px;
-			}
-		}
-
-		&--last {
-			@include media(xl) {
-				padding-left: 50px;
 			}
 		}
 	}

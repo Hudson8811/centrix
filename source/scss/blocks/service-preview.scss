@@ -34,6 +34,7 @@
 			display: block;
 			width: 100%;
 			height: auto;
+			object-fit: cover;
 
 			@include transition(transform);
 

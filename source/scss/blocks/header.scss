@@ -132,11 +132,11 @@
 					max-width: 1116px;
 				}
 				@include media(xxl) {
-					max-width: calc(100% - 30px);
+					max-width: calc(100% - 160px);
 				}
 
 				@include media(full) {
-					max-width: 1890px;
+					max-width: 1765px;
 				}
 			}
 		}
