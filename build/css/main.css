@@ -2565,14 +2565,14 @@ a:hover, a:focus {
 
 .carousel-card__title {
   margin-right: 20px;
-  font-size: 20px;
+  font-size: 14px;
   line-height: 1.21429;
   color: #000000;
 }
 
 @media (min-width: 992px) {
   .carousel-card__title {
-    font-size: 28px;
+    font-size: 20px;
   }
 }
 
@@ -2729,7 +2729,7 @@ a:hover, a:focus {
 
 .project-preview__title {
   margin-right: 20px;
-  font-size: 20px;
+  font-size: 14px;
   line-height: 1.21429;
   color: #000000;
   text-transform: uppercase;
@@ -2739,13 +2739,7 @@ a:hover, a:focus {
 
 @media (min-width: 992px) {
   .project-preview__title {
-    font-size: 24px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .project-preview__title {
-    font-size: 28px;
+    font-size: 20px;
   }
 }
 
@@ -10889,6 +10883,8 @@ a:hover, a:focus {
 .header-column--bottom {
   padding-top: 18px;
   color: #ffffff;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .header-column--bottom .header-column__menu {

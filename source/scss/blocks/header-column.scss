@@ -87,6 +87,8 @@
 	&--bottom {
 		padding-top: 18px;
 		color: $color-default-white;
+		background-repeat: no-repeat;
+		background-size: cover;
 
 		#{$self} {
 			&__menu {

@@ -316,6 +316,14 @@
 					@include media(lg) {
 						min-height: 710px;
 					}
+
+					@include media(full) {
+						min-height: 935px;
+					}
+
+					@media (min-width: 2560px) {
+						min-height: 1500px;
+					}
 				}
 
 				&--choose {
@@ -349,6 +357,14 @@
 
 						@include media(lg) {
 							padding-top: 40px;
+						}
+
+						@include hover {
+							color: $color-default-white;
+
+							svg {
+								fill: $color-default-white;
+							}
 						}
 
 						svg {
@@ -518,14 +534,6 @@
 					.demo-card__image {
 						transform: translateY(-10px);
 					}
-
-					.demo-card__link {
-						color: $color-yellow;
-
-						svg {
-							fill: $color-yellow;
-						}
-					}
 				}
 			}
 
@@ -569,6 +577,14 @@
 
 				@include media(lg) {
 					padding-top: 50px;
+				}
+
+				@include hover {
+					color: $color-default-black;
+
+					svg {
+						fill: $color-default-black;
+					}
 				}
 
 				svg {

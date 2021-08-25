@@ -119,17 +119,13 @@
 	&__title {
 		margin-right: 20px;
 
-		@include text(20px, 34 / 28, $color-default-black);
+		@include text(14px, 34 / 28, $color-default-black);
 		text-transform: uppercase;
 
 		@include transition(color);
 
 		@include media(lg) {
-			font-size: 24px;
-		}
-
-		@include media(xl) {
-			font-size: 28px;
+			font-size: 20px;
 		}
 	}
 
