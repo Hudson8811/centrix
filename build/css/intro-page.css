@@ -369,7 +369,7 @@
   }
 }
 
-@media (min-width: 1920px) {
+@media (min-width: 2000px) {
   .demo--new .demo__section--banner {
     min-height: 935px;
   }

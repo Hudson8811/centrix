@@ -317,7 +317,7 @@
 						min-height: 710px;
 					}
 
-					@include media(full) {
+					@media (min-width: 2000px) {
 						min-height: 935px;
 					}
 
