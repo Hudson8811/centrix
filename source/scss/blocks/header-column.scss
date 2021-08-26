@@ -5,9 +5,14 @@
 	padding-bottom: 14px;
 
 	&__menu {
+		display: none;
 		border-top: 1px solid $color-default-black;
 		margin-top: 18px;
 		padding-top: 20px;
+
+		@include media(md) {
+			display: flex;
+		}
 	}
 
 	&__col {
@@ -45,7 +50,10 @@
 		display: flex;
 		align-items: flex-end;
 		justify-content: space-between;
-		margin-top: 80px;
+
+		@include media(md) {
+			margin-top: 80px;
+		}
 
 		@include media(lg) {
 			margin-top: 191px;
