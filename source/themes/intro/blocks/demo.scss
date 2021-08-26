@@ -307,7 +307,7 @@
 			&__section {
 				&--banner {
 					min-height: 300px;
-					background-position: bottom;
+					background-position: top;
 
 					@include media(md) {
 						min-height: 500px;
@@ -315,14 +315,6 @@
 
 					@include media(lg) {
 						min-height: 710px;
-					}
-
-					@media (min-width: 2000px) {
-						min-height: 935px;
-					}
-
-					@media (min-width: 2560px) {
-						min-height: 1500px;
 					}
 				}
 

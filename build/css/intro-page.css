@@ -354,7 +354,7 @@
 
 .demo--new .demo__section--banner {
   min-height: 300px;
-  background-position: bottom;
+  background-position: top;
 }
 
 @media (min-width: 768px) {
@@ -366,18 +366,6 @@
 @media (min-width: 992px) {
   .demo--new .demo__section--banner {
     min-height: 710px;
-  }
-}
-
-@media (min-width: 2000px) {
-  .demo--new .demo__section--banner {
-    min-height: 935px;
-  }
-}
-
-@media (min-width: 2560px) {
-  .demo--new .demo__section--banner {
-    min-height: 1500px;
   }
 }
 

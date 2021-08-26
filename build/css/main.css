@@ -10816,13 +10816,9 @@ a:hover, a:focus {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -10835,18 +10831,6 @@ a:hover, a:focus {
   }
 }
 
-@media (min-width: 1400px) {
-  .header-column__bottom {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-align: end;
-        -ms-flex-align: end;
-            align-items: flex-end;
-  }
-}
-
 .header-column__arrow {
   width: 80px;
   height: 80px;
@@ -10854,7 +10838,7 @@ a:hover, a:focus {
           transform: rotate(90deg);
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
   .header-column__arrow {
     width: 142px;
     height: 142px;
@@ -10865,18 +10849,16 @@ a:hover, a:focus {
   width: 300px;
   height: 83px;
   margin-top: 20px;
+  margin-left: 20px;
+  /*@include media(xxl) {
+			margin-top: 0;
+		}*/
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
   .header-column__logo {
     width: 818px;
     height: 216px;
-  }
-}
-
-@media (min-width: 1400px) {
-  .header-column__logo {
-    margin-top: 0;
   }
 }
 
